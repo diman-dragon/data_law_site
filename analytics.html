@@ -9,139 +9,38 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    :root {
-      --bg: #fbfcfd;
-      --card: #ffffff;
-      --muted: #6b7280;
-      --accent: #2c3e50;
-      --accent-2: #e74c3c;
-      --radius: 12px;
-    }
-    body {
-      margin: 0;
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: #0f1724;
-      -webkit-font-smoothing: antialiased;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 20px;
-      background: linear-gradient(90deg, #23374d, #2c3e50);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 60;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo img {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: #fff;
-      padding: 4px;
-    }
-    .brand {
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.2px;
-    }
-    .tag {
-      font-size: 0.86rem;
-      opacity: 0.9;
-    }
-    .nav {
-      margin-left: auto;
-      display: flex;
-      gap: 14px;
-      align-items: center;
-    }
-    .nav a {
-      color: rgba(255, 255, 255, 0.95);
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-    .nav a:hover {
-      opacity: 0.75;
-    }
-    .layout {
-      max-width: 1200px;
-      margin: 28px auto;
-      padding: 0 18px;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 22px;
-    }
-    main {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    aside {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    section h2 {
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-size: 1.25rem;
-    }
-    section p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
     .chart-card {
-      background: var(--card);
-      padding: 14px;
+      background: var(--color-bg);
+      padding: 20px;
       border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.05);
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+      margin-bottom: 24px;
     }
-    .chart-card h3,
-    .chart-card h4 {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 1.15rem;
+    .chart-card h3 {
+      margin: 0 0 16px;
+      color: var(--color-accent);
+      font-size: 1.2rem;
     }
     .chart-container {
+      height: 300px !important;
       width: 100% !important;
-      height: 260px !important;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 12px;
-      background: var(--card);
+      margin-top: 16px;
+      background: var(--color-bg);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.05);
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
     }
     th, td {
-      padding: 10px 12px;
+      padding: 12px 14px;
       text-align: left;
-      border-bottom: 1px solid #eee;
-      font-size: 0.92rem;
+      border-bottom: 1px solid var(--color-border);
     }
     th {
-      background: var(--accent);
+      background: var(--color-accent);
       color: white;
       font-weight: 600;
     }
@@ -152,100 +51,8 @@
       background: rgba(29, 78, 216, 0.03);
     }
     .highlight {
-      background: rgba(231, 76, 60, 0.05);
+      background: rgba(185, 28, 28, 0.1);
       font-weight: 600;
-    }
-    .news-item {
-      background: var(--card);
-      padding: 14px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(2, 6, 23, 0.04);
-    }
-    .news-item strong {
-      color: var(--accent);
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.98rem;
-    }
-    .news-item small {
-      color: var(--muted);
-      display: block;
-      line-height: 1.5;
-      font-size: 0.88rem;
-    }
-    .footer {
-      margin-top: 40px;
-      background: linear-gradient(135deg, #1a2332 0%, #23374d 100%);
-      color: #fff;
-      border-top: 3px solid var(--accent);
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 32px 20px 20px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 24px;
-    }
-    .footer-col h4 {
-      margin: 0 0 12px;
-      color: #fff;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .footer-col p,
-    .footer-col ul {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.7;
-      font-size: 0.9rem;
-    }
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-    .footer-col ul li {
-      margin-bottom: 8px;
-    }
-    .footer-col ul li a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-    }
-    .footer-col ul li a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-links {
-      display: flex;
-      gap: 16px;
-    }
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.75);
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    .footer-links a:hover {
-      color: #fff;
-    }
-    @media (max-width: 980px) {
-      .layout {
-        grid-template-columns: 1fr;
-        padding: 0 14px;
-      }
-      .chart-container {
-        height: 220px !important;
-      }
     }
   </style>
 </head>
@@ -257,7 +64,7 @@
         <img 
           src="assets/images/logo.png" 
           alt="Data Law (DL)" 
-          onerror="this.src='https://via.placeholder.com/52/2c3e50/ffffff?text=DL'"
+          onerror="this.src='https://via.placeholder.com/52/1d4ed8/ffffff?text=DL'"
           width="52"
           height="52"
         />
@@ -266,7 +73,8 @@
           <div class="tag">Independent Analytical Center for Human Rights and Justice Systems</div>
         </div>
       </a>
-      <nav class="nav" aria-label="Навигация">
+
+      <nav class="nav" aria-label="Основная навигация">
         <a href="about.html">О нас</a>
         <a href="services.html">Услуги</a>
         <a href="analytics.html">Аналитика</a>
@@ -328,6 +136,11 @@
               </tr>
             </tbody>
           </table>
+          <p style="margin-top:12px; font-size:0.9rem; color:var(--color-text-light);">
+            <em>Интегральный индекс риска рассчитан по формуле:<br>
+            <code>0.4×(100−WJP) + 0.3×(100−CPI) + 0.3×(100−Freedom House)</code>.<br>
+            Чем выше значение — тем выше системный риск злоупотреблений.</em>
+          </p>
         </div>
 
         <!-- ГРАФИК: ИНТЕГРАЛЬНЫЙ РИСК -->
@@ -354,22 +167,7 @@
           <canvas id="freedomChart" class="chart-container"></canvas>
         </div>
 
-        <!-- ГРАФИК: ОПРАВДАТЕЛЬНЫЕ -->
-        <div class="chart-card">
-          <h3>Оправдательные приговоры (2020–2024, %)</h3>
-          <canvas id="acquittalChart" class="chart-container"></canvas>
-        </div>
-
-        <!-- ГРАФИК: ИНТЕРПОЛ -->
-        <div class="chart-card">
-          <h3>Красные уведомления Интерпола (на млн населения)</h3>
-          <canvas id="interpolChart" class="chart-container"></canvas>
-        </div>
-
-        <p><em>Примечание: Интегральный индекс риска рассчитан по формуле:<br>
-        <code>0.4×(100−WJP) + 0.3×(100−CPI) + 0.3×(100−Freedom House)</code>.<br>
-        Чем выше значение — тем выше системный риск злоупотреблений.</em></p>
-        <p><em>Источники: Судебный департамент РФ, Республиканский институт статистики Сербии, World Justice Project, Transparency International, Freedom House, Интерпол (сентябрь 2025).</em></p>
+        <p><em>Источники: World Justice Project, Transparency International, Freedom House, Интерпол (сентябрь 2025).</em></p>
       </section>
     </main>
 
@@ -416,7 +214,7 @@
           <h4>Контакты</h4>
           <ul>
             <li>📧 <a href="mailto:info@datalaw.org">info@datalaw.org</a></li>
-            <li>📍 Белград, Сербия</li>
+            <li>📍 Ulica Kralja Milana 28, Белград, Сербия</li>
             <li>⏰ Пн–Пт: 09:00–18:00 CET</li>
             <li>🚨 Экстренные случаи: 24/7</li>
           </ul>
@@ -438,16 +236,8 @@
     const wjp = [83, 75, 54, 43];
     const cpi = [75, 67, 35, 22];
     const freedom = [94, 90, 62, 14];
-    const acquittalRates = [12, 5, 13.56, 0.26]; // %
-    const interpolCountries = ['Россия', 'США', 'Германия'];
-    const interpolNotices = [22.0, 0.7, 0.4]; // на млн
+    const integralRisk = [12.1, 18.4, 45.0, 73.9]; // выше = хуже
 
-    // Интегральный риск (0–100, выше = хуже)
-    const integralRisk = countries.map((_, i) =>
-      parseFloat((0.4 * (100 - wjp[i]) + 0.3 * (100 - cpi[i]) + 0.3 * (100 - freedom[i])).toFixed(1))
-    );
-
-    // Цвета по странам (как в основном сайте)
     const colors = ['#2ca02c', '#98df8a', '#ffbb78', '#e74c3c'];
 
     // === ГРАФИК: ИНТЕГРАЛЬНЫЙ РИСК ===
@@ -468,7 +258,11 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          y: { beginAtZero: true, max: 100 }
+          y: {
+            beginAtZero: true,
+            max: 100,
+            title: { display: true, text: 'Риск (0–100)' }
+          }
         },
         plugins: { legend: { display: false } }
       }
@@ -491,7 +285,10 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          y: { beginAtZero: true, max: 100 }
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
         },
         plugins: { legend: { display: false } }
       }
@@ -514,7 +311,10 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          y: { beginAtZero: true, max: 100 }
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
         },
         plugins: { legend: { display: false } }
       }
@@ -537,53 +337,10 @@
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          y: { beginAtZero: true, max: 100 }
-        },
-        plugins: { legend: { display: false } }
-      }
-    });
-
-    // === ГРАФИК: ОПРАВДАТЕЛЬНЫЕ ===
-    const acquittalCtx = document.getElementById('acquittalChart').getContext('2d');
-    new Chart(acquittalCtx, {
-      type: 'bar',
-      data: {
-        labels: countries,
-        datasets: [{
-          label: 'Оправдательные приговоры (%)',
-          data: acquittalRates,
-          backgroundColor: colors,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: { beginAtZero: true }
-        },
-        plugins: { legend: { display: false } }
-      }
-    });
-
-    // === ГРАФИК: ИНТЕРПОЛ ===
-    const interpolCtx = document.getElementById('interpolChart').getContext('2d');
-    new Chart(interpolCtx, {
-      type: 'bar',
-      data: {
-        labels: interpolCountries,
-        datasets: [{
-          label: 'Красные уведомления (на млн)',
-          data: interpolNotices,
-          backgroundColor: ['#e74c3c', '#2c3e50', '#2ca02c'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: { beginAtZero: true }
+          y: {
+            beginAtZero: true,
+            max: 100
+          }
         },
         plugins: { legend: { display: false } }
       }
