@@ -978,14 +978,24 @@
         .lang-en { display: none; }
     </style>
 
-        <!-- Google tag (gtag.js) -->
+    <!-- ================================ -->
+    <!-- ✅ Google tag (gtag.js) — GA4 -->
+    <!-- Вставляется перед </head> -->
+    <!-- ================================ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4SCYW9YVM"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-S4SCYW9YVM');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-S4SCYW9YVM');
+    </script>
+    <!-- ================================ -->
+    <!-- Конец блока Google Analytics -->
+    <!-- ================================ -->
 </script>
 </head>
 <body>
