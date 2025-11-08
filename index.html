@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0f1a2e 0%, #1a1a3e 30%, #3a152a 70%, #4a1020 100%);
+            background: linear-gradient(135deg, #0a1128 0%, #1a1a3e 30%, #2d0a1a 70%, #3a0519 100%);
             color: white;
             overflow-x: hidden;
         }
@@ -73,7 +73,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(10, 17, 40, 0.9);
             backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s;
@@ -81,7 +81,7 @@
         }
 
         nav.scrolled {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(10, 17, 40, 0.95);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
@@ -220,7 +220,7 @@
             top: 80px;
             left: 0;
             width: 100%;
-            background: rgba(15, 23, 42, 0.98);
+            background: rgba(10, 17, 40, 0.98);
             backdrop-filter: blur(20px);
             padding: 2rem;
             border-bottom: 1px solid rgba(30, 58, 138, 0.2);
@@ -264,19 +264,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .hero-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            animation: pulse 3s infinite;
-            filter: drop-shadow(0 0 30px rgba(30, 58, 138, 0.6));
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
 
         .badge {
@@ -737,7 +724,7 @@
         }
 
         footer {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(10, 17, 40, 0.9);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(30, 58, 138, 0.2);
             padding: 4rem 2rem;
@@ -763,6 +750,25 @@
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .ai-grid {
+                gap: 2rem;
+            }
+            
+            .ai-section {
+                padding: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -793,6 +799,7 @@
 
             .cards-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .comparison-grid {
@@ -813,10 +820,12 @@
                 flex-direction: column !important;
                 align-items: flex-start;
                 padding-left: 70px;
+                margin-bottom: 4rem;
             }
 
             .timeline-content {
                 width: 100%;
+                padding: 2rem;
             }
 
             .timeline-marker {
@@ -829,6 +838,7 @@
 
             .ai-section {
                 padding: 2rem;
+                margin: 4rem 0;
             }
 
             .card {
@@ -837,6 +847,96 @@
 
             .stat-number {
                 font-size: 3rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-card {
+                padding: 2rem;
+            }
+            
+            .ai-feature {
+                padding: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .comparison-card {
+                padding: 2rem;
+            }
+            
+            .highlight-box {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .ai-feature {
+                padding: 1rem;
+            }
+            
+            .comparison-card {
+                padding: 1.5rem;
+            }
+            
+            .timeline-content {
+                padding: 1.5rem;
+            }
+            
+            .timeline-title {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-achievements li {
+                font-size: 1rem;
+            }
+            
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+            
+            .footer-tagline {
+                font-size: 0.9rem;
+            }
+            
+            .footer-text {
+                font-size: 0.9rem;
             }
         }
 
@@ -901,7 +1001,6 @@
 
     <section class="hero">
         <div class="hero-content">
-            <img src="logo.png" alt="Data Law Logo" class="hero-icon">
             <div class="badge" data-i18n="hero-badge">🚀 Объявляем запуск проекта</div>
             <h1>Data Law</h1>
             <p class="hero-subtitle" data-i18n="hero-subtitle">Технологии для защиты прав человека</p>
@@ -1275,7 +1374,10 @@
     </section>
 
     <footer>
-        <div class="footer-logo">Data Law</div>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Data Law Logo" style="width: 50px; height: 50px; margin-right: 1rem;">
+            Data Law
+        </div>
         <p class="footer-tagline" data-i18n="footer-tagline">Независимый аналитический центр для прав человека и систем правосудия</p>
         <p class="footer-text" style="color: rgba(255, 255, 255, 0.5); font-size: 0.95rem; margin-top: 1rem;">
             2025 Data Law. <span data-i18n="footer-text">Технологии на службе справедливости.</span>
@@ -1569,6 +1671,17 @@
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Закрытие мобильного меню при клике вне его области
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = event.target.closest('.nav-container') || 
+                                   event.target.closest('.mobile-menu');
+            
+            if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
             }
         });
     </script>
