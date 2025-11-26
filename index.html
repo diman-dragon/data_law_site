@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Law | Правда, которую невозможно не заметить</title>
-<meta name="description" content="Платформа для юристов и правозащитников. Пока это только идея в голове одного человека.">
+<title>Data Law | Palantir для правозащитников (OSINT)</title>
+<meta name="description" content="Самый мощный легальный OSINT-инструмент в мире. Превращает месяцы расследований в 30-90 секунд. Бесплатно для адвокатов и правозащитников.">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -171,6 +171,16 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px);
 }
 
+/* КРИТИЧЕСКИЙ FIX: Обеспечиваем читаемость при нажатии (Focus/Active State) */
+a:focus, a:active, .btn:focus, .btn:active {
+    outline: 2px solid var(--dl-accent) !important; /* Яркий акцентный цвет */
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(251, 191, 36, 0.5) !important; /* Неоновое свечение */
+    color: var(--dl-text-light) !important; 
+    text-decoration: none;
+}
+
+
 /* Карточки (Neumorphism/Glassmorphism) */
 .content-card {
     background: rgba(26, 28, 36, 0.7);
@@ -303,134 +313,157 @@ h1, h2, h3, h4, h5, h6 {
 <div class="container py-5">
 
 <div class="row pt-5 pb-5" id="hero">
-    <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+    <div class="col-lg-11 mx-auto text-center" data-aos="fade-up">
         <h1 class="display-3 fw-bold mb-4">
             Data Law: <span class="gradient-text">Правда, которую невозможно не заметить</span>
         </h1>
         <p class="lead mb-4" style="font-size: 1.35rem; font-weight: 500; line-height: 1.7;">
-            (Пока это только идея в голове одного человека. Но идея такая, что уже не даёт спать по ночам — и даже придуманный кот не даёт.)
+            Это будет самый мощный легальный <strong>OSINT-инструмент</strong> в мире для тех, кто защищает людей от государств.
         </p>
         
-        <h3 class="mt-5 mb-3 fw-semibold">Мы только начали.</h3>
-        <p class="lead mb-3" style="font-size: 1.15rem;">
-            Прямо сейчас: один человек, ноль строк кода, ноль датасетов, ноль рублей на счету.
-        </p>
-        <p class="mb-2 text-muted">Наброски — на бумаге, в голове и в OneNote.</p>
-        <p class="mb-5 fw-bold text-light">
-            Зато есть кот Баг — придуманный, но уже официально главный по качеству и пожизненный хранитель тёмной темы.
+        <p class="lead mb-5 text-start mx-auto" style="max-width: 900px; font-size: 1.2rem;">
+            <strong>OSINT</strong> — Open-Source Intelligence — разведка исключительно по открытым, публичным источникам. То, чем вручную занимаются Bellingcat, OCCRP, Amnesty, Human Rights Watch и лучшие расследователи планеты. Мы превратим месяцы их работы в 30–90 секунд.
         </p>
 
         <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mt-5" data-aos="zoom-in" data-aos-delay="400">
-            <a href="#pain-point" class="btn btn-primary btn-lg">
-                <i class="fas fa-arrow-down me-2"></i> Главная боль
+            <a href="#what-it-does" class="btn btn-primary btn-lg">
+                <i class="fas fa-magic me-2"></i> Что именно делает Data Law
             </a>
             <a href="#contact" class="btn btn-outline-light btn-lg">
-                <i class="fas fa-handshake me-2"></i> Поговорить об идее
+                <i class="fas fa-handshake me-2"></i> Написать автору и запросить Pitch Deck
             </a>
         </div>
     </div>
 </div>
 
-<div class="row my-5 py-5" id="pain-point">
-    <div class="col-lg-12 section-header" data-aos="fade-up">
-        <h2 class="display-6 text-white mb-3">
-            Главная боль, которую я хочу <span class="gradient-text">уничтожить раз и навсегда</span>
+<div class="row my-5 py-5" id="what-it-does">
+    <div class="col-lg-10 mx-auto section-header" data-aos="fade-up">
+        <h2 class="display-6 text-white mb-4 text-center">
+            <span class="gradient-text">Что именно делает</span> Data Law
         </h2>
-    </div>
-    <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="200">
         <div class="content-card">
-            <p class="lead mb-4 fw-medium">
-                Серьёзный кейс сегодня — это всегда:
+            <p class="lead mb-4 fw-medium" style="font-size: 1.25rem;">
+                Ты вводишь одно имя — человека, судьи, прокурора, следователя, компании или номер дела. Всё остальное делает платформа:
             </p>
-            <ul class="icon-list">
-                <li><i class="fas fa-file-pdf"></i> <span>Десятки PDF по 300–800 страниц каждый</span></li>
-                <li><i class="fas fa-window-maximize"></i> <span>Сотни вкладок, которые крашат браузер</span></li>
-                <li><i class="fas fa-clock"></i> <span>Недели ручного поиска по реестрам и архивам СМИ</span></li>
-                <li><i class="fas fa-bed"></i> <span>Ночи перед заседанием с мыслью «а вдруг где-то ещё есть одно дело, которое всё меняет»</span></li>
+            <ul class="icon-list" style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-search"></i> <span>Мгновенно собирает тысячи документов из открытых реестров любой страны мира</span></li>
+                <li><i class="fas fa-project-diagram"></i> <span>Строит живую карту связей: кто с кем судился, владел, работал, упоминался, пересекался</span></li>
+                <li><i class="fas fa-history"></i> <span>Создаёт умную хронологию событий с точностью до дня</span></li>
+                <li><i class="fas fa-file-export"></i> <span>Выдаёт готовый оффлайн-кейс и идеальный судебный PDF: графики, таблицы, кликабельные ссылки на первоисточники, оглавление</span></li>
+                <li><i class="fas fa-wifi-slash"></i> <span>Работает без интернета прямо в зале суда</span></li>
             </ul>
-            <div class="mt-5 text-center">
-                <p class="lead mb-4">
-                    И самый страшный вопрос на свете:
-                </p>
-                <h3 class="display-5 fw-bold mb-4 neon-text">
-                    «А где доказательства, от которых не отмахнуться?»
-                </h3>
-                <p class="text-muted">
-                    Я хочу, чтобы через несколько лет этот вопрос звучал так же архаично, как «а где мой дискетный привод?».
-                </p>
-                <p class="text-muted fst-italic">
-                    Кот мурлычет — одобряет.
+            <div class="blockquote-modern mt-5 text-center">
+                <p class="mb-0 fst-italic" style="font-size: 1.35rem;">
+                    Чтобы адвокат мог встать и спокойно сказать: «Ваша честь, позвольте продемонстрировать схему за последние 12 лет. Вот 683 дела, 11 судей, 3 прокурорских работника и одна и та же фабрикация. Всё из открытых государственных реестров».
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="section-divider" data-aos="fade-up" id="vision">
-    <div class="row">
-        <div class="col-lg-12 section-header">
-            <h2 class="display-6 text-white mb-3">
-                Что именно я <span class="gradient-text">собираюсь построить</span>
-            </h2>
-            <p class="lead text-muted">Платформу, которая будет делать то, что сейчас может позволить себе только государство или Bellingcat с бюджетом в миллионы:</p>
-        </div>
-        <div class="col-lg-11 mx-auto">
-            <ul class="icon-list">
-                <li><i class="fas fa-database"></i> <span>Автоматически собирать всё из открытых источников: судебные решения (КАД, ГАС «Правосудие», ЕСПЧ, Верховный суд), реестры компаний, ФНС, приставы, Росреестр, СМИ, Telegram-каналы, отчёты НКО и международных организаций</span></li>
-                <li><i class="fas fa-project-diagram"></i> <span>Находить и показывать связи между людьми, судьями, прокурорами, следователями, компаниями, событиями</span></li>
-                <li><i class="fas fa-laptop-code"></i> <span>Превращать это в интерактивные карты связей и умные хронологии, которые можно открыть на ноутбуке в зале суда и сказать: «Ваша честь, разрешите продемонстрировать схему за последние 10 лет»</span></li>
-                <li><i class="fas fa-plane-slash"></i> <span>Работать полностью оффлайн (скачал кейс — и пошёл в суд без интернета)</span></li>
-                <li><i class="fas fa-file-export"></i> <span>Экспортировать одним кликом красивый PDF с оглавлением и ссылками на источники</span></li>
-                <li><i class="fas fa-heart"></i> <span>Быть бесплатной навсегда для правозащитников, адвокатов по политическим и уголовным делам, НКО и журналистов-расследователей</span></li>
+<div class="row my-5 py-5" id="free-access">
+    <div class="col-lg-10 mx-auto section-header" data-aos="fade-up">
+        <h2 class="display-6 text-white mb-4 text-center">
+            Для кого это <span class="gradient-text">бесплатно навсегда</span>
+        </h2>
+        <div class="content-card text-center" style="padding: 2.5rem;">
+            <ul class="icon-list text-start mx-auto" style="max-width: 400px; list-style: none; padding-left: 0;">
+                <li><i class="fas fa-user-tie"></i> <span>Адвокаты по политическим делам</span></li>
+                <li><i class="fas fa-balance-scale"></i> <span>Правозащитники</span></li>
+                <li><i class="fas fa-hands-helping"></i> <span>НКО</span></li>
+                <li><i class="fas fa-feather-alt"></i> <span>Журналисты-расследователи</span></li>
             </ul>
-        </div>
-        
-        <div class="col-lg-10 mx-auto text-center mt-5">
-            <p class="lead mb-4">
-                Это не ещё одна база данных.
+            <p class="lead mt-5 mb-0 text-center fw-bold">
+                Для всех остальных — платный доступ.
             </p>
-            <div class="blockquote-modern">
-                <p class="mb-0 fst-italic" style="font-size: 1.35rem;">
-                    Это инструмент, который превратит «я думаю, что есть системность» в «вот 427 дел за 7 лет с одним и тем же судьёй и одной и той же схемой оправдания — смотрите график».
-                </p>
-            </div>
-            <p class="text-muted fst-italic mt-3">Кот уже поставил лапу одобрения.</p>
+            <p class="text-muted mt-2 mb-0">
+                Так миссия остаётся чистой, а платформа живёт и развивается десятилетиями.
+            </p>
         </div>
     </div>
 </div>
+
 
 <div class="row py-5" data-aos="fade-up" id="status">
     <div class="col-lg-10 mx-auto text-center">
         <h2 class="display-6 fw-bold mb-5">
-            <span class="gradient-text">Где мы прямо сейчас</span> (ноябрь 2025, полная честность)
+            <span class="gradient-text">Где мы прямо сейчас</span> — ноябрь 2025
         </h2>
     </div>
     
     <div class="col-lg-9 mx-auto">
         <div class="roadmap-item">
-            <h4 class="text-white mb-3"><i class="fas fa-users-cog me-2"></i> Команда</h4>
+            <h4 class="text-white mb-3"><i class="fas fa-user-secret me-2"></i> Команда</h4>
             <p class="text-muted">
-                Есть один человек, который одновременно: <br>
-                → юрист-политэмигрант с опытом политических дел и ЕСПЧ <br>
-                → дата-сайентист, уставший от бессмысленных проектов <br>
-                → дизайнер (да, Design Lab — это пока я один) <br>
-                Один очень мотивированный человек, который уже пятый месяц живёт только этой идеей.
+                Один человек, который прошёл через политические дела, ЕСПЧ, дата-сайенс и дизайн.
             </p>
         </div>
         
         <div class="roadmap-item">
-            <h4 class="text-white mb-3"><i class="fas fa-book me-2"></i> Исходные данные</h4>
+            <h4 class="text-white mb-3"><i class="fas fa-cat me-2"></i> Chief Darkness Officer</h4>
             <p class="text-muted">
-                Есть 460+ страниц заметок в OneNote, десятки листов бумаги и сотни схем в голове. <br>
-                Есть название, домен и тёмная тема (светлую кот запретил ещё летом). <br>
-                Есть ноль готового кода и ноль собранных данных.
+                Один придуманный кот Баг — уже легендарный Chief Darkness Officer.
+            </p>
+        </div>
+        
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-exclamation-circle me-2"></i> Состояние проекта</h4>
+            <ul class="icon-list ms-4" style="list-style: none; padding-left: 0;">
+                <li><i class="fas fa-minus-circle"></i> <span>0 строк готового кода</span></li>
+                <li><i class="fas fa-minus-circle"></i> <span>0 собранных данных</span></li>
+                <li><i class="fas fa-minus-circle"></i> <span>0 рублей на счету</span></li>
+            </ul>
+        </div>
+
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-file-alt me-2"></i> Документация</h4>
+            <p class="text-muted">
+                460+ страниц детальной документации, техзадания, UI-мокапов и дорожной карты.
+            </p>
+        </div>
+        
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-heart me-2"></i> Уверенность</h4>
+            <p class="lead text-white fw-bold">
+                Абсолютная, до дрожи уверенность, что этот инструмент нужен прямо сейчас.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row py-5" data-aos="fade-up" id="investor-pitch">
+    <div class="col-lg-10 mx-auto text-center">
+        <h2 class="display-6 fw-bold mb-4">
+            Почему это <span class="gradient-text">взлетит</span> (для тех, кто умеет считать)
+        </h2>
+    </div>
+    
+    <div class="col-lg-9 mx-auto">
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-chart-line me-2"></i> Рынок и оценки</h4>
+            <p class="text-muted">
+                Рынок юридического и правозащитного OSINT — миллиарды долларов. Прямые аналоги: Maltego, Palantir Gotham, Recorded Future — оценки от $2 млрд до $70 млрд.
+            </p>
+        </div>
+        
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-bullseye me-2"></i> Позиционирование</h4>
+            <p class="text-muted">
+                Уникальное позиционирование: бесплатно для тех, кто борется с системой, платно для корпораций и фондов.
             </p>
         </div>
 
         <div class="roadmap-item">
-            <h4 class="text-white mb-3"><i class="fas fa-exclamation-triangle me-2"></i> Главное</h4>
+            <h4 class="text-white mb-3"><i class="fas fa-share-alt me-2"></i> Рост</h4>
             <p class="text-muted">
-                Есть абсолютная уверенность, что такой инструмент нужен прямо сейчас — и что если его не сделаю я, то никто не сделает.
+                Органический вирусный рост: каждый выигранный кейс = сотни новых пользователей.
+            </p>
+        </div>
+        
+        <div class="roadmap-item">
+            <h4 class="text-white mb-3"><i class="fas fa-fire me-2"></i> Актив</h4>
+            <p class="text-muted">
+                Кот Баг уже стал мемом ещё до запуска.
             </p>
         </div>
     </div>
@@ -440,9 +473,15 @@ h1, h2, h3, h4, h5, h6 {
     <div class="col-lg-8 mx-auto">
         <div class="cat-section text-center">
             <i class="fas fa-cat cat-icon mb-3"></i>
-            <h5 class="text-white mb-3">Главный по качеству: Кот Баг</h5>
+            <h5 class="text-white mb-3"><strong>Кот Баг</strong> — Главный по качеству и хранитель тёмной темы</h5>
+            <p class="lead mb-4">
+                Он мурлычет — значит, всё идёт правильно.
+            </p>
+            <p class="lead mb-4">
+                Он царапает клавиатуру — значит, интерфейс надо переделать.
+            </p>
             <p class="text-muted fst-italic mb-0">
-                Он тестирует: если схема неудобная — царапает клавиатуру. <br>Светлые темы по-прежнему под пожизненным запретом.
+                Светлые темы запрещены конституцией проекта навечно.
             </p>
         </div>
     </div>
@@ -451,37 +490,37 @@ h1, h2, h3, h4, h5, h6 {
 <div class="row py-5" data-aos="fade-up" id="roadmap">
     <div class="col-lg-10 mx-auto text-center">
         <h2 class="display-6 fw-bold mb-4">
-            Что будет дальше <span class="gradient-text">(реалистичный план)</span>
+            <span class="gradient-text">Дорожная карта</span>
         </h2>
-        <p class="lead mb-5 text-muted">План одного человека и одного придуманного кота.</p>
+        <p class="lead mb-5 text-muted">План одного человека и одного Chief Darkness Officer.</p>
     </div>
     
     <div class="col-lg-9 mx-auto">
         <div class="roadmap-item">
-            <h4 class="text-white mb-3"><i class="fas fa-drafting-compass me-2"></i> Декабрь 2025 — март 2026: Прототип</h4>
+            <h4 class="text-white mb-3"><i class="fas fa-drafting-compass me-2"></i> Декабрь 2025 — май 2026: MVP</h4>
             <p class="text-muted">
-                Первый прототип на коленке: вручную загрузим 50–100 дел и соединим их стрелочками хотя бы в draw.io. Кот будет проверять, чтобы не было светлых тем.
+                <strong>MVP: Россия + 5 ключевых стран</strong>, первые реальные кейсы, первые «вау» от адвокатов.
             </p>
         </div>
         
         <div class="roadmap-item">
             <h4 class="text-white mb-3"><i class="fas fa-flask me-2"></i> 2026: Закрытая Альфа</h4>
             <p class="text-muted">
-                Закрытая альфа для первых адвокатов и правозащитников. Первые реальные кейсы, где платформа найдёт то, что люди искали месяцами.
+                Закрытая альфа. Первые 100 пользователей. Первые доказательства, которые изменят реальные дела.
             </p>
         </div>
 
         <div class="roadmap-item">
             <h4 class="text-white mb-3"><i class="fas fa-map-marked-alt me-2"></i> 2027: Открытая регистрация</h4>
             <p class="text-muted">
-                Первые рабочие карты связей и хронологии. Открытая регистрация. Мобильное приложение.
+                Открытая регистрация. <strong>30+ стран</strong>. Мобильное приложение. Миллионы скачиваний PDF в залах судов.
             </p>
         </div>
         
         <div class="roadmap-item">
-            <h4 class="text-white mb-3"><i class="fas fa-infinity me-2"></i> 2028+</h4>
+            <h4 class="text-white mb-3"><i class="fas fa-infinity me-2"></i> 2028 и дальше</h4>
             <p class="text-muted">
-                То, о чём пока даже страшно мечтать вслух (кот мурлычет — значит, всё получится).
+                Любая страна мира, где есть хотя бы один открытый реестр. AI-подсказки. Голосовой поиск. Интеграция с ЕСПЧ и ООН. То, о чём сегодня страшно даже мечтать вслух.
             </p>
         </div>
     </div>
@@ -491,14 +530,20 @@ h1, h2, h3, h4, h5, h6 {
     <div class="col-lg-10 mx-auto">
         <div class="contact-section text-center">
             <h2 class="display-5 fw-bold mb-4">
-                Хочешь <span class="gradient-text">увидеть наброски</span> и поговорить об этом?
+                Хочешь <span class="gradient-text">увидеть это прямо сейчас</span>?
             </h2>
-            <p class="lead mb-4">
-                Пиши. Покажу всё, что есть: бумажки, OneNote, схемы на салфетках. Расскажу подробно, как я это вижу. Выпьем кофе в зуме.
-            </p>
-            <p class="mb-5">
-                Отвечаю в течение часа. Даже в 5 утра.<br>
-                <span class="text-muted">Кот тоже будет (ну, в воображении).</span>
+            <div class="text-start mx-auto" style="max-width: 500px;">
+                <p class="lead mb-4 fw-medium">У меня уже есть:</p>
+                <ul class="icon-list" style="list-style: none; padding-left: 0;">
+                    <li><i class="fas fa-file-powerpoint"></i> <span>460+ страниц документации и мокапов</span></li>
+                    <li><i class="fas fa-tablet-alt"></i> <span>Кликабельный прототип интерфейса</span></li>
+                    <li><i class="fas fa-cogs"></i> <span>Полная техническая архитектура</span></li>
+                    <li><i class="fas fa-calculator"></i> <span>Финансовая модель и pitch deck для тех, кто готов менять мир по-крупному</span></li>
+                </ul>
+            </div>
+            
+            <p class="lead mb-5 mt-4">
+                Пиши. Покажу всё. Расскажу всё. <br>Отвечаю в любое время дня и ночи.
             </p>
             <div class="d-flex justify-content-center flex-column flex-md-row gap-3 mb-5" data-aos="zoom-in" data-aos-delay="200">
                 <a href="https://t.me/datalaw_rights" target="_blank" class="btn btn-primary btn-lg">
@@ -510,11 +555,14 @@ h1, h2, h3, h4, h5, h6 {
             </div>
             
             <div class="mt-5 pt-4 border-top" style="border-color: rgba(255,255,255,0.1) !important;">
-                <p class="text-muted mb-2" style="font-size: 0.95rem;">
-                    Data Law — это пока только идея в голове одного человека и придуманный кот на воображаемом роутере. Но идея уже живёт своей жизнью. И мурлычет громче любого реального кота.
+                <p class="lead fw-bold text-white mb-3">
+                    P.S. Это не ещё один юридический стартап.
+                </p>
+                <p class="lead text-muted mb-2" style="font-size: 1.15rem;">
+                    Это инструмент, который сделает системную несправедливость видимой в любой стране мира.
                 </p>
                 <p class="text-muted mt-2" style="font-size: 0.95rem;">
-                    P.S. Светлых тем не будет никогда. Кот (хоть и придуманный) проголосовал лапой ещё в июне. И я с ним полностью согласен.
+                    И да — светлых тем не будет никогда. Кот Баг поставил лапу. Я с ним согласен на 1000 %.
                 </p>
             </div>
         </div>
