@@ -3,8 +3,6 @@ module.exports = function(eleventyConfig) {
   // Копируем статику напрямую в public
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
-  
-  // Явно указываем копирование JS
   eleventyConfig.addPassthroughCopy("src/js");
 
   // Следим за изменениями
@@ -12,10 +10,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
 
   return {
-    // ВАЖНО: Это название твоего репозитория на GitHub
-    // Если репозиторий называется linguadeck_ai, оставь так. 
-    // Если просто data_law_site — замени.
-    pathPrefix: "/linguadeck_ai/", 
+    // ВАЖНО: Префикс пути для GitHub Pages (название твоего репозитория)
+    pathPrefix: "/data_law_site/",
 
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
