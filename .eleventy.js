@@ -5,13 +5,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
 
-  // Следим за изменениями
+  // Следим за изменениями в JS и CSS
   eleventyConfig.addWatchTarget("./src/js/");
   eleventyConfig.addWatchTarget("./src/css/");
 
+  // УМНЫЙ ПРЕФИКС: 
+  // Если запущена команда --serve (локально), префикс будет пустой "".
+  // При обычной сборке (на GitHub) добавится имя репозитория.
+  const isProd = process.env.NODE_ENV === "production" || !process.argv.includes("--serve");
+  const pathPrefix = isProd ? "/data_law_site/" : "/";
+
   return {
-    // ВАЖНО: Префикс пути для GitHub Pages (название твоего репозитория)
-    pathPrefix: "/data_law_site/",
+    pathPrefix: pathPrefix,
 
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
