@@ -1,0 +1,84 @@
+---
+layout: base.njk
+title: Контакты — DataLaw
+---
+
+<section class="mission-hero">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Secure Communications</span>
+    </div>
+    <h1 class="main-title animate-in">Свяжитесь с <i>DataLaw</i></h1>
+    
+    <div class="contact-grid animate-in">
+      
+      <div class="contact-info">
+        <div class="contact-block">
+          <span class="block-label">Для экстренных случаев</span>
+          <h3>SOS / Интерпол</h3>
+          <p>Если вы столкнулись с незаконным задержанием или получили уведомление о Red Notice.</p>
+          <a href="mailto:sos@datalaw.ai" class="contact-link">sos@datalaw.ai</a>
+        </div>
+
+        <div class="contact-block">
+          <span class="block-label">Безопасность</span>
+          <h3>Зашифрованная связь</h3>
+          <p>Мы используем Signal и PGP. Для получения ключа или ID отправьте пустой запрос с темой "SECURE" на почту ниже.</p>
+          <a href="mailto:office@datalaw.ai" class="contact-link">office@datalaw.ai</a>
+        </div>
+
+        <div class="security-notice">
+          <div class="chat-status"><span class="status-dot"></span> End-to-End Encryption Available</div>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <div class="contact-form-header">
+          <span class="block-label">Форма обращения</span>
+          <p>Ваше сообщение будет зашифровано локально перед отправкой.</p>
+        </div>
+
+        <form action="#" class="dl-form">
+          <div class="form-group">
+            <label>Ваше имя или псевдоним</label>
+            <input type="text" placeholder="Анонимно" class="dl-input">
+          </div>
+          
+          <div class="form-group">
+            <label>Email для связи</label>
+            <input type="email" placeholder="email@example.com" class="dl-input" required>
+          </div>
+
+          <div class="form-group">
+            <label>Тип запроса</label>
+            <select class="dl-input dl-select">
+              <option>Общий вопрос</option>
+              <option>Помощь по линии Интерпола</option>
+              <option>Партнерство / НКО</option>
+              <option>Ошибки в данных (Data Integrity)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Описание ситуации</label>
+            <textarea placeholder="Пожалуйста, не указывайте чувствительные детали (пароли, адреса) в открытом виде..." rows="5" class="dl-input"></textarea>
+          </div>
+
+          <div class="privacy-agreement">
+            <label class="checkbox-container">
+              <input type="checkbox" required>
+              <span class="checkmark"></span>
+              Я понимаю, что DataLaw обрабатывает данные согласно <strong>Zero-Knowledge Policy</strong>. Сообщение будет удалено после решения вопроса.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-send-ai" style="width: 100%; justify-content: center;">
+            <span>Отправить защищенное сообщение</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

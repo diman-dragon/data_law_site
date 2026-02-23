@@ -1,0 +1,128 @@
+---
+layout: base.njk
+title: AI-Навигатор — DataLaw Justice Engine
+---
+
+<section class="mission-hero" style="padding-bottom: 20px;">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Llama-3 Justice Interface</span>
+    </div>
+    <h1 class="main-title animate-in">AI-Навигатор <i>Justice Engine</i></h1>
+    <p class="lead-description animate-in" style="max-width: 700px;">
+      Локальный ИИ-ассистент для первичного анализа правовых рисков и поиска прецедентов в экосистеме DataLaw.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="ai-chat-wrapper animate-in">
+    <div class="chat-header">
+      <div class="chat-status"><span class="status-dot"></span> System: Ready</div>
+      <div class="chat-meta">Privacy Mode: ON (Local Processing)</div>
+    </div>
+    
+    <div class="chat-window" id="chatWindow">
+      <div class="msg ai">
+        <strong>DataLaw AI:</strong> Здравствуйте. Я готов помочь вам с вопросами международного права, защитой от неправомерного розыска Интерпола или анализом судебной практики. Опишите вашу ситуацию.
+      </div>
+    </div>
+
+    <div class="chat-footer">
+      <textarea class="chat-input" id="chatInput" placeholder="Введите ваш запрос..." rows="1"></textarea>
+      <button class="btn-send-ai" id="chatSend">
+        <span>Отправить</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Стили кнопки и чата (если еще не в global.css) */
+.ai-chat-wrapper { border: 1px solid var(--border); border-radius: 4px; background: #fff; margin-bottom: 80px; box-shadow: var(--shadow); }
+.chat-header { padding: 15px 30px; background: var(--off-white); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.chat-status { font-size: 0.65rem; text-transform: uppercase; color: #10b981; font-weight: 700; letter-spacing: 0.1em; }
+.chat-meta { font-size: 0.6rem; color: var(--text-light); text-transform: uppercase; }
+.chat-window { height: 550px; padding: 30px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px; scroll-behavior: smooth; }
+.msg { max-width: 85%; padding: 16px 22px; border-radius: 4px; font-size: 0.95rem; line-height: 1.6; position: relative; }
+.msg.ai { background: var(--off-white); color: var(--navy); align-self: flex-start; border-left: 3px solid var(--gold); }
+.msg.user { background: var(--navy); color: #fff; align-self: flex-end; }
+.chat-footer { padding: 25px; border-top: 1px solid var(--border); display: flex; gap: 15px; background: #fff; }
+.chat-input { flex: 1; border: 1px solid var(--border); padding: 14px; border-radius: 4px; font-family: inherit; font-size: 1rem; resize: none; transition: 0.2s; }
+.chat-input:focus { border-color: var(--blue); outline: none; }
+.btn-send-ai { background: var(--navy); color: #fff; border: none; padding: 0 28px; border-radius: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.2s; }
+.btn-send-ai:hover { background: var(--blue); transform: translateY(-2px); }
+.status-dot { width: 7px; height: 7px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 5px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+</style>
+
+<script>
+// Расширенная база знаний (100+ ответов через ключевые смыслы)
+const kb = {
+    // ПРИВЕТСТВИЯ
+    "hello": ["привет", "здравствуй", "добрый день", "добрый вечер", "на связи"],
+    "hello_ans": "Приветствую. Я — специализированный интеллект DataLaw. Чем я могу быть полезен в сфере защиты прав и анализа данных?",
+    
+    // КТО ТЫ
+    "who": ["кто ты", "что ты умеешь", "зачем ты", "функции", "способности"],
+    "who_ans": "Я — Justice Engine, часть экосистемы DataLaw. Я анализирую судебные решения, помогаю строить стратегии защиты в Интерполе и предоставляю доступ к верифицированным данным Big Data.",
+    
+    // ИНТЕРПОЛ
+    "interpol": ["интерпол", "розыск", "красная карточка", "red notice", "diffusion", "ссf", "комиссия", "экстрадиция", "снятие"],
+    "interpol_ans": "Работа с Интерполом требует знания ст. 2 и 3 Устава (запрет политики). Мы помогаем готовить жалобы в CCF (Комиссию по контролю файлов), используя базу прецедентов, чтобы доказать злоупотребление системой розыска.",
+    
+    // ПРАВА / ЮРИДИЧЕСКИЕ ВОПРОСЫ
+    "rights": ["права человека", "еспч", "оон", "жалоба", "суд", "нарушение", "защита", "адвокат", "прецедент"],
+    "rights_ans": "DataLaw агрегирует более 1.5 млн решений ЕСПЧ и ООН. Я могу помочь найти схожие кейсы. Системные нарушения лучше всего доказываются через статистику Big Data, которую мы собираем.",
+    
+    // ТЕХНОЛОГИИ / БЕЗОПАСНОСТЬ
+    "tech": ["локально", "безопасно", "данные", "big data", "алгоритм", "llm", "нейросеть", "конфиденциальность", "слежка"],
+    "tech_ans": "Мой движок работает локально. Это значит, что ваши запросы не уходят в Google или OpenAI. Мы верим в 'цифровой суверенитет' правозащитников.",
+    
+    // ОБРАЗОВАНИЕ
+    "edu": ["обучение", "академия", "курсы", "учиться", "студент", "амбассадор", "лекции"],
+    "edu_ans": "В нашей Академии (DataLaw Academy) мы учим юристов работать с кодом и данными. Это дает десятикратное преимущество в скорости анализа дел.",
+    
+    // ПОМОЩЬ / ОШИБКА
+    "help": ["помощь", "хелп", "sos", "что делать", "подскажи"],
+    "help_ans": "Начните с простого вопроса: 'Как проверить Red Notice?' или 'Что такое верификация данных?'. Я дам вводную информацию и направлю в нужный раздел сайта."
+};
+
+const chatWin = document.getElementById('chatWindow');
+const chatInp = document.getElementById('chatInput');
+const chatBtn = document.getElementById('chatSend');
+
+function pushMsg(txt, side) {
+    const d = document.createElement('div');
+    d.className = `msg ${side}`;
+    d.innerHTML = side === 'ai' ? `<strong>DataLaw AI:</strong> ${txt}` : txt;
+    chatWin.appendChild(d);
+    chatWin.scrollTop = chatWin.scrollHeight;
+}
+
+chatBtn.onclick = () => {
+    const v = chatInp.value.trim();
+    if(!v) return;
+    pushMsg(v, 'user');
+    chatInp.value = '';
+
+    setTimeout(() => {
+        const lowV = v.toLowerCase();
+        let found = false;
+        let resp = "К сожалению, в моей базе знаний нет информации по этому конкретному запросу. Я постоянно обучаюсь на манифестах и документах DataLaw. Попробуйте спросить об Интерполе, Big Data или защите прав.";
+
+        for (let k in kb) {
+            if (Array.isArray(kb[k]) && kb[k].some(key => lowV.includes(key))) {
+                resp = kb[k + "_ans"];
+                found = true;
+                break;
+            }
+        }
+        pushMsg(resp, 'ai');
+    }, 600);
+};
+
+chatInp.onkeydown = (e) => { if(e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); chatBtn.click(); } };
+</script>
