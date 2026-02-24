@@ -1,25 +1,42 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="header-logo" href="/">
-      <img src="/assets/logo.jpg" alt="DataLaw" class="header-logo-img">
+<header class="site-header" style="background: #fff; border-bottom: 1px solid rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;">
+  <div class="container header-inner" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
+    
+    <a class="header-logo" href="{{ '/' | url }}" style="display: flex; align-items: center; text-decoration: none; flex-shrink: 0;">
+      <img src="{{ '/assets/logo.jpg' | url }}" alt="DataLaw" style="height: 45px; width: 45px; border-radius: 4px; margin-right: 12px;">
       <div class="header-logo-info">
-        <span class="header-logo-text">DATALAW</span>
-        <span class="header-logo-tagline">Global Technologies for Human Rights</span>
+        <span class="header-logo-text" style="display: block; font-family: 'Jost', sans-serif; font-weight: 700; font-size: 1.2rem; color: #1a1a1a; letter-spacing: 1px; line-height: 1;">DATALAW</span>
+        <span class="header-logo-tagline" style="display: block; font-size: 0.65rem; color: #888; text-transform: uppercase; margin-top: 4px;">Global Technologies</span>
       </div>
     </a>
-    
-    <nav class="header-nav">
-      <a href="/" class="header-nav-link">Миссия</a>
-      <a href="/pages/interpol/" class="header-nav-link">Интерпол</a>
-      <a href="/pages/integration/" class="header-nav-link">Интеграция</a>
-      <a href="/pages/education/" class="header-nav-link">Образование</a>
-      <a href="/pages/library/" class="header-nav-link">Библиотека</a>
-    </nav>
 
-    <div class="header-actions">
-      <a href="/pages/ai-navigator/" class="btn-nav-ai accent-glow">
-        <span class="ai-icon">✦</span> AI-Навигатор
-      </a>
-    </div>
+    <nav class="header-nav" style="display: flex; gap: 18px; align-items: center; margin-left: auto;">
+      <a href="{{ '/' | url }}" class="nav-item">Миссия</a>
+      <a href="{{ '/pages/interpol/' | url }}" class="nav-item">Интерпол</a>
+      <a href="{{ '/pages/practice/' | url }}" class="nav-item">Практика</a>
+      <a href="{{ '/pages/integration/' | url }}" class="nav-item">Интеграция</a>
+      <a href="{{ '/pages/education/' | url }}" class="nav-item">Академия</a>
+      <a href="{{ '/pages/library/' | url }}" class="nav-item">Библиотека</a>
+      <a href="{{ '/pages/crm/' | url }}" class="nav-item" style="color: #c5a87c; font-weight: 600;">CRM</a>
+      <a href="{{ '/pages/ai-navigator/' | url }}" class="nav-item">AI-Навигатор</a>
+      <a href="{{ '/pages/contacts/' | url }}" class="nav-item" style="padding: 8px 16px; border: 1px solid #1a1a1a; border-radius: 4px; font-size: 0.8rem;">Контакты</a>
+    </nav>
   </div>
 </header>
+
+<style>
+  .nav-item {
+    text-decoration: none;
+    color: #444;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-item:hover { color: #c5a87c; }
+  
+  @media (max-width: 1100px) {
+    .nav-item { font-size: 0.75rem; gap: 12px; }
+    .header-logo-tagline { display: none; }
+  }
+</style>

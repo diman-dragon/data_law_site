@@ -1,0 +1,172 @@
+---
+layout: base.njk
+title: AI Навигатор — Лайла
+---
+
+<section class="ai-hero">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Linguadeck AI · DataLaw Intelligence</span>
+    </div>
+
+    <h1 class="main-title animate-in">
+      Лайла — ваш <em>интеллектуальный</em><br>проводник по праву
+    </h1>
+
+    <div class="library-hero-grid animate-in">
+      <p class="lead-description">
+        AI-ассистент, обученный на десятках тысяч решений ЕСПЧ, Комитета ООН по правам человека, КПП и национальных судов. Лайла не просто отвечает на вопросы — она анализирует вашу ситуацию, находит релевантные прецеденты и указывает на слабые места в доказательной базе. Бесплатно для людей, которым это действительно нужно.
+      </p>
+    </div>
+
+    <div class="ai-chat-interface animate-in" style="background: #fff; border-radius: 12px; padding: 40px; border: 1px solid var(--border); margin-top: 40px;">
+
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
+        <div style="width: 42px; height: 42px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--navy); font-size: 1rem; line-height: 1.2;">Лайла</div>
+          <div style="font-size: 0.8rem; color: var(--text-mid); margin-top: 2px;">AI-ассистент DataLaw · некоммерческий проект</div>
+        </div>
+        <div style="margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap;">
+          <span style="background: var(--off-white); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; color: var(--text-mid);">ЕСПЧ</span>
+          <span style="background: var(--off-white); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; color: var(--text-mid);">КПЧ ООН</span>
+          <span style="background: var(--off-white); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; color: var(--text-mid);">Интерпол / CCF</span>
+        </div>
+      </div>
+
+      <div id="ai-main-chat" style="height: 420px; overflow-y: auto; margin-bottom: 24px; display: flex; flex-direction: column; gap: 20px;">
+
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 32px; height: 32px; background: var(--navy); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div style="background: var(--off-white); border-radius: 0 12px 12px 12px; padding: 18px 22px; max-width: 85%; border: 1px solid var(--border);">
+            <p style="margin: 0 0 4px; color: var(--navy); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Лайла</p>
+            <p style="margin: 0; color: var(--text-mid); line-height: 1.75; font-size: 0.95rem;">Здравствуйте. Я специализируюсь на международном праве в области прав человека, политически мотивированном преследовании и процессуальных нарушениях. Расскажите о вашей ситуации — я постараюсь найти применимые прецеденты и помогу выстроить правовую позицию.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: flex-start; flex-direction: row-reverse;">
+          <div style="width: 32px; height: 32px; background: var(--border); border-radius: 50%; flex-shrink: 0; margin-top: 4px;"></div>
+          <div style="background: var(--navy); border-radius: 12px 0 12px 12px; padding: 18px 22px; max-width: 75%;">
+            <p style="margin: 0; color: #fff; line-height: 1.75; font-size: 0.95rem;">На меня выписан Red Notice Интерпола. Я считаю преследование политическим. С чего начать?</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <div style="width: 32px; height: 32px; background: var(--navy); border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div style="background: var(--off-white); border-radius: 0 12px 12px 12px; padding: 18px 22px; max-width: 85%; border: 1px solid var(--border);">
+            <p style="margin: 0 0 4px; color: var(--navy); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Лайла</p>
+            <p style="margin: 0 0 12px; color: var(--text-mid); line-height: 1.75; font-size: 0.95rem;">Я нашла <strong style="color: var(--navy);">31 релевантный прецедент</strong> по делам о злоупотреблении механизмом Red Notice, в том числе против государств СНГ. Первоочерёдные шаги:</p>
+            <ol style="margin: 0; padding-left: 20px; color: var(--text-mid); font-size: 0.9rem; line-height: 2;">
+              <li>Запросить статус уведомления через <strong>CCF</strong> (Commission for the Control of INTERPOL's Files) — срок рассмотрения до 9 месяцев, подавать нужно немедленно.</li>
+              <li>Зафиксировать доказательства политической мотивированности: хронологию преследования, публичные заявления официальных лиц, связь с вашей деятельностью.</li>
+              <li>Параллельно рассмотреть жалобу в ЕСПЧ по ст. 5 и 18 Конвенции — практика <em>Sharomov v. Russia</em> и <em>Rasul Jafarov v. Azerbaijan</em>.</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <input type="text" id="ai-input" placeholder="Опишите вашу ситуацию или задайте правовой вопрос..." style="flex: 1; padding: 16px 20px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; outline: none; font-family: inherit;">
+        <button class="cta-btn">Спросить →</button>
+      </div>
+      <p style="margin: 14px 0 0; font-size: 0.8rem; color: var(--text-mid); text-align: center;">Диалоги не хранятся. История не передаётся третьим лицам. Лайла — не адвокат: её ответы носят информационный характер и не заменяют юридическую консультацию.</p>
+    </div>
+  </div>
+</section>
+
+<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <div class="block-label">Возможности</div>
+      <h2 class="section-title-left">Чем Лайла отличается<br>от обычного поиска</h2>
+    </div>
+
+    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">База живых прецедентов</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Лайла обучена на массиве решений ЕСПЧ, КПЧ, КПП ООН и национальных судов. Каждый ответ содержит ссылки на конкретные дела — не абстракции, а реальная практика.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Оценка шансов</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Система сравнивает факты вашего дела с аналогичными кейсами и даёт вероятностную оценку перспектив жалобы — с указанием сильных и слабых сторон позиции.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Умные шаблоны жалоб</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Автоматическая генерация черновиков обращений в ЕСПЧ, КПЧ ООН и CCF Интерпола — с актуальными критериями приемлемости и структурой аргументации.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Интеграция с CRM</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Внутри DataLaw CRM Лайла работает прямо в карточке дела: выявляет пробелы в доказательной базе, предлагает стратегии и помогает адвокатам готовить позиции быстрее.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Полная конфиденциальность</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Диалоги не сохраняются и не используются для дообучения. Взаимодействие защищено сквозным шифрованием — ваши данные не покидают устройство.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Многоязычность</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Русский, английский, французский, арабский. Юридические термины переводятся с сохранением точного процессуального смысла — никаких потерь при переводе.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="edu-section">
+  <div class="container">
+    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+      <div>
+        <div class="block-label">Прозрачность</div>
+        <h2 class="section-title-left">Лайла — инструмент.<br>Не замена адвокату</h2>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">Мы убеждены: AI в правозащитной работе должен снижать барьеры и усиливать возможности людей — а не создавать иллюзию юридической помощи. Лайла формирует гипотезы, снижает время на рутинный поиск и помогает задать правильные вопросы.</p>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">Каждый ответ содержит ссылку на источник, степень уверенности модели и предупреждение об ограничениях применительно к конкретной юрисдикции. Окончательные решения всегда принимает человек.</p>
+      </div>
+      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
+        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 25px;">Попробуйте прямо сейчас</h4>
+        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Опишите ситуацию в свободной форме. Лайла задаст уточняющие вопросы и составит карту применимых международных норм.</p>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; gap: 12px; align-items: flex-start; opacity: 0.9;">
+            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span>
+            <span>«Как доказать политическую мотивированность уголовного дела в ЕСПЧ?»</span>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start; opacity: 0.9;">
+            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span>
+            <span>«Какие сроки и критерии приемлемости жалобы в Комитет ООН по правам человека?»</span>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start; opacity: 0.9;">
+            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span>
+            <span>«Найди прецеденты отмены Red Notice по делам активистов из Центральной Азии»</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">Linguadeck AI · DataLaw</p>
+        <h3 class="edu-cta-title">Получите ранний доступ к Лайле</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Запросить доступ →</a>
+        <a href="{{ '/pages/library/' | url }}" class="cta-btn cta-btn--light">Библиотека прецедентов →</a>
+      </div>
+    </div>
+  </div>
+</div>

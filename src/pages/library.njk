@@ -1,0 +1,131 @@
+---
+layout: base.njk
+title: Библиотека прецедентов — DataLaw
+---
+
+<section class="library-hero">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">DataLaw Intelligence Layer · Библиотека прецедентов</span>
+    </div>
+
+    <h1 class="main-title animate-in">
+      Архив <em>юридических данных</em><br>в открытом доступе
+    </h1>
+
+    <div class="library-hero-grid animate-in">
+      <p class="lead-description">
+        Структурированная база решений ЕСПЧ, Комитетов ООН, CCF Интерпола и национальных судов по делам о политически мотивированном преследовании, злоупотреблении уголовным правом и системных нарушениях прав человека. Бесплатно. Без регистрации.
+      </p>
+      <div class="edu-hero-stat-col">
+        <div class="edu-stat"><span class="edu-stat-num">50k+</span><span class="edu-stat-label">решений в базе</span></div>
+        <div class="edu-stat"><span class="edu-stat-num">40+</span><span class="edu-stat-label">юрисдикций</span></div>
+      </div>
+    </div>
+
+    <div class="win11-search-container animate-in">
+      <div class="win11-search-wrapper">
+        <input type="text" placeholder="Поиск по прецедентам: флагрантное правосудие, Red Notice, пытки, статья 18 ЕКПЧ..." style="border:none; outline:none; width:100%; background: transparent;">
+        <button class="cta-btn">Найти →</button>
+      </div>
+      <div class="search-hint" style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <span style="font-weight: 600; color: var(--navy); font-size: 0.9rem;">Популярные темы:</span>
+        <a href="{{ '/pages/library/' | url }}?q=flagrant" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px;">Флагрантное правосудие</a>
+        <a href="{{ '/pages/library/' | url }}?q=red-notice" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px;">Red Notice</a>
+        <a href="{{ '/pages/library/' | url }}?q=article-18" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px;">Статья 18 ЕКПЧ</a>
+        <a href="{{ '/pages/library/' | url }}?q=political-persecution" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px;">Политическое преследование</a>
+        <a href="{{ '/pages/library/' | url }}?q=torture" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); border-radius: 20px; padding: 3px 12px;">Пытки · Статья 3</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <div class="block-label">Источники</div>
+      <h2 class="section-title-left">Что входит<br>в библиотеку</h2>
+    </div>
+
+    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">ЕСПЧ</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Европейский суд по правам человека</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Решения по делам о политическом преследовании, пытках, произвольном задержании, нарушении права на справедливое судебное разбирательство и злоупотреблении ограничениями прав. Структурированы по статьям Конвенции, странам и типам нарушений.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">ООН</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Комитеты и специальные докладчики</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Соображения КПЧ, решения КПП, доклады Рабочей группы по произвольным задержаниям и специальных докладчиков ООН. Незаменимы при параллельном использовании нескольких механизмов защиты.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Интерпол · CCF</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Решения по жалобам на Red Notice</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Структурированная база решений CCF с анализом аргументов, которые были признаны достаточными для отмены или блокировки Red Notice. Уникальный ресурс — нигде больше эти данные не агрегированы в таком объёме.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Национальные суды</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Решения судов по ключевым юрисдикциям</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Решения национальных судов о политически мотивированных делах в России, Беларуси, Азербайджане, Казахстане, Узбекистане и других юрисдикциях, представляющих особый интерес для нашей работы.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Аналитика</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Доклады и страновые обзоры</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Аналитические доклады DataLaw о системных паттернах нарушений: страновые профили, типологии злоупотреблений, динамика по годам. Открытые данные для журналистов и исследователей.</p>
+      </div>
+
+      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Обновления</div>
+        <h3 style="margin-bottom: 15px; color: var(--navy);">Живая база, не архив</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Библиотека пополняется еженедельно. Новые решения ЕСПЧ добавляются в течение 48 часов после публикации. Подпишитесь на обновления по интересующей теме или юрисдикции.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="edu-section">
+  <div class="container">
+    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+      <div>
+        <div class="block-label">Принципы</div>
+        <h2 class="section-title-left">Открытый доступ —<br>не опция, а позиция</h2>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">Государства, злоупотребляющие правовыми механизмами, имеют на своей стороне юридические департаменты, доступ к платным базам данных и время. Правозащитники, активисты и пострадавшие зачастую лишены этих ресурсов.</p>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">Закрытая прецедентная база — это дополнительное неравенство. Именно поэтому библиотека DataLaw открыта для всех. Без подписки, без ограничений, без регистрации.</p>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">Расширенный поиск, AI-анализ через Лайлу и интеграция с CRM доступны по запросу — бесплатно для НКО и правозащитников.</p>
+      </div>
+      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
+        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 25px;">Лайла работает<br>с библиотекой</h4>
+        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Не знаете, с чего начать поиск? Спросите Лайлу — она проанализирует вашу ситуацию и сама найдёт в библиотеке применимые прецеденты, отсортированные по релевантности и силе аргументации.</p>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span><span>Поиск по фактическим обстоятельствам дела</span></li>
+          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span><span>Сравнение вашего кейса с аналогичными</span></li>
+          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span><span>Анализ аргументов, сработавших в схожих ситуациях</span></li>
+          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">→</span><span>Экспорт подборки прецедентов в карточку дела CRM</span></li>
+        </ul>
+        <a href="{{ '/pages/ai-navigator/' | url }}" class="cta-btn" style="display: inline-block; margin-top: 28px;">Спросить Лайлу →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">DataLaw · Библиотека прецедентов</p>
+        <h3 class="edu-cta-title">Знаете дело, которого нет в базе?</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Предложить дело →</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Стать верификатором →</a>
+      </div>
+    </div>
+  </div>
+</div>

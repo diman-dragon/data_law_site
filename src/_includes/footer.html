@@ -1,62 +1,353 @@
 <footer class="site-footer">
   <div class="container">
 
+    <!-- MAIN FOOTER GRID -->
     <div class="footer-inner">
 
+      <!-- BRAND -->
       <div class="footer-brand">
-        <div class="header-logo-text" style="color: #fff; margin-bottom: 8px;">DATALAW</div>
-        <p class="footer-desc">Цифровая инфраструктура справедливости — где технологии стоят на страже достоинства, а не систем контроля.</p>
-        <div class="footer-badges" style="display: flex; gap: 10px; margin-top: 20px;">
+        <div class="footer-logo">
+          <span class="footer-logo-text">DATALAW</span>
+          <span class="footer-logo-badge">Non-Profit</span>
+        </div>
+        <p class="footer-desc">
+          Цифровая инфраструктура справедливости — где технологии стоят на страже достоинства, а не систем контроля.
+        </p>
+        <p class="footer-desc" style="margin-top: 10px; font-style: italic; opacity: 0.6; font-size: 0.82rem;">
+          «Мы превращаем Big Data в Big Justice»
+        </p>
+        <div class="footer-badges" style="display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap;">
           <span class="footer-badge">Zero-Knowledge</span>
           <span class="footer-badge">Open Data</span>
+          <span class="footer-badge">Non-Profit</span>
         </div>
       </div>
 
+      <!-- LINKS -->
       <div class="footer-links">
 
         <div class="footer-col">
           <div class="footer-col-title">Направления</div>
-          <a href="/pages/interpol/" class="footer-link">Интерпол</a>
-          <a href="/pages/integration/" class="footer-link">Верификация</a>
-          <a href="/pages/library/" class="footer-link">Библиотека</a>
-          <a href="/pages/ai-navigator/" class="footer-link">AI-Навигатор</a>
+          <a href="{{ '/pages/interpol/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Интерпол / Red Notice
+          </a>
+          <a href="{{ '/pages/practice/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Наша практика
+          </a>
+          <a href="{{ '/pages/integration/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Верификация данных
+          </a>
+          <a href="{{ '/pages/library/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Библиотека прецедентов
+          </a>
+          <a href="{{ '/pages/analytics/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Аналитика и доклады
+          </a>
+          <a href="{{ '/pages/crm/' | url }}" class="footer-link footer-link--gold">
+            <span class="footer-link-dot" style="background: var(--gold);"></span>CRM Система
+          </a>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Организация</div>
-          <a href="/" class="footer-link">Миссия</a>
-          <a href="/pages/education/" class="footer-link">Академия</a>
-          <a href="/pages/contacts/" class="footer-link">Контакты</a>
+          <a href="{{ '/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Миссия
+          </a>
+          <a href="{{ '/pages/education/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Академия DataLaw
+          </a>
+          <a href="{{ '/pages/ai-navigator/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>AI-Навигатор Лайла
+          </a>
+          <a href="{{ '/pages/contacts/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Контакты
+          </a>
         </div>
 
         <div class="footer-col help-col">
           <div class="footer-col-title">Нужна помощь?</div>
-          <p class="footer-link-desc">Если вы столкнулись с нарушением прав — мы поможем.</p>
-          <a href="/pages/contacts/" class="footer-cta" style="color: var(--gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Связаться →</a>
+          <p class="footer-link-desc">
+            Если вы столкнулись с политически мотивированным преследованием, незаконным Red Notice или нарушением прав — мы рядом.
+          </p>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <a href="{{ '/pages/contacts/' | url }}" class="footer-cta-btn">
+              Связаться с командой →
+            </a>
+            <a href="{{ '/pages/ai-navigator/' | url }}" class="footer-cta-link">
+              ✦ Спросить Лайлу
+            </a>
+          </div>
+          <div class="footer-nco-note">
+            <span class="footer-nco-icon">✓</span>
+            Для НКО и правозащитников — бесплатно
+          </div>
         </div>
 
       </div>
-
     </div>
 
-    <div class="footer-sources" style="padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
-      <span class="footer-col-title" style="display: block; margin-bottom: 20px;">Источники данных</span>
-      <div class="footer-sources-list" style="display: flex; flex-wrap: wrap; gap: 20px; opacity: 0.4; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;">
+    <!-- DATA SOURCES -->
+    <div class="footer-sources">
+      <span class="footer-col-title" style="display: block; margin-bottom: 16px;">Источники данных</span>
+      <div class="footer-sources-list">
         <span>ЕСПЧ / HUDOC</span>
         <span>ООН / КПЧ</span>
         <span>МУС</span>
         <span>МАСПЧ</span>
-        <span>ОБСЕ / БДИПЧ</span>
-        <span>Венецианская комиссия</span>
+        <span>ОБСЕ</span>
+        <span>Совет Европы</span>
+        <span>CCF Интерпол</span>
+        <span>Национальные реестры 190+ стран</span>
       </div>
     </div>
 
+    <!-- BOTTOM BAR -->
     <div class="footer-bottom">
-      <span>© 2026 DATALAW. Justice Intelligence Engine.</span>
+      <span>&copy; 2026 DATALAW. Global Technologies for Human Rights.</span>
       <div class="footer-bottom-links">
-        <a href="#" class="footer-link" style="margin-left: 20px; font-size: 0.7rem;">Privacy Policy</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="footer-bottom-link">Конфиденциальность</a>
+        <span class="footer-bottom-sep">·</span>
+        <a href="{{ '/pages/contacts/' | url }}" class="footer-bottom-link">Условия использования</a>
+        <span class="footer-bottom-sep">·</span>
+        <a href="{{ '/pages/contacts/' | url }}" class="footer-bottom-link">Open Source</a>
       </div>
     </div>
 
   </div>
+
+  <style>
+    /* ── FOOTER BASE ── */
+    .site-footer {
+      background: #0a1a30;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: 'Jost', sans-serif;
+      margin-top: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle grid texture */
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ── INNER LAYOUT ── */
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+      padding: 72px 0 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+    }
+
+    /* ── BRAND ── */
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .footer-logo-text {
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      color: #fff;
+    }
+    .footer-logo-badge {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      border: 1px solid rgba(184, 145, 58, 0.4);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .footer-desc {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+    }
+    .footer-badge {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 4px 12px;
+      border-radius: 20px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-badge:hover {
+      border-color: rgba(184, 145, 58, 0.5);
+      color: var(--gold);
+    }
+
+    /* ── LINKS ── */
+    .footer-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 40px;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-col-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 12px;
+    }
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      padding: 5px 0;
+      transition: color 0.2s;
+      line-height: 1.3;
+    }
+    .footer-link:hover { color: #fff; }
+    .footer-link--gold { color: var(--gold) !important; }
+    .footer-link--gold:hover { color: #d4a84b !important; }
+    .footer-link-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .footer-link:hover .footer-link-dot { background: var(--gold); }
+
+    /* ── HELP COL ── */
+    .footer-link-desc {
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0;
+    }
+    .footer-cta-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid rgba(184, 145, 58, 0.5);
+      color: var(--gold);
+      text-decoration: none;
+      border-radius: 6px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .footer-cta-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .footer-cta-link {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      text-align: center;
+      transition: color 0.2s;
+      padding: 4px 0;
+    }
+    .footer-cta-link:hover { color: rgba(255, 255, 255, 0.8); }
+    .footer-nco-note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      background: rgba(184, 145, 58, 0.08);
+      border: 1px solid rgba(184, 145, 58, 0.2);
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .footer-nco-icon {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── SOURCES ── */
+    .footer-sources {
+      padding: 36px 0 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+    }
+    .footer-sources-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+    }
+    .footer-sources-list span {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.2);
+      padding: 3px 0;
+      transition: color 0.2s;
+    }
+    .footer-sources-list span:hover { color: rgba(255, 255, 255, 0.45); }
+
+    /* ── BOTTOM BAR ── */
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-bottom-link {
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-bottom-link:hover { color: rgba(255, 255, 255, 0.5); }
+    .footer-bottom-sep { opacity: 0.3; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-links { grid-template-columns: 1fr 1fr; }
+      .help-col { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .footer-inner { padding: 48px 0 40px; }
+      .footer-links { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
 </footer>
