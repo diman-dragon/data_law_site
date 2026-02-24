@@ -2,22 +2,22 @@
   <div class="header-inner">
     
     <div class="logo-section">
-      <a href="/" class="text-logo">
+      <a href="{{ '/' | url }}" class="text-logo">
         <span class="logo-main">DATA LAW</span>
         <span class="logo-sub">GLOBAL TECHNOLOGIES FOR HUMAN RIGHTS</span>
       </a>
     </div>
 
     <nav class="header-nav" id="main-nav">
-      <a href="/" class="nav-item">Миссия</a>
-      <a href="/pages/interpol/" class="nav-item">Интерпол</a>
-      <a href="/pages/practice/" class="nav-item">Практика</a>
-      <a href="/pages/integration/" class="nav-item">Интеграция</a>
-      <a href="/pages/education/" class="nav-item">Академия</a>
-      <a href="/pages/library/" class="nav-item">Библиотека</a>
-      <a href="/pages/crm/" class="nav-item">CRM</a>
-      <a href="/pages/ai-navigator/" class="nav-item">AI-Навигатор</a>
-      <a href="/pages/contacts/" class="nav-btn">Контакты</a>
+      <a href="{{ '/' | url }}" class="nav-item">Миссия</a>
+      <a href="{{ '/pages/interpol/' | url }}" class="nav-item">Интерпол</a>
+      <a href="{{ '/pages/practice/' | url }}" class="nav-item">Практика</a>
+      <a href="{{ '/pages/integration/' | url }}" class="nav-item">Интеграция</a>
+      <a href="{{ '/pages/education/' | url }}" class="nav-item">Академия</a>
+      <a href="{{ '/pages/library/' | url }}" class="nav-item">Библиотека</a>
+      <a href="{{ '/pages/crm/' | url }}" class="nav-item">CRM</a>
+      <a href="{{ '/pages/ai-navigator/' | url }}" class="nav-item">AI-Навигатор</a>
+      <a href="{{ '/pages/contacts/' | url }}" class="nav-btn">Контакты</a>
     </nav>
   </div>
 </header>
@@ -69,7 +69,7 @@
     color: #000;
     line-height: 1;
     letter-spacing: 0.06em;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 4px 1px rgba(0,0,0,.1);
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3);
   }
 
   .logo-sub {
@@ -101,24 +101,24 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     opacity: 0.6;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     padding: 10px 0;
   }
 
-  /* Состояние при наведении */
   .nav-item:hover {
     opacity: 1;
+    color: #000;
   }
 
-  /* КЛАСС ВЫДЕЛЕНИЯ: жирный шрифт + подчеркивание */
-  .nav-item.active {
-    opacity: 1;
+  /* ВЫДЕЛЕНИЕ АКТИВНОЙ СТРАНИЦЫ */
+  .nav-item--active {
+    opacity: 1 !important;
     color: #000 !important;
-    font-weight: 700;
+    font-weight: 700 !important;
   }
 
-  .nav-item.active::after {
+  .nav-item--active::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -139,20 +139,33 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-left: 10px;
+    transition: 0.3s;
+  }
+
+  .nav-btn:hover {
+    background: #222;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 1300px) {
+    .logo-main { font-size: 24px; }
+    .header-nav { gap: 15px; }
+    .nav-item { font-size: 0.75rem; }
+    .header-inner { height: 80px; }
   }
 </style>
 
 <script>
-  // Скрипт автоматически добавляет класс 'active' текущей странице
-  document.addEventListener("DOMContentLoaded", function() {
-    const currentUrl = window.location.pathname;
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname;
     const navItems = document.querySelectorAll('.nav-item');
     
     navItems.forEach(item => {
-      // Проверяем, совпадает ли href ссылки с текущим адресом
-      if (item.getAttribute('href') === currentUrl || 
-          (currentUrl.includes(item.getAttribute('href')) && item.getAttribute('href') !== '/')) {
-        item.classList.add('active');
+      const itemPath = item.getAttribute('href');
+      // Проверяем соответствие пути (с учетом слешей)
+      if (currentPath === itemPath || (itemPath !== '/' && currentPath.startsWith(itemPath))) {
+        item.classList.add('nav-item--active');
       }
     });
   });
