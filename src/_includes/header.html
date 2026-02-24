@@ -106,12 +106,9 @@
     padding: 10px 0;
   }
 
-  .nav-item:hover {
-    opacity: 1;
-    color: #000;
-  }
+  .nav-item:hover { opacity: 1; color: #000; }
 
-  /* ВЫДЕЛЕНИЕ АКТИВНОЙ СТРАНИЦЫ */
+  /* АКТИВНОЕ СОСТОЯНИЕ */
   .nav-item--active {
     opacity: 1 !important;
     color: #000 !important;
@@ -142,16 +139,9 @@
     transition: 0.3s;
   }
 
-  .nav-btn:hover {
-    background: #222;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
   @media (max-width: 1300px) {
     .logo-main { font-size: 24px; }
     .header-nav { gap: 15px; }
-    .nav-item { font-size: 0.75rem; }
     .header-inner { height: 80px; }
   }
 </style>
@@ -162,10 +152,16 @@
     const navItems = document.querySelectorAll('.nav-item');
     
     navItems.forEach(item => {
-      const itemPath = item.getAttribute('href');
-      // Проверяем соответствие пути (с учетом слешей)
-      if (currentPath === itemPath || (itemPath !== '/' && currentPath.startsWith(itemPath))) {
-        item.classList.add('nav-item--active');
+      const itemPath = new URL(item.href).pathname;
+      
+      // Логика: если это главная, проверяем на строгое равенство. 
+      // Если внутренняя — проверяем, начинается ли адрес с этого пути.
+      const isHome = itemPath === '/' || itemPath === '/linguadeck_ai' || itemPath === '/linguadeck_ai/';
+      
+      if (isHome) {
+        if (currentPath === itemPath) item.classList.add('nav-item--active');
+      } else {
+        if (currentPath.startsWith(itemPath)) item.classList.add('nav-item--active');
       }
     });
   });
