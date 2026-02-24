@@ -3196,3 +3196,17 @@ main {
 .win11-search-container:focus-within .win11-hints {
   display: block;
 }
+
+.header-logo img {
+  height: 100%; /* Занимает все 80px высоты хедера */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* СЕКРЕТНЫЙ ИНГРЕДИЕНТ: */
+  mix-blend-mode: multiply; 
+  filter: contrast(1.1); /* Сделает шрифт еще чернее и сочнее */
+}
+
+.header-inner {
+  padding-left: 0; /* Убираем лишние отступы, так как они теперь внутри самой картинки */
+}
