@@ -2,7 +2,7 @@
   <div class="header-inner">
     
     <div class="logo-section">
-      <a href="{{ '/' | url }}" class="text-logo">
+      <a href="/data_law_site/" class="text-logo">
         <span class="logo-main">DATA LAW</span>
         <span class="logo-sub">GLOBAL TECHNOLOGIES FOR HUMAN RIGHTS</span>
       </a>
@@ -11,43 +11,43 @@
     <nav class="header-nav" id="main-nav">
       
       <div class="nav-group">
-        <span class="nav-item">Об организации</span>
+        <a href="/data_law_site/" class="nav-item">Об организации</a>
         <div class="dropdown-menu">
-          <a href="{{ '/' | url }}">Главная страница</a>
-          <a href="{{ '/pages/about/' | url }}">Миссия и ценности</a>
-          <a href="{{ '/pages/contacts/' | url }}">Контактная информация</a>
+          <a href="/data_law_site/">Главная страница</a>
+          <a href="/data_law_site/pages/about/">Миссия и ценности</a>
+          <a href="/data_law_site/pages/contacts/">Контактная информация</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Экспертиза</span>
         <div class="dropdown-menu">
-          <a href="{{ '/pages/interpol/' | url }}">Интерпол / Red Notice</a>
-          <a href="{{ '/pages/practice/' | url }}">Судебная практика</a>
-          <a href="{{ '/pages/education/' | url }}">Академия DataLaw</a>
+          <a href="/data_law_site/pages/interpol/">Интерпол / Red Notice</a>
+          <a href="/data_law_site/pages/practice/">Судебная практика</a>
+          <a href="/data_law_site/pages/education/">Академия DataLaw</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Аналитика</span>
         <div class="dropdown-menu">
-          <a href="{{ '/pages/articles/' | url }}">Статьи и гайды</a>
-          <a href="{{ '/pages/reviews/' | url }}">Страновые обзоры</a>
-          <a href="{{ '/pages/expert-opinions/' | url }}">Экспертные заключения</a>
-          <a href="{{ '/pages/library/' | url }}">Библиотека прецедентов</a>
+          <a href="/data_law_site/pages/articles/">Статьи и гайды</a>
+          <a href="/data_law_site/pages/reviews/">Страновые обзоры</a>
+          <a href="/data_law_site/pages/expert-opinions/">Экспертные заключения</a>
+          <a href="/data_law_site/pages/library/">Библиотека прецедентов</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Технологии</span>
         <div class="dropdown-menu">
-          <a href="{{ '/pages/ai-navigator/' | url }}">AI-Навигатор Лайла</a>
-          <a href="{{ '/pages/crm/' | url }}">Legal CRM Система</a>
-          <a href="{{ '/pages/integration/' | url }}">Верификация данных</a>
+          <a href="/data_law_site/pages/ai-navigator/">AI-Навигатор Лайла</a>
+          <a href="/data_law_site/pages/crm/">Legal CRM Система</a>
+          <a href="/data_law_site/pages/integration/">Верификация данных</a>
         </div>
       </div>
 
-      <a href="{{ '/pages/contacts/' | url }}" class="nav-btn">Связаться</a>
+      <a href="/data_law_site/pages/contacts/" class="nav-btn">Связаться</a>
     </nav>
   </div>
 </header>
@@ -61,123 +61,108 @@
     --transition-speed: 0.3s;
   }
 
-  /* БАЗОВЫЕ СТИЛИ ХЕДЕРА */
+  /* ШЛЯПА САЙТА */
   .site-header {
     background-color: var(--washi-base);
     background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999;
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
+    height: 110px;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
   }
 
-  /* СТИЛИ ЛОГОТИПА */
-  .logo-section {
-    flex-shrink: 0;
-  }
-
-  .text-logo {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
+  /* ЛОГОТИПНЫЙ БЛОК */
+  .logo-section { flex-shrink: 0; }
+  .text-logo { text-decoration: none; display: flex; flex-direction: column; }
+  
   .logo-main {
     font-family: var(--font-main);
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 32px;
+    font-weight: 900;
     color: #000;
-    line-height: 1;
-    letter-spacing: 0.05em;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
 
   .logo-sub {
     font-family: var(--font-main);
-    font-size: 8.5px;
+    font-size: 9px;
     font-weight: 700;
     color: var(--navy-dark);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-top: 6px;
-    opacity: 0.75;
+    letter-spacing: 0.18em;
+    margin-top: 8px;
+    opacity: 0.8;
   }
 
-  /* КОНТЕЙНЕР НАВИГАЦИИ */
+  /* НАВИГАЦИОННАЯ СЕТКА */
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
   }
 
   .nav-group {
     position: relative;
-    padding: 30px 0; /* Зона для ховера */
+    padding: 35px 0; /* Огромная зона для удержания ховера */
   }
 
   .nav-item {
     text-decoration: none;
     color: var(--navy-dark);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
+    font-size: 0.82rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 12px 15px;
+    letter-spacing: 0.05em;
+    padding: 10px 15px;
     cursor: pointer;
-    opacity: 0.65;
-    transition: all var(--transition-speed) ease;
+    opacity: 0.7;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
   }
 
   .nav-item::after {
     content: '▾';
-    font-size: 0.7rem;
-    opacity: 0.5;
-    transition: transform 0.2s;
+    font-size: 0.75rem;
+    opacity: 0.4;
+    transition: transform 0.3s;
   }
 
-  .nav-group:hover .nav-item {
-    opacity: 1;
-    color: #000;
-  }
+  .nav-group:hover .nav-item { opacity: 1; color: #000; }
+  .nav-group:hover .nav-item::after { transform: rotate(180deg); opacity: 1; }
 
-  .nav-group:hover .nav-item::after {
-    transform: rotate(180deg);
-  }
-
-  /* ВЫПАДАЮЩЕЕ МЕНЮ */
+  /* ВЫПАДАШКА */
   .dropdown-menu {
     position: absolute;
-    top: 90%;
+    top: 95px; /* Точное позиционирование под хедером */
     left: 50%;
-    transform: translateX(-50%) translateY(15px);
-    background: #fdfdfb;
-    min-width: 260px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    border: 1px solid rgba(0,0,0,0.08);
+    transform: translateX(-50%) translateY(10px);
+    background: #fff;
+    min-width: 280px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
     display: none;
     flex-direction: column;
     padding: 15px 0;
-    border-radius: 4px;
+    border-radius: 2px;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .nav-group:hover .dropdown-menu {
@@ -189,87 +174,84 @@
 
   .dropdown-menu a {
     text-decoration: none;
-    color: var(--navy-dark);
-    padding: 12px 28px;
-    font-size: 0.85rem;
+    color: #333;
+    padding: 14px 30px;
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: 0.2s;
-    border-left: 4px solid transparent;
+    transition: all 0.2s;
+    border-left: 5px solid transparent;
     display: block;
+    line-height: 1.2;
   }
 
   .dropdown-menu a:hover {
-    background: var(--washi-base);
+    background: #f8f6e9;
     color: #000;
-    border-left: 4px solid var(--accent-gold);
-    padding-left: 32px;
+    border-left: 5px solid var(--accent-gold);
+    padding-left: 35px;
   }
 
-  /* КНОПКА ДЕЙСТВИЯ */
+  /* ГЛАВНАЯ КНОПКА */
   .nav-btn {
     text-decoration: none;
     background: #000;
-    color: var(--washi-base) !important;
-    padding: 14px 28px;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    color: #fff !important;
+    padding: 15px 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
     text-transform: uppercase;
-    margin-left: 20px;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
-    letter-spacing: 0.05em;
+    margin-left: 25px;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
 
   .nav-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    filter: brightness(1.1);
+    background: var(--accent-gold);
+    color: #000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   }
 
-  /* АКТИВНЫЙ ПУНКТ */
-  .nav-item--active {
-    opacity: 1 !important;
+  /* АКТИВНЫЙ МАРКЕР */
+  .nav-item.is-active {
     color: #000 !important;
-    position: relative;
+    opacity: 1;
   }
-  
-  .nav-item--active::before {
+  .nav-item.is-active::before {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 25px;
     left: 15px;
     right: 15px;
-    height: 2px;
+    height: 3px;
     background: var(--accent-gold);
   }
 
-  /* МОБИЛЬНАЯ АДАПТАЦИЯ (УПРОЩЕННАЯ) */
-  @media (max-width: 1100px) {
+  /* АДАПТИВ */
+  @media (max-width: 1200px) {
     .header-inner { padding: 0 20px; height: 90px; }
-    .logo-main { font-size: 22px; }
+    .logo-main { font-size: 24px; }
     .nav-item { font-size: 0.7rem; padding: 10px 8px; }
-    .nav-btn { padding: 10px 18px; font-size: 0.7rem; margin-left: 10px; }
+    .nav-btn { padding: 12px 20px; font-size: 0.75rem; margin-left: 10px; }
   }
 </style>
 
 <script>
-  // Скрипт подсветки активных ссылок с учетом подпапок GitHub Pages
+  // Скрипт автоматической подсветки активного раздела
   document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
-    const navGroups = document.querySelectorAll('.nav-group');
-    
-    navGroups.forEach(group => {
+    const navItems = document.querySelectorAll('.nav-group');
+
+    navItems.forEach(group => {
       const links = group.querySelectorAll('.dropdown-menu a');
       links.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-        
-        // Проверяем совпадение путей
-        if (currentPath === linkPath || (currentPath.includes(linkPath) && linkPath !== '/')) {
-          const navItem = group.querySelector('.nav-item');
-          if (navItem) navItem.classList.add('nav-item--active');
+        const path = link.getAttribute('href');
+        if (currentPath === path || (currentPath.includes(path) && path !== '/data_law_site/')) {
+          const mainItem = group.querySelector('.nav-item');
+          if (mainItem) mainItem.classList.add('is-active');
           link.style.color = 'var(--accent-gold)';
-          link.style.fontWeight = '700';
+          link.style.fontWeight = '800';
         }
       });
     });
