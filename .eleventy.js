@@ -40,6 +40,7 @@ module.exports = function(eleventyConfig) {
 
   // --- 7. НАСТРОЙКИ ДВИЖКА ---
   return {
+    pathPrefix: "/data_law_site/",   // ← GitHub Pages: github.io/data_law_site/
     dir: {
       input: "src",
       output: "public",
