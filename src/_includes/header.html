@@ -11,39 +11,38 @@
     <nav class="header-nav" id="main-nav">
       
       <div class="nav-group">
-        <a href="/" class="nav-item has-dropdown">Главная</a>
+        <a href="/" class="nav-item">Главная</a>
         <div class="dropdown-menu">
-          <a href="/pages/mission/">Миссия</a>
-          <a href="/pages/about/">О нас</a>
+          <a href="/pages/about/">О нас / История</a>
           <a href="/pages/contacts/">Контакты</a>
         </div>
       </div>
 
       <div class="nav-group">
-        <span class="nav-item has-dropdown">Экспертиза</span>
+        <span class="nav-item">Экспертиза</span>
         <div class="dropdown-menu">
-          <a href="/pages/interpol/">Интерпол</a>
+          <a href="/pages/interpol/">Интерпол / CCF</a>
           <a href="/pages/practice/">Судебная практика</a>
-          <a href="/pages/education/">Академия</a>
+          <a href="/pages/education/">Академия DataLaw</a>
         </div>
       </div>
 
       <div class="nav-group">
-        <span class="nav-item has-dropdown">Аналитика</span>
+        <span class="nav-item">Аналитика</span>
         <div class="dropdown-menu">
-          <a href="/pages/articles/">Статьи</a>
-          <a href="/pages/reviews/">Обзоры</a>
+          <a href="/pages/articles/">Статьи и гайды</a>
+          <a href="/pages/reviews/">Страновые обзоры</a>
           <a href="/pages/expert-opinions/">Экспертные заключения</a>
-          <a href="/pages/library/">Библиотека</a>
+          <a href="/pages/library/">Библиотека кейсов</a>
         </div>
       </div>
 
       <div class="nav-group">
-        <span class="nav-item has-dropdown">Технологии</span>
+        <span class="nav-item">Технологии</span>
         <div class="dropdown-menu">
           <a href="/pages/ai-navigator/">AI-Навигатор</a>
           <a href="/pages/crm/">DataLaw CRM</a>
-          <a href="/pages/integration/">Интеграция</a>
+          <a href="/pages/integration/">Верификация данных</a>
         </div>
       </div>
 
@@ -61,7 +60,6 @@
     --transition-speed: 0.3s;
   }
 
-  /* ФОН И ГРАНИЦЫ */
   .site-header {
     background-color: var(--washi-base);
     background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
@@ -82,16 +80,10 @@
     padding: 0 40px;
   }
 
-  /* ЛОГОТИП */
-  .logo-section {
-    flex-shrink: 0;
-  }
-
   .text-logo {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .logo-main {
@@ -101,11 +93,10 @@
     color: #000;
     line-height: 1;
     letter-spacing: 0.05em;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9;
+    text-shadow: 0 1px 0 #ccc;
   }
 
   .logo-sub {
-    font-family: var(--font-main);
     font-size: 8.5px;
     font-weight: 700;
     color: var(--navy-dark);
@@ -115,7 +106,6 @@
     opacity: 0.75;
   }
 
-  /* НАВИГАЦИЯ И ГРУППЫ */
   .header-nav {
     display: flex;
     align-items: center;
@@ -124,22 +114,20 @@
 
   .nav-group {
     position: relative;
-    padding: 10px 0;
+    padding: 20px 0; /* Увеличил область наведения */
   }
 
   .nav-item {
     text-decoration: none;
     color: var(--navy-dark);
-    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 15px 18px;
+    padding: 10px 18px;
     cursor: pointer;
     opacity: 0.65;
-    transition: all var(--transition-speed) ease;
-    display: inline-block;
+    transition: all var(--transition-speed);
   }
 
   .nav-item::after {
@@ -153,14 +141,13 @@
     color: #000;
   }
 
-  /* ВЫПАДАЮЩЕЕ МЕНЮ (DROPDOWN) */
   .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: #fdfdfb; /* Цвет чистой бумаги */
-    min-width: 240px;
+    background: #fdfdfb;
+    min-width: 250px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.06);
     display: none;
@@ -168,7 +155,6 @@
     padding: 12px 0;
     border-radius: 3px;
     opacity: 0;
-    transition: 0.3s ease;
   }
 
   .nav-group:hover .dropdown-menu {
@@ -193,7 +179,6 @@
     border-left: 3px solid var(--accent-gold);
   }
 
-  /* КНОПКА КОНТАКТЫ */
   .nav-btn {
     text-decoration: none;
     background: #000;
@@ -204,33 +189,21 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-left: 20px;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
   }
 
   .nav-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     filter: brightness(1.2);
   }
 
-  /* АКТИВНОЕ СОСТОЯНИЕ */
   .nav-item--active {
     opacity: 1 !important;
-    color: #000 !important;
-  }
-
-  /* АДАПТИВНОСТЬ */
-  @media (max-width: 1200px) {
-    .header-inner { padding: 0 20px; height: 85px; }
-    .logo-main { font-size: 22px; }
-    .nav-item { font-size: 0.72rem; padding: 10px 10px; }
-    .dropdown-menu { min-width: 200px; }
+    border-bottom: 2px solid var(--accent-gold);
   }
 </style>
 
 <script>
-  // Логика подсветки активного раздела
   document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
     const navGroups = document.querySelectorAll('.nav-group');
@@ -238,8 +211,9 @@
     navGroups.forEach(group => {
       const links = group.querySelectorAll('.dropdown-menu a');
       links.forEach(link => {
-        const path = new URL(link.href).pathname;
-        if (currentPath === path && path !== '/') {
+        // Убираем лишние слэши для сравнения
+        const cleanPath = link.getAttribute('href');
+        if (currentPath === cleanPath) {
           group.querySelector('.nav-item').classList.add('nav-item--active');
           link.style.fontWeight = '700';
           link.style.color = 'var(--accent-gold)';
