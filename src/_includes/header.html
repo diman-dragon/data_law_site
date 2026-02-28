@@ -2,257 +2,225 @@
   <div class="header-inner">
     
     <div class="logo-section">
-      <a href="/data_law_site/" class="text-logo">
-        <span class="logo-main">DATA LAW</span>
+      <a href="{{ '/' | url }}" class="text-logo">
+        <div class="logo-wrapper">
+          <span class="logo-main">DATA LAW</span>
+          <div class="logo-accent-line"></div>
+        </div>
         <span class="logo-sub">GLOBAL TECHNOLOGIES FOR HUMAN RIGHTS</span>
       </a>
     </div>
 
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Открыть меню">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="toggle-text">MENU</span>
+    </button>
+
     <nav class="header-nav" id="main-nav">
-      
-      <div class="nav-group">
-        <a href="/data_law_site/" class="nav-item">Об организации</a>
-        <div class="dropdown-menu">
-          <a href="/data_law_site/">Главная страница</a>
-          <a href="/data_law_site/pages/about/">Миссия и ценности</a>
-          <a href="/data_law_site/pages/contacts/">Контактная информация</a>
+      <div class="nav-container">
+        
+        <div class="nav-group">
+          <div class="nav-link-row">
+            <a href="{{ '/pages/about/' | url }}" class="nav-link">Об организации</a>
+            <button class="expander" type="button"></button>
+          </div>
+          <div class="dropdown-panel">
+            <div class="dropdown-inner">
+              <a href="{{ '/pages/about/' | url }}" class="drop-item">О нас</a>
+              <a href="{{ '/pages/mission/' | url }}" class="drop-item">Миссия и ценности</a>
+              <a href="{{ '/pages/contacts/' | url }}" class="drop-item">Контакты</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-link-row">
+            <span class="nav-link">Экспертиза</span>
+            <button class="expander" type="button"></button>
+          </div>
+          <div class="dropdown-panel">
+            <div class="dropdown-inner">
+              <a href="{{ '/pages/interpol/' | url }}" class="drop-item">Интерпол / Red Notice</a>
+              <a href="{{ '/pages/practice/' | url }}" class="drop-item">Судебная практика</a>
+              <a href="{{ '/pages/education/' | url }}" class="drop-item">Академия DataLaw</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-link-row">
+            <a href="{{ '/pages/analytics/' | url }}" class="nav-link">Аналитика</a>
+            <button class="expander" type="button"></button>
+          </div>
+          <div class="dropdown-panel">
+            <div class="dropdown-inner">
+              <a href="{{ '/pages/articles/' | url }}" class="drop-item">Статьи и гайды</a>
+              <a href="{{ '/pages/reviews/' | url }}" class="drop-item">Страновые обзоры</a>
+              <a href="{{ '/pages/expert-opinions/' | url }}" class="drop-item">Экспертные заключения</a>
+              <a href="{{ '/pages/library/' | url }}" class="drop-item">Библиотека прецедентов</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-link-row">
+            <span class="nav-link">Технологии</span>
+            <button class="expander" type="button"></button>
+          </div>
+          <div class="dropdown-panel">
+            <div class="dropdown-inner">
+              <a href="{{ '/pages/ai-navigator/' | url }}" class="drop-item">AI-Навигатор Лайла</a>
+              <a href="{{ '/pages/crm/' | url }}" class="drop-item">Legal CRM Система</a>
+              <a href="{{ '/pages/integration/' | url }}" class="drop-item">Верификация данных</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <a href="{{ '/pages/contacts/' | url }}" class="cta-button">Связаться</a>
         </div>
       </div>
-
-      <div class="nav-group">
-        <span class="nav-item">Экспертиза</span>
-        <div class="dropdown-menu">
-          <a href="/data_law_site/pages/interpol/">Интерпол / Red Notice</a>
-          <a href="/data_law_site/pages/practice/">Судебная практика</a>
-          <a href="/data_law_site/pages/education/">Академия DataLaw</a>
-        </div>
-      </div>
-
-      <div class="nav-group">
-        <span class="nav-item">Аналитика</span>
-        <div class="dropdown-menu">
-          <a href="/data_law_site/pages/articles/">Статьи и гайды</a>
-          <a href="/data_law_site/pages/reviews/">Страновые обзоры</a>
-          <a href="/data_law_site/pages/expert-opinions/">Экспертные заключения</a>
-          <a href="/data_law_site/pages/library/">Библиотека прецедентов</a>
-        </div>
-      </div>
-
-      <div class="nav-group">
-        <span class="nav-item">Технологии</span>
-        <div class="dropdown-menu">
-          <a href="/data_law_site/pages/ai-navigator/">AI-Навигатор Лайла</a>
-          <a href="/data_law_site/pages/crm/">Legal CRM Система</a>
-          <a href="/data_law_site/pages/integration/">Верификация данных</a>
-        </div>
-      </div>
-
-      <a href="/data_law_site/pages/contacts/" class="nav-btn">Связаться</a>
     </nav>
   </div>
 </header>
 
 <style>
   :root {
-    --washi-base: #E6E1C5;
-    --navy-dark: #1a1a1a;
-    --accent-gold: #c5a87c;
-    --font-main: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-    --transition-speed: 0.3s;
+    --c-washi: #E6E1C5;
+    --c-paper: #fdfdfb;
+    --c-navy: #1a1a1a;
+    --c-gold: #c5a87c;
+    --header-h: 110px;
+    --t-normal: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  /* ШЛЯПА САЙТА */
   .site-header {
-    background-color: var(--washi-base);
-    background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
+    background: var(--c-washi) url("https://www.transparenttextures.com/patterns/handmade-paper.png");
     border-bottom: 1px solid rgba(0,0,0,0.15);
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: sticky; top: 0; z-index: 10000; width: 100%; height: var(--header-h);
+    display: flex; align-items: center;
   }
+  .header-inner { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
 
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 110px;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 40px;
+  /* LOGO */
+  .text-logo { text-decoration: none; color: var(--c-navy); display: flex; flex-direction: column; position: relative; z-index: 10002; }
+  .logo-main { font-size: 32px; font-weight: 900; line-height: 1; letter-spacing: -0.01em; }
+  .logo-accent-line { height: 4px; background: var(--c-gold); width: 40px; margin: 2px 0 6px; }
+  .logo-sub { font-size: 8.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.8; }
+
+  /* NAV DESKTOP */
+  .nav-container { display: flex; align-items: center; gap: 8px; }
+  .nav-group { position: relative; }
+  .nav-link-row { display: flex; align-items: center; }
+  .nav-link { 
+    text-decoration: none; color: var(--c-navy); font-size: 13px; font-weight: 700; 
+    text-transform: uppercase; padding: 20px 14px; opacity: 0.7; transition: 0.2s;
   }
+  .expander { background: none; border: none; cursor: pointer; padding: 10px; opacity: 0.4; transition: 0.3s; }
+  .expander::after { content: '▾'; font-size: 14px; display: block; }
 
-  /* ЛОГОТИПНЫЙ БЛОК */
-  .logo-section { flex-shrink: 0; }
-  .text-logo { text-decoration: none; display: flex; flex-direction: column; }
+  .dropdown-panel {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px);
+    background: var(--c-paper); min-width: 260px; border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12); padding: 15px 0; opacity: 0; visibility: hidden; transition: var(--t-normal);
+  }
   
-  .logo-main {
-    font-family: var(--font-main);
-    font-size: 32px;
-    font-weight: 900;
-    color: #000;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+  @media (min-width: 1151px) {
+    .menu-toggle { display: none !important; }
+    .nav-group:hover .dropdown-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    .nav-group:hover .nav-link { opacity: 1; }
+    .nav-group:hover .expander { opacity: 1; transform: rotate(180deg); }
   }
 
-  .logo-sub {
-    font-family: var(--font-main);
-    font-size: 9px;
-    font-weight: 700;
-    color: var(--navy-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    margin-top: 8px;
-    opacity: 0.8;
-  }
+  .drop-item { display: block; text-decoration: none; color: #444; padding: 12px 25px; font-size: 14px; font-weight: 500; border-left: 4px solid transparent; transition: 0.2s; }
+  .drop-item:hover { background: #f4f1de; border-left-color: var(--c-gold); padding-left: 30px; color: #000; }
 
-  /* НАВИГАЦИОННАЯ СЕТКА */
-  .header-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .cta-button { text-decoration: none; background: #000; color: #fff !important; padding: 14px 28px; font-size: 13px; font-weight: 800; text-transform: uppercase; margin-left: 15px; transition: 0.3s; }
 
-  .nav-group {
-    position: relative;
-    padding: 35px 0; /* Огромная зона для удержания ховера */
+  /* MOBILE TOGGLE - FIXED VISIBILITY */
+  .menu-toggle { 
+    display: none; 
+    background: none; border: none; align-items: center; gap: 12px; 
+    cursor: pointer; z-index: 10005; padding: 10px; position: relative;
+    pointer-events: all;
   }
+  .hamburger { width: 24px; height: 18px; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+  .hamburger span { display: block; width: 100%; height: 2px; background: #000; transition: 0.3s; }
+  .toggle-text { font-weight: 900; font-size: 12px; letter-spacing: 0.1em; color: #000; }
 
-  .nav-item {
-    text-decoration: none;
-    color: var(--navy-dark);
-    font-size: 0.82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 10px 15px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
+  /* MEDIA QUERY ДЛЯ МОБИЛОК */
+  @media (max-width: 1150px) {
+    .site-header { height: 80px; }
+    .header-nav { display: block; }
+    .nav-container { display: flex; }
+    .menu-toggle { display: flex !important; } /* Принудительно показываем */
+    
+    .header-nav { 
+      position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; 
+      background: var(--c-washi); flex-direction: column; padding: 100px 30px 40px; 
+      transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1); overflow-y: auto; z-index: 10000;
+    }
+    .header-nav.is-open { right: 0; }
+    
+    .nav-container { flex-direction: column; width: 100%; gap: 0; }
+    .nav-group { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .nav-link-row { justify-content: space-between; align-items: center; width: 100%; }
+    .nav-link { font-size: 20px; padding: 25px 0; opacity: 1; flex-grow: 1; }
+    
+    .expander { width: 70px; height: 70px; opacity: 1; display: flex; align-items: center; justify-content: center; }
+    .expander::after { font-size: 24px; }
 
-  .nav-item::after {
-    content: '▾';
-    font-size: 0.75rem;
-    opacity: 0.4;
-    transition: transform 0.3s;
-  }
+    .dropdown-panel { 
+      position: static; display: none; transform: none; visibility: visible; 
+      opacity: 1; box-shadow: none; background: rgba(0,0,0,0.03); padding: 0;
+    }
+    .dropdown-panel.is-active { display: block; }
+    .drop-item { font-size: 17px; padding: 18px 25px; }
 
-  .nav-group:hover .nav-item { opacity: 1; color: #000; }
-  .nav-group:hover .nav-item::after { transform: rotate(180deg); opacity: 1; }
-
-  /* ВЫПАДАШКА */
-  .dropdown-menu {
-    position: absolute;
-    top: 95px; /* Точное позиционирование под хедером */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: #fff;
-    min-width: 280px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-    border: 1px solid rgba(0,0,0,0.1);
-    display: none;
-    flex-direction: column;
-    padding: 15px 0;
-    border-radius: 2px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .nav-group:hover .dropdown-menu {
-    display: flex;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .dropdown-menu a {
-    text-decoration: none;
-    color: #333;
-    padding: 14px 30px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.2s;
-    border-left: 5px solid transparent;
-    display: block;
-    line-height: 1.2;
-  }
-
-  .dropdown-menu a:hover {
-    background: #f8f6e9;
-    color: #000;
-    border-left: 5px solid var(--accent-gold);
-    padding-left: 35px;
-  }
-
-  /* ГЛАВНАЯ КНОПКА */
-  .nav-btn {
-    text-decoration: none;
-    background: #000;
-    color: #fff !important;
-    padding: 15px 30px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-left: 25px;
-    transition: 0.3s;
-    border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-
-  .nav-btn:hover {
-    background: var(--accent-gold);
-    color: #000 !important;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-  }
-
-  /* АКТИВНЫЙ МАРКЕР */
-  .nav-item.is-active {
-    color: #000 !important;
-    opacity: 1;
-  }
-  .nav-item.is-active::before {
-    content: '';
-    position: absolute;
-    bottom: 25px;
-    left: 15px;
-    right: 15px;
-    height: 3px;
-    background: var(--accent-gold);
-  }
-
-  /* АДАПТИВ */
-  @media (max-width: 1200px) {
-    .header-inner { padding: 0 20px; height: 90px; }
-    .logo-main { font-size: 24px; }
-    .nav-item { font-size: 0.7rem; padding: 10px 8px; }
-    .nav-btn { padding: 12px 20px; font-size: 0.75rem; margin-left: 10px; }
+    /* Анимация бургера */
+    .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   }
 </style>
 
 <script>
-  // Скрипт автоматической подсветки активного раздела
   document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname;
-    const navItems = document.querySelectorAll('.nav-group');
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('main-nav');
+    const expanders = document.querySelectorAll('.expander');
 
-    navItems.forEach(group => {
-      const links = group.querySelectorAll('.dropdown-menu a');
-      links.forEach(link => {
-        const path = link.getAttribute('href');
-        if (currentPath === path || (currentPath.includes(path) && path !== '/data_law_site/')) {
-          const mainItem = group.querySelector('.nav-item');
-          if (mainItem) mainItem.classList.add('is-active');
-          link.style.color = 'var(--accent-gold)';
-          link.style.fontWeight = '800';
+    if (toggle && nav) {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.classList.toggle('active');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+    }
+
+    expanders.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const group = btn.closest('.nav-group');
+        const panel = group.querySelector('.dropdown-panel');
+        if (panel) {
+          const isActive = panel.classList.toggle('is-active');
+          btn.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0)';
         }
+      });
+    });
+
+    // Закрытие при клике на ссылку
+    document.querySelectorAll('.drop-item, .nav-link, .cta-button').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
   });
