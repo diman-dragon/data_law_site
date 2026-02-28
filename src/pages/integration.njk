@@ -3,7 +3,8 @@ layout: base.njk
 title: Интеграция — DataLaw
 ---
 
-<section class="integration-hero">
+{# --- HERO SECTION --- #}
+<section class="page-hero">
   <div class="container">
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
@@ -14,108 +15,104 @@ title: Интеграция — DataLaw
       Встройте инфраструктуру DataLaw<br>в <em>свои процессы</em>
     </h1>
 
-    <div class="library-hero-grid animate-in">
+    <div class="hero-grid animate-in">
       <p class="lead-description">
-        DataLaw открыт для партнёрства с НКО, медиа, адвокатскими объединениями и технологическими командами. Мы предоставляем API-доступ к библиотеке прецедентов, AI-ассистенту Лайле и аналитическим инструментам — чтобы вы могли встраивать эти возможности в собственную работу, не дублируя инфраструктуру.
+        DataLaw открыт для партнёрства с НКО, медиа и адвокатскими объединениями. Мы предоставляем API-доступ к библиотеке прецедентов, AI-ассистенту Лайле и аналитическим инструментам — чтобы вы могли использовать наши мощности, не дублируя сложную IT-инфраструктуру.
       </p>
     </div>
   </div>
 </section>
 
-<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+{# --- PARTNERSHIP FORMATS --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
   <div class="container">
     <div class="section-header">
-      <div class="block-label">Форматы сотрудничества</div>
+      <div class="block-label">Форматы</div>
       <h2 class="section-title-left">Как мы работаем<br>с партнёрами</h2>
     </div>
 
-    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+    <div class="action-grid animate-in" style="margin-top: 60px;">
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">API-доступ</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Библиотека и AI через API</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Доступ к базе прецедентов, поиску по решениям международных органов и AI-ассистенту Лайле через REST API. Для организаций, разрабатывающих собственные правовые инструменты или исследовательские платформы.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">01 · API-Доступ</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Библиотека и AI</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Доступ к базе прецедентов и AI-ассистенту Лайле через REST API. Для организаций, создающих собственные правовые платформы.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">White-label</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">CRM под брендом партнёра</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Правозащитные организации и адвокатские объединения могут развернуть собственный экземпляр DataLaw CRM с изолированными данными и брендингом. Полная функциональность, включая Zero-Knowledge шифрование.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">02 · White-Label</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Собственная CRM</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Развертывание изолированного экземпляра DataLaw CRM под брендом партнёра с сохранением Zero-Knowledge архитектуры.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Данные</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Обмен данными и верификация</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Мы сотрудничаем с медиа и исследовательскими командами, которые верифицируют и дополняют нашу базу. Совместная работа над данными о судебных реестрах, Интерполе и нарушениях прав человека в труднодоступных юрисдикциях.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">03 · Данные</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Верификация данных</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Совместная работа над мониторингом судебных реестров и аналитикой Интерпола в закрытых юрисдикциях.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Медиа</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Журналистские расследования</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Редакциям, ведущим расследования о злоупотреблении Интерполом, политических делах и нарушениях прав человека — доступ к аналитической базе DataLaw, инструментам верификации и экспертным комментариям команды.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">04 · Исследования</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Для расследований</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Редакциям медиа — доступ к аналитическим выгрузкам по паттернам системных злоупотреблений международным правом.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Академия</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Совместные образовательные программы</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Разработка совместных курсов, клинических программ и Fellows-треков с университетами и правозащитными организациями. DataLaw предоставляет материалы, экспертов и доступ к реальной практике.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">05 · Академия</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Клинические программы</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Предоставление кейс-материалов и инфраструктуры DataLaw для образовательных курсов юридических факультетов.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Технологии</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Open Source и совместные разработки</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Часть инфраструктуры DataLaw публикуется в открытом доступе. Технологические команды, разделяющие наши ценности, могут вносить вклад в развитие платформы или строить поверх неё собственные инструменты.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">06 · Dev</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Open Source</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Совместная разработка инструментов защиты на базе открытого кода DataLaw. Мы верим в прозрачность алгоритмов.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="edu-section">
+{# --- PRINCIPLES & CONTACT --- #}
+<section class="page-section">
   <div class="container">
-    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+    <div class="hero-grid animate-in" style="align-items: center;">
       <div>
-        <div class="block-label">Принципы партнёрства</div>
-        <h2 class="section-title-left">Мы выбираем партнёров<br>по ценностям</h2>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">DataLaw — некоммерческая организация. Это означает, что коммерческие соображения никогда не стоят выше миссии. Мы не сотрудничаем с организациями, чьи интересы могут создать конфликт с защитой прав человека.</p>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">Все партнёрства оцениваются с точки зрения независимости данных, конфиденциальности пользователей и соответствия нашим принципам.</p>
-        <ul style="margin-top: 30px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Независимость редакции:</strong> данные не меняются под влиянием партнёров.</span>
-          </li>
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Конфиденциальность:</strong> данные партнёров и пользователей остаются изолированными.</span>
-          </li>
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Прозрачность:</strong> все партнёрства раскрываются публично.</span>
-          </li>
+        <div class="block-label">Ценности</div>
+        <h2 style="font-size: 3rem; margin: 20px 0;">Партнёрство на<br><em>ваших</em> условиях</h2>
+        <p class="lead-description" style="font-size: 1.1rem;">
+          Мы — некоммерческая организация. Это означает, что миссия всегда выше коммерческих соображений. Мы не сотрудничаем с теми, кто создает угрозу защите прав человека.
+        </p>
+        <ul class="feature-list" style="margin-top: 30px;">
+          <li><strong>Независимость:</strong> данные не меняются под влиянием партнёров.</li>
+          <li><strong>Изоляция:</strong> ваши данные остаются только вашими.</li>
+          <li><strong>Прозрачность:</strong> все значимые партнёрства публичны.</li>
         </ul>
       </div>
-      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
-        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 25px;">Готовы к диалогу</h4>
-        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Расскажите о вашей организации и задаче. Мы не ограничены стандартными форматами — если ваша работа служит защите прав человека, мы найдём подходящую форму сотрудничества.</p>
+      
+      <div class="dark-feature-card">
+        <h4 style="color: var(--gold); font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 25px;">Готовы к диалогу</h4>
+        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Расскажите о вашей задаче. Если ваша работа служит защите прав человека, мы всегда найдём форму технологического сотрудничества.</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 28px;">
-          <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 14px;">Срок ответа</div>
-          <p style="line-height: 1.8; opacity: 0.85; margin: 0; font-size: 0.95rem;">На запросы о партнёрстве мы отвечаем в течение 5 рабочих дней. На запросы от НКО и правозащитных организаций — в течение 48 часов.</p>
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 10px; font-weight: 800;">Срок ответа:</div>
+          <p style="opacity: 0.9; margin: 0; font-size: 0.95rem;">НКО и правозащита — до 48 часов.<br>Другие запросы — в течение 5 рабочих дней.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+{# --- CTA BAND --- #}
 <div class="edu-cta-band">
   <div class="container">
     <div class="edu-cta-inner">
       <div>
-        <p class="edu-cta-label">DataLaw · Партнёрская программа</p>
-        <h3 class="edu-cta-title">Обсудим формат сотрудничества</h3>
+        <p class="edu-cta-label">DataLaw Integration</p>
+        <h3 class="edu-cta-title">Обсудим интеграцию в ваши процессы</h3>
       </div>
       <div class="edu-cta-actions">
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Связаться с командой →</a>
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Запросить API-доступ →</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn" style="background: #fff; color: var(--navy);">Связаться с командой →</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Запросить API-документацию</a>
       </div>
     </div>
   </div>

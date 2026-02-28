@@ -3,25 +3,94 @@ layout: base.njk
 title: Open Source — DataLaw
 ---
 
-<section class="legal-page" style="padding: 100px 0; background: #fff;">
-  <div class="container" style="max-width: 800px;">
-    <div class="block-label">Engineering Integrity</div>
-    <h1 style="font-size: 3rem; font-weight: 900; margin: 20px 0 50px; line-height: 1;">Open Source</h1>
-    
-    <div class="legal-content" style="line-height: 1.8; color: var(--text-mid); font-size: 1.05rem;">
-      <p style="margin-bottom: 25px;">Прозрачность — залог доверия в правозащитных технологиях. Мы верим, что критическая инфраструктура должна быть открытой для аудита сообществом.</p>
-      
-      <div style="background: var(--navy); color: white; padding: 35px; border-radius: 4px; margin: 40px 0;">
-        <h3 style="color: var(--gold); margin-top: 0;">Репозитории проекта</h3>
-        <p style="opacity: 0.8; margin-bottom: 20px;">Наш основной стек базируется на Rust, Tauri и Python (для AI-моделей). Весь код доступен под лицензией MIT.</p>
-        <a href="https://github.com/datalaw" class="cta-btn" style="background: var(--gold); color: var(--navy);">GitHub / DataLaw Core →</a>
+{# --- HERO SECTION --- #}
+<section class="page-hero" style="background: #fff; border-bottom: none;">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Engineering Integrity · Сообщество</span>
+    </div>
+
+    <h1 class="main-title animate-in">
+      Прозрачность — это<br><em>линия защиты</em>
+    </h1>
+
+    <div class="hero-grid animate-in" style="margin-top: 40px;">
+      <div class="lead-description">
+        <p>Мы убеждены: критическая правозащитная инфраструктура не может быть закрытой. Доверие к инструментам защиты прав человека должно базироваться на возможности независимого аудита каждой строчки кода.</p>
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy);">Весь основной стек DataLaw — от краулеров до локальной CRM — распространяется под свободными лицензиями.</p>
       </div>
-
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">1. Аудит безопасности</h3>
-      <p>Мы приглашаем независимых экспертов по безопасности для участия в баг-баунти программе и аудите наших криптографических модулей.</p>
-
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">2. Сообщество</h3>
-      <p>DataLaw — это коллективный проект. Если вы разработчик и хотите внести вклад в защиту прав человека, ознакомьтесь с нашими CONTRIBUTING гайдами.</p>
     </div>
   </div>
 </section>
+
+{# --- REPOS & TECH STACK --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="hero-grid" style="align-items: flex-start; gap: 60px;">
+      
+      {# Стек и ссылки #}
+      <div style="background: var(--navy); color: white; padding: 50px; border-radius: 0;">
+        <div class="block-label" style="color: var(--gold);">Наш стек</div>
+        <h3 style="color: #fff; font-family: var(--font-serif); font-style: italic; font-size: 2.2rem; margin: 20px 0;">DataLaw Core</h3>
+        <p style="opacity: 0.8; line-height: 1.8; margin-bottom: 30px;">
+          Мы выбрали Rust для ядра системы ради безопасности памяти, Tauri для кроссплатформенного десктопа и Python для обучения наших AI-моделей.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <a href="https://github.com/datalaw" class="cta-btn" style="background: var(--gold); color: var(--navy); width: 100%; justify-content: center;">
+            GitHub / Main Repository →
+          </a>
+          <a href="#" class="cta-btn cta-btn--light" style="border-color: rgba(255,255,255,0.2); color: #fff; width: 100%; justify-content: center;">
+            Документация для разработчиков
+          </a>
+        </div>
+      </div>
+
+      {# Принципы разработки #}
+      <div class="legal-content">
+        <div style="margin-bottom: 40px;">
+          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">1. Публичный аудит безопасности</h3>
+          <p style="color: var(--text-mid); line-height: 1.7;">Все криптографические модули и механизмы локального хранения данных (Zero-Knowledge) проходят независимый аудит. Мы приветствуем участие сообщества в проверке архитектурных решений.</p>
+        </div>
+
+        <div style="margin-bottom: 40px;">
+          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">2. Лицензирование (MIT/GPL)</h3>
+          <p style="color: var(--text-mid); line-height: 1.7;">Мы не накладываем ограничений на использование наших технологий правозащитными организациями. Наши разработки — это общественное благо.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">3. Вклад в проект (Contributing)</h3>
+          <p style="color: var(--text-mid); line-height: 1.7;">Вы можете помочь проекту не только кодом, но и данными, переводами юридических корпусов или верификацией прецедентов в вашей юрисдикции.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# --- INFO BLOCK --- #}
+<section class="page-section" style="border-top: 1px solid var(--border);">
+  <div class="container" style="max-width: 900px; text-align: center;">
+    <div class="block-label" style="margin: 0 auto 20px;">Bug Bounty</div>
+    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Нашли уязвимость?</h2>
+    <p class="lead-description">Безопасность наших пользователей — приоритет №1. Если вы обнаружили ошибку в логике работы локального узла или CRM, пожалуйста, сообщите нам через защищенный канал.</p>
+    <a href="{{ '/pages/contacts/' | url }}" class="cta-btn" style="margin-top: 30px;">Сообщить об ошибке →</a>
+  </div>
+</section>
+
+{# --- ACTION CARDS --- #}
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">DataLaw Engineering</p>
+        <h3 class="edu-cta-title">Хотите развернуть локальный узел?</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="#" class="cta-btn">Docker Image</a>
+        <a href="#" class="cta-btn cta-btn--light">Build from Source</a>
+      </div>
+    </div>
+  </div>
+</div>

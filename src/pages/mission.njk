@@ -1,302 +1,149 @@
 ---
 layout: base.njk
-title: DATALAW — Миссия
+title: DATALAW — Миссия и Технология
 ---
 
-<!-- HERO -->
-<section class="mission-hero">
+{# --- HERO SECTION --- #}
+<section class="page-hero">
   <div class="container">
-
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">Некоммерческая правозащитная организация</span>
+      <span class="eyebrow-text">Non-Profit Human Rights Technology</span>
     </div>
 
     <h1 class="main-title animate-in">
-      Там, где право встречается<br>с <em>большими данными</em>
+      Там, где право встречается<br>с <em>Big Data</em>
     </h1>
 
-    <div class="lead-block animate-in">
-      <div class="lead-slogan-wrap">
-        <span class="pulse-dot"></span>
-        <span class="lead-slogan">«Мы превращаем Big Data в Big Justice»</span>
+    <div class="hero-grid animate-in">
+      <div class="lead-description">
+        <p>Государства используют неограниченные ресурсы, чтобы превратить право в инструмент давления. Мы создаем технологический противовес.</p>
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy);">DataLaw — это цифровая инфраструктура, которая делает международную защиту доступной независимо от бюджета и географии клиента.</p>
       </div>
-      <p class="lead-description">
-        Государства с неограниченными ресурсами используют право как инструмент давления: уголовное преследование, политически мотивированный розыск, системные процессуальные нарушения. Журналисты, активисты, адвокаты и обычные граждане противостоят этому в одиночку. DataLaw создан, чтобы изменить это соотношение — мы строим цифровую инфраструктуру, которая делает международную правовую защиту доступной для каждого, независимо от бюджета и географии.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- NONPROFIT MANIFESTO -->
-<section class="index-context-section" style="background: var(--navy);">
-  <div class="container">
-    <div class="context-grid">
-
-      <div class="context-left">
-        <div class="block-label" style="color: var(--gold);">Наша позиция</div>
-        <h2 class="section-title-left" style="color: #fff;">Мы некоммерческая организация — и это не оговорка</h2>
-        <p style="color: rgba(255,255,255,0.75); line-height: 1.85;">Доступ к качественной правовой защите по-прежнему определяется деньгами, географией и языком. Человек, чьи права нарушены в небольшом городе авторитарного государства, фактически лишён возможности воспользоваться теми же механизмами, что и житель Берлина или Нью-Йорка.</p>
-        <p style="color: rgba(255,255,255,0.75); line-height: 1.85; margin-top: 16px;">Коммерческий LegalTech идёт за корпоративными деньгами. Правозащитные организации работают вручную в условиях хронической нехватки ресурсов. DataLaw — это недостающий слой: технологическая инфраструктура, созданная специально для тех, кто работает в условиях давления, и бесплатная для тех, кто в этом больше всего нуждается.</p>
-        <div style="display: flex; gap: 20px; margin-top: 36px; flex-wrap: wrap;">
-          <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Нам нужна помощь →</a>
-          <a href="{{ '/pages/library/' | url }}" class="cta-btn cta-btn--light">Открытая библиотека →</a>
+      <div class="edu-hero-stat-col" style="border-left: 1px solid var(--border); padding-left: 40px;">
+        <div class="edu-stat">
+          <span class="edu-stat-num">50k+</span>
+          <span class="edu-stat-label">решений в базе данных</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">100%</span>
+          <span class="edu-stat-label">бесплатно для НКО</span>
         </div>
       </div>
-
-      <div class="context-right">
-        <div class="context-stat-grid">
-          <div class="context-stat" style="border-color: rgba(184,145,58,0.3);">
-            <span class="context-stat-num" style="color: var(--gold);">100%</span>
-            <span class="context-stat-label" style="color: rgba(14, 13, 13, 0.65);">инструментов DataLaw бесплатны для НКО и правозащитников</span>
-          </div>
-          <div class="context-stat" style="border-color: rgba(184,145,58,0.3);">
-            <span class="context-stat-num" style="color: var(--gold);">0</span>
-            <span class="context-stat-label" style="color: rgba(7, 6, 6, 0.65);">рекламодателей и коммерческих интересов, влияющих на данные</span>
-          </div>
-          <div class="context-stat" style="border-color: rgba(184,145,58,0.3);">
-            <span class="context-stat-num" style="color: var(--gold);">1,5 млн</span>
-            <span class="context-stat-label" style="color: rgba(16, 14, 14, 0.65);">документов в публичных базах ЕСПЧ и ООН (2024–2025)</span>
-          </div>
-          <div class="context-stat" style="border-color: rgba(184,145,58,0.3);">
-            <span class="context-stat-num" style="color: var(--gold);"><1%</span>
-            <span class="context-stat-label" style="color: rgba(2, 2, 2, 0.65);">из них охватывается ручным анализом правозащитных организаций</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ARCHITECTURE -->
-<section class="index-arch-section">
+{# --- MANIFESTO SECTION --- #}
+<section class="page-section" style="background: var(--navy); color: #fff;">
   <div class="container">
+    <div class="hero-grid animate-in" style="align-items: flex-start;">
+      <div>
+        <div class="block-label" style="color: var(--gold);">Manifesto</div>
+        <h2 style="color: #fff; font-size: 2.8rem; margin: 20px 0;">Мы NPO — и это <br>не оговорка</h2>
+        <p style="opacity: 0.8; line-height: 1.8;">Коммерческий LegalTech идет туда, где есть корпоративные деньги. Правозащитники же годами работают «вручную» в условиях дефицита ресурсов.</p>
+        <p style="opacity: 0.8; line-height: 1.8; margin-top: 20px;">DataLaw — это недостающий технологический слой. Мы берем инструменты Big Data, доступные спецслужбам, и отдаем их тем, кто защищает права человека.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid rgba(255,255,255,0.1);">
+          <span style="color: var(--gold); font-weight: 800; font-size: 1.5rem;">01</span>
+          <h4 style="color: #fff; margin: 10px 0;">Независимость</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7; margin: 0;">Никаких внешних инвесторов или коммерческих интересов, влияющих на приоритеты разработки.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid rgba(255,255,255,0.1);">
+          <span style="color: var(--gold); font-weight: 800; font-size: 1.5rem;">02</span>
+          <h4 style="color: #fff; margin: 10px 0;">Симметрия</h4>
+          <p style="font-size: 0.9rem; opacity: 0.7; margin: 0;">Если у госмашины есть нейросети для слежки, у защиты должны быть нейросети для анализа прецедентов.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+{# --- ARCHITECTURE (THE TWO LAYERS) --- #}
+<section class="page-section" style="background: var(--off-white); border-bottom: 1px solid var(--border);">
+  <div class="container">
     <div class="section-header">
-      <div class="block-label">Архитектура</div>
-      <h2 class="section-title-left">Гибридная модель: облако + локальная среда</h2>
-      <p class="section-sub">Ключевой принцип DataLaw: облако работает с публичными данными — локальная среда с конфиденциальными. Два уровня, объединённых в единую сеть. Персональные данные физически не могут оказаться в облаке.</p>
+      <div class="block-label">Architecture</div>
+      <h2 class="section-title-left">Гибридная модель безопасности</h2>
+      <p class="lead-description" style="max-width: 800px;">Мы разделили систему на два независимых контура: облако для публичных данных и локальную среду для работы с делами.</p>
     </div>
 
-    <div class="arch-grid">
-
-      <div class="arch-card arch-card--cloud">
-        <div class="arch-card-header">
-          <div class="arch-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          </div>
-          <span class="arch-type">Облачное ядро</span>
+    <div class="action-grid animate-in" style="margin-top: 60px; grid-template-columns: 1fr 1fr;">
+      
+      {# Cloud Layer #}
+      <div style="background: #fff; padding: 50px; border: 1px solid var(--border);">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--blue);"></div>
+          <span style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem;">Облачный слой (Публичный)</span>
         </div>
-        <h3>Глобальный аналитический центр</h3>
-        <p>Отвечает за сбор, обработку и предоставление публичных данных. Работает с открытыми судебными реестрами по всему миру. Доступен без регистрации.</p>
-        <div class="arch-features">
-          <div class="arch-feature">
-            <span class="arch-feature-title">Global Crawler</span>
-            <span class="arch-feature-desc">Круглосуточное сканирование реестров судов, ООН, ЕСПЧ, МУС. Фиксирует аномалии за часы</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">Big Data Analysis</span>
-            <span class="arch-feature-desc">Выявление системных нарушений, паттернов давления, географических и временных трендов</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">AI-навигатор Лайла</span>
-            <span class="arch-feature-desc">Анонимный публичный сервис для пострадавших. Данные обезличиваются на входе — история не хранится</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">Этика AI</span>
-            <span class="arch-feature-desc">Bias-аудит и fine-tuning на разнообразных юридических корпусах. Результаты публикуются открыто</span>
-          </div>
-        </div>
+        <h3 style="font-family: var(--font-serif); font-style: italic; font-size: 2rem; margin-bottom: 20px;">Global Intelligence</h3>
+        <p style="color: var(--text-mid); font-size: 0.95rem; line-height: 1.7;">Круглосуточный краулер сканирует реестры судов, ООН и ЕСПЧ. Здесь хранятся 1.5 млн документов, доступных для семантического поиска всем желающим.</p>
+        <ul class="feature-list" style="margin-top: 30px;">
+          <li>Мониторинг аномалий в реальном времени.</li>
+          <li>Семантический поиск по смыслу (Embeddings).</li>
+          <li>Анонимный доступ без регистрации.</li>
+        </ul>
       </div>
 
-      <div class="arch-divider">
-        <div class="arch-divider-line"></div>
-        <div class="arch-divider-badge">Zero-Knowledge</div>
-        <div class="arch-divider-line"></div>
-        <p class="arch-sync-note">Синхронизация односторонняя: облако → устройство, но не обратно. Персональные данные физически не могут оказаться в облаке.</p>
-      </div>
-
-      <div class="arch-card arch-card--local">
-        <div class="arch-card-header">
-          <div class="arch-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <span class="arch-type">Локальный узел</span>
+      {# Local Layer #}
+      <div style="background: var(--navy); padding: 50px; color: #fff;">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--gold);"></div>
+          <span style="font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.7rem; color: var(--gold);">Локальный слой (Zero-Knowledge)</span>
         </div>
-        <h3>Защищённая CRM</h3>
-        <p>Работа с конкретными людьми и конфиденциальной информацией. Устанавливается на компьютер или USB-накопитель. Полностью автономна офлайн — для условий, где сам факт выхода в интернет небезопасен.</p>
-        <div class="arch-features">
-          <div class="arch-feature">
-            <span class="arch-feature-title">Local CRM</span>
-            <span class="arch-feature-desc">Для юристов и адвокатов — по подписке. Для НКО и правозащитников — бесплатно. Работает без интернета</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">Local AI (LLM)</span>
-            <span class="arch-feature-desc">Квантованная языковая модель на железе пользователя. Ни байта данных не уходит в сеть</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">Zero-Knowledge</span>
-            <span class="arch-feature-desc">Даже при компрометации облака персональные данные не могут там оказаться — архитектурно</span>
-          </div>
-          <div class="arch-feature">
-            <span class="arch-feature-title">Минимум оборудования</span>
-            <span class="arch-feature-desc">16+ ГБ RAM, ноутбук 2022+. Базовый режим без GPU на большинстве современных машин</span>
-          </div>
-        </div>
+        <h3 style="font-family: var(--font-serif); font-style: italic; font-size: 2rem; margin-bottom: 20px; color: #fff;">Local Node & CRM</h3>
+        <p style="opacity: 0.8; font-size: 0.95rem; line-height: 1.7;">Рабочее пространство юриста. Устанавливается на устройство. Все персональные данные и материалы дел физически не могут покинуть ваш компьютер.</p>
+        <ul class="feature-list" style="margin-top: 30px;">
+          <li>Локальная нейросеть (LLM) работает офлайн.</li>
+          <li>Шифрование военного уровня.</li>
+          <li>Zero-Knowledge: DataLaw не имеет доступа к вашим делам.</li>
+        </ul>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="index-products-section">
+{# --- SYNERGY / ECOSYSTEM --- #}
+<section class="page-section">
   <div class="container">
-
     <div class="section-header">
-      <div class="block-label">Продукты</div>
-      <h2 class="section-title-left">Шесть инструментов экосистемы</h2>
-      <p class="section-sub">Четыре — в облаке для широкой аудитории. Два — локально, для профессиональной работы без облачных следов. CRM доступна всем юристам и адвокатам; для НКО и правозащитников — бесплатно.</p>
+      <div class="block-label">Ecosystem</div>
+      <h2 class="section-title-left">Не замена, а усиление</h2>
+      <p class="lead-description">Мы занимаем нишу автоматизированного анализа. DataLaw дополняет существующие инструменты правозащитников.</p>
     </div>
 
-    <div class="products-layer">
-      <div class="products-layer-label">
-        <span class="products-layer-name">Облако</span>
-        <span class="products-layer-sub">Публичные данные · Широкая аудитория · Без регистрации</span>
+    <div class="action-grid animate-in" style="margin-top: 60px; grid-template-columns: repeat(3, 1fr);">
+      <div style="padding: 30px; border: 1px solid var(--border);">
+        <h4 style="font-family: var(--font-serif); font-style: italic; font-size: 1.4rem;">DataLaw + Uwazi</h4>
+        <p style="font-size: 0.9rem; color: var(--text-mid); margin-top: 15px;">Uwazi хранит и структурирует ваши кейсы — DataLaw обогащает их прецедентами из 50+ юрисдикций.</p>
       </div>
-      <div class="products-cloud-grid">
-        <div class="product-card">
-          <div class="product-num">01</div>
-          <h4>Global Crawler</h4>
-          <p>Круглосуточно сканирует судебные реестры 190+ стран. Фиксирует аномалии в судебной статистике раньше, чем они попадают в СМИ. Основа всей экосистемы данных.</p>
-          <div class="product-tag">Системный · Автоматический</div>
-        </div>
-        <div class="product-card">
-          <div class="product-num">02</div>
-          <h4>AI-Навигатор Лайла</h4>
-          <p>Точка входа для человека, столкнувшегося с нарушением. Диагностирует ситуацию, определяет применимые механизмы защиты, строит конкретную дорожную карту. Полностью анонимно.</p>
-          <div class="product-tag">Для пострадавших · Анонимно · Бесплатно</div>
-        </div>
-        <div class="product-card">
-          <div class="product-num">03</div>
-          <h4>Автогенератор документов</h4>
-          <p>На основе лучших мировых образцов создаёт юридически грамотные жалобы в ЕСПЧ, КПЧ ООН и CCF Интерпола под обстоятельства конкретного дела.</p>
-          <div class="product-tag">Жалобы · Иски · Шаблоны</div>
-        </div>
-        <div class="product-card">
-          <div class="product-num">04</div>
-          <h4>Linguadeck AI</h4>
-          <p>Снимает языковой барьер: переводит и адаптирует обращения не только лингвистически, но и юридически — под стандарты конкретного международного органа.</p>
-          <div class="product-tag">Перевод · Юридическая адаптация</div>
-        </div>
+      <div style="padding: 30px; border: 1px solid var(--border);">
+        <h4 style="font-family: var(--font-serif); font-style: italic; font-size: 1.4rem;">DataLaw + Tella</h4>
+        <p style="font-size: 0.9rem; color: var(--text-mid); margin-top: 15px;">Tella собирает доказательства «в поле» — DataLaw помогает выстроить на их основе правовую позицию без облачных следов.</p>
+      </div>
+      <div style="padding: 30px; border: 1px solid var(--border);">
+        <h4 style="font-family: var(--font-serif); font-style: italic; font-size: 1.4rem;">DataLaw + OSINT</h4>
+        <p style="font-size: 0.9rem; color: var(--text-mid); margin-top: 15px;">Мы превращаем точечные находки расследователей в статистически доказанные системные паттерны нарушений.</p>
       </div>
     </div>
-
-    <div class="products-layer products-layer--local">
-      <div class="products-layer-label">
-        <span class="products-layer-name">Локально</span>
-        <span class="products-layer-sub">Конфиденциальные данные · Юристы, адвокаты, НКО · Офлайн</span>
-      </div>
-      <div class="products-local-grid">
-        <div class="product-card product-card--local">
-          <div class="product-num">05</div>
-          <h4>Local CRM</h4>
-          <p>Полноценное рабочее пространство: управление делами, клиентской базой и документооборотом. Доступна всем юристам и адвокатам. Для НКО и правозащитников — <strong>бесплатно</strong>. Работает без интернета, устанавливается на USB.</p>
-          <div class="product-tag product-tag--local">Офлайн · Зашифровано · НКО — бесплатно</div>
-        </div>
-        <div class="product-card product-card--local">
-          <div class="product-num">06</div>
-          <h4>Local AI</h4>
-          <p>Встроенный языковой ассистент: анализирует тома дел, находит противоречия в материалах, помогает готовить правовые позиции. Ни байта данных не покидает компьютер юриста.</p>
-          <div class="product-tag product-tag--local">Zero-Knowledge · Локальный LLM</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- POSITIONING -->
-<section class="index-position-section">
+{# --- CTA BAND --- #}
+<div class="edu-cta-band">
   <div class="container">
-
-    <div class="position-inner">
-      <div class="position-left">
-        <div class="block-label">Позиционирование</div>
-        <h2 class="help-title">Не замена — недостающий слой</h2>
-        <p>Правозащитный технологический рынок 2025–2026 — не пустое поле. Здесь уже работают сильные игроки: Uwazi закрывает документирование, Amnesty Tech специализируется на OSINT, Tella решает безопасный сбор доказательств в полевых условиях.</p>
-        <p style="margin-top: 14px;">DataLaw занимает нишу, которую никто из них не закрывает: автоматизированный глобальный мониторинг судебной практики в связке с защищённым локальным AI для работы под наблюдением. Мы не конкурируем — мы дополняем.</p>
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">Support Human Rights Tech</p>
+        <h3 class="edu-cta-title">Станьте частью инфраструктуры</h3>
       </div>
-      <div class="position-right">
-        <div class="synergy-item">
-          <div class="synergy-from">Uwazi</div>
-          <div class="synergy-arrow">+</div>
-          <div class="synergy-desc">Хранит и структурирует кейсы — DataLaw обогащает их прецедентами из 50+ юрисдикций и выявляет системные паттерны поверх накопленных данных</div>
-        </div>
-        <div class="synergy-item">
-          <div class="synergy-from">Tella</div>
-          <div class="synergy-arrow">+</div>
-          <div class="synergy-desc">Собирает доказательства на месте — DataLaw помогает выстроить правовую позицию в офлайн-среде, куда не проникает слежка</div>
-        </div>
-        <div class="synergy-item">
-          <div class="synergy-from">Amnesty Tech</div>
-          <div class="synergy-arrow">+</div>
-          <div class="synergy-desc">OSINT и точечные расследования — DataLaw даёт статистическую базу для масштабирования отдельных находок до системных доказательств</div>
-        </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Поддержать проект</a>
+        <a href="{{ '/pages/library/' | url }}" class="cta-btn cta-btn--light">Смотреть данные</a>
       </div>
-    </div>
-
-    <div class="advantages-grid">
-      <div class="advantage-card">
-        <div class="advantage-num">I</div>
-        <h4>Глобальный автомониторинг</h4>
-        <p>Непрерывное сканирование публичной судебной практики по всему миру с выявлением аномалий и системных паттернов в реальном времени — там, где реестры открыты.</p>
-      </div>
-      <div class="advantage-card">
-        <div class="advantage-num">II</div>
-        <h4>Локальный AI с Zero-Knowledge</h4>
-        <p>Мощный языковой ассистент, работающий полностью на устройстве юриста без облачного следа — для стран, где сам факт обращения к правозащитному инструменту может стать основанием для преследования.</p>
-      </div>
-      <div class="advantage-card">
-        <div class="advantage-num">III</div>
-        <h4>Прецедентная база как живой инструмент</h4>
-        <p>Не статичная библиотека — семантически связанная система, которая за секунды находит аналогичные дела из десятков юрисдикций и предлагает проверенные стратегии защиты.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- KEY DIRECTIONS -->
-<section class="infra-section">
-  <div class="container">
-    <h2 class="section-title">Ключевые <span>направления</span></h2>
-    <div class="infra-grid">
-
-      <a href="{{ '/pages/integration/' | url }}" class="infra-card">
-        <span class="num">01</span>
-        <h4>Верификация</h4>
-        <p>Глобальный краулер фиксирует аномалии в судебных реестрах за часы — задолго до СМИ. Мы превращаем миллионы решений в неопровержимые доказательства системных нарушений.</p>
-        <span class="card-arrow">→</span>
-      </a>
-
-      <a href="{{ '/pages/interpol/' | url }}" class="infra-card highlight-card">
-        <div class="card-badge">Key Focus</div>
-        <span class="num">02</span>
-        <h4>Интерпол</h4>
-        <p>Мониторим и помогаем защититься от неправомерных Red Notices и Diffusion. Политически мотивированные розыски — мы выявляем, документируем и помогаем снять уведомление через CCF.</p>
-        <span class="card-arrow">→</span>
-      </a>
-
-      <a href="{{ '/pages/library/' | url }}" class="infra-card">
-        <span class="num">03</span>
-        <h4>Библиотека</h4>
-        <p>Открытый и защищённый архив глобальной судебной практики, прецедентов ЕСПЧ / МУС / ООН и аналитики. Семантический поиск, многоязычный перевод, офлайн-доступ.</p>
-        <span class="card-arrow">→</span>
-      </a>
-
     </div>
   </div>
-</section>
+</div>

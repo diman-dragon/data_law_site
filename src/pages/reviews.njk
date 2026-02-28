@@ -3,18 +3,19 @@ layout: base.njk
 title: Обзоры и страновая аналитика — DataLaw
 ---
 
-<section class="library-hero" style="border-bottom: 1px solid var(--border);">
+{# --- HERO SECTION --- #}
+<section class="page-hero" style="border-bottom: 1px solid var(--border);">
   <div class="container">
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">DataLaw Analytics · Мониторинг системных угроз</span>
+      <span class="eyebrow-text">DataLaw Analytics · Системный мониторинг</span>
     </div>
 
     <h1 class="main-title animate-in">
       Обзоры <em>злоупотреблений</em><br>и страновые доклады
     </h1>
 
-    <div class="library-hero-grid animate-in">
+    <div class="hero-grid animate-in">
       <p class="lead-description">
         Мы анализируем массивы данных, чтобы выявить паттерны, которые скрыты за единичными кейсами. Наши обзоры — это база для формирования стратегии защиты в условиях системного давления госмашины.
       </p>
@@ -22,45 +23,100 @@ title: Обзоры и страновая аналитика — DataLaw
   </div>
 </section>
 
-<section class="reviews-feed" style="padding: 60px 0;">
+{# --- ANALYTICS FEED --- #}
+<section class="page-section" style="background: #fff;">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 40px;">
+    <div class="news-grid-12">
       
-      <div style="grid-column: span 8;">
-        <article style="border: 1px solid var(--border); padding: 50px; position: relative;">
-          <span style="background: var(--navy); color: #fff; padding: 4px 12px; font-size: 0.8rem; font-weight: 800; position: absolute; top: 0; left: 50px; transform: translateY(-50%);">ГОДОВОЙ ОТЧЕТ 2026</span>
-          <time style="display: block; font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-bottom: 20px;">28 Февраля, 2026</time>
-          <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 25px; font-weight: 900;">Транснациональные репрессии через механизмы Интерпола</h2>
-          <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 30px;">
-            Анализ использования статьи 3 Устава Интерпола в кейсах стран Центральной Азии и Восточной Европы. Как политически мотивированные запросы маскируются под общеуголовные преступления.
+      {# ГЛАВНЫЙ МАТЕРИАЛ (Левая колонка) #}
+      <div class="news-col-main animate-in">
+        <article style="border: 1px solid var(--border); padding: 60px 50px; position: relative; background: var(--off-white);">
+          <span style="background: var(--navy); color: #fff; padding: 6px 16px; font-size: 0.75rem; font-weight: 800; position: absolute; top: 0; left: 50px; transform: translateY(-50%); letter-spacing: 0.1em;">ГОДОВОЙ ОТЧЕТ 2026</span>
+          
+          <time style="display: block; font-size: 0.9rem; color: var(--gold); font-weight: 700; margin-bottom: 25px; letter-spacing: 0.05em;">28 ФЕВРАЛЯ, 2026</time>
+          
+          <h2 style="font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; margin-bottom: 30px; font-weight: 900; font-family: var(--font-main);">
+            Транснациональные репрессии через механизмы Интерпола
+          </h2>
+          
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 40px;">
+            Глобальное исследование DataLaw об использовании Статьи 3 Устава Интерпола в странах Центральной Азии и Восточной Европы. Мы проанализировали 1,200+ запросов на Red Notice, выявив алгоритмы, по которым политически мотивированные преследования маскируются под экономические преступления (ст. 159 УК РФ и аналоги).
           </p>
-          <div style="display: flex; gap: 25px; align-items: center;">
-            <a href="#" class="cta-btn">Читать отчет →</a>
-            <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid var(--gold);">Скачать PDF [3.4MB]</a>
+          
+          <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+            <a href="#" class="cta-btn">Читать полный текст</a>
+            <a href="#" style="color: var(--navy); font-weight: 800; text-decoration: none; font-size: 0.85rem; border-bottom: 2px solid var(--gold); padding-bottom: 2px; text-transform: uppercase; letter-spacing: 0.1em;">
+              PDF Report [3.4 MB]
+            </a>
           </div>
         </article>
-      </div>
 
-      <div style="grid-column: span 4;">
-        <div style="background: var(--off-white); padding: 40px; border-radius: 4px;">
-          <h4 style="text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; border-bottom: 2px solid var(--navy); padding-bottom: 15px; margin-bottom: 25px;">Фокус внимания</h4>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
-            <li style="border-bottom: 1px solid var(--border); padding-bottom: 15px;">
-              <span style="display: block; font-size: 0.75rem; color: var(--gold); font-weight: 800; margin-bottom: 5px;">ЮРИСДИКЦИЯ</span>
-              <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; font-size: 1.1rem;">Казахстан: Динамика экстрадиционных запросов</a>
-            </li>
-            <li style="border-bottom: 1px solid var(--border); padding-bottom: 15px;">
-              <span style="display: block; font-size: 0.75rem; color: var(--gold); font-weight: 800; margin-bottom: 5px;">ЮРИСДИКЦИЯ</span>
-              <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; font-size: 1.1rem;">РФ: Использование 159 ст. УК для Red Notice</a>
-            </li>
-            <li>
-              <span style="display: block; font-size: 0.75rem; color: var(--gold); font-weight: 800; margin-bottom: 5px;">ИНСТИТУТЫ</span>
-              <a href="#" style="color: var(--navy); font-weight: 700; text-decoration: none; font-size: 1.1rem;">Реформа CCF: Ожидания vs Реальность</a>
-            </li>
-          </ul>
+        {# ВТОРОЙ МАТЕРИАЛ (Ниже) #}
+        <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+          <article style="padding: 30px; border: 1px solid var(--border);">
+             <span style="color: var(--gold); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Методология</span>
+             <h3 style="font-size: 1.4rem; margin: 15px 0; font-family: var(--font-serif); font-style: italic;">Семантический анализ обвинительных актов</h3>
+             <p style="font-size: 0.9rem; color: var(--text-mid);">Как наш ИИ находит идентичные формулировки в «индивидуальных» уголовных делах разных регионов.</p>
+             <a href="#" style="font-size: 0.8rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold);">Подробнее →</a>
+          </article>
+          
+          <article style="padding: 30px; border: 1px solid var(--border);">
+             <span style="color: var(--gold); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Статистика</span>
+             <h3 style="font-size: 1.4rem; margin: 15px 0; font-family: var(--font-serif); font-style: italic;">Динамика экстрадиций: 2023–2025</h3>
+             <p style="font-size: 0.9rem; color: var(--text-mid);">Инфографика: корреляция между политическими событиями и всплеском запросов в Интерпол.</p>
+             <a href="#" style="font-size: 0.8rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold);">Смотреть данные →</a>
+          </article>
         </div>
       </div>
+
+      {# САЙДБАР (Правая колонка) #}
+      <aside class="news-col-side animate-in">
+        <div style="position: sticky; top: 40px;">
+          <div style="background: var(--navy); color: #fff; padding: 40px; margin-bottom: 30px;">
+            <h4 style="color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.75rem; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+              Фокус внимания
+            </h4>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 25px;">
+              <li>
+                <span style="display: block; font-size: 0.65rem; color: var(--gold); font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Казахстан</span>
+                <a href="#" style="color: #fff; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.3; display: block;">Анализ использования антитеррористического законодательства.</a>
+              </li>
+              <li>
+                <span style="display: block; font-size: 0.65rem; color: var(--gold); font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Восточная Европа</span>
+                <a href="#" style="color: #fff; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.3; display: block;">Таймлайн блокировок счетов правозащитных НКО.</a>
+              </li>
+              <li>
+                <span style="display: block; font-size: 0.65rem; color: var(--gold); font-weight: 800; margin-bottom: 8px; text-transform: uppercase;">Интерпол</span>
+                <a href="#" style="color: #fff; font-weight: 600; text-decoration: none; font-size: 1.05rem; line-height: 1.3; display: block;">Эффективность реформ CCF: статистический срез за год.</a>
+              </li>
+            </ul>
+          </div>
+
+          <div style="border: 1px solid var(--border); padding: 30px;">
+            <h5 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px;">Подписка на дайджест</h5>
+            <p style="font-size: 0.85rem; color: var(--text-mid); margin-bottom: 20px;">Получайте оповещения о новых страновых докладах и аналитических записках.</p>
+            <input type="email" placeholder="Email адрес" style="width: 100%; padding: 12px; border: 1px solid var(--border); margin-bottom: 15px; font-family: var(--font-main);">
+            <button class="cta-btn" style="width: 100%; justify-content: center; font-size: 0.75rem;">Подписаться</button>
+          </div>
+        </div>
+      </aside>
 
     </div>
   </div>
 </section>
+
+{# --- CTA BAND --- #}
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">DataLaw Intelligence</p>
+        <h3 class="edu-cta-title">Нужен специальный анализ для вашего дела?</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Запросить экспертизу →</a>
+        <a href="{{ '/pages/ai-navigator/' | url }}" class="cta-btn cta-btn--light">Спросить Лайлу</a>
+      </div>
+    </div>
+  </div>
+</div>

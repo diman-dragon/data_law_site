@@ -3,22 +3,110 @@ layout: base.njk
 title: Условия использования — DataLaw
 ---
 
-<section class="legal-page" style="padding: 100px 0; background: #fff;">
-  <div class="container" style="max-width: 800px;">
-    <div class="block-label">Legal Framework</div>
-    <h1 style="font-size: 3rem; font-weight: 900; margin: 20px 0 50px; line-height: 1;">Условия использования</h1>
-    
-    <div class="legal-content" style="line-height: 1.8; color: var(--text-mid); font-size: 1.05rem;">
-      <p style="margin-bottom: 25px;">Используя платформу DataLaw, вы принимаете следующие условия. Данная платформа является некоммерческим инструментом поддержки правозащитной деятельности.</p>
-      
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">1. Характер информации</h3>
-      <p>Материалы, представленные в Библиотеке и генерируемые AI-Навигатором, носят информационно-аналитический характер и не являются прямой юридической консультацией. Окончательные правовые решения должны приниматься квалифицированным адвокатом.</p>
+{# --- HERO SECTION --- #}
+<section class="page-hero" style="background: #fff; border-bottom: none;">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Legal Framework · Правовой статус</span>
+    </div>
 
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">2. Ответственность</h3>
-      <p>DataLaw не несет ответственности за действия органов государственной власти или международных организаций (включая Интерпол и ЕСПЧ). Мы предоставляем технологическую базу для защиты, но не гарантируем исход юридических процедур.</p>
+    <h1 class="main-title animate-in">
+      Правила <em>взаимодействия</em><br>с платформой
+    </h1>
 
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">3. Этика и Безопасность</h3>
-      <p>Запрещается использование инструментов платформы для деятельности, нарушающей международные стандарты прав человека. Мы оставляем за собой право ограничить доступ к системе в случае выявления попыток деструктивного воздействия на инфраструктуру.</p>
+    <div class="hero-grid animate-in" style="margin-top: 40px;">
+      <div class="lead-description">
+        <p>DataLaw — это некоммерческая технологическая платформа. Мы предоставляем инфраструктуру для анализа данных и автоматизации юридической рутины, чтобы сделать профессиональную защиту прав человека доступнее и эффективнее.</p>
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy);">Используя наши инструменты, вы соглашаетесь с принципами технологической ответственности, описанными ниже.</p>
+      </div>
     </div>
   </div>
 </section>
+
+{# --- LEGAL CONTENT --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+  <div class="container" style="max-width: 900px;">
+    
+    <div class="legal-content animate-in" style="background: #fff; padding: 60px; border: 1px solid var(--border);">
+      
+      {# Section 1 #}
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+          <span style="color: var(--gold); font-family: var(--font-serif); font-style: italic;">1.</span> 
+          Информационный статус
+        </h3>
+        <p style="color: var(--text-mid); line-height: 1.8;">
+          Аналитические справки, результаты поиска в Библиотеке и ответы AI-Навигатора Лайлы носят исключительно информационный характер. 
+          <strong>DataLaw не является адвокатским образованием</strong> и не предоставляет прямых юридических консультаций. 
+        </p>
+        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 10px;">
+          Все гипотезы, сформированные системой, должны быть проверены квалифицированным юристом перед использованием в официальных документах.
+        </p>
+      </div>
+
+      {# Section 2 #}
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+          <span style="color: var(--gold); font-family: var(--font-serif); font-style: italic;">2.</span> 
+          Ограничение ответственности
+        </h3>
+        <p style="color: var(--text-mid); line-height: 1.8;">
+          Мы предоставляем технологическую базу («как есть»), но не можем гарантировать конкретный результат в международных или национальных инстанциях.
+        </p>
+        <ul class="feature-list" style="margin-top: 15px; font-size: 0.95rem;">
+          <li>DataLaw не несет ответственности за решения Комиссии по контролю файлов Интерпола (CCF).</li>
+          <li>Мы не отвечаем за изменения в практике ЕСПЧ или национальных судов, произошедшие после публикации материалов.</li>
+          <li>Риск использования ИИ-генераций лежит на пользователе.</li>
+        </ul>
+      </div>
+
+      {# Section 3 #}
+      <div style="margin-bottom: 50px;">
+        <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+          <span style="color: var(--gold); font-family: var(--font-serif); font-style: italic;">3.</span> 
+          Этический кодекс
+        </h3>
+        <p style="color: var(--text-mid); line-height: 1.8;">
+          Запрещено использование инструментов DataLaw для содействия нарушениям прав человека, совершения киберпреступлений или легализации незаконных действий. В случае выявления попыток использования платформы в деструктивных целях (DDoS, парсинг закрытых узлов), доступ будет ограничен без уведомления.
+        </p>
+      </div>
+
+      {# Section 4 #}
+      <div>
+        <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+          <span style="color: var(--gold); font-family: var(--font-serif); font-style: italic;">4.</span> 
+          Интеллектуальная собственность
+        </h3>
+        <p style="color: var(--text-mid); line-height: 1.8;">
+          Программный код платформы распространяется под лицензией MIT. Однако аналитические обзоры и страновые доклады являются собственностью проекта и могут цитироваться только с прямой ссылкой на DataLaw.
+        </p>
+      </div>
+
+    </div>
+
+    {# --- NOTICE BOX --- #}
+    <div style="margin-top: 40px; text-align: center; padding: 0 40px;">
+      <p style="font-size: 0.85rem; color: var(--text-mid); font-style: italic;">
+        Последнее обновление условий: 20 февраля 2026 года. Мы оставляем за собой право изменять данные условия по мере развития технологий защиты данных.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{# --- FINAL CTA --- #}
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">DataLaw Integrity</p>
+        <h3 class="edu-cta-title">Остались вопросы по статусу?</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Написать юристам</a>
+        <a href="{{ '/pages/privacy/' | url }}" class="cta-btn cta-btn--light">Конфиденциальность</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,332 @@
+/* ==========================================================================
+   PAGES ARCHITECTURE (Сетки и структуры страниц)
+   ========================================================================== */
+
+/* --- HERO СЕКЦИИ (Верхний блок каждой страницы) --- */
+.page-hero, 
+.library-hero, 
+.education-hero, 
+.interpol-hero, 
+.integration-hero,
+.analytics-hero {
+  padding: 120px 0 80px;
+  background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Элемент "над заголовком" (Eyebrow) */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.eyebrow-line {
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.eyebrow-text {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--text-mid);
+}
+
+/* Главный заголовок страницы */
+.main-title {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 45px;
+  letter-spacing: -0.02em;
+  max-width: 1100px;
+}
+
+/* Стандартные сетки для Hero-блоков (Текст слева, Статистика справа) */
+.hero-grid, 
+.library-hero-grid, 
+.edu-hero-grid, 
+.interpol-hero-grid,
+.analytics-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.lead-description {
+  font-size: 1.3rem;
+  line-height: 1.65;
+  color: var(--text-mid);
+  font-weight: 400;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid, .library-hero-grid, .edu-hero-grid, .interpol-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- КОЛОНКА СТАТИСТИКИ (Цифры справа) --- */
+.edu-hero-stat-col, .analytics-hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.edu-stat {
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-stat-num {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.edu-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+/* --- СЕКЦИИ КОНТЕНТА --- */
+.page-section, .edu-section, .opinions-registry, .articles-feed {
+  padding: 100px 0;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.block-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* --- КАРТОЧКИ И СПИСКИ (Прецеденты, Статьи) --- */
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .grid-3-col { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .grid-3-col { grid-template-columns: 1fr; }
+}
+
+.article-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  border-top: 4px solid var(--gold);
+}
+
+.article-time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  margin-bottom: 15px;
+}
+
+/* --- ТЕМНЫЕ ИНФО-БЛОКИ (Security Standard) --- */
+.dark-feature-card {
+  background: var(--navy);
+  padding: 50px;
+  border-radius: 4px; /* Ушли от больших скруглений к строгому стилю */
+  color: white;
+}
+
+.dark-feature-card h4 {
+  color: var(--gold);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-list li {
+  display: flex;
+  gap: 15px;
+  line-height: 1.5;
+  opacity: 0.9;
+  font-size: 1.05rem;
+}
+
+.feature-list li::before {
+  content: "—";
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* --- ПОИСК (Win11 Style из Library) --- */
+.search-container {
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(197, 168, 124, 0.1);
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 15px 20px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  outline: none;
+}
+
+/* --- СИНЯЯ ПОЛОСА ПРИЗЫВА (CTA Band) --- */
+.edu-cta-band {
+  background: var(--navy);
+  padding: 80px 0;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.edu-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.edu-cta-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.edu-cta-title {
+  font-size: 2.2rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+@media (max-width: 850px) {
+  .edu-cta-inner { flex-direction: column; align-items: flex-start; text-align: left; }
+}
+
+/* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
+.animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: pageSlideUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.animate-in:nth-child(2) { animation-delay: 0.1s; }
+.animate-in:nth-child(3) { animation-delay: 0.2s; }
+
+@keyframes pageSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- HOME SPECIFIC --- */
+.home-hero {
+  padding: 100px 0 60px;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+/* Сетка новостей на главной (Amnesty Style) */
+.news-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.news-col-main { grid-column: span 6; }
+.news-col-side { grid-column: span 3; border-left: 1px solid var(--border); padding-left: 30px; }
+.news-col-alert { grid-column: span 3; background: var(--off-white); padding: 30px; border-radius: 4px; }
+
+@media (max-width: 1100px) {
+  .news-grid-12 { display: flex; flex-direction: column; }
+  .news-col-side { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 30px; }
+}
+
+/* Карточки действий (Action Cards) в футере страниц */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.action-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 30px;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.action-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.action-card--dark {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.action-card h4 {
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.action-card:hover h4 {
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .action-grid { grid-template-columns: 1fr 1fr; }
+}

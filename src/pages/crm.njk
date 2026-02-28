@@ -3,7 +3,8 @@ layout: base.njk
 title: DataLaw CRM — Case Management System
 ---
 
-<section class="library-hero" style="padding-bottom: 80px;">
+{# --- HERO SECTION --- #}
+<section class="page-hero" style="padding-bottom: 80px;">
   <div class="container">
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
@@ -14,104 +15,99 @@ title: DataLaw CRM — Case Management System
       CRM как инструмент <em>стратегической</em><br>защиты прав человека
     </h1>
 
-    <div class="library-hero-grid animate-in">
+    <div class="hero-grid animate-in">
       <p class="lead-description">
-        Первая в мире система управления делами, разработанная специально для правозащитников, адвокатов и НКО, работающих с политически мотивированным преследованием. Автоматизация юридических процессов — и архитектура нулевого разглашения, при которой ваши данные недоступны даже нам.
+        Первая в мире система управления делами, разработанная специально для правозащитников, адвокатов и НКО. Автоматизация юридических процессов — и архитектура нулевого разглашения, при которой ваши данные недоступны даже нам.
       </p>
     </div>
 
     <div class="crm-hero-actions animate-in" style="margin-top: 40px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
       <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Запросить доступ →</a>
       <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Смотреть демо →</a>
-      <div style="display: flex; align-items: center; gap: 10px; color: var(--text-mid); font-size: 0.9rem;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Zero-Knowledge архитектура
+      <div style="display: flex; align-items: center; gap: 10px; color: var(--text-mid); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Zero-Knowledge Architecture
       </div>
     </div>
   </div>
 </section>
 
-<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+{# --- FEATURES GRID --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
   <div class="container">
     <div class="section-header">
       <div class="block-label">Возможности</div>
       <h2 class="section-title-left">Почему DataLaw CRM?</h2>
     </div>
 
-    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+    {# Используем action-grid, но переопределяем на 3 колонки для десктопа #}
+    <div class="action-grid animate-in" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); margin-top: 60px;">
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Smart-формуляры</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Автоматическая генерация жалоб в ЕСПЧ, Комитет ООН и CCF Интерпола. Система проверяет актуальность критериев приемлемости и автоматически подтягивает нужные параграфы из библиотеки прецедентов — с указанием конкретных решений в поддержку позиции.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">Smart-формуляры</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Автоматическая генерация жалоб в ЕСПЧ, Комитет ООН и CCF Интерпола. Система проверяет критерии приемлемости и подтягивает нужные параграфы из библиотеки прецедентов.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Абсолютная анонимность</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Мы не храним ваши ключи шифрования. Все данные шифруются на стороне браузера до передачи на сервер. Даже при принудительном изъятии инфраструктуры DataLaw — ваши дела остаются физически недоступными для третьих лиц.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">Абсолютная анонимность</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Все данные шифруются на стороне браузера. Мы не храним ваши ключи. Даже при принудительном изъятии серверов — ваши дела остаются физически недоступными для нас и третьих лиц.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Таймлайн преследования</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Визуальная хроника нарушений: фиксируйте события, прикрепляйте доказательства, выстраивайте причинно-следственные связи. Инструмент выявляет паттерны «флагрантного правосудия» через сравнение с тысячами аналогичных кейсов.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">Таймлайн преследования</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Визуальная хроника нарушений: фиксируйте события и выстраивайте причинно-следственные связи. Инструмент выявляет паттерны системных злоупотреблений госмашины.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Командная работа</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Защищённое пространство для совместной работы группы адвокатов, правозащитников и экспертов над одним делом. Разграничение доступа, история версий, зашифрованный мессенджер внутри карточки.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">Командная работа</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Защищённое пространство для совместной работы группы адвокатов и экспертов. Разграничение доступа, история версий и зашифрованный мессенджер внутри каждой карточки.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Многоюрисдикционная стратегия</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Ведите одно дело параллельно в нескольких инстанциях — национальные суды, ЕСПЧ, КПЧ ООН, Интерпол. CRM отслеживает сроки, напоминает о критичных датах и синхронизирует позиции.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">Стратегия защиты</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Ведите дело параллельно в нескольких инстанциях: национальные суды, ЕСПЧ, ООН, Интерпол. CRM отслеживает жесткие дедлайны и синхронизирует правовые позиции.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-        <h3 style="margin-bottom: 15px; color: var(--navy);">AI-анализ прямо в деле</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Лайла интегрирована в каждую карточку: помогает находить пробелы в доказательной базе, предлагает прецеденты и составляет черновики правовых позиций — не переключаясь между окнами.</p>
+      <div class="action-card" style="padding: 40px; border-radius: 0;">
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; margin-bottom: 20px; color: var(--navy);">AI-анализ в деле</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Лайла интегрирована в каждую карточку: она находит пробелы в доказательной базе, предлагает тактику и составляет черновики — не покидая защищенный контур.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="edu-section">
+{# --- PRESSURE-READY SECTION --- #}
+<section class="page-section">
   <div class="container">
-    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+    <div class="hero-grid animate-in" style="align-items: center;">
       <div>
         <div class="block-label">Безопасность</div>
-        <h2 class="section-title-left">Разработано для работы<br>в условиях давления</h2>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">Мы понимаем реальность: наши пользователи нередко работают под наблюдением или прямой угрозой. CRM проектировался именно для этих условий — с допущением, что однажды к нам могут прийти.</p>
-        <ul style="margin-top: 30px; list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Panic Button:</strong> мгновенная и необратимая очистка всех локальных данных одним нажатием.</span>
-          </li>
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Multi-jurisdiction Backup:</strong> выбор юрисдикции для хранения зашифрованных резервных копий — вне досягаемости страны-преследователя.</span>
-          </li>
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Decoy Mode:</strong> возможность задать отдельный PIN, при вводе которого отображается нейтральный набор данных.</span>
-          </li>
-          <li style="display: flex; gap: 15px; align-items: flex-start;">
-            <span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">[+]</span>
-            <span><strong>Tor / VPN-совместимость:</strong> полноценная работа через анонимизирующие сети без потери функциональности.</span>
-          </li>
+        <h2 style="font-size: 3rem; margin: 20px 0;">Работа в условиях<br><em>прямого</em> давления</h2>
+        <p class="lead-description" style="font-size: 1.1rem;">
+          Мы понимаем реальность: наши пользователи работают под наблюдением. CRM спроектирован с допущением, что однажды к вам могут прийти.
+        </p>
+        <ul class="feature-list" style="margin-top: 30px;">
+          <li><strong>Panic Button:</strong> мгновенная очистка локальных данных одним нажатием.</li>
+          <li><strong>Multi-jurisdiction Backup:</strong> зашифрованные копии вне зоны риска.</li>
+          <li><strong>Decoy Mode:</strong> отдельный PIN-код для отображения «чистого» профиля.</li>
+          <li><strong>Tor / VPN Native:</strong> работа через анонимные сети без потери скорости.</li>
         </ul>
       </div>
-      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
-        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 25px;">Лайла — внутри каждого дела</h4>
-        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Наш AI-ассистент встроен непосредственно в интерфейс CRM. Откройте карточку дела — и Лайла уже готова анализировать собранные материалы, искать прецеденты и составлять черновики обращений.</p>
+      
+      <div class="dark-feature-card">
+        <h4 style="color: var(--gold); font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 25px;">Лайла — внутри дела</h4>
+        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Наш AI-ассистент встроен в интерфейс. Откройте карточку — и Лайла уже готова анализировать материалы и искать прецеденты.</p>
         <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 28px;">
-          <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 14px;">Доступ для НКО и правозащитников</div>
-          <p style="line-height: 1.8; opacity: 0.85; margin: 0; font-size: 0.95rem;">Некоммерческие организации и адвокаты по делам о правах человека получают полный доступ к CRM на безвозмездной основе. Заполните заявку — мы рассматриваем её в течение 72 часов.</p>
+          <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 14px; font-weight: 800;">Бесплатно для НКО</div>
+          <p style="line-height: 1.8; opacity: 0.85; margin: 0; font-size: 0.95rem;">Правозащитные организации получают полный доступ к CRM на безвозмездной основе. Рассмотрение заявки — 72 часа.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+{# --- CTA BAND --- #}
 <div class="edu-cta-band">
   <div class="container">
     <div class="edu-cta-inner">
@@ -120,8 +116,8 @@ title: DataLaw CRM — Case Management System
         <h3 class="edu-cta-title">Начните защищать своих клиентов безопаснее</h3>
       </div>
       <div class="edu-cta-actions">
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Запросить доступ →</a>
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Задать вопрос →</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn" style="background: #fff; color: var(--navy);">Запросить доступ →</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Задать вопрос</a>
       </div>
     </div>
   </div>

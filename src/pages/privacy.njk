@@ -3,22 +3,108 @@ layout: base.njk
 title: Конфиденциальность — DataLaw
 ---
 
-<section class="legal-page" style="padding: 100px 0; background: var(--off-white);">
-  <div class="container" style="max-width: 800px;">
-    <div class="block-label">Zero-Knowledge Policy</div>
-    <h1 style="font-size: 3rem; font-weight: 900; margin: 20px 0 50px; line-height: 1;">Конфиденциальность</h1>
-    
-    <div class="legal-content" style="line-height: 1.8; color: var(--text-mid); font-size: 1.05rem;">
-      <p style="margin-bottom: 25px; font-weight: 600; color: var(--navy);">Ваши данные — это ваша собственность. Наша архитектура исключает возможность доступа к вашей частной информации третьих лиц, включая разработчиков платформы.</p>
-      
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">1. Локальная обработка (Local-First)</h3>
-      <p>Все персональные документы, загружаемые в систему для анализа, обрабатываются локально на вашем устройстве. Тексты ваших дел не отправляются на наши серверы.</p>
+{# --- HERO SECTION --- #}
+<section class="page-hero" style="background: var(--off-white); border-bottom: none;">
+  <div class="container">
+    <div class="hero-eyebrow animate-in">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Zero-Knowledge Policy</span>
+    </div>
 
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">2. Отсутствие трекеров</h3>
-      <p>Мы не используем Google Analytics или иные системы коммерческого мониторинга. Мы собираем только анонимизированную техническую статистику, необходимую для стабильной работы Rust-сервисов.</p>
+    <h1 class="main-title animate-in">
+      Приватность через<br><em>архитектуру</em>
+    </h1>
 
-      <h3 style="color: var(--navy); margin: 40px 0 20px;">3. Адвокатская тайна</h3>
-      <p>Система спроектирована с учетом требований адвокатской тайны. Использование шифрования на стороне клиента (Client-side encryption) гарантирует, что даже при изъятии сервера данные останутся недоступными.</p>
+    <div class="hero-grid animate-in" style="margin-top: 40px;">
+      <div class="lead-description">
+        <p>В мире правозащиты конфиденциальность — это не юридическая формальность, а вопрос безопасности жизни. Мы спроектировали DataLaw так, чтобы доступ к вашим данным был физически невозможен ни для нас, ни для правительств, ни для злоумышленников.</p>
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy);">Ваши данные не защищены нашим обещанием — они защищены математикой и кодом.</p>
+      </div>
     </div>
   </div>
 </section>
+
+{# --- LEGAL CONTENT --- #}
+<section class="page-section" style="background: #fff; border-top: 1px solid var(--border);">
+  <div class="container" style="max-width: 900px;">
+    
+    <div class="legal-content animate-in">
+      
+      {# Point 1 #}
+      <div style="margin-bottom: 60px;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <span style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); font-style: italic; line-height: 1;">01</span>
+          <div>
+            <h3 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 20px;">Локальная обработка (Local-First)</h3>
+            <p style="color: var(--text-mid); font-size: 1.1rem; line-height: 1.8;">
+              Все чувствительные данные — тексты жалоб, персональные данные клиентов, материалы уголовных дел — обрабатываются <strong>исключительно на вашем устройстве</strong>. 
+            </p>
+            <p style="color: var(--text-mid); font-size: 1.1rem; line-height: 1.8; margin-top: 15px;">
+              Когда вы используете Local AI для анализа тома дела, нейросеть запускается на вашей оперативной памяти. Ни один байт вашего текста не передается в облако DataLaw.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {# Point 2 #}
+      <div style="margin-bottom: 60px;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <span style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); font-style: italic; line-height: 1;">02</span>
+          <div>
+            <h3 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 20px;">Zero-Knowledge Encryption</h3>
+            <p style="color: var(--text-mid); font-size: 1.1rem; line-height: 1.8;">
+              Если вы используете синхронизацию между своими устройствами, данные шифруются на стороне клиента (AES-256) с использованием вашего мастер-пароля. 
+            </p>
+            <p style="color: var(--text-mid); font-size: 1.1rem; line-height: 1.8; margin-top: 15px; font-weight: 600; color: var(--navy);">
+              У разработчиков DataLaw нет ключей расшифровки. Мы храним лишь зашифрованные «контейнеры», содержимое которых нам неизвестно.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {# Point 3 #}
+      <div style="margin-bottom: 60px;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <span style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); font-style: italic; line-height: 1;">03</span>
+          <div>
+            <h3 style="font-size: 1.8rem; color: var(--navy); margin-bottom: 20px;">Принцип минимизации следов</h3>
+            <p style="color: var(--text-mid); font-size: 1.1rem; line-height: 1.8;">
+              Мы не используем коммерческие системы аналитики (Google Analytics, Hotjar и др.). Мы не собираем IP-адреса пользователей при работе с публичной библиотекой прецедентов.
+            </p>
+            <ul class="feature-list" style="margin-top: 20px;">
+              <li>Нет cookies для отслеживания поведения.</li>
+              <li>Нет логов запросов к AI-Навигатору Лайле.</li>
+              <li>Нет передачи данных третьим лицам или рекламным сетям.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {# --- INFO BOX --- #}
+    <div style="background: var(--navy); color: #fff; padding: 40px; margin-top: 40px;">
+      <h4 style="color: var(--gold); font-family: var(--font-serif); font-style: italic; font-size: 1.5rem; margin-bottom: 15px;">Адвокатская тайна</h4>
+      <p style="font-size: 1rem; opacity: 0.8; margin: 0; line-height: 1.7;">
+        Архитектура DataLaw соответствует стандартам защиты профессиональной тайны. Даже в случае физического изъятия наших серверов, правоохранительные органы не смогут получить доступ к вашим рабочим файлам, так как ключи доступа находятся только у вас.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{# --- CTA BAND --- #}
+<div class="edu-cta-band">
+  <div class="container">
+    <div class="edu-cta-inner">
+      <div>
+        <p class="edu-cta-label">Security & Integrity</p>
+        <h3 class="edu-cta-title">Хотите проверить наш код?</h3>
+      </div>
+      <div class="edu-cta-actions">
+        <a href="{{ '/pages/opensource/' | url }}" class="cta-btn">GitHub Repository</a>
+        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Технический аудит</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-text">DATALAW</span>
+          <span class="footer-logo-badge">Non-Profit</span>
+        </div>
+        <p class="footer-desc">
+          Цифровая инфраструктура справедливости — где технологии стоят на страже достоинства, а не систем контроля.
+        </p>
+        <p class="footer-desc" style="margin-top: 10px; font-style: italic; opacity: 0.6; font-size: 0.82rem;">
+          «Мы превращаем Big Data в Big Justice»
+        </p>
+        <div class="footer-badges" style="display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap;">
+          <span class="footer-badge">Zero-Knowledge</span>
+          <span class="footer-badge">Open Data</span>
+          <span class="footer-badge">Non-Profit</span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+
+        <div class="footer-col">
+          <div class="footer-col-title">Направления</div>
+          <a href="{{ '/pages/interpol/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Интерпол / Red Notice
+          </a>
+          <a href="{{ '/pages/practice/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Наша практика
+          </a>
+          <a href="{{ '/pages/integration/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Верификация данных
+          </a>
+          <a href="{{ '/pages/library/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Библиотека прецедентов
+          </a>
+          <a href="{{ '/pages/reviews/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Аналитика и доклады
+          </a>
+          <a href="{{ '/pages/crm/' | url }}" class="footer-link footer-link--gold">
+            <span class="footer-link-dot" style="background: var(--gold, #b8913a);"></span>CRM Система
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Организация</div>
+          <a href="{{ '/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Миссия
+          </a>
+          <a href="{{ '/pages/education/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Академия DataLaw
+          </a>
+          <a href="{{ '/pages/ai-navigator/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>AI-Навигатор Лайла
+          </a>
+          <a href="{{ '/pages/contacts/' | url }}" class="footer-link">
+            <span class="footer-link-dot"></span>Контакты
+          </a>
+        </div>
+
+        <div class="footer-col help-col">
+          <div class="footer-col-title">Нужна помощь?</div>
+          <p class="footer-link-desc">
+            Если вы столкнулись с политически мотивированным преследованием, незаконным Red Notice или нарушением прав — мы рядом.
+          </p>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <a href="{{ '/pages/contacts/' | url }}" class="footer-cta-btn">
+              Связаться с командой →
+            </a>
+            {# Здесь используем id нашего триггера для Лайлы, чтобы кнопка открывала виджет #}
+            <a href="#" id="laylaTriggerFooter" class="footer-cta-link">
+              ✦ Спросить Лайлу
+            </a>
+          </div>
+          <div class="footer-nco-note">
+            <span class="footer-nco-icon">✓</span>
+            Для НКО и правозащитников — бесплатно
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-sources">
+      <span class="footer-col-title" style="display: block; margin-bottom: 16px;">Источники данных</span>
+      <div class="footer-sources-list">
+        <span>ЕСПЧ / HUDOC</span>
+        <span>ООН / КПЧ</span>
+        <span>МУС</span>
+        <span>МАСПЧ</span>
+        <span>ОБСЕ</span>
+        <span>Совет Европы</span>
+        <span>CCF Интерпол</span>
+        <span>Национальные реестры 190+ стран</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 DATALAW. V 0.1.2. Global Technologies for Human Rights.</span>
+      <div class="footer-bottom-links">
+        <a href="{{ '/pages/privacy/' | url }}" class="footer-bottom-link">Конфиденциальность</a>
+        <span class="footer-bottom-sep">·</span>
+        <a href="{{ '/pages/terms/' | url }}" class="footer-bottom-link">Условия использования</a>
+        <span class="footer-bottom-sep">·</span>
+        <a href="{{ '/pages/opensource/' | url }}" class="footer-bottom-link">Open Source</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

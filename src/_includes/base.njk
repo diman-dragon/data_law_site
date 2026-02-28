@@ -3,240 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DataLaw — технологическая защита прав человека.">
-  <meta name="theme-color" content="#0f2444">
-  <title>{{ title }} | DATALAW</title>
+  <title>{{ title }} | {{ site.title if site.title else "DATALAW" }}</title>
 
-  <link rel="icon" type="image/jpg" href="{{ '/assets/logo.jpg' | url }}">
+  {# 1. ШРИФТЫ (Загружаются первыми) #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/css/global.css' | url }}">
-  
-  <style>
-    html { scroll-behavior: smooth; }
-    body { opacity: 0; transition: opacity 0.8s ease-in; margin: 0; font-family: 'Jost', sans-serif; }
-    body.loaded { opacity: 1; }
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    /* ══════════════════════════════════════
-        LAYLA WIDGET — ORBITAL SATELLITES
-    ══════════════════════════════════════ */
-    .layla-container {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 10000;
-    }
+  {# 2. ГЛОБАЛЬНЫЙ ФУНДАМЕНТ (Сброс, Цвета, Типографика) #}
+  <link rel="stylesheet" href="/css/global.css">
 
-    /* Кнопка-сфера с орбитами */
-    .layla-trigger {
-      width: 75px;
-      height: 75px;
-      background: #0f2444;
-      border: 1px solid rgba(197, 168, 124, 0.3);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-    }
+  {# 3. АРХИТЕКТУРА СТРАНИЦ (Сетки, Hero-блоки, Секции) #}
+  <link rel="stylesheet" href="/css/pages.css">
 
-    .layla-trigger:hover {
-      transform: scale(1.1);
-      border-color: #c5a87c;
-      box-shadow: 0 15px 40px rgba(197, 168, 124, 0.2);
-    }
+  {# 4. КОМПОНЕНТЫ (Специфичные блоки) #}
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/layla-widget.css">
 
-    /* SVG Орбиты и Спутники */
-    .orbital-system {
-      width: 55px;
-      height: 55px;
-    }
-
-    .orbit {
-      fill: none;
-      stroke: rgba(197, 168, 124, 0.4);
-      stroke-width: 0.8;
-    }
-
-    .satellite {
-      fill: #c5a87c;
-      filter: drop-shadow(0 0 3px #c5a87c);
-    }
-
-    /* Анимация вращения орбит */
-    .orbit-1 { animation: rotate-system 6s linear infinite; transform-origin: center; }
-    .orbit-2 { animation: rotate-system 10s linear infinite reverse; transform-origin: center; }
-    .orbit-3 { animation: rotate-system 15s linear infinite; transform-origin: center; }
-
-    @keyframes rotate-system {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* Окно чата */
-    .layla-window {
-      position: absolute;
-      bottom: 90px;
-      right: 0;
-      width: 380px;
-      height: 550px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid #c5a87c;
-      animation: layla-fade-up 0.3s ease-out;
-    }
-
-    .layla-window.active { display: flex; }
-
-    @keyframes layla-fade-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Дизайн чата */
-    .layla-header { 
-      background: #0f2444; padding: 20px; 
-      border-bottom: 1px solid #c5a87c; color: #c5a87c;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .layla-header h4 { margin: 0; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
-    
-    .layla-messages { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; background: #fcfcfc; }
-    .msg { padding: 12px 16px; border-radius: 8px; font-size: 0.9rem; line-height: 1.5; max-width: 85%; }
-    .msg.ai { background: #f0f2f5; color: #0f2444; align-self: flex-start; border-left: 3px solid #c5a87c; }
-    .msg.user { background: #0f2444; color: #fff; align-self: flex-end; }
-
-    .layla-input-area { padding: 15px; border-top: 1px solid #eee; display: flex; gap: 10px; background: #fff; }
-    .layla-input { flex: 1; border: 1px solid #eee; padding: 12px; outline: none; border-radius: 4px; font-family: 'Jost', sans-serif; }
-    .layla-send { background: #0f2444; color: #c5a87c; border: 1px solid #c5a87c; padding: 0 20px; cursor: pointer; border-radius: 4px; transition: 0.3s; }
-    .layla-send:hover { background: #c5a87c; color: #0f2444; }
-
-    /* Печать */
-    .dots span { width: 4px; height: 4px; background: #c5a87c; border-radius: 50%; display: inline-block; animation: blink 1.4s infinite; margin-right: 2px; }
-    .dots span:nth-child(2) { animation-delay: 0.2s; }
-    .dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes blink { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
-  </style>
+  {# 5. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ СТРАНИЦЫ (Если заданы в Frontmatter) #}
+  {% if css %}
+    <link rel="stylesheet" href="/css/{{ css }}.css">
+  {% endif %}
 </head>
-<body onload="document.body.classList.add('loaded')">
+<body class="site-body">
 
-  {% include "header.html" %}
+  {# ХЕДЕР #}
+  {% include "components/header/header.njk" %}
 
-  <main>{{ content | safe }}</main>
+  {# ОСНОВНОЙ КОНТЕНТ #}
+  <main id="main-content" class="fade-in">
+    {{ content | safe }}
+  </main>
 
-  {% include "footer.html" %}
+  {# ФУТЕР #}
+  {% include "components/footer/footer.njk" %}
+  
+  {# ВИДЖЕТ LAYLA AI #}
+  {% include "components/layla-widget/layla-widget.njk" %}
 
-  <div class="layla-container" id="laylaWidget">
-    <div class="layla-window" id="laylaWindow">
-      <div class="layla-header">
-        <h4>ЛАЙЛА / AI-АССИСТЕНТ</h4>
-        <button id="laylaClose" style="background:none; border:none; color:#c5a87c; font-size:1.5rem; cursor:pointer;">&times;</button>
-      </div>
-      <div class="layla-messages" id="laylaMsgs">
-        <div class="msg ai">Я Лайла, Ваш AI-ассистент. Готова предоставить данные из реестра DataLaw. Что вы хотите узнать?</div>
-      </div>
-      <div class="layla-input-area">
-        <input type="text" class="layla-input" id="laylaIn" placeholder="Интерпол, CRM, защита данных...">
-        <button class="layla-send" id="laylaSend">SEND</button>
-      </div>
-    </div>
+  {# СКРИПТЫ (defer гарантирует загрузку после парсинга HTML) #}
+  <script src="/js/main.js" defer></script>
+  <script src="/js/layla-widget.js" defer></script>
 
-    <button class="layla-trigger" id="laylaTrigger">
-      <svg class="orbital-system" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="4" fill="#c5a87c" />
-        
-        <g class="orbit-1">
-          <circle class="orbit" cx="50" cy="50" r="20" />
-          <circle class="satellite" cx="70" cy="50" r="2.5" />
-        </g>
-        
-        <g class="orbit-2">
-          <circle class="orbit" cx="50" cy="50" r="32" stroke-dasharray="2, 4" />
-          <circle class="satellite" cx="18" cy="50" r="2" />
-        </g>
-
-        <g class="orbit-3">
-          <circle class="orbit" cx="50" cy="50" r="44" />
-          <circle class="satellite" cx="50" cy="6" r="3" />
-        </g>
-      </svg>
-    </button>
-  </div>
-
-  <script>
-    (function() {
-      const widget = document.getElementById('laylaWidget');
-      const trigger = document.getElementById('laylaTrigger');
-      const windowEl = document.getElementById('laylaWindow');
-      const closeBtn = document.getElementById('laylaClose');
-      const input = document.getElementById('laylaIn');
-      const msgs = document.getElementById('laylaMsgs');
-      const sendBtn = document.getElementById('laylaSend');
-
-      let laylaDB = null;
-
-      // Загрузка базы из твоего файла
-      fetch("{{ '/js/layla-db.json' | url }}")
-        .then(r => r.json()).then(data => { laylaDB = data.responses; })
-        .catch(e => console.error("Database error", e));
-
-      trigger.onclick = (e) => { e.stopPropagation(); windowEl.classList.toggle('active'); };
-      closeBtn.onclick = () => windowEl.classList.remove('active');
-
-      // Клик мимо
-      document.addEventListener('click', (e) => {
-        if (!widget.contains(e.target)) windowEl.classList.remove('active');
-      });
-
-      function addMsg(text, type, isTyping = false) {
-        const d = document.createElement('div');
-        d.className = `msg ${type}`;
-        if (isTyping) {
-          d.className += ' dots';
-          d.innerHTML = '<span></span><span></span><span></span>';
-        } else {
-          d.innerText = text;
-        }
-        msgs.appendChild(d);
-        msgs.scrollTop = msgs.scrollHeight;
-        return d;
-      }
-
-      function handleSend() {
-        const val = input.value.trim();
-        if(!val || !laylaDB) return;
-        addMsg(val, 'user');
-        input.value = '';
-
-        const typing = addMsg('', 'ai', true);
-
-        setTimeout(() => {
-          typing.remove();
-          let response = "Запрос проанализирован. В открытой базе недостаточно данных, рекомендую обратиться к нашим экспертам через форму обратной связи.";
-          const low = val.toLowerCase();
-          for (const key in laylaDB) {
-            if (laylaDB[key].keys.some(k => low.includes(k.toLowerCase()))) {
-              response = laylaDB[key].text;
-              break;
-            }
-          }
-          addMsg(response, 'ai');
-        }, 850);
-      }
-
-      sendBtn.onclick = handleSend;
-      input.onkeypress = (e) => { if(e.key === 'Enter') handleSend(); };
-    })();
-  </script>
 </body>
 </html>

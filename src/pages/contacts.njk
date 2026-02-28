@@ -3,94 +3,103 @@ layout: base.njk
 title: Контакты — DataLaw
 ---
 
-<section class="education-hero">
+{# --- HERO SECTION --- #}
+<section class="page-hero">
   <div class="container">
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
       <span class="eyebrow-text">DataLaw Infrastructure · Связь и доступ</span>
     </div>
+    
     <h1 class="main-title animate-in">Безопасность — это не опция.<br>Это <em>единственный</em> формат работы</h1>
     
-    <div class="edu-hero-grid animate-in">
+    <div class="hero-grid animate-in">
       <p class="lead-description">
-        В условиях системного давления стандартные каналы связи становятся уязвимостью. Мы временно ограничили использование email-форм и облачных сервисов, чтобы исключить перехват данных на промежуточных узлах. Связь осуществляется через защищенные точки доступа.
+        В условиях системного давления стандартные каналы связи становятся уязвимостью. Мы ограничили использование открытых email-форм, чтобы исключить перехват данных. Связь осуществляется через защищенные точки доступа.
       </p>
       <div class="edu-hero-stat-col">
-        <div class="edu-stat"><span class="edu-stat-num">2</span><span class="edu-stat-label">активных узла</span></div>
-        <div class="edu-stat"><span class="edu-stat-num">24/7</span><span class="edu-stat-label">мониторинг</span></div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">2</span>
+          <span class="edu-stat-label">активных узла</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">24/7</span>
+          <span class="edu-stat-label">мониторинг</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+{# --- ACTIVE CHANNELS --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
   <div class="container">
     <div class="section-header">
       <div class="block-label">Точки доступа</div>
       <h2 class="section-title-left">Активные каналы</h2>
     </div>
 
-    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
-
-      <a href="https://t.me/+q_sSkrk1WMdlNTA0" target="_blank" class="source-card" style="display: block; text-decoration: none; background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s;">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Node 01 · Оперативная связь</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Ситуационный центр</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 25px;">Закрытая группа для первичного аудита кейсов, экстренных консультаций по линии Интерпола и координации юридической защиты.</p>
-        <span style="font-weight: 800; color: var(--gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Присоединиться к чату →</span>
+    <div class="action-grid animate-in" style="margin-top: 60px;">
+      
+      {# Node 01 #}
+      <a href="https://t.me/+q_sSkrk1WMdlNTA0" target="_blank" class="action-card" style="grid-column: span 2; padding: 45px; text-decoration: none; transition: var(--transition-main);">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">Node 01 · Оперативная связь</div>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Ситуационный центр</h3>
+        <p style="font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 30px;">Закрытая группа для первичного аудита кейсов, экстренных консультаций по линии Интерпола и координации юридической защиты.</p>
+        <span style="font-weight: 800; color: var(--navy); text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 4px;">Присоединиться к чату →</span>
       </a>
 
-      <a href="https://t.me/datalaw_rights" target="_blank" class="source-card" style="display: block; text-decoration: none; background: #fff; padding: 40px; border-radius: 12px; border: 1px solid var(--border); transition: 0.3s;">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 16px;">Node 02 · Мониторинг</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">DataLaw Channel</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 25px;">Официальный поток: аналитика системных нарушений, обновления базы прецедентов и новости образовательных программ Academy.</p>
-        <span style="font-weight: 800; color: var(--gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Подписаться на канал →</span>
+      {# Node 02 #}
+      <a href="https://t.me/datalaw_rights" target="_blank" class="action-card" style="grid-column: span 2; padding: 45px; text-decoration: none; transition: var(--transition-main);">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">Node 02 · Мониторинг</div>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">DataLaw Channel</h3>
+        <p style="font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 30px;">Официальный поток: аналитика системных нарушений, обновления базы прецедентов и новости образовательных программ Academy.</p>
+        <span style="font-weight: 800; color: var(--navy); text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 4px;">Подписаться на канал →</span>
       </a>
 
     </div>
   </div>
 </section>
 
-<section class="edu-section">
+{# --- TECH PROTOCOL --- #}
+<section class="page-section">
   <div class="container">
-    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+    <div class="hero-grid animate-in" style="align-items: center;">
       <div>
         <div class="block-label">Протокол безопасности</div>
-        <h2 class="section-title-left">Почему ограничены<br>стандартные способы?</h2>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">Мы работаем в среде, где метаданные часто важнее содержания. Обычное письмо на почту оставляет след на серверах провайдеров, который невозможно стереть.</p>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">DataLaw придерживается концепции <strong>Zero-Knowledge</strong>. Это значит, что техническая архитектура проекта должна исключать возможность доступа третьих лиц к вашему факту обращения.</p>
+        <h2 style="font-size: 2.8rem; margin: 20px 0;">Почему ограничены<br><em>стандартные</em> способы?</h2>
+        <p class="lead-description" style="font-size: 1.05rem;">
+          Мы работаем в среде, где метаданные часто важнее содержания. Обычное письмо на почту оставляет след на серверах провайдеров, который невозможно стереть.
+        </p>
+        <p class="lead-description" style="font-size: 1.05rem; margin-top: 15px;">
+          DataLaw придерживается концепции <strong>Zero-Knowledge</strong>. Это значит, что архитектура проекта должна исключать возможность доступа третьих лиц к самому факту вашего обращения.
+        </p>
       </div>
       
-      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
-        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-style: italic; margin-bottom: 25px;">Laila Encrypted Gate</h4>
-        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">В процессе интеграции находится модуль прямого шифрования. К моменту публичного релиза здесь будет развернута форма, работающая по стандарту PGP в браузере клиента.</p>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Локальное шифрование (No Cloud)</span></li>
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Анонимная передача пакетов</span></li>
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Автоматическое удаление метаданных</span></li>
+      <div class="dark-feature-card">
+        <h4 style="color: var(--gold); font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 25px;">Laila Encrypted Gate</h4>
+        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85; font-size: 0.95rem;">
+          В процессе интеграции находится модуль прямого шифрования. К моменту релиза здесь будет развернута форма, работающая по стандарту PGP в браузере клиента.
+        </p>
+        <ul class="feature-list">
+          <li>Локальное шифрование (No Cloud)</li>
+          <li>Анонимная передача пакетов</li>
+          <li>Автоматическое удаление метаданных</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+{# --- CTA BAND --- #}
 <div class="edu-cta-band">
   <div class="container">
     <div class="edu-cta-inner">
       <div>
         <p class="edu-cta-label">DataLaw Connect</p>
-        <h3 class="edu-cta-title">Нужна юридическая помощь по линии Интерпола?</h3>
+        <h3 class="edu-cta-title">Нужна помощь по линии Интерпола?</h3>
       </div>
-      <div class="edu-cta-actions">
-        <a href="https://t.me/+q_sSkrk1WMdlNTA0" target="_blank" class="cta-btn">Перейти в ситуационный центр →</a>
-      </div>
+      <a href="https://t.me/+q_sSkrk1WMdlNTA0" target="_blank" class="cta-btn" style="background: #fff; color: var(--navy);">В ситуационный центр →</a>
     </div>
   </div>
 </div>
-
-<style>
-  .source-card:hover {
-    border-color: var(--gold) !important;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-</style>

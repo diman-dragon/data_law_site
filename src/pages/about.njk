@@ -3,7 +3,8 @@ layout: base.njk
 title: О нас — DataLaw
 ---
 
-<section class="library-hero">
+{# --- HERO SECTION --- #}
+<section class="page-hero">
   <div class="container">
     <div class="hero-eyebrow animate-in">
       <span class="eyebrow-line"></span>
@@ -14,71 +15,86 @@ title: О нас — DataLaw
       Проект, рожденный под<br><em>системным давлением</em>
     </h1>
 
-    <div class="library-hero-grid animate-in">
+    <div class="hero-grid animate-in">
       <div class="lead-description">
-        <p>DataLaw — это не результат мозгового штурма в офисе. Это результат столкновения с государственной машиной. Мы сами прошли и продолжаем проходить путь борьбы с неправомерными запросами, злоупотреблениями механизмами Интерпола и прямым давлением системы. На этом пути мы быстро поняли: в одиночку, даже имея ресурсы и опыт, ты остаешься безоружным перед автоматизированным аппаратом подавления.</p>
-        <p style="margin-top: 20px;">Мы создавали эту систему для себя. Нам нужен был инструмент, который не «течет», не зависит от облаков и работает быстрее, чем прокурорские запросы. Мы не стали делать это «на коленке» — мы использовали самые актуальные технологии, чтобы наше техническое превосходство стало нашей главной защитой.</p>
+        <p>DataLaw — это не результат мозгового штурма в офисе. Это результат столкновения с государственной машиной. Мы сами прошли и продолжаем проходить путь борьбы с неправомерными запросами, злоупотреблениями механизмами Интерпола и прямым давлением системы.</p>
+        <p style="margin-top: 20px;">Мы создавали эту систему для себя. Нам нужен был инструмент, который не «течет», не зависит от облаков и работает быстрее, чем прокурорские запросы. Мы использовали самые актуальные технологии, чтобы техническое превосходство стало нашей главной защитой.</p>
       </div>
       <div class="edu-hero-stat-col">
-        <div class="edu-stat"><span class="edu-stat-num">Real Case</span><span class="edu-stat-label">опыт борьбы</span></div>
-        <div class="edu-stat"><span class="edu-stat-num">Hard Tech</span><span class="edu-stat-label">никаких компромиссов</span></div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">Real Case</span>
+          <span class="edu-stat-label">опыт борьбы</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">Hard Tech</span>
+          <span class="edu-stat-label">никаких компромиссов</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="edu-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
+{# --- BACKGROUND SECTION (Cards) --- #}
+<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
   <div class="container">
     <div class="section-header">
       <div class="block-label">Бэкграунд</div>
-      <h2 class="section-title-left">Мы знаем боли,<br>потому что они наши</h2>
+      <h2 style="font-size: 3rem;">Мы знаем боли,<br>потому что они наши</h2>
     </div>
 
-    <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 60px;">
-
-      <div class="source-card" style="background: #fff; padding: 45px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 20px;">Опыт</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Правозащита «в полях»</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8;">Мы годами занимались защитой тех, кого система выбрала своей целью. Мы видели, как легко манипулировать Red Notice и как сложно адвокату искать иголку в стоге сена, когда у него нет доступа к нормальным данным. DataLaw — это оцифрованный опыт этой борьбы.</p>
+    <div class="grid-3-col" style="margin-top: 60px;">
+      {# Карточка 1 #}
+      <div class="action-card">
+        <div class="block-label" style="font-size: 0.65rem;">Опыт</div>
+        <h3 style="margin-bottom: 15px;">Правозащита «в полях»</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы годами занимались защитой тех, кого система выбрала своей целью. Мы видели паттерны манипуляций Red Notice. DataLaw — это оцифрованный опыт этой борьбы.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 45px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 20px;">Реализация</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Инженерный подход</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8;">Мы не строили иллюзий и не делали «быстрых» решений. Мы выбрали Rust за его бескомпромиссную безопасность и Local AI за возможность работать в полной изоляции. Если система пытается тебя достать, твой софт должен быть твоей крепостью, а не дырой в безопасности.</p>
+      {# Карточка 2 #}
+      <div class="action-card">
+        <div class="block-label" style="font-size: 0.65rem;">Реализация</div>
+        <h3 style="margin-bottom: 15px;">Инженерный подход</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы выбрали Rust за безопасность и Local AI за автономность. Если система пытается тебя достать, софт должен быть крепостью, а не дырой в безопасности.</p>
       </div>
 
-      <div class="source-card" style="background: #fff; padding: 45px; border-radius: 12px; border: 1px solid var(--border);">
-        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700; margin-bottom: 20px;">Результат</div>
-        <h3 style="margin-bottom: 15px; color: var(--navy);">Симметрия ресурсов</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.8;">Даже с деньгами и связями ты проиграешь госмашине, если у неё есть Big Data, а у тебя — нет. Мы упаковали в DataLaw возможности, которые раньше были только у спецслужб, и отдали их в руки независимых профессионалов.</p>
+      {# Карточка 3 #}
+      <div class="action-card">
+        <div class="block-label" style="font-size: 0.65rem;">Результат</div>
+        <h3 style="margin-bottom: 15px;">Симметрия ресурсов</h3>
+        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы упаковали в DataLaw возможности, которые раньше были только у госорганов, и отдали их в руки независимых адвокатов и профессионалов.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<section class="edu-section">
+{# --- TECH / POSITION SECTION --- #}
+<section class="page-section">
   <div class="container">
-    <div class="tech-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: flex-start;">
+    <div class="hero-grid" style="align-items: center;">
       <div>
         <div class="block-label">Позиция</div>
-        <h2 class="section-title-left">Почему мы решили<br>открыть этот проект</h2>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 24px;">Когда ты находишься под давлением, ты понимаешь цену каждой секунды и каждого бита информации. Мы создали DataLaw для себя, чтобы эффективно работать в условиях агрессивной среды. Но мы поняли, что эта проблема масштабна — тысячи профессионалов ежедневно сталкиваются с тем же самым.</p>
-        <p style="color: var(--text-mid); line-height: 1.8; margin-top: 16px;">Мы не предлагаем «сервис». Мы предлагаем инфраструктуру, которая помогла нам и поможет вам. **Zero-Knowledge Architecture** здесь не для красоты — это гарантия того, что ваши данные никогда не станут оружием против вас, даже если на нас надавят.</p>
+        <h2 style="font-size: 3rem; margin: 20px 0;">Почему мы решили<br>открыть этот проект</h2>
+        <p class="lead-description" style="font-size: 1.1rem;">
+          Мы создали DataLaw для себя, но поняли, что тысячи профессионалов ежедневно сталкиваются с тем же самым. Мы предлагаем инфраструктуру, которая помогла нам и поможет вам.
+        </p>
+        <p class="lead-description" style="font-size: 1.1rem; margin-top: 20px;">
+          <strong>Zero-Knowledge Architecture</strong> здесь не для красоты — это гарантия того, что ваши данные никогда не станут оружием против вас.
+        </p>
       </div>
-      <div style="background: var(--navy); padding: 50px; border-radius: 20px; color: white;">
-        <h4 style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-style: italic; margin-bottom: 25px;">Наш стандарт:</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px;">
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Никаких облаков для хранения рабочих файлов дел.</span></li>
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Локальные ИИ-модели, не требующие интернета.</span></li>
-          <li style="display: flex; gap: 12px; opacity: 0.9;"><span style="color: var(--gold); font-weight: 700; flex-shrink: 0;">—</span><span>Код, написанный теми, кто знает цену ошибки.</span></li>
+      
+      <div class="dark-feature-card">
+        <h4>Наш стандарт:</h4>
+        <ul class="feature-list">
+          <li>Никаких облаков для хранения рабочих файлов дел.</li>
+          <li>Локальные ИИ-модели, не требующие интернета.</li>
+          <li>Код, написанный теми, кто знает цену ошибки.</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+{# --- CTA BAND --- #}
 <div class="edu-cta-band">
   <div class="container">
     <div class="edu-cta-inner">
@@ -86,9 +102,7 @@ title: О нас — DataLaw
         <p class="edu-cta-label">DataLaw Core</p>
         <h3 class="edu-cta-title">Профессиональная солидарность важнее бизнеса</h3>
       </div>
-      <div class="edu-cta-actions">
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Связаться с нами →</a>
-      </div>
+      <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Связаться с нами →</a>
     </div>
   </div>
 </div>
