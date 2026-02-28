@@ -2,7 +2,7 @@
   <div class="header-inner">
     
     <div class="logo-section">
-      <a href="/" class="text-logo">
+      <a href="{{ '/' | url }}" class="text-logo">
         <span class="logo-main">DATA LAW</span>
         <span class="logo-sub">GLOBAL TECHNOLOGIES FOR HUMAN RIGHTS</span>
       </a>
@@ -11,42 +11,43 @@
     <nav class="header-nav" id="main-nav">
       
       <div class="nav-group">
-        <a href="/" class="nav-item">Главная</a>
+        <span class="nav-item">Об организации</span>
         <div class="dropdown-menu">
-          <a href="/pages/about/">О нас / История</a>
-          <a href="/pages/contacts/">Контакты</a>
+          <a href="{{ '/' | url }}">Главная страница</a>
+          <a href="{{ '/pages/about/' | url }}">Миссия и ценности</a>
+          <a href="{{ '/pages/contacts/' | url }}">Контактная информация</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Экспертиза</span>
         <div class="dropdown-menu">
-          <a href="/pages/interpol/">Интерпол / CCF</a>
-          <a href="/pages/practice/">Судебная практика</a>
-          <a href="/pages/education/">Академия DataLaw</a>
+          <a href="{{ '/pages/interpol/' | url }}">Интерпол / Red Notice</a>
+          <a href="{{ '/pages/practice/' | url }}">Судебная практика</a>
+          <a href="{{ '/pages/education/' | url }}">Академия DataLaw</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Аналитика</span>
         <div class="dropdown-menu">
-          <a href="/pages/articles/">Статьи и гайды</a>
-          <a href="/pages/reviews/">Страновые обзоры</a>
-          <a href="/pages/expert-opinions/">Экспертные заключения</a>
-          <a href="/pages/library/">Библиотека кейсов</a>
+          <a href="{{ '/pages/articles/' | url }}">Статьи и гайды</a>
+          <a href="{{ '/pages/reviews/' | url }}">Страновые обзоры</a>
+          <a href="{{ '/pages/expert-opinions/' | url }}">Экспертные заключения</a>
+          <a href="{{ '/pages/library/' | url }}">Библиотека прецедентов</a>
         </div>
       </div>
 
       <div class="nav-group">
         <span class="nav-item">Технологии</span>
         <div class="dropdown-menu">
-          <a href="/pages/ai-navigator/">AI-Навигатор</a>
-          <a href="/pages/crm/">DataLaw CRM</a>
-          <a href="/pages/integration/">Верификация данных</a>
+          <a href="{{ '/pages/ai-navigator/' | url }}">AI-Навигатор Лайла</a>
+          <a href="{{ '/pages/crm/' | url }}">Legal CRM Система</a>
+          <a href="{{ '/pages/integration/' | url }}">Верификация данных</a>
         </div>
       </div>
 
-      <a href="/pages/contacts/" class="nav-btn">Связаться</a>
+      <a href="{{ '/pages/contacts/' | url }}" class="nav-btn">Связаться</a>
     </nav>
   </div>
 </header>
@@ -60,6 +61,7 @@
     --transition-speed: 0.3s;
   }
 
+  /* БАЗОВЫЕ СТИЛИ ХЕДЕРА */
   .site-header {
     background-color: var(--washi-base);
     background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
@@ -68,6 +70,7 @@
     top: 0;
     z-index: 1000;
     width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }
 
   .header-inner {
@@ -80,10 +83,16 @@
     padding: 0 40px;
   }
 
+  /* СТИЛИ ЛОГОТИПА */
+  .logo-section {
+    flex-shrink: 0;
+  }
+
   .text-logo {
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .logo-main {
@@ -93,10 +102,11 @@
     color: #000;
     line-height: 1;
     letter-spacing: 0.05em;
-    text-shadow: 0 1px 0 #ccc;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9;
   }
 
   .logo-sub {
+    font-family: var(--font-main);
     font-size: 8.5px;
     font-weight: 700;
     color: var(--navy-dark);
@@ -106,34 +116,40 @@
     opacity: 0.75;
   }
 
+  /* КОНТЕЙНЕР НАВИГАЦИИ */
   .header-nav {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
   }
 
   .nav-group {
     position: relative;
-    padding: 20px 0; /* Увеличил область наведения */
+    padding: 30px 0; /* Зона для ховера */
   }
 
   .nav-item {
     text-decoration: none;
     color: var(--navy-dark);
-    font-size: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 10px 18px;
+    padding: 12px 15px;
     cursor: pointer;
     opacity: 0.65;
-    transition: all var(--transition-speed);
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .nav-item::after {
-    content: ' ▾';
+    content: '▾';
     font-size: 0.7rem;
     opacity: 0.5;
+    transition: transform 0.2s;
   }
 
   .nav-group:hover .nav-item {
@@ -141,69 +157,104 @@
     color: #000;
   }
 
+  .nav-group:hover .nav-item::after {
+    transform: rotate(180deg);
+  }
+
+  /* ВЫПАДАЮЩЕЕ МЕНЮ */
   .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 50%;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(15px);
     background: #fdfdfb;
-    min-width: 250px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.06);
+    min-width: 260px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.08);
     display: none;
     flex-direction: column;
-    padding: 12px 0;
-    border-radius: 3px;
+    padding: 15px 0;
+    border-radius: 4px;
     opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .nav-group:hover .dropdown-menu {
     display: flex;
     opacity: 1;
+    pointer-events: auto;
     transform: translateX(-50%) translateY(0);
   }
 
   .dropdown-menu a {
     text-decoration: none;
     color: var(--navy-dark);
-    padding: 12px 25px;
-    font-size: 0.82rem;
+    padding: 12px 28px;
+    font-size: 0.85rem;
     font-weight: 500;
     transition: 0.2s;
-    border-left: 3px solid transparent;
+    border-left: 4px solid transparent;
+    display: block;
   }
 
   .dropdown-menu a:hover {
     background: var(--washi-base);
     color: #000;
-    border-left: 3px solid var(--accent-gold);
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 32px;
   }
 
+  /* КНОПКА ДЕЙСТВИЯ */
   .nav-btn {
     text-decoration: none;
     background: #000;
     color: var(--washi-base) !important;
-    padding: 12px 24px;
-    border-radius: 2px;
-    font-size: 0.78rem;
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     margin-left: 20px;
-    transition: 0.3s;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+    letter-spacing: 0.05em;
   }
 
   .nav-btn:hover {
     transform: translateY(-2px);
-    filter: brightness(1.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    filter: brightness(1.1);
   }
 
+  /* АКТИВНЫЙ ПУНКТ */
   .nav-item--active {
     opacity: 1 !important;
-    border-bottom: 2px solid var(--accent-gold);
+    color: #000 !important;
+    position: relative;
+  }
+  
+  .nav-item--active::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: var(--accent-gold);
+  }
+
+  /* МОБИЛЬНАЯ АДАПТАЦИЯ (УПРОЩЕННАЯ) */
+  @media (max-width: 1100px) {
+    .header-inner { padding: 0 20px; height: 90px; }
+    .logo-main { font-size: 22px; }
+    .nav-item { font-size: 0.7rem; padding: 10px 8px; }
+    .nav-btn { padding: 10px 18px; font-size: 0.7rem; margin-left: 10px; }
   }
 </style>
 
 <script>
+  // Скрипт подсветки активных ссылок с учетом подпапок GitHub Pages
   document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname;
     const navGroups = document.querySelectorAll('.nav-group');
@@ -211,12 +262,14 @@
     navGroups.forEach(group => {
       const links = group.querySelectorAll('.dropdown-menu a');
       links.forEach(link => {
-        // Убираем лишние слэши для сравнения
-        const cleanPath = link.getAttribute('href');
-        if (currentPath === cleanPath) {
-          group.querySelector('.nav-item').classList.add('nav-item--active');
-          link.style.fontWeight = '700';
+        const linkPath = new URL(link.href).pathname;
+        
+        // Проверяем совпадение путей
+        if (currentPath === linkPath || (currentPath.includes(linkPath) && linkPath !== '/')) {
+          const navItem = group.querySelector('.nav-item');
+          if (navItem) navItem.classList.add('nav-item--active');
           link.style.color = 'var(--accent-gold)';
+          link.style.fontWeight = '700';
         }
       });
     });
