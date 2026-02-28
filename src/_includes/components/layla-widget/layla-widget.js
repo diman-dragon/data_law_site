@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let laylaDB = null;
 
-    // 1. Загрузка базы знаний (путь соответствует passthrough в .eleventy.js)
-    fetch('/data/layla-db.json')
+    // 1. Загрузка базы знаний (путь берём из data-атрибута — работает с любым pathPrefix)
+    const dbPath = windowEl?.dataset.db || '/data/layla-db.json';
+    fetch(dbPath)
         .then(response => {
             if (!response.ok) throw new Error("Database not found");
             return response.json();
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e) e.stopPropagation();
         const isActive = windowEl.classList.toggle('active');
         if (isActive) {
-            setTimeout(() => input.focus(), 100); // Фокус на ввод при открытии
+            setTimeout(() => input.focus(), 100);
         }
     };
 
@@ -44,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeWindow();
     });
 
-    // Закрытие при клике вне окна
     document.addEventListener('click', (e) => {
         if (windowEl.classList.contains('active') && 
             !windowEl.contains(e.target) && 
@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Закрытие по ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeWindow();
     });
@@ -63,17 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const val = input.value.trim();
         if (!val) return;
 
-        // Сообщение пользователя
         addMsg(val, 'user');
         input.value = '';
 
-        // Имитация "раздумий" ИИ
         setTimeout(() => {
             let reply = "Анализирую ваш запрос... В открытых базах данных совпадений не найдено. Рекомендуется ручная проверка специалистом.";
             
             if (laylaDB) {
                 const query = val.toLowerCase();
-                // Поиск по ключам в базе данных
                 for (const key in laylaDB) {
                     const match = laylaDB[key].keys.some(k => query.includes(k.toLowerCase()));
                     if (match) {
@@ -91,12 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         msgDiv.className = `msg ${type}`;
         msgDiv.textContent = text;
         msgs.appendChild(msgDiv);
-        
-        // Автопрокрутка вниз
         msgs.scrollTop = msgs.scrollHeight;
     }
 
-    // События отправки
     sendBtn?.addEventListener('click', handleSend);
     
     input?.addEventListener('keypress', (e) => {
