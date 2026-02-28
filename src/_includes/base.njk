@@ -5,25 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | {{ site.title if site.title else "DATALAW" }}</title>
 
-  {# 1. ШРИФТЫ (Загружаются первыми) #}
+  {# 1. ШРИФТЫ #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  {# 2. ГЛОБАЛЬНЫЙ ФУНДАМЕНТ (Сброс, Цвета, Типографика) #}
-  <link rel="stylesheet" href="/css/global.css">
+  {# 2-4. СТИЛИ (Применяем фильтр | url для корректных путей на GitHub) #}
+  <link rel="stylesheet" href="{{ '/css/global.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/pages.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/header.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/layla-widget.css' | url }}">
 
-  {# 3. АРХИТЕКТУРА СТРАНИЦ (Сетки, Hero-блоки, Секции) #}
-  <link rel="stylesheet" href="/css/pages.css">
-
-  {# 4. КОМПОНЕНТЫ (Специфичные блоки) #}
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/layla-widget.css">
-
-  {# 5. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ СТРАНИЦЫ (Если заданы в Frontmatter) #}
+  {# 5. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ СТРАНИЦЫ #}
   {% if css %}
-    <link rel="stylesheet" href="/css/{{ css }}.css">
+    <link rel="stylesheet" href="{{ ['/css/', css, '.css'] | join | url }}">
   {% endif %}
 </head>
 <body class="site-body">
@@ -42,9 +38,9 @@
   {# ВИДЖЕТ LAYLA AI #}
   {% include "components/layla-widget/layla-widget.njk" %}
 
-  {# СКРИПТЫ (defer гарантирует загрузку после парсинга HTML) #}
-  <script src="/js/main.js" defer></script>
-  <script src="/js/layla-widget.js" defer></script>
+  {# СКРИПТЫ #}
+  <script src="{{ '/js/main.js' | url }}" defer></script>
+  <script src="{{ '/js/layla-widget.js' | url }}" defer></script>
 
 </body>
 </html>
