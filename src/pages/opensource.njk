@@ -3,94 +3,88 @@ layout: base.njk
 title: Open Source — DataLaw
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero" style="background: #fff; border-bottom: none;">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">Engineering Integrity · Сообщество</span>
-    </div>
-
-    <h1 class="main-title animate-in">
-      Прозрачность — это<br><em>линия защиты</em>
-    </h1>
-
-    <div class="hero-grid animate-in" style="margin-top: 40px;">
-      <div class="lead-description">
-        <p>Мы убеждены: критическая правозащитная инфраструктура не может быть закрытой. Доверие к инструментам защиты прав человека должно базироваться на возможности независимого аудита каждой строчки кода.</p>
-        <p style="margin-top: 20px; font-weight: 600; color: var(--navy);">Весь основной стек DataLaw — от краулеров до локальной CRM — распространяется под свободными лицензиями.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{{ hero({
+  eyebrow: "Engineering Integrity · Сообщество",
+  title: "Прозрачность — это<br><em>линия защиты</em>",
+  description: "Мы убеждены: критическая правозащитная инфраструктура не может быть закрытой. Доверие к инструментам защиты прав человека должно базироваться на возможности независимого аудита каждой строчки кода.<br><br><strong class='text-main'>Весь основной стек DataLaw — от краулеров до локальной CRM — распространяется под свободными лицензиями.</strong>",
+  bg: "alt"
+}) }}
 
 {# --- REPOS & TECH STACK --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="hero-grid" style="align-items: flex-start; gap: 60px;">
+{% call section({
+  class: "border-t",
+  bg: "base"
+}) %}
+  <div class="grid grid-2 gap-16 mt-12 items-start">
+    
+    {# Стек и ссылки #}
+    {% call card({
+      dark: true,
+      class: "p-10"
+    }) %}
+      <div class="text-overline text-accent mb-4">Наш стек</div>
+      <h3 class="text-h2 font-serif italic text-white mb-6">DataLaw Core</h3>
+      <p class="opacity-80 mb-8">Мы выбрали Rust для ядра системы ради безопасности памяти, Tauri для кроссплатформенного десктопа и Python для обучения наших AI-моделей.</p>
       
-      {# Стек и ссылки #}
-      <div style="background: var(--navy); color: white; padding: 50px; border-radius: 0;">
-        <div class="block-label" style="color: var(--gold);">Наш стек</div>
-        <h3 style="color: #fff; font-family: var(--font-serif); font-style: italic; font-size: 2.2rem; margin: 20px 0;">DataLaw Core</h3>
-        <p style="opacity: 0.8; line-height: 1.8; margin-bottom: 30px;">
-          Мы выбрали Rust для ядра системы ради безопасности памяти, Tauri для кроссплатформенного десктопа и Python для обучения наших AI-моделей.
-        </p>
-        
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-          <a href="https://github.com/datalaw" class="cta-btn" style="background: var(--gold); color: var(--navy); width: 100%; justify-content: center;">
-            GitHub / Main Repository →
-          </a>
-          <a href="#" class="cta-btn cta-btn--light" style="border-color: rgba(255,255,255,0.2); color: #fff; width: 100%; justify-content: center;">
-            Документация для разработчиков
-          </a>
-        </div>
+      <div class="flex flex-col gap-4">
+        {{ button({ text: "GitHub / Main Repository →", href: "https://github.com/datalaw", class: "bg-accent text-navy justify-center" }) }}
+        {{ button({ text: "Документация для разработчиков", href: "#", type: "light", class: "text-white border-white-10 justify-center" }) }}
+      </div>
+    {% endcall %}
+
+    {# Принципы разработки #}
+    <div class="flex flex-col gap-10">
+      <div>
+        <h3 class="text-h3 mb-4">1. Публичный аудит безопасности</h3>
+        <p class="text-muted">Все криптографические модули и механизмы локального хранения данных (Zero-Knowledge) проходят независимый аудит. Мы приветствуем участие сообщества в проверке архитектурных решений.</p>
       </div>
 
-      {# Принципы разработки #}
-      <div class="legal-content">
-        <div style="margin-bottom: 40px;">
-          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">1. Публичный аудит безопасности</h3>
-          <p style="color: var(--text-mid); line-height: 1.7;">Все криптографические модули и механизмы локального хранения данных (Zero-Knowledge) проходят независимый аудит. Мы приветствуем участие сообщества в проверке архитектурных решений.</p>
-        </div>
-
-        <div style="margin-bottom: 40px;">
-          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">2. Лицензирование (MIT/GPL)</h3>
-          <p style="color: var(--text-mid); line-height: 1.7;">Мы не накладываем ограничений на использование наших технологий правозащитными организациями. Наши разработки — это общественное благо.</p>
-        </div>
-
-        <div>
-          <h3 style="font-size: 1.5rem; color: var(--navy); margin-bottom: 15px;">3. Вклад в проект (Contributing)</h3>
-          <p style="color: var(--text-mid); line-height: 1.7;">Вы можете помочь проекту не только кодом, но и данными, переводами юридических корпусов или верификацией прецедентов в вашей юрисдикции.</p>
-        </div>
+      <div>
+        <h3 class="text-h3 mb-4">2. Лицензирование (MIT/GPL)</h3>
+        <p class="text-muted">Мы не накладываем ограничений на использование наших технологий правозащитными организациями. Наши разработки — это общественное благо.</p>
       </div>
 
+      <div>
+        <h3 class="text-h3 mb-4">3. Вклад в проект (Contributing)</h3>
+        <p class="text-muted">Вы можете помочь проекту не только кодом, но и данными, переводами юридических корпусов или верификацией прецедентов в вашей юрисдикции.</p>
+      </div>
     </div>
+
   </div>
-</section>
+{% endcall %}
 
 {# --- INFO BLOCK --- #}
-<section class="page-section" style="border-top: 1px solid var(--border);">
-  <div class="container" style="max-width: 900px; text-align: center;">
-    <div class="block-label" style="margin: 0 auto 20px;">Bug Bounty</div>
-    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Нашли уязвимость?</h2>
-    <p class="lead-description">Безопасность наших пользователей — приоритет №1. Если вы обнаружили ошибку в логике работы локального узла или CRM, пожалуйста, сообщите нам через защищенный канал.</p>
-    <a href="{{ '/pages/contacts/' | url }}" class="cta-btn" style="margin-top: 30px;">Сообщить об ошибке →</a>
+{% call section({
+  class: "border-t text-center",
+  headerClass: "items-center"
+}) %}
+  <div class="max-w-3xl mx-auto">
+    <div class="text-overline mb-4">Bug Bounty</div>
+    <h2 class="text-h1 mb-8">Нашли уязвимость?</h2>
+    <p class="text-lead mb-10">Безопасность наших пользователей — приоритет №1. Если вы обнаружили ошибку в логике работы локального узла или CRM, пожалуйста, сообщите нам через защищенный канал.</p>
+    {{ button({ text: "Сообщить об ошибке →", href: "/pages/contacts/" }) }}
   </div>
-</section>
+{% endcall %}
 
 {# --- ACTION CARDS --- #}
-<div class="edu-cta-band">
-  <div class="container">
-    <div class="edu-cta-inner">
-      <div>
-        <p class="edu-cta-label">DataLaw Engineering</p>
-        <h3 class="edu-cta-title">Хотите развернуть локальный узел?</h3>
-      </div>
-      <div class="edu-cta-actions">
-        <a href="#" class="cta-btn">Docker Image</a>
-        <a href="#" class="cta-btn cta-btn--light">Build from Source</a>
-      </div>
+{% call section({
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="flex justify-between items-center gap-8">
+    <div>
+      <p class="text-overline mb-2">DataLaw Engineering</p>
+      <h3 class="text-h2 text-white">Хотите развернуть локальный узел?</h3>
+    </div>
+    <div class="flex gap-4">
+      {{ button({ text: "Docker Image", href: "#", class: "bg-white text-navy" }) }}
+      {{ button({ text: "Build from Source", href: "#", type: "light" }) }}
     </div>
   </div>
-</div>
+{% endcall %}

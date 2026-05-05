@@ -3,80 +3,73 @@ layout: base.njk
 title: Статьи и публикации — DataLaw
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">DataLaw Insights · Публикации</span>
-    </div>
-
-    <h1 class="main-title animate-in">
-      Практические <em>статьи</em><br>и новости технологий
-    </h1>
-
-    <div class="hero-grid animate-in">
-      <p class="lead-description">
-        Разборы юридических кейсов, инструкции по работе с международными институтами 
-        и обновления наших технологий защиты данных.
-      </p>
-    </div>
-  </div>
-</section>
+{{ hero({
+  eyebrow: "DataLaw Insights · Публикации",
+  title: "Практические <em>статьи</em><br>и новости технологий",
+  description: "Разборы юридических кейсов, инструкции по работе с международными институтами и обновления наших технологий защиты данных.",
+  bg: "alt"
+}) }}
 
 {# --- ARTICLES FEED --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="news-grid-12 animate-in">
+{% call section({
+  class: "border-t"
+}) %}
+  <div class="grid grid-2 gap-12 mt-12">
+    
+    {# Статья 1 (Основная) #}
+    <article class="flex flex-col border-b pb-10">
+      <div class="h-1 bg-accent w-16 mb-6"></div>
+      <time class="text-overline text-muted mb-4">24 Февраля, 2026</time>
+      <h3 class="text-h2 font-serif italic mb-6">
+        <a href="#" class="text-navy hover:text-accent">Почему локальный ИИ — единственный выбор для адвоката под давлением</a>
+      </h3>
+      <p class="text-lead mb-8">Разбор рисков использования облачных моделей при работе с делами, имеющими политический окрас. Как Zero-Knowledge архитектура DataLaw спасает адвокатскую тайну и предотвращает утечки данных в юрисдикции агрессора.</p>
+      <a href="#" class="text-overline border-b-2 border-accent pb-1 w-fit">Читать материал →</a>
+    </article>
+
+    {# Боковая колонка со статьями #}
+    <div class="grid grid-2 gap-8">
       
-      {# Статья 1 (Основная) #}
-      <article class="news-col-main" style="display: flex; flex-direction: column; border-bottom: 1px solid var(--border); padding-bottom: 40px;">
-        <div style="height: 4px; background: var(--gold); width: 60px; margin-bottom: 25px;"></div>
-        <time style="font-size: 0.85rem; font-weight: 800; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px; display: block;">24 Февраля, 2026</time>
-        <h3 style="font-family: var(--font-serif); font-size: 2.2rem; font-style: italic; line-height: 1.2; margin-bottom: 20px;">
-          <a href="#" style="color: var(--navy); text-decoration: none;">Почему локальный ИИ — единственный выбор для адвоката под давлением</a>
-        </h3>
-        <p style="color: var(--text-mid); line-height: 1.7; font-size: 1.1rem; flex-grow: 1;">Разбор рисков использования облачных моделей при работе с делами, имеющими политический окрас. Как Zero-Knowledge архитектура DataLaw спасает адвокатскую тайну и предотвращает утечки данных в юрисдикции агрессора.</p>
-        <a href="#" style="margin-top: 25px; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--gold); width: fit-content; padding-bottom: 4px;">Читать материал →</a>
+      {# Статья 2 #}
+      <article class="flex flex-col">
+        <time class="text-overline text-accent mb-3">18 Февраля</time>
+        <h4 class="text-h4 mb-4">
+          <a href="#" class="text-navy hover:text-accent">Чек-лист: Если вы в базе Интерпола</a>
+        </h4>
+        <p class="text-sm text-muted mb-6">Первые шаги, сбор доказательств и стратегия превентивных мер от экспертов DataLaw.</p>
+        <a href="#" class="text-overline text-xxs border-b border-accent pb-1 w-fit">Инструкция →</a>
       </article>
 
-      {# Боковая колонка со статьями #}
-      <div class="news-col-side" style="grid-column: span 6; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-        
-        {# Статья 2 #}
-        <article style="display: flex; flex-direction: column;">
-          <time style="font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase; margin-bottom: 10px;">18 Февраля</time>
-          <h4 style="font-size: 1.3rem; line-height: 1.3; margin-bottom: 15px;">
-            <a href="#" style="color: var(--navy); text-decoration: none;">Чек-лист: Если вы в базе Интерпола</a>
-          </h4>
-          <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;">Первые шаги, сбор доказательств и стратегия превентивных мер от экспертов DataLaw.</p>
-          <a href="#" style="margin-top: 15px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); width: fit-content;">Инструкция →</a>
-        </article>
+      {# Статья 3 #}
+      <article class="flex flex-col">
+        <time class="text-overline text-accent mb-3">10 Февраля</time>
+        <h4 class="text-h4 mb-4">
+          <a href="#" class="text-navy hover:text-accent">Анализ статьи 18 ЕКПЧ: Пределы прав</a>
+        </h4>
+        <p class="text-sm text-muted mb-6">Как доказать наличие скрытого мотива у государства? Обзор практики ЕСПЧ.</p>
+        <a href="#" class="text-overline text-xxs border-b border-accent pb-1 w-fit">Аналитика →</a>
+      </article>
 
-        {# Статья 3 #}
-        <article style="display: flex; flex-direction: column;">
-          <time style="font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase; margin-bottom: 10px;">10 Февраля</time>
-          <h4 style="font-size: 1.3rem; line-height: 1.3; margin-bottom: 15px;">
-            <a href="#" style="color: var(--navy); text-decoration: none;">Анализ статьи 18 ЕКПЧ: Пределы прав</a>
-          </h4>
-          <p style="font-size: 0.9rem; color: var(--text-mid); line-height: 1.6;">Как доказать наличие скрытого мотива у государства? Обзор практики ЕСПЧ.</p>
-          <a href="#" style="margin-top: 15px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); width: fit-content;">Аналитика →</a>
-        </article>
-
-      </div>
     </div>
   </div>
-</section>
+{% endcall %}
 
-{# --- CTA BAND (как в остальных файлах) --- #}
-<div class="edu-cta-band">
-  <div class="container">
-    <div class="edu-cta-inner">
-      <div>
-        <p class="edu-cta-label">DataLaw Library</p>
-        <h3 class="edu-cta-title">Ищете конкретный прецедент?</h3>
-      </div>
-      <a href="{{ '/pages/library/' | url }}" class="cta-btn" style="background: #fff; color: var(--navy);">В библиотеку →</a>
+{# --- CTA BAND --- #}
+{% call section({
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="flex justify-between items-center gap-8">
+    <div>
+      <p class="text-overline mb-2">DataLaw Library</p>
+      <h3 class="text-h2 text-white">Ищете конкретный прецедент?</h3>
     </div>
+    {{ button({ text: "В библиотеку →", href: "/pages/library/", class: "bg-white text-navy" }) }}
   </div>
-</div>
+{% endcall %}

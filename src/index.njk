@@ -3,6 +3,10 @@ layout: base.njk
 title: DataLaw — Мониторинг системных злоупотреблений и ИИ-аналитика
 ---
 
+{% from "macros/section.njk" import section %}
+{% from "macros/cta.njk" import cta %}
+{% from "macros/card.njk" import card %}
+
 {# --- HERO СЕКЦИЯ --- #}
 <section class="home-hero">
   <div class="container">
@@ -13,136 +17,65 @@ title: DataLaw — Мониторинг системных злоупотреб�
 
     <div class="hero-grid">
       <div>
-        <h1 class="main-title animate-in">
-          Право против <br><em>госмашины.</em>
-        </h1>
-        <p class="lead-description animate-in">
-          DataLaw оцифровывает опыт противостояния неправомерному давлению. Мы строим инструменты симметричного ответа: от глобальных архивов CCF до локального ИИ.
-        </p>
+        <h1 class="main-title animate-in">Право против <br><em>госмашины.</em></h1>
+        <p class="lead-description animate-in">DataLaw оцифровывает опыт противостояния неправомерному давлению. Мы строим инструменты симметричного ответа: от глобальных архивов CCF до локального ИИ.</p>
       </div>
       
-      <div class="edu-hero-stat-col animate-in" style="border-left: 1px solid var(--border); padding-left: 40px;">
+      <div class="edu-hero-stat-col animate-in" style="border-left: 1px solid var(--border); padding-left: var(--space-lg);">
         <div class="edu-stat">
           <span class="edu-stat-num">50k+</span>
           <span class="edu-stat-label">судебных прецедентов</span>
         </div>
-        <div style="display: flex; gap: 20px; margin-top: 10px;">
-          <a href="{{ '/pages/library/' | url }}" class="cta-btn">База данных</a>
-          <a href="{{ '/pages/about/' | url }}" class="cta-btn cta-btn--light">О нас</a>
+        <div style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
+          {{ cta("База данных", "/pages/library/") }}
+          {{ cta("О нас", "/pages/about/", true) }}
         </div>
       </div>
     </div>
   </div>
 </section>
 
-{# --- СЕКЦИЯ НОВОСТЕЙ (AMNESTY STYLE) --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="news-grid-12">
-      
-      {# Главная новость #}
-      <div class="news-col-main">
-        <article class="article-item" style="border-top: none; border-bottom: 1px solid var(--border); padding-top: 0; padding-bottom: 40px;">
-          <div class="block-label">Критический анализ · Интерпол</div>
-          <h2 style="font-size: 2.8rem; margin-bottom: 20px;">
-            <a href="{{ '/pages/interpol/' | url }}" style="color: var(--navy); text-decoration: none;">Злоупотребление Red Notice: Новые паттерны в 2026 году</a>
-          </h2>
-          <p class="lead-description" style="font-size: 1.15rem;">
-            Исследование DataLaw выявило рост использования обвинений в «кибермошенничестве» как прикрытия для преследования политических активистов. Анализ 40 успешных кейсов отмены в CCF.
-          </p>
-          <time class="article-time">28 Февраля, 2026</time>
-        </article>
-      </div>
-
-      {# Боковая колонка новостей #}
-      <div class="news-col-side">
-        <article style="margin-bottom: 40px;">
-          <div class="block-label" style="font-size: 0.65rem;">Обновление базы</div>
-          <h3 style="font-size: 1.3rem; line-height: 1.3;">
-            <a href="{{ '/pages/practice/' | url }}" style="color: var(--navy); text-decoration: none;">ЕСПЧ: Статья 18. Добавлены решения по делам о скрытых мотивах.</a>
-          </h3>
-          <time class="article-time" style="margin-top: 10px; display: block;">26 Февраля, 2026</time>
-        </article>
-        
-        <article>
-          <div class="block-label" style="font-size: 0.65rem;">Технологии</div>
-          <h3 style="font-size: 1.3rem; line-height: 1.3;">
-            <a href="{{ '/pages/ai-navigator/' | url }}" style="color: var(--navy); text-decoration: none;">Laila v2.5: Интеграция семантического анализа жалоб в ООН.</a>
-          </h3>
-          <time class="article-time" style="margin-top: 10px; display: block;">24 Февраля, 2026</time>
-        </article>
-      </div>
-
-      {# Мониторинг (Alert Box) #}
-      <div class="news-col-alert">
-        <h4 style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; margin-bottom: 25px; border-bottom: 2px solid var(--navy); padding-bottom: 10px;">Мониторинг</h4>
-        <ul class="feature-list" style="gap: 15px;">
-          <li style="font-size: 0.9rem;"><span style="color: #ff0000; font-weight: 800;">LIVE:</span> Зафиксирована волна экстрадиционных запросов из Центральной Азии.</li>
-          <li style="font-size: 0.9rem;"><span style="font-weight: 800;">DATA:</span> Оцифрован архив решений CCF за IV квартал 2025 года.</li>
-          <li style="font-size: 0.9rem;"><span style="font-weight: 800;">ALARM:</span> Уязвимость в облачных CRM. Рекомендуем переход на Local-First.</li>
-        </ul>
-      </div>
-
+{# --- СЕКЦИЯ НОВОСТЕЙ --- #}
+{% call section("", "Последние расследования") %}
+  <div class="news-grid-12">
+    <div class="news-col-main">
+      <article class="article-item" style="border-top: none; border-bottom: 1px solid var(--border); padding-bottom: var(--space-lg);">
+        <div class="block-label">Критический анализ · Интерпол</div>
+        <h2 style="font-size: 2.8rem; margin-bottom: var(--space-md);">
+          <a href="{{ '/pages/interpol/' | url }}" style="color: var(--navy); text-decoration: none;">Злоупотребление Red Notice: Новые паттерны в 2026 году</a>
+        </h2>
+        <p class="lead-description" style="font-size: 1.15rem;">Исследование DataLaw выявило рост использования обвинений в «кибермошенничестве» как прикрытия для преследования политических активистов. Анализ 40 успешных кейсов отмены в CCF.</p>
+        <time class="article-time">28 Февраля, 2026</time>
+      </article>
+    </div>
+    <div class="news-col-side">
+      <article style="margin-bottom: var(--space-lg);">
+        <div class="block-label">Обновление базы</div>
+        <h3 style="font-size: 1.3rem;"><a href="{{ '/pages/practice/' | url }}" style="color: var(--navy); text-decoration: none;">ЕСПЧ: Статья 18. Добавлены решения по делам о скрытых мотивах.</a></h3>
+      </article>
+      <article>
+        <div class="block-label">Технологии</div>
+        <h3 style="font-size: 1.3rem;"><a href="{{ '/pages/ai-navigator/' | url }}" style="color: var(--navy); text-decoration: none;">Laila v2.5: Интеграция семантического анализа жалоб в ООН.</a></h3>
+      </article>
     </div>
   </div>
-</section>
+{% endcall %}
 
-{# --- DEEP DIVE (ТЕМНАЯ СЕКЦИЯ) --- #}
-<section class="page-section" style="background: var(--navy); color: #fff;">
-  <div class="container">
-    <div class="hero-grid" style="align-items: center; gap: 100px;">
-      <div>
-        <div class="block-label">Инструментарий</div>
-        <h2 style="font-size: 3.5rem; color: #fff; margin: 20px 0;">Когда закон становится оружием, технологии — щитом.</h2>
-        <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
-          Мы создали DataLaw для работы в условиях, где «облако» — это риск. Наш софт написан на Rust ради абсолютной устойчивости и скорости анализа.
-        </p>
-        
-        <div class="grid-3-col" style="grid-template-columns: 1fr 1fr;">
-          <div>
-            <h4 style="color: var(--gold); margin-bottom: 10px;">Zero-Knowledge</h4>
-            <p style="font-size: 0.9rem; opacity: 0.7;">Техническая невозможность доступа разработчиков к вашим файлам.</p>
-          </div>
-          <div>
-            <h4 style="color: var(--gold); margin-bottom: 10px;">Offline AI</h4>
-            <p style="font-size: 0.9rem; opacity: 0.7;">Локальные модели проводят аудит без подключения к сети.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dark-feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(184,145,58,0.3);">
-        <h3 style="font-family: var(--font-serif); font-size: 2.5rem; font-style: italic; color: var(--gold); margin-bottom: 20px;">Генезис</h3>
-        <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.9;">
-          «Мы сами прошли путь под системным давлением. DataLaw — это не стартап. Это оцифрованная тактика выживания и защиты».
-        </p>
-        <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-          <a href="{{ '/pages/about/' | url }}" style="color: #fff; text-decoration: none; font-weight: 700; border-bottom: 1px solid var(--gold);">Читать нашу историю →</a>
-        </div>
-      </div>
+{# --- DEEP DIVE --- #}
+{% call section("Инструментарий", "Когда закон становится оружием, технологии — щитом.", "page-section", "background: var(--navy); color: var(--white);") %}
+  <div class="hero-grid" style="align-items: center; gap: 100px;">
+    <div>
+      <p style="font-size: 1.2rem; opacity: 0.8;">Мы создали DataLaw для работы в условиях, где «облако» — это риск. Наш софт написан на Rust ради абсолютной устойчивости и скорости анализа.</p>
     </div>
   </div>
-</section>
+{% endcall %}
 
-{# --- ACTION CARDS (НИЖНЯЯ СЕТКА) --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="action-grid">
-      <a href="{{ '/pages/interpol/' | url }}" class="action-card">
-        <h4>Interpol CCF</h4>
-        <p style="font-size: 0.85rem; color: var(--text-mid);">Методология и прецеденты отмены Red Notice.</p>
-      </a>
-      <a href="{{ '/pages/library/' | url }}" class="action-card">
-        <h4>ЕСПЧ / ООН</h4>
-        <p style="font-size: 0.85rem; color: var(--text-mid);">Архив решений по системным нарушениям.</p>
-      </a>
-      <a href="{{ '/pages/ai-navigator/' | url }}" class="action-card">
-        <h4>AI Laila</h4>
-        <p style="font-size: 0.85rem; color: var(--text-mid);">Локальный анализ юридических документов.</p>
-      </a>
-      <a href="{{ '/pages/contacts/' | url }}" class="action-card action-card--dark">
-        <h4 style="color: var(--gold);">Support</h4>
-        <p style="font-size: 0.85rem; opacity: 0.8;">Запрос на экспертную поддержку и консультацию.</p>
-      </a>
-    </div>
+{# --- ACTION CARDS --- #}
+{% call section("", "") %}
+  <div class="action-grid">
+    {{ card("Interpol CCF", "Методология и прецеденты отмены Red Notice.", "/pages/interpol/") }}
+    {{ card("ЕСПЧ / ООН", "Архив решений по системным нарушениям.", "/pages/library/") }}
+    {{ card("AI Laila", "Локальный анализ юридических документов.", "/pages/ai-navigator/") }}
+    {{ card("Support", "Запрос на экспертную поддержку и консультацию.", "/pages/contacts/", true) }}
   </div>
-</section>
+{% endcall %}

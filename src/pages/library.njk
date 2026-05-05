@@ -3,179 +3,126 @@ layout: base.njk
 title: Библиотека прецедентов — DataLaw
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero" style="padding-bottom: 100px;">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">DataLaw Intelligence Layer · Библиотека прецедентов</span>
+{% call hero({
+  eyebrow: "DataLaw Intelligence Layer · Библиотека прецедентов",
+  title: "Архив <em>юридических данных</em><br>в открытом доступе",
+  description: "Мы собрали 50 000+ решений ЕСПЧ, Комитетов ООН и CCF Интерпола. Все документы нормализованы и проиндексированы для мгновенного поиска по фактическим обстоятельствам. Без регистрации и SMS.",
+  stats: [
+    { value: "50k+", label: "документов в базе" },
+    { value: "24/7", label: "обновление данных" }
+  ],
+  bg: "alt"
+}) %}
+  <div class="c-search-hub animate-in mt-12">
+    <div class="c-search-hub__field">
+      <svg class="c-search-hub__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
+        <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <input class="c-search-hub__input" type="text" placeholder="Введите суть дела (например: задержание за пост в Facebook или экстрадиция по мошенничеству)...">
     </div>
+    {{ button({ text: "Семантический поиск" }) }}
+  </div>
 
-    <h1 class="main-title animate-in">
-      Архив <em>юридических данных</em><br>в открытом доступе
-    </h1>
+  <div class="c-search-tags animate-in">
+    <span class="c-search-tags__label">Быстрые фильтры:</span>
+    <a href="#" class="search-tag">#FlagrantJustice</a>
+    <a href="#" class="search-tag">#RedNotice</a>
+    <a href="#" class="search-tag">#Статья18</a>
+    <a href="#" class="search-tag">#Экстрадиция</a>
+  </div>
+{% endcall %}
 
-    <div class="hero-grid animate-in" style="margin-bottom: 60px;">
-      <p class="lead-description">
-        Мы собрали 50 000+ решений ЕСПЧ, Комитетов ООН и CCF Интерпола. Все документы нормализованы и проиндексированы для мгновенного поиска по фактическим обстоятельствам. Без регистрации и SMS.
-      </p>
-      <div class="edu-hero-stat-col" style="border-left: 1px solid var(--border); padding-left: 40px;">
-        <div class="edu-stat">
-          <span class="edu-stat-num">50k+</span>
-          <span class="edu-stat-label">документов в базе</span>
-        </div>
-        <div class="edu-stat">
-          <span class="edu-stat-num">24/7</span>
-          <span class="edu-stat-label">обновление данных</span>
-        </div>
-      </div>
-    </div>
-
-    {# Блок поиска #}
-    <div class="search-hub animate-in" style="background: #fff; border: 1px solid var(--navy); padding: 8px; display: flex; align-items: stretch; gap: 10px;">
-      <div style="flex-grow: 1; display: flex; align-items: center; padding: 0 20px;">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="opacity: 0.4; margin-right: 15px;">
-          <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
-          <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <input type="text" placeholder="Введите суть дела (например: задержание за пост в Facebook или экстрадиция по мошенничеству)..." 
-               style="border: none; outline: none; width: 100%; font-family: var(--font-main); font-size: 1.1rem; padding: 15px 0;">
-      </div>
-      <button class="cta-btn" style="padding: 0 40px;">Семантический поиск</button>
-    </div>
-
-    <div class="search-tags animate-in" style="margin-top: 24px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-      <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-mid); letter-spacing: 0.05em;">Быстрые фильтры:</span>
-      <a href="#" class="search-tag">#FlagrantJustice</a>
-      <a href="#" class="search-tag">#RedNotice</a>
-      <a href="#" class="search-tag">#Статья18</a>
-      <a href="#" class="search-tag">#Экстрадиция</a>
+{# --- ТЕХНОЛОГИЧЕСКИЙ БЛОК --- #}
+{% call section({
+  label: "Технология",
+  title: "Как работает<br><em>семантический</em> поиск",
+  description: "Традиционный поиск ищет <strong>слова</strong>. Наш поиск ищет <strong>смыслы</strong>. Мы используем векторные представления (embeddings) для каждого абзаца в нашей базе. Это превращает юридический текст в математическую модель связей.",
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="grid grid-2 gap-12 mt-12">
+    <div>{# Left empty or additional content #}</div>
+    <div class="grid grid-1 gap-8">
+      {{ card({
+        title: "Поиск по контексту",
+        description: "Вы можете описать ситуацию «своими словами». Система поймет, что «незаконное удержание в отделе» семантически близко к «нарушению статьи 5 ЕКПЧ», даже если эти термины не пересекаются буквально.",
+        dark: true,
+        class: "border-l-2 border-accent p-8"
+      }) }}
+      {{ card({
+        title: "Юридическая синонимия",
+        description: "Лайла понимает иерархию и синонимию терминов. Она знает, что «прецедент CCF» и «решение Комиссии по контролю файлов» — это одно и то же в контексте Интерпола.",
+        dark: true,
+        class: "border-l-2 border-accent p-8"
+      }) }}
     </div>
   </div>
-</section>
-
-{# --- ТЕХНОЛОГИЧЕСКИЙ БЛОК (Подробно про семантику) --- #}
-<section class="page-section" style="background: var(--navy); color: #fff;">
-  <div class="container">
-    <div class="hero-grid" style="align-items: flex-start;">
-      <div>
-        <div class="block-label" style="color: var(--gold);">Технология</div>
-        <h2 style="font-size: 2.8rem; margin: 20px 0; color: #fff;">Как работает<br><em>семантический</em> поиск</h2>
-        <p style="opacity: 0.8; line-height: 1.8; font-size: 1.1rem;">
-          Традиционный поиск ищет <strong>слова</strong>. Наш поиск ищет <strong>смыслы</strong>. 
-        </p>
-        <p style="opacity: 0.8; line-height: 1.8;">
-          Мы используем векторные представления (embeddings) для каждого абзаца в нашей базе. Это превращает юридический текст в математическую модель связей.
-        </p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
-        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-left: 2px solid var(--gold);">
-          <h4 style="color: var(--gold); margin-bottom: 10px; font-family: var(--font-serif); font-style: italic;">Поиск по контексту</h4>
-          <p style="font-size: 0.95rem; opacity: 0.8; margin: 0;">Вы можете описать ситуацию «своими словами». Система поймет, что «незаконное удержание в отделе» семантически близко к «нарушению статьи 5 ЕКПЧ», даже если эти термины не пересекаются буквально.</p>
-        </div>
-        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-left: 2px solid var(--gold);">
-          <h4 style="color: var(--gold); margin-bottom: 10px; font-family: var(--font-serif); font-style: italic;">Юридическая синонимия</h4>
-          <p style="font-size: 0.95rem; opacity: 0.8; margin: 0;">Лайла понимает иерархию и синонимию терминов. Она знает, что «прецедент CCF» и «решение Комиссии по контролю файлов» — это одно и то же в контексте Интерпола.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% endcall %}
 
 {# --- ИСТОЧНИКИ ДАННЫХ --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-header">
-      <div class="block-label">Архитектура</div>
-      <h2 class="section-title-left">Структура базы данных</h2>
-    </div>
+{% call section({
+  label: "Архитектура",
+  title: "Структура базы данных",
+  class: "border-t"
+}) %}
+  <div class="grid grid-4 gap-4 mt-12">
+    {{ card({
+      label: "ECHR",
+      title: "Решения ЕСПЧ",
+      description: "Полный архив по делам против РФ, Беларуси, Азербайджана и стран ЦА. Размечено по статьям и мерам «общего характера».",
+      class: "bg-alt"
+    }) }}
 
-    <div class="action-grid animate-in" style="margin-top: 60px;">
-      {# Карточки источников #}
-      <div class="action-card" style="padding: 40px; background: #fff; border: 1px solid var(--border);">
-        <div class="tag-label">ECHR</div>
-        <h3 class="card-title-serif">Решения ЕСПЧ</h3>
-        <p class="card-text">Полный архив по делам против РФ, Беларуси, Азербайджана и стран ЦА. Размечено по статьям и мерам «общего характера».</p>
-      </div>
+    {{ card({
+      label: "INTERPOL",
+      title: "Архив CCF",
+      description: "Специфическая выборка решений Комиссии по контролю файлов Интерпола о блокировке и удалении данных.",
+      class: "bg-alt"
+    }) }}
 
-      <div class="action-card" style="padding: 40px; background: #fff; border: 1px solid var(--border);">
-        <div class="tag-label">INTERPOL</div>
-        <h3 class="card-title-serif">Архив CCF</h3>
-        <p class="card-text">Специфическая выборка решений Комиссии по контролю файлов Интерпола о блокировке и удалении данных.</p>
-      </div>
+    {{ card({
+      label: "UN",
+      title: "Комитеты ООН",
+      description: "Соображения по индивидуальным жалобам в КПЧ и решения Рабочей группы по произвольным задержаниям.",
+      class: "bg-alt"
+    }) }}
 
-      <div class="action-card" style="padding: 40px; background: #fff; border: 1px solid var(--border);">
-        <div class="tag-label">UN</div>
-        <h3 class="card-title-serif">Комитеты ООН</h3>
-        <p class="card-text">Соображения по индивидуальным жалобам в КПЧ и решения Рабочей группы по произвольным задержаниям.</p>
-      </div>
-
-      <div class="action-card" style="padding: 40px; background: #fff; border: 1px solid var(--border);">
-        <div class="tag-label">NATIONAL</div>
-        <h3 class="card-title-serif">Экстрадиция</h3>
-        <p class="card-text">Решения национальных судов ЕС и Великобритании по запросам о выдаче в страны с высоким риском пыток.</p>
-      </div>
-    </div>
+    {{ card({
+      label: "NATIONAL",
+      title: "Экстрадиция",
+      description: "Решения национальных судов ЕС и Великобритании по запросам о выдаче в страны с высоким риском пыток.",
+      class: "bg-alt"
+    }) }}
   </div>
-</section>
+{% endcall %}
 
 {# --- LAILA AI BLOCK --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="hero-grid animate-in" style="align-items: center;">
-      <div>
-        <div class="block-label">Laila AI</div>
-        <h2 style="font-size: 3rem; margin: 20px 0;">Анализ выше<br><em>простого</em> поиска</h2>
-        <p class="lead-description">
-          Семантический поиск находит документы. Лайла — анализирует их содержание. Она может сравнить ваш кейс с найденными прецедентами и выделить аргументы, которые сработали.
-        </p>
-      </div>
-      
-      <div class="dark-feature-card">
-        <h4 style="color: var(--gold); font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 25px;">AI-фильтрация</h4>
-        <ul class="feature-list" style="margin-bottom: 30px;">
-          <li><strong>Суммаризация:</strong> краткое содержание решения за 5 секунд.</li>
-          <li><strong>Extract Arguments:</strong> выгрузка только юридической позиции защиты.</li>
-          <li><strong>Similarity Score:</strong> процент совпадения фактов вашего дела с прецедентом.</li>
-        </ul>
-        <a href="{{ '/pages/ai-navigator/' | url }}" class="cta-btn" style="background: var(--gold); color: var(--navy); width: 100%; justify-content: center;">Запустить Лайлу →</a>
-      </div>
-    </div>
+{% call section({
+  label: "Laila AI",
+  title: "Анализ выше<br><em>простого</em> поиска",
+  description: "Семантический поиск находит документы. Лайла — анализирует их содержание. Она может сравнить ваш кейс с найденными прецедентами и выделить аргументы, которые сработали.",
+  class: "border-t"
+}) %}
+  <div class="grid grid-2 gap-12 items-center mt-12">
+    <div>{# Left #}</div>
+    {% call card({
+      dark: true,
+      class: "border-accent"
+    }) %}
+      <h3 class="text-h2 font-serif italic text-accent mb-6">AI-фильтрация</h3>
+      <ul class="feature-list mb-8">
+        <li><strong>Суммаризация:</strong> краткое содержание решения за 5 секунд.</li>
+        <li><strong>Extract Arguments:</strong> выгрузка только юридической позиции защиты.</li>
+        <li><strong>Similarity Score:</strong> процент совпадения фактов вашего дела с прецедентом.</li>
+      </ul>
+      {{ button({ text: "Запустить Лайлу →", href: "/pages/ai-navigator/", class: "bg-accent text-navy w-full justify-center" }) }}
+    {% endcall %}
   </div>
-</section>
-
-<style>
-  .search-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--navy);
-    text-decoration: none;
-    padding: 6px 14px;
-    border: 1px solid var(--border);
-    transition: 0.2s;
-  }
-  .search-tag:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-  .tag-label {
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 15px;
-  }
-  .card-title-serif {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-  }
-  .card-text {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-</style>
+{% endcall %}

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/diman-dragon/data_law_site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@tauri-apps/cli": "^2.11.0"
   }
 }

@@ -1,0 +1,23 @@
+:root {
+  /* Colors - keeping originals */
+  --navy: #0a192f;
+  --gold: #b8913a;
+  --text-main: #333;
+  --text-mid: #666;
+  --border: #e0e0e0;
+  --white: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+
+  /* Spacing */
+  --space-sm: 10px;
+  --space-md: 20px;
+  --space-lg: 40px;
+  --space-xl: 100px;
+}
+
+body { font-family: var(--font-sans); color: var(--text-main); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.block-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-mid); margin-bottom: var(--space-sm); }

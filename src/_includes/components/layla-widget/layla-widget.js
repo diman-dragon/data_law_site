@@ -1,98 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Элементы управления
-    const trigger = document.getElementById('laylaTrigger');
-    const windowEl = document.getElementById('laylaWindow');
-    const closeBtn = document.getElementById('laylaClose');
-    const input = document.getElementById('laylaIn');
-    const sendBtn = document.getElementById('laylaSend');
-    const msgs = document.getElementById('laylaMsgs');
+  const root = document.getElementById('laylaWidget');
+  const panel = document.getElementById('laylaWindow');
+  const input = document.getElementById('laylaIn');
+  const messages = document.getElementById('laylaMsgs');
+  const state = { responses: null };
 
-    let laylaDB = null;
+  if (!root || !panel || !input || !messages) return;
 
-    // 1. Загрузка базы знаний (путь берём из data-атрибута — работает с любым pathPrefix)
-    const dbPath = windowEl?.dataset.db || '/data/layla-db.json';
-    fetch(dbPath)
-        .then(response => {
-            if (!response.ok) throw new Error("Database not found");
-            return response.json();
-        })
-        .then(data => {
-            laylaDB = data.responses;
-            console.log("LAYLA AI: System Online");
-        })
-        .catch(err => {
-            console.error("LAYLA AI: Database error", err);
-        });
+  const addMessage = (text, type) => {
+    const node = document.createElement('div');
+    node.className = `msg ${type}`;
+    node.textContent = text;
+    messages.appendChild(node);
+    messages.scrollTop = messages.scrollHeight;
+  };
 
-    // 2. Функции открытия/закрытия
-    const toggleWindow = (e) => {
-        if (e) e.stopPropagation();
-        const isActive = windowEl.classList.toggle('active');
-        if (isActive) {
-            setTimeout(() => input.focus(), 100);
-        }
-    };
+  const findReply = (query) => {
+    const fallback = 'Анализирую запрос. В открытых базах совпадений не найдено. Рекомендуется ручная проверка специалистом.';
+    if (!state.responses) return fallback;
+    const normalized = query.toLowerCase();
+    const item = Object.values(state.responses).find(entry =>
+      entry.keys.some(key => normalized.includes(key.toLowerCase()))
+    );
+    return item?.text || fallback;
+  };
 
-    const closeWindow = () => {
-        windowEl.classList.remove('active');
-    };
+  const send = () => {
+    const value = input.value.trim();
+    if (!value) return;
+    addMessage(value, 'user');
+    input.value = '';
+    window.setTimeout(() => addMessage(findReply(value), 'ai'), 600);
+  };
 
-    // 3. Обработчики кликов
-    trigger?.addEventListener('click', toggleWindow);
-    
-    closeBtn?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeWindow();
-    });
+  const close = () => panel.classList.remove('active');
+  const open = () => {
+    panel.classList.add('active');
+    window.setTimeout(() => input.focus(), 100);
+  };
 
-    document.addEventListener('click', (e) => {
-        if (windowEl.classList.contains('active') && 
-            !windowEl.contains(e.target) && 
-            !trigger.contains(e.target)) {
-            closeWindow();
-        }
-    });
+  fetch(panel.dataset.db || '/data/layla-db.json')
+    .then(response => (response.ok ? response.json() : null))
+    .then(data => { state.responses = data?.responses || null; })
+    .catch(() => { state.responses = null; });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeWindow();
-    });
+  document.getElementById('laylaTrigger')?.addEventListener('click', event => {
+    event.stopPropagation();
+    panel.classList.contains('active') ? close() : open();
+  });
 
-    // 4. Логика отправки сообщений
-    function handleSend() {
-        const val = input.value.trim();
-        if (!val) return;
+  document.getElementById('laylaClose')?.addEventListener('click', event => {
+    event.stopPropagation();
+    close();
+  });
 
-        addMsg(val, 'user');
-        input.value = '';
-
-        setTimeout(() => {
-            let reply = "Анализирую ваш запрос... В открытых базах данных совпадений не найдено. Рекомендуется ручная проверка специалистом.";
-            
-            if (laylaDB) {
-                const query = val.toLowerCase();
-                for (const key in laylaDB) {
-                    const match = laylaDB[key].keys.some(k => query.includes(k.toLowerCase()));
-                    if (match) {
-                        reply = laylaDB[key].text;
-                        break;
-                    }
-                }
-            }
-            addMsg(reply, 'ai');
-        }, 600);
-    }
-
-    function addMsg(text, type) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `msg ${type}`;
-        msgDiv.textContent = text;
-        msgs.appendChild(msgDiv);
-        msgs.scrollTop = msgs.scrollHeight;
-    }
-
-    sendBtn?.addEventListener('click', handleSend);
-    
-    input?.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleSend();
-    });
+  document.getElementById('laylaSend')?.addEventListener('click', send);
+  input.addEventListener('keydown', event => { if (event.key === 'Enter') send(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+  document.addEventListener('click', event => { if (!root.contains(event.target)) close(); });
 });

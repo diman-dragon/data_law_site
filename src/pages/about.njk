@@ -3,106 +3,84 @@ layout: base.njk
 title: О нас — DataLaw
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">DataLaw Core · Наша история</span>
-    </div>
-
-    <h1 class="main-title animate-in">
-      Проект, рожденный под<br><em>системным давлением</em>
-    </h1>
-
-    <div class="hero-grid animate-in">
-      <div class="lead-description">
-        <p>DataLaw — это не результат мозгового штурма в офисе. Это результат столкновения с государственной машиной. Мы сами прошли и продолжаем проходить путь борьбы с неправомерными запросами, злоупотреблениями механизмами Интерпола и прямым давлением системы.</p>
-        <p style="margin-top: 20px;">Мы создавали эту систему для себя. Нам нужен был инструмент, который не «течет», не зависит от облаков и работает быстрее, чем прокурорские запросы. Мы использовали самые актуальные технологии, чтобы техническое превосходство стало нашей главной защитой.</p>
-      </div>
-      <div class="edu-hero-stat-col">
-        <div class="edu-stat">
-          <span class="edu-stat-num">Real Case</span>
-          <span class="edu-stat-label">опыт борьбы</span>
-        </div>
-        <div class="edu-stat">
-          <span class="edu-stat-num">Hard Tech</span>
-          <span class="edu-stat-label">никаких компромиссов</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{{ hero({
+  eyebrow: "DataLaw Core · Наша история",
+  title: "Проект, рожденный под<br><em>системным давлением</em>",
+  description: "DataLaw — это не результат мозгового штурма в офисе. Это результат столкновения с государственной машиной. Мы сами прошли и продолжаем проходить путь борьбы с неправомерными запросами, злоупотреблениями механизмами Интерпола и прямым давлением системы.",
+  stats: [
+    { value: "Real Case", label: "опыт борьбы" },
+    { value: "Hard Tech", label: "никаких компромиссов" }
+  ]
+}) }}
 
 {# --- BACKGROUND SECTION (Cards) --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-header">
-      <div class="block-label">Бэкграунд</div>
-      <h2 style="font-size: 3rem;">Мы знаем боли,<br>потому что они наши</h2>
-    </div>
+{% call section({
+  label: "Бэкграунд",
+  title: "Мы знаем боли,<br>потому что они наши",
+  class: "border-t",
+  bg: "base"
+}) %}
+  <div class="grid grid-3 gap-8 mt-12">
+    {{ card({
+      label: "Опыт",
+      title: "Правозащита «в полях»",
+      description: "Мы годами занимались защитой тех, кого система выбрала своей целью. Мы видели паттерны манипуляций Red Notice. DataLaw — это оцифрованный опыт этой борьбы."
+    }) }}
 
-    <div class="grid-3-col" style="margin-top: 60px;">
-      {# Карточка 1 #}
-      <div class="action-card">
-        <div class="block-label" style="font-size: 0.65rem;">Опыт</div>
-        <h3 style="margin-bottom: 15px;">Правозащита «в полях»</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы годами занимались защитой тех, кого система выбрала своей целью. Мы видели паттерны манипуляций Red Notice. DataLaw — это оцифрованный опыт этой борьбы.</p>
-      </div>
+    {{ card({
+      label: "Реализация",
+      title: "Инженерный подход",
+      description: "Мы выбрали Rust за безопасность и Local AI за автономность. Если система пытается тебя достать, софт должен быть крепостью, а не дырой в безопасности."
+    }) }}
 
-      {# Карточка 2 #}
-      <div class="action-card">
-        <div class="block-label" style="font-size: 0.65rem;">Реализация</div>
-        <h3 style="margin-bottom: 15px;">Инженерный подход</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы выбрали Rust за безопасность и Local AI за автономность. Если система пытается тебя достать, софт должен быть крепостью, а не дырой в безопасности.</p>
-      </div>
-
-      {# Карточка 3 #}
-      <div class="action-card">
-        <div class="block-label" style="font-size: 0.65rem;">Результат</div>
-        <h3 style="margin-bottom: 15px;">Симметрия ресурсов</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid);">Мы упаковали в DataLaw возможности, которые раньше были только у госорганов, и отдали их в руки независимых адвокатов и профессионалов.</p>
-      </div>
-    </div>
+    {{ card({
+      label: "Результат",
+      title: "Симметрия ресурсов",
+      description: "Мы упаковали в DataLaw возможности, которые раньше были только у госорганов, и отдали их в руки независимых адвокатов и профессионалов."
+    }) }}
   </div>
-</section>
+{% endcall %}
 
 {# --- TECH / POSITION SECTION --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="hero-grid" style="align-items: center;">
-      <div>
-        <div class="block-label">Позиция</div>
-        <h2 style="font-size: 3rem; margin: 20px 0;">Почему мы решили<br>открыть этот проект</h2>
-        <p class="lead-description" style="font-size: 1.1rem;">
-          Мы создали DataLaw для себя, но поняли, что тысячи профессионалов ежедневно сталкиваются с тем же самым. Мы предлагаем инфраструктуру, которая помогла нам и поможет вам.
-        </p>
-        <p class="lead-description" style="font-size: 1.1rem; margin-top: 20px;">
-          <strong>Zero-Knowledge Architecture</strong> здесь не для красоты — это гарантия того, что ваши данные никогда не станут оружием против вас.
-        </p>
-      </div>
-      
-      <div class="dark-feature-card">
-        <h4>Наш стандарт:</h4>
-        <ul class="feature-list">
-          <li>Никаких облаков для хранения рабочих файлов дел.</li>
-          <li>Локальные ИИ-модели, не требующие интернета.</li>
-          <li>Код, написанный теми, кто знает цену ошибки.</li>
-        </ul>
-      </div>
+{% call section({
+  label: "Позиция",
+  title: "Почему мы решили<br>открыть этот проект",
+  description: "Мы создали DataLaw для себя, но поняли, что тысячи профессионалов ежедневно сталкиваются с тем же самым. Мы предлагаем инфраструктуру, которая помогла нам и поможет вам. <br><br> <strong class='bold'>Zero-Knowledge Architecture</strong> здесь не для красоты — это гарантия того, что ваши данные никогда не станут оружием против вас."
+}) %}
+  <div class="grid grid-2 gap-12 mt-12 items-center">
+    <div>
+      {# Empty div or additional text if needed #}
     </div>
+    
+    {% call card({
+      title: "Наш стандарт:",
+      dark: true
+    }) %}
+      <ul class="feature-list">
+        <li>Никаких облаков для хранения рабочих файлов дел.</li>
+        <li>Локальные ИИ-модели, не требующие интернета.</li>
+        <li>Код, написанный теми, кто знает цену ошибки.</li>
+      </ul>
+    {% endcall %}
   </div>
-</section>
+{% endcall %}
 
 {# --- CTA BAND --- #}
-<div class="edu-cta-band">
-  <div class="container">
-    <div class="edu-cta-inner">
-      <div>
-        <p class="edu-cta-label">DataLaw Core</p>
-        <h3 class="edu-cta-title">Профессиональная солидарность важнее бизнеса</h3>
-      </div>
-      <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Связаться с нами →</a>
+{% call section({
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="flex justify-between items-center gap-8">
+    <div>
+      <p class="text-overline mb-2">DataLaw Core</p>
+      <h3 class="text-h2 text-white">Профессиональная солидарность важнее бизнеса</h3>
     </div>
+    {{ button({ text: "Связаться с нами →", href: "/pages/contacts/" }) }}
   </div>
-</div>
+{% endcall %}

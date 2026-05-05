@@ -1,0 +1,3 @@
+{% macro cta(text, href, light=false) %}
+<a href="{{ href | url }}" class="cta-btn {% if light %}cta-btn--light{% endif %}">{{ text }}</a>
+{% endmacro %}

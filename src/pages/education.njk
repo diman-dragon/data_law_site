@@ -3,165 +3,153 @@ layout: base.njk
 title: Образование — DataLaw Academy
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">DataLaw Academy · Образовательное направление</span>
-    </div>
-    <h1 class="main-title animate-in">Технологии — инструмент.<br>Культура знаний — <em>фундамент</em></h1>
-    
-    <div class="hero-grid animate-in">
-      <p class="lead-description">
-        Инструменты DataLaw бесполезны без людей, умеющих ими пользоваться. Academy готовит юристов, журналистов и сотрудников НКО к работе с международным правом и цифровой безопасностью — в условиях реального системного давления.
-      </p>
-      <div class="edu-hero-stat-col">
-        <div class="edu-stat">
-          <span class="edu-stat-num">4</span>
-          <span class="edu-stat-label">направления обучения</span>
-        </div>
-        <div class="edu-stat">
-          <span class="edu-stat-num">0 ₽</span>
-          <span class="edu-stat-label">для НКО и адвокатов</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{{ hero({
+  eyebrow: "DataLaw Academy · Образовательное направление",
+  title: "Технологии — инструмент.<br>Культура знаний — <em>фундамент</em>",
+  description: "Инструменты DataLaw бесполезны без людей, умеющих ими пользоваться. Academy готовит юристов, журналистов и сотрудников НКО к работе с международным правом и цифровой безопасностью — в условиях реального системного давления.",
+  stats: [
+    { value: "4", label: "направления обучения" },
+    { value: "0 ₽", label: "для НКО и адвокатов" }
+  ],
+  bg: "alt"
+}) }}
 
 {# --- DIRECTIONS --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-header">
-      <div class="block-label">Направления</div>
-      <h2 class="section-title-left">Чему мы учим</h2>
-    </div>
+{% call section({
+  label: "Направления",
+  title: "Чему мы учим",
+  class: "border-t",
+  bg: "base"
+}) %}
+  <div class="grid grid-2 gap-8 mt-12">
+    {{ card({
+      label: "01 · Право",
+      title: "Международная защита",
+      description: "Механизмы ЕСПЧ, ООН и Интерпола. Критерии приемлемости жалоб и работа с прецедентами по делам о политически мотивированном преследовании.",
+      class: "bg-white p-10"
+    }) }}
 
-    <div class="action-grid animate-in" style="margin-top: 60px;">
+    {{ card({
+      label: "02 · Данные",
+      title: "OSINT и верификация",
+      description: "Методы разведки по открытым источникам для правозащиты. Фиксация цифровых доказательств по международным стандартам верификации.",
+      class: "bg-white p-10"
+    }) }}
 
-      <div class="action-card" style="padding: 40px; border-radius: 0;">
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">01 · Право</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Международная защита</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Механизмы ЕСПЧ, ООН и Интерпола. Критерии приемлемости жалоб и работа с прецедентами по делам о политически мотивированном преследовании.</p>
-      </div>
+    {{ card({
+      label: "03 · Безопасность",
+      title: "Цифровая защита",
+      description: "Операционная безопасность (OpSec) для адвокатов. Защита источников и клиентов. Работа с зашифрованными данными в условиях активного наблюдения.",
+      class: "bg-white p-10"
+    }) }}
 
-      <div class="action-card" style="padding: 40px; border-radius: 0;">
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">02 · Данные</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">OSINT и верификация</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Методы разведки по открытым источникам для правозащиты. Фиксация цифровых доказательств по международным стандартам верификации.</p>
-      </div>
-
-      <div class="action-card" style="padding: 40px; border-radius: 0;">
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">03 · Безопасность</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Цифровая защита</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Операционная безопасность (OpSec) для адвокатов. Защита источников и клиентов. Работа с зашифрованными данными в условиях активного наблюдения.</p>
-      </div>
-
-      <div class="action-card" style="padding: 40px; border-radius: 0;">
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 20px;">04 · Технологии</div>
-        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; font-style: italic; margin-bottom: 15px; color: var(--navy);">Инструменты DataLaw</h3>
-        <p style="font-size: 0.95rem; color: var(--text-mid); line-height: 1.7;">Глубокое погружение: от поиска в библиотеке прецедентов до ведения дел в Zero-Knowledge CRM и использования AI-ассистента Лайлы.</p>
-      </div>
-
-    </div>
+    {{ card({
+      label: "04 · Технологии",
+      title: "Инструменты DataLaw",
+      description: "Глубокое погружение: от поиска в библиотеке прецедентов до ведения дел в Zero-Knowledge CRM и использования AI-ассистента Лайлы.",
+      class: "bg-white p-10"
+    }) }}
   </div>
-</section>
+{% endcall %}
 
 {# --- FELLOWSHIPS LIST --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="block-label">Программы</div>
-      <h2 class="section-title-left">Fellowships и практика</h2>
+{% call section({
+  label: "Программы",
+  title: "Fellowships и практика",
+  class: "border-t"
+}) %}
+  <div class="flex flex-col gap-0 mt-12">
+    
+    {# Item 1 #}
+    <div class="py-10 border-b flex justify-between items-start gap-8">
+      <div class="max-w-3xl">
+        <div class="text-overline text-accent mb-3">Верификационная программа</div>
+        <h4 class="text-h3 font-serif italic mb-4">Мониторинг судебных реестров</h4>
+        <p class="text-muted">Участие в верификации данных о судебных делах из труднодоступных юрисдикций. Оплачиваемая удалённая работа для студентов юридических факультетов. Результаты формируют открытую базу DataLaw.</p>
+      </div>
+      <div class="text-right whitespace-nowrap">
+        <div class="text-sm text-muted">Формат: <strong class="text-main">Удалённо</strong></div>
+        <div class="text-sm text-muted">Для кого: <strong class="text-main">Студенты</strong></div>
+      </div>
     </div>
 
-    <div class="opportunity-list animate-in" style="margin-top: 50px;">
-
-      {# Item 1 #}
-      <div style="padding: 40px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 250px; gap: 40px; align-items: flex-start;">
-        <div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 12px;">Верификационная программа</div>
-          <h4 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--navy); margin-bottom: 15px;">Мониторинг судебных реестров</h4>
-          <p style="color: var(--text-mid); line-height: 1.7; max-width: 800px;">Участие в верификации данных о судебных делах из труднодоступных юрисдикций. Оплачиваемая удалённая работа для студентов юридических факультетов. Результаты формируют открытую базу DataLaw.</p>
-        </div>
-        <div style="text-align: right; font-size: 0.9rem;">
-          <div style="color: var(--text-mid); margin-bottom: 5px;">Формат: <strong>Удалённо</strong></div>
-          <div style="color: var(--text-mid);">Для кого: <strong>Студенты</strong></div>
-        </div>
+    {# Item 2 #}
+    <div class="py-10 border-b flex justify-between items-start gap-8">
+      <div class="max-w-3xl">
+        <div class="text-overline text-accent mb-3">Fellowship · 6–12 месяцев</div>
+        <h4 class="text-h3 font-serif italic mb-4">Правозащитная практика в DataLaw</h4>
+        <p class="text-muted">Погружение в команду: участие в анализе реальных кейсов Интерпола и разработке юридических стратегий. Fellows получают наставника и доступ к закрытой аналитике платформы.</p>
       </div>
-
-      {# Item 2 #}
-      <div style="padding: 40px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr 250px; gap: 40px; align-items: flex-start;">
-        <div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 12px;">Fellowship · 6–12 месяцев</div>
-          <h4 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--navy); margin-bottom: 15px;">Правозащитная практика в DataLaw</h4>
-          <p style="color: var(--text-mid); line-height: 1.7; max-width: 800px;">Погружение в команду: участие в анализе реальных кейсов Интерпола и разработке юридических стратегий. Fellows получают наставника и доступ к закрытой аналитике платформы.</p>
-        </div>
-        <div style="text-align: right; font-size: 0.9rem;">
-          <div style="color: var(--text-mid); margin-bottom: 5px;">Формат: <strong>Гибрид / Стипендия</strong></div>
-          <div style="color: var(--text-mid);">Для кого: <strong>Юристы / Журналисты</strong></div>
-        </div>
+      <div class="text-right whitespace-nowrap">
+        <div class="text-sm text-muted">Формат: <strong class="text-main">Гибрид / Стипендия</strong></div>
+        <div class="text-sm text-muted">Для кого: <strong class="text-main">Юристы / Журналисты</strong></div>
       </div>
-
-      {# Item 3 #}
-      <div style="padding: 40px 0; display: grid; grid-template-columns: 1fr 250px; gap: 40px; align-items: flex-start;">
-        <div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 800; margin-bottom: 12px;">Academic Partnership</div>
-          <h4 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--navy); margin-bottom: 15px;">Совместные клинические программы</h4>
-          <p style="color: var(--text-mid); line-height: 1.7; max-width: 800px;">Партнёрство с юридическими факультетами. Предоставляем доступ к базе прецедентов и кейс-стади для правовых клиник. Для университетов из стран в зоне риска — полностью безвозмездно.</p>
-        </div>
-        <div style="text-align: right; font-size: 0.9rem;">
-          <div style="color: var(--text-mid); margin-bottom: 5px;">Формат: <strong>Индивидуальный</strong></div>
-          <div style="color: var(--text-mid);">Для кого: <strong>ВУЗы / Клиники</strong></div>
-        </div>
-      </div>
-
     </div>
+
+    {# Item 3 #}
+    <div class="py-10 flex justify-between items-start gap-8">
+      <div class="max-w-3xl">
+        <div class="text-overline text-accent mb-3">Academic Partnership</div>
+        <h4 class="text-h3 font-serif italic mb-4">Совместные клинические программы</h4>
+        <p class="text-muted">Партнёрство с юридическими факультетами. Предоставляем доступ к базе прецедентов и кейс-стади для правовых клиник. Для университетов из стран в зоне риска — полностью безвозмездно.</p>
+      </div>
+      <div class="text-right whitespace-nowrap">
+        <div class="text-sm text-muted">Формат: <strong class="text-main">Индивидуальный</strong></div>
+        <div class="text-sm text-muted">Для кого: <strong class="text-main">ВУЗы / Клиники</strong></div>
+      </div>
+    </div>
+
   </div>
-</section>
+{% endcall %}
 
 {# --- PRINCIPLES & NGO --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="hero-grid animate-in" style="align-items: center;">
-      <div>
-        <div class="block-label">Принципы</div>
-        <h2 style="font-size: 3rem; margin: 20px 0;">Знания как<br><em>инструмент</em> защиты</h2>
-        <p class="lead-description" style="font-size: 1.1rem;">
-          Государства имеют на своей стороне огромные ресурсы и правовую машину. Правозащитники часто работают без доступа к сопоставимой экспертизе.
-        </p>
-        <p class="lead-description" style="font-size: 1.1rem; margin-top: 15px;">
-          DataLaw Academy сокращает этот разрыв, передавая знания и сети поддержки бесплатно тем, кто находится на переднем крае борьбы.
-        </p>
-      </div>
-      
-      <div class="dark-feature-card">
-        <h4 style="color: var(--gold); font-family: var(--font-serif); font-size: 2rem; font-style: italic; margin-bottom: 25px;">Для НКО — бесплатно</h4>
-        <p style="line-height: 1.8; margin-bottom: 28px; opacity: 0.85;">Доступ к знаниям не должен зависеть от бюджета. Все программы Academy открыты для некоммерческого сектора без оплаты.</p>
-        <ul class="feature-list">
-          <li>Полный доступ к онлайн-курсам и базе</li>
-          <li>Сертификация по итогам обучения</li>
-          <li>Доступ к закрытому сообществу практиков</li>
-          <li>Консультации с экспертами DataLaw</li>
-        </ul>
-      </div>
+{% call section({
+  label: "Принципы",
+  title: "Знания как<br><em>инструмент</em> защиты",
+  class: "border-t",
+  bg: "base"
+}) %}
+  <div class="grid grid-2 gap-12 items-center mt-12">
+    <div>
+      <p class="text-lead mb-6">Государства имеют на своей стороне огромные ресурсы и правовую машину. Правозащитники часто работают без доступа к сопоставимой экспертизе.</p>
+      <p class="text-lead">DataLaw Academy сокращает этот разрыв, передавая знания и сети поддержки бесплатно тем, кто находится на переднем крае борьбы.</p>
     </div>
+    
+    {% call card({
+      dark: true,
+      class: "border-accent p-10"
+    }) %}
+      <h4 class="text-h3 text-accent font-serif italic mb-6">Для НКО — бесплатно</h4>
+      <p class="text-sm opacity-80 mb-8">Доступ к знаниям не должен зависеть от бюджета. Все программы Academy открыты для некоммерческого сектора без оплаты.</p>
+      <ul class="feature-list">
+        <li>Полный доступ к онлайн-курсам и базе</li>
+        <li>Сертификация по итогам обучения</li>
+        <li>Доступ к закрытому сообществу практиков</li>
+        <li>Консультации с экспертами DataLaw</li>
+      </ul>
+    {% endcall %}
   </div>
-</section>
+{% endcall %}
 
 {# --- CTA BAND --- #}
-<div class="edu-cta-band">
-  <div class="container">
-    <div class="edu-cta-inner">
-      <div>
-        <p class="edu-cta-label">DataLaw Academy</p>
-        <h3 class="edu-cta-title">Станьте частью сообщества практиков</h3>
-      </div>
-      <div class="edu-cta-actions">
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn" style="background: #fff; color: var(--navy);">Подать заявку →</a>
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn cta-btn--light">Стать партнёром</a>
-      </div>
+{% call section({
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="flex justify-between items-center gap-8">
+    <div>
+      <p class="text-overline mb-2">DataLaw Academy</p>
+      <h3 class="text-h2 text-white">Станьте частью сообщества практиков</h3>
+    </div>
+    <div class="flex gap-4">
+      {{ button({ text: "Подать заявку →", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
+      {{ button({ text: "Стать партнёром", href: "/pages/contacts/", type: "light" }) }}
     </div>
   </div>
-</div>
+{% endcall %}

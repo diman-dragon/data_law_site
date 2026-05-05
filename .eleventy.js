@@ -26,6 +26,15 @@ module.exports = function(eleventyConfig) {
     "src/_includes/components/layla-widget/layla-widget.css": "css/layla-widget.css" 
   });
   eleventyConfig.addPassthroughCopy({ 
+    "src/_includes/components/layla-widget/layla-window.css": "css/layla-window.css" 
+  });
+  eleventyConfig.addPassthroughCopy({ 
+    "src/_includes/components/layla-widget/layla-messages.css": "css/layla-messages.css" 
+  });
+  eleventyConfig.addPassthroughCopy({ 
+    "src/_includes/components/layla-widget/layla-input.css": "css/layla-input.css" 
+  });
+  eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/layla-widget/layla-widget.js": "js/layla-widget.js" 
   });
 

@@ -3,159 +3,93 @@ layout: base.njk
 title: AI Навигатор — Лайла
 ---
 
+{% from "ui/hero.njk" import hero %}
+{% from "ui/section.njk" import section %}
+{% from "ui/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+{% from "macros/layla-chat-preview.njk" import laylaChatPreview %}
+
 {# --- HERO SECTION --- #}
-<section class="page-hero">
-  <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="eyebrow-line"></span>
-      <span class="eyebrow-text">Linguadeck AI · DataLaw Intelligence</span>
-    </div>
-
-    <h1 class="main-title animate-in">
-      Лайла — ваш <em>интеллектуальный</em><br>проводник по праву
-    </h1>
-
-    <div class="hero-grid animate-in">
-      <p class="lead-description">
-        AI-ассистент, обученный на десятках тысяч решений ЕСПЧ, Комитета ООН по правам человека и CCF Интерпола. Лайла не просто отвечает — она анализирует ситуацию, находит релевантные прецеденты и указывает на слабые места в защите.
-      </p>
-    </div>
-
-    {# --- ИНТЕРФЕЙС ЧАТА --- #}
-    <div class="ai-chat-interface animate-in" style="background: #fff; border-radius: 12px; padding: 40px; border: 1px solid var(--border); margin-top: 40px;">
-      
-      {# Шапка чата #}
-      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">
-        <div style="width: 42px; height: 42px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div>
-          <div style="font-weight: 700; color: var(--navy); font-size: 1rem;">Лайла</div>
-          <div style="font-size: 0.8rem; color: var(--text-mid);">AI-ассистент DataLaw · некоммерческий проект</div>
-        </div>
-        <div style="margin-left: auto; display: flex; gap: 8px;">
-          <span class="tag-badge">ЕСПЧ</span>
-          <span class="tag-badge">КПЧ ООН</span>
-          <span class="tag-badge">Интерпол</span>
-        </div>
-      </div>
-
-      {# Окно сообщений #}
-      <div id="ai-main-chat" style="height: 420px; overflow-y: auto; margin-bottom: 24px; display: flex; flex-direction: column; gap: 20px;">
-        
-        {# Ответ Лайлы #}
-        <div class="chat-msg chat-msg--ai">
-          <div class="chat-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="chat-bubble">
-            <p class="chat-label">Лайла</p>
-            <p>Здравствуйте. Я специализируюсь на международном праве и защите от преследований. Расскажите о вашей ситуации.</p>
-          </div>
-        </div>
-
-        {# Вопрос пользователя #}
-        <div class="chat-msg chat-msg--user">
-          <div class="chat-bubble">
-            <p>На меня выписан Red Notice Интерпола. Я считаю преследование политическим. С чего начать?</p>
-          </div>
-        </div>
-
-        {# Ответ Лайлы с деталями #}
-        <div class="chat-msg chat-msg--ai">
-          <div class="chat-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="chat-bubble">
-            <p class="chat-label">Лайла</p>
-            <p>Я нашла <strong style="color: var(--navy);">31 релевантный прецедент</strong>. Первоочерёдные шаги:</p>
-            <ol style="margin-top: 10px; padding-left: 18px; font-size: 0.9rem;">
-              <li>Запросить статус через <strong>CCF</strong> (срок до 9 мес).</li>
-              <li>Собрать доказательства политической мотивированности.</li>
-              <li>Изучить практику <em>Sharomov v. Russia</em>.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-
-      {# Поле ввода #}
-      <div style="display: flex; gap: 12px; align-items: center;">
-        <input type="text" class="search-input" style="margin: 0;" placeholder="Опишите вашу ситуацию или задайте правовой вопрос...">
-        <button class="cta-btn">Спросить →</button>
-      </div>
-      <p style="margin-top: 15px; font-size: 0.75rem; color: var(--text-mid); text-align: center;">Лайла — не адвокат. Ответы носят информационный характер.</p>
-    </div>
-  </div>
-</section>
+{% call hero({
+  eyebrow: "Linguadeck AI · DataLaw Intelligence",
+  title: "Лайла — ваш <em>интеллектуальный</em><br>проводник по праву",
+  description: "AI-ассистент, обученный на десятках тысяч решений ЕСПЧ, Комитета ООН по правам человека и CCF Интерпола. Лайла анализирует ситуацию, находит релевантные прецеденты и указывает на слабые места в защите.",
+  bg: "alt"
+}) %}
+  {{ laylaChatPreview() }}
+{% endcall %}
 
 {# --- FEATURES SECTION --- #}
-<section class="page-section" style="background: var(--off-white); border-top: 1px solid var(--border);">
-  <div class="container">
-    <div class="section-header">
-      <div class="block-label">Возможности</div>
-      <h2 style="font-size: 3rem;">Чем Лайла отличается<br>от обычного поиска</h2>
-    </div>
-
-    <div class="grid-3-col" style="margin-top: 60px;">
-      <div class="action-card">
-        <h3>База живых прецедентов</h3>
-        <p>Каждый ответ содержит ссылки на конкретные дела ЕСПЧ и ООН — не абстракции, а реальная практика.</p>
-      </div>
-      <div class="action-card">
-        <h3>Оценка шансов</h3>
-        <p>Система сравнивает факты вашего дела с аналогичными кейсами и даёт вероятностную оценку перспектив.</p>
-      </div>
-      <div class="action-card">
-        <h3>Умные шаблоны</h3>
-        <p>Автоматическая генерация черновиков обращений в CCF Интерпола и ЕСПЧ с учетом актуальных критериев.</p>
-      </div>
-      <div class="action-card">
-        <h3>Интеграция с CRM</h3>
-        <p>Внутри DataLaw CRM Лайла работает прямо в карточке дела: выявляет пробелы и предлагает стратегии.</p>
-      </div>
-      <div class="action-card">
-        <h3>Zero-Knowledge AI</h3>
-        <p>Диалоги не сохраняются и не используются для дообучения. Данные не покидают ваше устройство.</p>
-      </div>
-      <div class="action-card">
-        <h3>Многоязычность</h3>
-        <p>Юридические термины переводятся с сохранением точного процессуального смысла (RU/EN/FR).</p>
-      </div>
-    </div>
+{% call section({
+  label: "Возможности",
+  title: "Чем Лайла отличается<br>от обычного поиска",
+  class: "border-t"
+}) %}
+  <div class="grid grid-3 gap-8 mt-12">
+    {{ card({ 
+      title: "База живых прецедентов", 
+      description: "Каждый ответ содержит ссылки на конкретные дела ЕСПЧ, ООН и CCF Интерпола." 
+    }) }}
+    {{ card({ 
+      title: "Оценка шансов", 
+      description: "Система сравнивает факты вашего дела с похожими кейсами и помогает увидеть перспективу." 
+    }) }}
+    {{ card({ 
+      title: "Умные шаблоны", 
+      description: "Черновики обращений в CCF и ЕСПЧ формируются с учетом актуальных критериев." 
+    }) }}
+    {{ card({ 
+      title: "Интеграция с CRM", 
+      description: "Лайла работает прямо в карточке дела: выявляет пробелы и предлагает стратегии." 
+    }) }}
+    {{ card({ 
+      title: "Zero-Knowledge AI", 
+      description: "Диалоги не сохраняются и не используются для дообучения. Данные не покидают устройство." 
+    }) }}
+    {{ card({ 
+      title: "Многоязычность", 
+      description: "Юридические термины переводятся с сохранением точного процессуального смысла." 
+    }) }}
   </div>
-</section>
+{% endcall %}
 
 {# --- TRANSPARENCY SECTION --- #}
-<section class="page-section">
-  <div class="container">
-    <div class="hero-grid" style="align-items: center;">
-      <div>
-        <div class="block-label">Прозрачность</div>
-        <h2 style="font-size: 3rem; margin: 20px 0;">Лайла — инструмент.<br>Не замена адвокату</h2>
-        <p class="lead-description">
-          Мы убеждены: AI должен усиливать возможности людей, а не создавать иллюзию помощи. Лайла формирует гипотезы и экономит время на поиск. Окончательные решения всегда принимает человек.
-        </p>
-      </div>
-      <div class="dark-feature-card">
-        <h4 style="color: var(--gold); font-style: italic; font-size: 1.8rem; margin-bottom: 20px;">Попробуйте:</h4>
-        <ul class="feature-list" style="font-size: 0.95rem;">
-          <li>«Как доказать политический мотив дела в ЕСПЧ?»</li>
-          <li>«Сроки приемлемости жалобы в Комитет ООН?»</li>
-          <li>«Прецеденты отмены Red Notice в ЦА?»</li>
-        </ul>
-      </div>
+{% call section({
+  label: "Прозрачность",
+  title: "Лайла — инструмент.<br>Не замена адвокату",
+  description: "AI должен усиливать возможности людей, а не создавать иллюзию помощи. Лайла формирует гипотезы и экономит время на поиск, а окончательные решения принимает человек.",
+  class: "border-t"
+}) %}
+  <div class="grid grid-2 gap-12 items-center mt-12">
+    <div>
+      {# Left side content if needed #}
     </div>
+    {% call card({ 
+      dark: true, 
+      title: "Попробуйте:" 
+    }) %}
+      <ul class="feature-list text-sm">
+        <li>«Как доказать политический мотив дела в ЕСПЧ?»</li>
+        <li>«Сроки приемлемости жалобы в Комитет ООН?»</li>
+        <li>«Прецеденты отмены Red Notice в ЦА?»</li>
+      </ul>
+    {% endcall %}
   </div>
-</section>
+{% endcall %}
 
 {# --- CTA BAND --- #}
-<div class="edu-cta-band">
-  <div class="container">
-    <div class="edu-cta-inner">
-      <div>
-        <p class="edu-cta-label">Linguadeck AI · DataLaw</p>
-        <h3 class="edu-cta-title">Получите ранний доступ к Лайле</h3>
-      </div>
-      <div class="edu-cta-actions">
-        <a href="{{ '/pages/contacts/' | url }}" class="cta-btn">Запросить доступ →</a>
-        <a href="{{ '/pages/library/' | url }}" class="cta-btn cta-btn--light">Библиотека →</a>
-      </div>
+{% call section({
+  bg: "dark",
+  class: "text-white"
+}) %}
+  <div class="flex justify-between items-center gap-8">
+    <div>
+      <p class="text-overline mb-2">Linguadeck AI · DataLaw</p>
+      <h3 class="text-h2 text-white">Получите ранний доступ к Лайле</h3>
+    </div>
+    <div class="flex gap-4">
+      {{ button({ text: "Запросить доступ →", href: "/pages/contacts/" }) }}
+      {{ button({ text: "Библиотека →", href: "/pages/library/", type: "light" }) }}
     </div>
   </div>
-</div>
+{% endcall %}
