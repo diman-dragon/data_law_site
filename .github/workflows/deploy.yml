@@ -28,17 +28,16 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        # Используем install без --frozen-lockfile, чтобы избежать ошибок совместимости в CI
-        run: pnpm install
+        # Флаг --no-frozen-lockfile исправляет ошибку несовпадения версий в локах
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Eleventy
-        # Запуск сборки через pnpm
         run: pnpm exec @11ty/eleventy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # ВНИМАНИЕ: Если в .eleventy.js папка вывода "public", замени _site на public
+          # Проверь, чтобы в .eleventy.js папка вывода была именно _site
           path: ./_site
 
   deploy:
