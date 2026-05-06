@@ -1,6 +1,8 @@
+{% from "ui/button.njk" import button %}
+
 {#
   hero({ eyebrow, title, description, stats, actions, bg })
-  Поддерживает {% call hero({...}) %}...{% endcall %} для дополнительного контента
+  Supports {% call hero({...}) %}...{% endcall %} for additional content.
 #}
 {% macro hero(params) %}
   {%- set bg = params.bg or 'base' -%}
@@ -31,7 +33,11 @@
           {% if params.actions %}
             <div class="dl-hero__actions">
               {% for action in params.actions %}
-                {{ action | safe }}
+                {% if action.text %}
+                  {{ button(action) }}
+                {% else %}
+                  {{ action | safe }}
+                {% endif %}
               {% endfor %}
             </div>
           {% endif %}
