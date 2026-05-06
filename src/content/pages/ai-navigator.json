@@ -20,9 +20,9 @@
     ],
     "actions": [
       {
-        "text": "Спросить Лайлу",
-        "type": "primary",
-        "trigger": "layla"
+        "text": "Открыть Workspace",
+        "href": "/pages/intelligence/",
+        "type": "primary"
       },
       {
         "text": "Библиотека",
