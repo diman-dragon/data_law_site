@@ -1,332 +1,369 @@
 /* ==========================================================================
-   PAGES ARCHITECTURE (Сетки и структуры страниц)
+   DATALAW — PAGES
+   Компоновка, специфичная для конкретных страниц.
+   Глобальные компоненты — в components.css.
    ========================================================================== */
 
-/* --- HERO СЕКЦИИ (Верхний блок каждой страницы) --- */
-.page-hero, 
-.library-hero, 
-.education-hero, 
-.interpol-hero, 
-.integration-hero,
-.analytics-hero {
-  padding: 120px 0 80px;
-  background: var(--off-white);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
+/* ─────────────────────────────────────────────────────────────────────────
+   INDEX — NEWS GRID
+   ───────────────────────────────────────────────────────────────────────── */
 
-/* Элемент "над заголовком" (Eyebrow) */
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 35px;
-}
-
-.eyebrow-line {
-  width: 45px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.eyebrow-text {
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: var(--text-mid);
-}
-
-/* Главный заголовок страницы */
-.main-title {
-  font-size: clamp(2.5rem, 5vw, 4.2rem);
-  font-weight: 900;
-  line-height: 1.05;
-  margin-bottom: 45px;
-  letter-spacing: -0.02em;
-  max-width: 1100px;
-}
-
-/* Стандартные сетки для Hero-блоков (Текст слева, Статистика справа) */
-.hero-grid, 
-.library-hero-grid, 
-.edu-hero-grid, 
-.interpol-hero-grid,
-.analytics-hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.lead-description {
-  font-size: 1.3rem;
-  line-height: 1.65;
-  color: var(--text-mid);
-  font-weight: 400;
-}
-
-@media (max-width: 1024px) {
-  .hero-grid, .library-hero-grid, .edu-hero-grid, .interpol-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-/* --- КОЛОНКА СТАТИСТИКИ (Цифры справа) --- */
-.edu-hero-stat-col, .analytics-hero-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.edu-stat {
-  padding-bottom: 25px;
-  border-bottom: 1px solid var(--border);
-}
-
-.edu-stat-num {
-  display: block;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--navy);
-  line-height: 1;
-  margin-bottom: 5px;
-}
-
-.edu-stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: var(--gold);
-}
-
-/* --- СЕКЦИИ КОНТЕНТА --- */
-.page-section, .edu-section, .opinions-registry, .articles-feed {
-  padding: 100px 0;
-}
-
-.section-header {
-  margin-bottom: 60px;
-}
-
-.block-label {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-/* --- КАРТОЧКИ И СПИСКИ (Прецеденты, Статьи) --- */
-.grid-3-col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-@media (max-width: 900px) {
-  .grid-3-col { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .grid-3-col { grid-template-columns: 1fr; }
-}
-
-.article-item {
-  display: flex;
-  flex-direction: column;
-  padding-top: 30px;
-  border-top: 4px solid var(--gold);
-}
-
-.article-time {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-mid);
-  margin-bottom: 15px;
-}
-
-/* --- ТЕМНЫЕ ИНФО-БЛОКИ (Security Standard) --- */
-.dark-feature-card {
-  background: var(--navy);
-  padding: 50px;
-  border-radius: 4px; /* Ушли от больших скруглений к строгому стилю */
-  color: white;
-}
-
-.dark-feature-card h4 {
-  color: var(--gold);
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 25px;
-  font-weight: 400;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.feature-list li {
-  display: flex;
-  gap: 15px;
-  line-height: 1.5;
-  opacity: 0.9;
-  font-size: 1.05rem;
-}
-
-.feature-list li::before {
-  content: "—";
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* --- ПОИСК (Win11 Style из Library) --- */
-.search-container {
-  margin-top: 50px;
-  max-width: 800px;
-}
-
-.search-wrapper {
-  position: relative;
-  display: flex;
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 5px;
-  transition: 0.3s;
-}
-
-.search-wrapper:focus-within {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(197, 168, 124, 0.1);
-}
-
-.search-input {
-  flex-grow: 1;
-  border: none;
-  padding: 15px 20px;
-  font-family: var(--font-main);
-  font-size: 1rem;
-  outline: none;
-}
-
-/* --- СИНЯЯ ПОЛОСА ПРИЗЫВА (CTA Band) --- */
-.edu-cta-band {
-  background: var(--navy);
-  padding: 80px 0;
-  color: #fff;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.edu-cta-inner {
-  display: flex;
+.home-news-header {
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: center;
-  gap: 40px;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: var(--sp-5);
+  gap: var(--sp-6);
 }
 
-.edu-cta-label {
-  font-size: 0.8rem;
+.home-news-all {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
   text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 10px;
+  letter-spacing: var(--ls-caps);
+  color: var(--c-text-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--c-border-mid);
+  padding-bottom: 2px;
+  transition: color var(--t-fast), border-color var(--t-fast);
 }
+.home-news-all:hover { color: var(--c-gold); border-color: var(--c-gold-border); }
 
-.edu-cta-title {
-  font-size: 2.2rem;
-  color: #fff;
-  line-height: 1.2;
-}
-
-@media (max-width: 850px) {
-  .edu-cta-inner { flex-direction: column; align-items: flex-start; text-align: left; }
-}
-
-/* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
-.animate-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: pageSlideUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-}
-
-.animate-in:nth-child(2) { animation-delay: 0.1s; }
-.animate-in:nth-child(3) { animation-delay: 0.2s; }
-
-@keyframes pageSlideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* --- HOME SPECIFIC --- */
-.home-hero {
-  padding: 100px 0 60px;
-  border-bottom: 1px solid var(--border);
-  background: #fff;
-}
-
-/* Сетка новостей на главной (Amnesty Style) */
-.news-grid-12 {
+.home-news-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 0;
+  border: 1px solid var(--c-border);
+  margin-top: 0;
 }
 
-.news-col-main { grid-column: span 6; }
-.news-col-side { grid-column: span 3; border-left: 1px solid var(--border); padding-left: 30px; }
-.news-col-alert { grid-column: span 3; background: var(--off-white); padding: 30px; border-radius: 4px; }
-
-@media (max-width: 1100px) {
-  .news-grid-12 { display: flex; flex-direction: column; }
-  .news-col-side { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 30px; }
+/* Main article */
+.home-news-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  padding: var(--sp-10);
+  border-right: 1px solid var(--c-border);
 }
 
-/* Карточки действий (Action Cards) в футере страниц */
-.action-grid {
+.home-news-main__tag {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--c-red);
+}
+
+.home-news-main__tag-line {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--c-red);
+  flex-shrink: 0;
+}
+
+.home-news-main__title {
+  font-family: var(--f-serif);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-ink);
+  text-decoration: none;
+  display: block;
+  transition: color var(--t-fast);
+}
+.home-news-main__title:hover { color: var(--c-gold); }
+
+.home-news-main__lead {
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--c-text-mid);
+  font-weight: var(--fw-light);
+  flex-grow: 1;
+}
+
+.home-news-main__date {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--c-text-dim);
+}
+
+/* Side articles */
+.home-news-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-news-side__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-8) var(--sp-8);
+  border-bottom: 1px solid var(--c-border);
+  flex: 1;
+  transition: background var(--t-fast);
+}
+.home-news-side__item:last-child { border-bottom: none; }
+.home-news-side__item:hover { background: rgba(14,14,14,.02); }
+
+.home-news-side__title {
+  font-family: var(--f-serif);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--c-ink);
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+.home-news-side__title:hover { color: var(--c-gold); }
+
+.home-news-side__date {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-caps);
+  color: var(--c-text-dim);
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .home-news-grid { grid-template-columns: 1fr; }
+  .home-news-main { border-right: none; border-bottom: 1px solid var(--c-border); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   INDEX — DARK TECH SECTION
+   ───────────────────────────────────────────────────────────────────────── */
+
+.home-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.home-tech-left .dl-section__label { margin-bottom: var(--sp-5); }
+.home-tech-left .dl-section__title { font-size: var(--fs-3xl); }
+
+.home-tech-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  padding-left: clamp(24px, 4vw, 56px);
+  border-left: 1px solid rgba(255,255,255,.1);
+}
+
+.home-tech-feature {
+  display: flex;
+  gap: var(--sp-5);
+  align-items: flex-start;
+}
+
+.home-tech-feature__num {
+  font-family: var(--f-serif);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--c-gold);
+  flex-shrink: 0;
+  padding-top: 3px;
+  min-width: 22px;
+}
+
+.home-tech-feature__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: rgba(255,255,255,.9);
+  margin-bottom: var(--sp-2);
+}
+
+.home-tech-feature__text {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: rgba(255,255,255,.55);
+}
+
+@media (max-width: 768px) {
+  .home-tech-grid { grid-template-columns: 1fr; gap: var(--sp-12); }
+  .home-tech-features { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,.1); padding-top: var(--sp-8); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   INDEX — TOOLS GRID
+   ───────────────────────────────────────────────────────────────────────── */
+
+.home-tools-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  border: 1px solid var(--c-border);
+  border-top: none;
 }
 
-.action-card {
-  display: block;
+.home-tool {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-10) var(--sp-8);
   text-decoration: none;
-  border: 1px solid var(--border);
-  padding: 30px;
-  transition: all 0.3s ease;
-  background: #fff;
+  color: var(--c-text);
+  border-right: 1px solid var(--c-border);
+  position: relative;
+  transition: background var(--t-base);
 }
+.home-tool:last-child { border-right: none; }
 
-.action-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+.home-tool::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--c-ink);
+  transition: width var(--t-slow) var(--ease-out);
 }
+.home-tool:hover::after { width: 100%; }
+.home-tool:hover { background: rgba(14,14,14,.02); }
 
-.action-card--dark {
-  background: var(--navy);
-  color: white;
-  border-color: var(--navy);
+.home-tool--dark {
+  background: var(--c-ink);
+  color: rgba(255,255,255,.8);
 }
+.home-tool--dark::after { background: var(--c-gold); }
+.home-tool--dark:hover { background: #111; }
 
-.action-card h4 {
-  margin-bottom: 15px;
-  transition: 0.3s;
+.home-tool__num {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--c-text-dim);
 }
+.home-tool--dark .home-tool__num { color: rgba(255,255,255,.3); }
 
-.action-card:hover h4 {
-  color: var(--gold);
+.home-tool__title {
+  font-family: var(--f-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-ink);
 }
+.home-tool--dark .home-tool__title { color: var(--c-white); }
+
+.home-tool__desc {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: var(--c-text-mid);
+  flex-grow: 1;
+}
+.home-tool--dark .home-tool__desc { color: rgba(255,255,255,.45); }
+
+.home-tool__arrow {
+  font-size: var(--fs-lg);
+  color: var(--c-gold);
+  margin-top: auto;
+  display: inline-block;
+  transition: transform var(--t-base) var(--ease-std);
+}
+.home-tool:hover .home-tool__arrow { transform: translateX(5px); }
 
 @media (max-width: 900px) {
-  .action-grid { grid-template-columns: 1fr 1fr; }
+  .home-tools-grid { grid-template-columns: repeat(2,1fr); }
+  .home-tool:nth-child(2) { border-right: none; }
+  .home-tool:nth-child(3) { border-top: 1px solid var(--c-border); }
+  .home-tool:nth-child(4) { border-top: 1px solid var(--c-border); border-right: none; }
 }
+@media (max-width: 480px) {
+  .home-tools-grid { grid-template-columns: 1fr; }
+  .home-tool { border-right: none; border-top: 1px solid var(--c-border); }
+  .home-tool:first-child { border-top: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   ANALYTICS — HERO META
+   ───────────────────────────────────────────────────────────────────────── */
+
+.analytics-hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+.analytics-update-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--c-text-mid);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  width: fit-content;
+}
+.analytics-update-dot { background: #27ae60; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MISC utils used only in pages
+   ───────────────────────────────────────────────────────────────────────── */
+
+.w-24 { width: 96px; }
+.w-8  { width: 32px; }
+.w-2  { width: 8px; }
+.w-48 { width: 192px; }
+.h-48 { height: 192px; }
+.w-12 { width: 48px; }
+.min-w-16 { min-width: 64px; }
+.flex-grow { flex-grow: 1; }
+.w-1\.5 { width: 6px; }
+
+.md\:flex-row     { }
+.md\:block        { }
+
+@media (min-width: 640px) {
+  .md\:flex-row { flex-direction: row; }
+  .md\:block    { display: block; }
+}
+
+/* pb-10, pt-4 etc. for education fellowships list */
+.pb-10 { padding-bottom: var(--sp-10); }
+.pb-6  { padding-bottom: var(--sp-6); }
+.pb-8  { padding-bottom: var(--sp-8); }
+.pb-1  { padding-bottom: 2px; }
+.pt-4  { padding-top: var(--sp-4); }
+.pt-8  { padding-top: var(--sp-8); }
+.py-10 { padding-top: var(--sp-10); padding-bottom: var(--sp-10); }
+.px-4  { padding-inline: var(--sp-4); }
+.px-3  { padding-inline: var(--sp-3); }
+.py-2  { padding-block: var(--sp-2); }
+.py-1  { padding-block: 3px; }
+.pr-0  { padding-right: 0; }
+.w-fit { width: fit-content; }
+.-translate-y-1\/2 { transform: translateY(-50%); }
+.top-0  { top: 0; }
+.left-12{ left: var(--sp-12); }
+
+/* inline input for newsletter */
+input[type="email"], input[type="text"] {
+  font-family: var(--f-sans);
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  background: var(--c-white);
+  border: 1px solid var(--c-border-mid);
+  padding: var(--sp-3) var(--sp-4);
+  outline: none;
+  transition: border-color var(--t-base);
+  width: 100%;
+}
+input[type="email"]:focus,
+input[type="text"]:focus { border-color: var(--c-gold); }
+input[type="email"]::placeholder,
+input[type="text"]::placeholder { color: var(--c-text-dim); }
+
+/* SVG inline in analytics donut */
+svg text { font-family: var(--f-serif); fill: var(--c-ink); }

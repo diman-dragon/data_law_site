@@ -1,0 +1,13 @@
+{% macro band(params) %}
+<div class="band {% if params.dark %}band--dark{% endif %}">
+  <div class="container">
+    <div class="band__inner">
+      {% if params.label %}<span class="label">{{ params.label }}</span>{% endif %}
+      <span class="band__text">{{ params.text | safe }}</span>
+      {% if params.href %}
+        <a href="{{ params.href | url }}" class="band__link">{{ params.link_text or "Подробнее" }} →</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endmacro %}

@@ -12,7 +12,7 @@ title: Образование — DataLaw Academy
 {{ hero({
   eyebrow: "DataLaw Academy · Образовательное направление",
   title: "Технологии — инструмент.<br>Культура знаний — <em>фундамент</em>",
-  description: "Инструменты DataLaw бесполезны без людей, умеющих ими пользоваться. Academy готовит юристов, журналистов и сотрудников НКО к работе с международным правом и цифровой безопасностью — в условиях реального системного давления.",
+  description: "Academy готовит юристов и сотрудников НКО к работе с международным правом и цифровой безопасностью.",
   stats: [
     { value: "4", label: "направления обучения" },
     { value: "0 ₽", label: "для НКО и адвокатов" }
@@ -24,115 +24,45 @@ title: Образование — DataLaw Academy
 {% call section({
   label: "Направления",
   title: "Чему мы учим",
-  class: "border-t",
-  bg: "base"
+  class: "border-t"
 }) %}
   <div class="grid grid-2 gap-8 mt-12">
     {{ card({
       label: "01 · Право",
       title: "Международная защита",
-      description: "Механизмы ЕСПЧ, ООН и Интерпола. Критерии приемлемости жалоб и работа с прецедентами по делам о политически мотивированном преследовании.",
-      class: "bg-white p-10"
+      description: "Механизмы ЕСПЧ, ООН и Интерпола."
     }) }}
-
     {{ card({
       label: "02 · Данные",
       title: "OSINT и верификация",
-      description: "Методы разведки по открытым источникам для правозащиты. Фиксация цифровых доказательств по международным стандартам верификации.",
-      class: "bg-white p-10"
+      description: "Фиксация цифровых доказательств по стандартам."
     }) }}
-
     {{ card({
       label: "03 · Безопасность",
       title: "Цифровая защита",
-      description: "Операционная безопасность (OpSec) для адвокатов. Защита источников и клиентов. Работа с зашифрованными данными в условиях активного наблюдения.",
-      class: "bg-white p-10"
+      description: "Операционная безопасность (OpSec) для адвокатов."
     }) }}
-
     {{ card({
       label: "04 · Технологии",
       title: "Инструменты DataLaw",
-      description: "Глубокое погружение: от поиска в библиотеке прецедентов до ведения дел в Zero-Knowledge CRM и использования AI-ассистента Лайлы.",
-      class: "bg-white p-10"
+      description: "От поиска в библиотеке до работы в CRM."
     }) }}
   </div>
 {% endcall %}
 
-{# --- FELLOWSHIPS LIST --- #}
-{% call section({
-  label: "Программы",
-  title: "Fellowships и практика",
-  class: "border-t"
-}) %}
-  <div class="flex flex-col gap-0 mt-12">
-    
-    {# Item 1 #}
-    <div class="py-10 border-b flex justify-between items-start gap-8">
-      <div class="max-w-3xl">
-        <div class="text-overline text-accent mb-3">Верификационная программа</div>
-        <h4 class="text-h3 font-serif italic mb-4">Мониторинг судебных реестров</h4>
-        <p class="text-muted">Участие в верификации данных о судебных делах из труднодоступных юрисдикций. Оплачиваемая удалённая работа для студентов юридических факультетов. Результаты формируют открытую базу DataLaw.</p>
-      </div>
-      <div class="text-right whitespace-nowrap">
-        <div class="text-sm text-muted">Формат: <strong class="text-main">Удалённо</strong></div>
-        <div class="text-sm text-muted">Для кого: <strong class="text-main">Студенты</strong></div>
-      </div>
-    </div>
-
-    {# Item 2 #}
-    <div class="py-10 border-b flex justify-between items-start gap-8">
-      <div class="max-w-3xl">
-        <div class="text-overline text-accent mb-3">Fellowship · 6–12 месяцев</div>
-        <h4 class="text-h3 font-serif italic mb-4">Правозащитная практика в DataLaw</h4>
-        <p class="text-muted">Погружение в команду: участие в анализе реальных кейсов Интерпола и разработке юридических стратегий. Fellows получают наставника и доступ к закрытой аналитике платформы.</p>
-      </div>
-      <div class="text-right whitespace-nowrap">
-        <div class="text-sm text-muted">Формат: <strong class="text-main">Гибрид / Стипендия</strong></div>
-        <div class="text-sm text-muted">Для кого: <strong class="text-main">Юристы / Журналисты</strong></div>
-      </div>
-    </div>
-
-    {# Item 3 #}
-    <div class="py-10 flex justify-between items-start gap-8">
-      <div class="max-w-3xl">
-        <div class="text-overline text-accent mb-3">Academic Partnership</div>
-        <h4 class="text-h3 font-serif italic mb-4">Совместные клинические программы</h4>
-        <p class="text-muted">Партнёрство с юридическими факультетами. Предоставляем доступ к базе прецедентов и кейс-стади для правовых клиник. Для университетов из стран в зоне риска — полностью безвозмездно.</p>
-      </div>
-      <div class="text-right whitespace-nowrap">
-        <div class="text-sm text-muted">Формат: <strong class="text-main">Индивидуальный</strong></div>
-        <div class="text-sm text-muted">Для кого: <strong class="text-main">ВУЗы / Клиники</strong></div>
-      </div>
-    </div>
-
-  </div>
-{% endcall %}
-
-{# --- PRINCIPLES & NGO --- #}
+{# --- NGO SECTION --- #}
 {% call section({
   label: "Принципы",
-  title: "Знания как<br><em>инструмент</em> защиты",
-  class: "border-t",
+  title: "Знания как инструмент защиты",
   bg: "base"
 }) %}
   <div class="grid grid-2 gap-12 items-center mt-12">
-    <div>
-      <p class="text-lead mb-6">Государства имеют на своей стороне огромные ресурсы и правовую машину. Правозащитники часто работают без доступа к сопоставимой экспертизе.</p>
-      <p class="text-lead">DataLaw Academy сокращает этот разрыв, передавая знания и сети поддержки бесплатно тем, кто находится на переднем крае борьбы.</p>
-    </div>
-    
+    <p>DataLaw Academy передает знания и сети поддержки бесплатно тем, кто на переднем крае борьбы.</p>
     {% call card({
       dark: true,
-      class: "border-accent p-10"
+      title: "Для НКО — бесплатно"
     }) %}
-      <h4 class="text-h3 text-accent font-serif italic mb-6">Для НКО — бесплатно</h4>
-      <p class="text-sm opacity-80 mb-8">Доступ к знаниям не должен зависеть от бюджета. Все программы Academy открыты для некоммерческого сектора без оплаты.</p>
-      <ul class="feature-list">
-        <li>Полный доступ к онлайн-курсам и базе</li>
-        <li>Сертификация по итогам обучения</li>
-        <li>Доступ к закрытому сообществу практиков</li>
-        <li>Консультации с экспертами DataLaw</li>
-      </ul>
+      <p class="text-sm opacity-80">Доступ не зависит от бюджета. Программы открыты для некоммерческого сектора.</p>
     {% endcall %}
   </div>
 {% endcall %}
@@ -145,11 +75,8 @@ title: Образование — DataLaw Academy
   <div class="flex justify-between items-center gap-8">
     <div>
       <p class="text-overline mb-2">DataLaw Academy</p>
-      <h3 class="text-h2 text-white">Станьте частью сообщества практиков</h3>
+      <h3 class="text-h2 text-white">Станьте частью сообщества</h3>
     </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Подать заявку →", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Стать партнёром", href: "/pages/contacts/", type: "light" }) }}
-    </div>
+    {{ button({ text: "Подать заявку →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

@@ -12,7 +12,7 @@ title: Экспертные заключения — DataLaw
 {{ hero({
   eyebrow: "DataLaw Intelligence · Правовые заключения",
   title: "Независимые <em>экспертные</em><br>заключения и Amicus Curiae",
-  description: "Реестр официальных правовых позиций DataLaw по системным вопросам международного права, экстрадиции и соблюдения прав человека. Эти документы предназначены для использования в судах как доказательство системного характера нарушений.",
+  description: "Реестр официальных правовых позиций DataLaw по системным вопросам международного права.",
   bg: "alt"
 }) }}
 
@@ -20,77 +20,43 @@ title: Экспертные заключения — DataLaw
 {% call section({
   label: "Intelligence",
   title: "Реестр документов",
-  headerClass: "flex justify-between items-end border-b-2 border-navy pb-6",
   class: "border-t"
 }) %}
-  <div class="registry-table animate-in mt-12">
-    {# Шапка таблицы #}
-    <div class="table-registry__header">
-      <span>ID / Дата</span>
-      <span>Тема заключения</span>
-      <span>Инстанция</span>
-      <span>Статус</span>
-    </div>
-
-    {# Записи #}
+  <div class="grid grid-1 gap-8 mt-12">
     {% set items = [
       {
         id: "#DL-2026-08",
         date: "24.02.2026",
-        title: "Системные нарушения права на справедливое разбирательство в делах об «экономическом экстремизме»",
-        desc: "Анализ репрессивного использования финансовых регуляторов для блокировки активов правозащитных организаций.",
-        court: "ЕСПЧ / Комитет ООН",
-        status: "Верифицировано",
-        statusClass: "success"
+        title: "Системные нарушения права на справедливое разбирательство",
+        desc: "Анализ репрессивного использования финансовых регуляторов.",
+        court: "ЕСПЧ / Комитет ООН"
       },
       {
         id: "#DL-2026-03",
         date: "12.01.2026",
-        title: "Допустимость экстрадиции в условиях разрушения института независимой адвокатуры",
-        desc: "Оценка рисков нарушения Статьи 3 ЕКПЧ при выдаче лиц в юрисдикции с массовым лишением адвокатов лицензий.",
-        court: "CCF Интерпол / Суды ЕС",
-        status: "Верифицировано",
-        statusClass: "success"
-      },
-      {
-        id: "#DL-2025-11",
-        date: "15.11.2025",
-        title: "Amicus Curiae: Стандарты доказывания политической мотивации в делах о Red Notice",
-        desc: "Методология выявления скрытого политического контекста в запросах о мошенничестве и уклонении от налогов.",
-        court: "General Public",
-        status: "Архив",
-        statusClass: "neutral"
+        title: "Допустимость экстрадиции в условиях разрушения адвокатуры",
+        desc: "Оценка рисков нарушения Статьи 3 ЕКПЧ.",
+        court: "CCF Интерпол / Суды ЕС"
       }
     ] %}
 
     {% for item in items %}
-      <div class="table-registry__row">
-        <div class="flex flex-col gap-1">
+      <div class="card p-8 flex-row items-center gap-8">
+        <div class="flex flex-col gap-1 min-w-32">
           <span class="font-bold text-sm">{{ item.id }}</span>
           <span class="text-xs text-muted">{{ item.date }}</span>
         </div>
-        <div>
-          <h3 class="text-h4 font-serif italic mb-2"><a href="#" class="hover:text-accent">{{ item.title }}</a></h3>
+        <div class="flex-grow">
+          <h3 class="text-h4 mb-2">{{ item.title }}</h3>
           <p class="text-sm text-muted">{{ item.desc }}</p>
         </div>
-        <div class="text-xs font-bold uppercase tracking-wider">{{ item.court }}</div>
-        <div><span class="badge badge--{{ item.statusClass }}">{{ item.status }}</span></div>
+        <div class="text-xs font-bold uppercase">{{ item.court }}</div>
       </div>
     {% endfor %}
   </div>
 
-  {# Блок запроса экспертизы #}
-  <div class="grid grid-2 gap-8 mt-20 items-stretch">
-    <div class="p-10 border bg-base flex flex-col justify-center">
-      <h4 class="text-h2 font-serif italic mb-6">Индивидуальное заключение</h4>
-      <p class="text-muted">Мы готовим экспертные заключения для адвокатов по запросу. Наши специалисты анализируют обстоятельства дела на предмет соответствия международным стандартам и системным нарушениям в запрашивающей юрисдикции.</p>
-    </div>
-    {% call card({
-      dark: true,
-      class: "p-10 flex flex-col justify-center items-start"
-    }) %}
-      <p class="opacity-80 mb-8">Запросы от НКО и адвокатов по делам о защите прав человека рассматриваются в приоритетном порядке.</p>
-      {{ button({ text: "Направить запрос →", href: "/pages/contacts/", class: "bg-accent text-navy" }) }}
-    {% endcall %}
+  <div class="grid grid-2 gap-8 mt-12 items-center">
+    <p>Мы готовим экспертные заключения для адвокатов по запросу.</p>
+    {{ button({ text: "Направить запрос →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

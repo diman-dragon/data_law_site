@@ -1,0 +1,13 @@
+{% macro page_header(params) %}
+<header class="page-header">
+  <div class="container container--narrow">
+    {% if params.label %}
+      <div class="label label--gold fade-in">{{ params.label }}</div>
+    {% endif %}
+    <h1 class="page-header__title fade-in" style="animation-delay: 0.1s;">{{ params.title | safe }}</h1>
+    {% if params.description %}
+      <p class="page-header__desc fade-in" style="animation-delay: 0.2s;">{{ params.description }}</p>
+    {% endif %}
+  </div>
+</header>
+{% endmacro %}

@@ -1,46 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('menu-toggle');
-  const nav = document.getElementById('main-nav');
 
-  // 1. Бургер
+  // ── МОБИЛЬНОЕ МЕНЮ ────────────────────────────────────────────────────────
+
+  const toggle = document.getElementById('menu-toggle');
+  const nav    = document.getElementById('main-nav');
+
   if (toggle && nav) {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       const isOpen = nav.classList.toggle('is-open');
       toggle.classList.toggle('active');
-      
-      // Блокируем скролл страницы
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
 
-  // 2. Аккордеоны (выпадашки) на мобилке
-  const expanders = document.querySelectorAll('.expander');
-  expanders.forEach(btn => {
+  // ── АККОРДЕОНЫ НАВИГАЦИИ ───────────────────────────────────────────────────
+
+  document.querySelectorAll('.expander').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      
+
       const group = btn.closest('.nav-group');
-      const panel = group.querySelector('.dropdown-panel');
-      
-      if (panel) {
-        const isActive = panel.classList.toggle('is-active');
-        // Поворот иконки
-        btn.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0)';
-      }
+      const panel = group?.querySelector('.dropdown-panel');
+      if (!panel) return;
+
+      const isActive = panel.classList.toggle('is-active');
+      btn.style.transform = isActive ? 'rotate(180deg)' : '';
     });
   });
 
-  // 3. Закрытие меню при клике на ссылку
-  const links = document.querySelectorAll('.drop-item, .nav-link:not(.expander)');
-  links.forEach(link => {
+  // ── ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ НА ССЫЛКУ ─────────────────────────────────────
+
+  document.querySelectorAll('.drop-item, .nav-link').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1150) {
+      if (window.innerWidth <= 1150 && nav && toggle) {
         nav.classList.remove('is-open');
         toggle.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
   });
+
+  // ── СВЯЗЬ КНОПКИ В ФУТЕРЕ С ВИДЖЕТОМ LAYLA ────────────────────────────────
+
+  const footerTrigger = document.getElementById('laylaTriggerFooter');
+  const laylaPanel    = document.getElementById('laylaWindow');
+
+  if (footerTrigger && laylaPanel) {
+    footerTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      laylaPanel.classList.add('active');
+      laylaPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      document.getElementById('laylaIn')?.focus();
+    });
+  }
+
 });

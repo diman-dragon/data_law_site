@@ -12,128 +12,32 @@ title: Наша практика — DataLaw
 {{ hero({
   eyebrow: "Case Studies · Стратегическая защита",
   title: "Практика <em>технологической</em><br>адвокации",
-  description: "Данные — это не просто цифры, это аргументы, которые невозможно игнорировать. Мы используем семантический анализ и мониторинг реестров, чтобы превращать разрозненные факты в неопровержимые системные доказательства.",
+  description: "Мы используем семантический анализ, чтобы превращать факты в системные доказательства.",
   bg: "alt"
 }) }}
 
-{# --- CASE 001: ИНТЕРПОЛ --- #}
+{# --- CASE 001 --- #}
 {% call section({
-  class: "border-t",
-  bg: "base"
-}) %}
-  <div class="card-split animate-in">
-    <div class="card-split__sidebar">
-      <div>
-        <div class="text-overline text-accent">Кейс #001</div>
-        <h2 class="text-h2 font-serif italic text-white mt-4">Отмена Red Notice</h2>
-        <p class="text-sm opacity-70 mt-6">Политически мотивированный розыск активиста из Центральной Азии под видом общеуголовного преступления.</p>
-      </div>
-      <div class="border-t border-white-10 pt-8 flex flex-col gap-4">
-        <div>
-          <span class="text-overline text-xxs opacity-60 block">Статус</span>
-          <span class="font-bold text-sm">Розыск прекращен (CCF)</span>
-        </div>
-        <div>
-          <span class="text-overline text-xxs opacity-60 block">Инструментарий</span>
-          <span class="text-sm">Анализ прецедентов CCF · Big Data</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-split__content">
-      <h3 class="text-h3 mb-6">Суть и работа DataLaw</h3>
-      <p class="text-muted mb-6">Государство инициировало розыск через Интерпол спустя три месяца после того, как клиент получил убежище в ЕС. Обвинение было мастерски замаскировано под финансовое мошенничество.</p>
-      <p class="text-muted mb-8">Используя <strong>семантический поиск</strong>, мы сопоставили формулировки обвинения с 340 аналогичными делами из нашей базы. Мы доказали наличие «стандартного паттерна», который государство использует для нейтрализации оппонентов. Это позволило применить ст. 3 Устава Интерпола (запрет на политическое вмешательство).</p>
-      
-      <div class="bg-base p-8 border-l-4 border-accent">
-        <h4 class="text-overline text-xs mb-4">Результат:</h4>
-        <ul class="feature-list text-sm">
-          <li>Уведомление (Red Notice) полностью удалено из баз Интерпола.</li>
-          <li>Свобода передвижения восстановлена во всех странах-членах организации.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-{% endcall %}
-
-{# --- CASE 002: ЕСПЧ --- #}
-{% call section({
+  label: "Кейс #001",
+  title: "Отмена Red Notice",
   class: "border-t"
 }) %}
-  <div class="card-split animate-in">
-    <div class="card-split__sidebar">
-      <div>
-        <div class="text-overline text-accent">Кейс #002</div>
-        <h2 class="text-h2 font-serif italic text-white mt-4">Статья 18 ЕКПЧ</h2>
-        <p class="text-sm opacity-70 mt-6">Доказывание «скрытых целей» государства при преследовании журналиста-расследователя.</p>
-      </div>
-      <div class="border-t border-white-10 pt-8 flex flex-col gap-4">
-        <div>
-          <span class="text-overline text-xxs opacity-60 block">Статус</span>
-          <span class="font-bold text-sm">Жалоба коммуницирована</span>
-        </div>
-        <div>
-          <span class="text-overline text-xxs opacity-60 block">Инструментарий</span>
-          <span class="text-sm">Timeline Correlation · Laila AI</span>
-        </div>
-      </div>
+  <div class="grid grid-2 gap-12 mt-12">
+    <div>
+      <p class="text-muted">Используя семантический поиск, мы доказали наличие стандартного паттерна преследования.</p>
     </div>
-
-    <div class="card-split__content">
-      <h3 class="text-h3 mb-6">Суть и работа DataLaw</h3>
-      <p class="text-muted mb-6">Самое сложное в ЕСПЧ — доказать «скрытый мотив» властей. Мы построили автоматический таймлайн, объединив даты выхода расследований журналиста с датами следственных действий.</p>
-      <p class="text-muted mb-8">Система выявила корреляцию в 92%: каждая волна обысков происходила ровно через 14-20 дней после публикации резонансных материалов. Лайла подобрала 18 прецедентов, где аналогичная временная связь послужила доказательством нарушения ст. 18 (пределы использования ограничений в отношении прав).</p>
-      
-      <div class="bg-base p-8 border-l-4 border-accent">
-        <h4 class="text-overline text-xs mb-4">Результат:</h4>
-        <ul class="feature-list text-sm">
-          <li>ЕСПЧ принял аргументы о системности и коммуницировал жалобу в приоритетном порядке.</li>
-          <li>Создана методология анализа временных корреляций для дел о цензуре.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-{% endcall %}
-
-{# --- METHODOLOGY --- #}
-{% call section({
-  label: "Методология",
-  title: "Как данные становятся <em>защитой</em>",
-  bg: "dark",
-  class: "text-white"
-}) %}
-  <div class="grid grid-2 gap-12 items-center mt-12">
-    <p class="text-lead">Мы не просто ищем документы. Мы нормализуем хаос юридических данных в структурированную позицию. Каждый кейс проходит три этапа:</p>
-    <div class="grid grid-1 gap-4">
-      <div class="p-8 border border-white-10 bg-white-10">
-        <strong class="text-accent block text-overline mb-2">01 · Верификация</strong>
-        <p class="text-sm opacity-70">Сопоставление фактов дела с открытыми реестрами и архивами CCF/ЕСПЧ.</p>
-      </div>
-      <div class="p-8 border border-white-10 bg-white-10">
-        <strong class="text-accent block text-overline mb-2">02 · Семантическое сопоставление</strong>
-        <p class="text-sm opacity-70">Поиск неявных связей и прецедентов, которые пропускает обычный поиск по словам.</p>
-      </div>
-      <div class="p-8 border border-white-10 bg-white-10">
-        <strong class="text-accent block text-overline mb-2">03 · Генерация позиции</strong>
-        <p class="text-sm opacity-70">Подготовка жалобы с использованием аргументов, имеющих наивысший Similarity Score.</p>
-      </div>
-    </div>
+    {% call card({ title: "Результат" }) %}
+      <p>Уведомление полностью удалено из баз Интерпола.</p>
+    {% endcall %}
   </div>
 {% endcall %}
 
 {# --- CTA BAND --- #}
 {% call section({
-  bg: "alt",
-  class: "border-t"
+  bg: "base"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">DataLaw Intelligence</p>
-      <h3 class="text-h2">Ваше дело требует анализа?</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Связаться с командой", href: "/pages/contacts/" }) }}
-      {{ button({ text: "Спросить Лайлу", href: "/pages/ai-navigator/", type: "light" }) }}
-    </div>
+    <h3 class="text-h2">Ваше дело требует анализа?</h3>
+    {{ button({ text: "Связаться с командой", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

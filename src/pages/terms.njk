@@ -12,80 +12,36 @@ title: Условия использования — DataLaw
 {{ hero({
   eyebrow: "Legal Framework · Правовой статус",
   title: "Правила <em>взаимодействия</em><br>с платформой",
-  description: "DataLaw — это некоммерческая технологическая платформа. Мы предоставляем инфраструктуру для анализа данных и автоматизации юридической рутины, чтобы сделать профессиональную защиту прав человека доступнее и эффективнее.<br><br><strong class='text-main'>Используя наши инструменты, вы соглашаетесь с принципами технологической ответственности, описанными ниже.</strong>",
+  description: "Используя наши инструменты, вы соглашаетесь с принципами технологической ответственности.",
   bg: "alt"
 }) }}
 
 {# --- LEGAL CONTENT --- #}
 {% call section({
-  class: "border-t",
-  bg: "base"
+  class: "border-t"
 }) %}
-  <div class="max-w-3xl mx-auto bg-white border p-12 mt-12">
-    
-    <div class="flex flex-col gap-12">
-      
-      {# Section 1 #}
-      <div>
-        <h3 class="text-h3 mb-6 flex items-center gap-4">
-          <span class="text-accent font-serif italic text-h2 leading-none">1.</span> 
-          Информационный статус
-        </h3>
-        <p class="text-muted leading-relaxed">Аналитические справки, результаты поиска в Библиотеке и ответы AI-Навигатора Лайлы носят исключительно информационный характер. <strong>DataLaw не является адвокатским образованием</strong> и не предоставляет прямых юридических консультаций.</p>
-        <p class="text-muted leading-relaxed mt-4">Все гипотезы, сформированные системой, должны быть проверены квалифицированным юристом перед использованием в официальных документах.</p>
-      </div>
-
-      {# Section 2 #}
-      <div>
-        <h3 class="text-h3 mb-6 flex items-center gap-4">
-          <span class="text-accent font-serif italic text-h2 leading-none">2.</span> 
-          Ограничение ответственности
-        </h3>
-        <p class="text-muted leading-relaxed">Мы предоставляем технологическую базу («как есть»), но не можем гарантировать конкретный результат в международных или национальных инстанциях.</p>
-        <ul class="feature-list mt-6 text-sm">
-          <li>DataLaw не несет ответственности за решения Комиссии по контролю файлов Интерпола (CCF).</li>
-          <li>Мы не отвечаем за изменения в практике ЕСПЧ или национальных судов, произошедшие после публикации материалов.</li>
-          <li>Риск использования ИИ-генераций лежит на пользователе.</li>
-        </ul>
-      </div>
-
-      {# Section 3 #}
-      <div>
-        <h3 class="text-h3 mb-6 flex items-center gap-4">
-          <span class="text-accent font-serif italic text-h2 leading-none">3.</span> 
-          Этический кодекс
-        </h3>
-        <p class="text-muted leading-relaxed">Запрещено использование инструментов DataLaw для содействия нарушениям прав человека, совершения киберпреступлений или легализации незаконных действий. В случае выявления попыток использования платформы в деструктивных целях, доступ будет ограничен без уведомления.</p>
-      </div>
-
-      {# Section 4 #}
-      <div>
-        <h3 class="text-h3 mb-6 flex items-center gap-4">
-          <span class="text-accent font-serif italic text-h2 leading-none">4.</span> 
-          Интеллектуальная собственность
-        </h3>
-        <p class="text-muted leading-relaxed">Программный код платформы распространяется под лицензией MIT. Однако аналитические обзоры и страновые доклады являются собственностью проекта и могут цитироваться только с прямой ссылкой на DataLaw.</p>
-      </div>
-
+  <div class="grid grid-1 gap-12 mt-12">
+    <div>
+      <h3 class="text-h3 mb-4">Информационный статус</h3>
+      <p>DataLaw не предоставляет прямых юридических консультаций.</p>
+    </div>
+    <div>
+      <h3 class="text-h3 mb-4">Ограничение ответственности</h3>
+      <p>Мы предоставляем базу «как есть».</p>
+    </div>
+    <div>
+      <h3 class="text-h3 mb-4">Этический кодекс</h3>
+      <p>Запрещено использование инструментов для нарушений прав человека.</p>
     </div>
   </div>
-
-  <p class="text-center text-xs text-muted italic mt-10">Последнее обновление условий: 20 февраля 2026 года. Мы оставляем за собой право изменять данные условия по мере развития технологий защиты данных.</p>
 {% endcall %}
 
-{# --- FINAL CTA --- #}
+{# --- CTA BAND --- #}
 {% call section({
-  bg: "dark",
-  class: "text-white"
+  bg: "dark"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">DataLaw Integrity</p>
-      <h3 class="text-h2 text-white">Остались вопросы по статусу?</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Написать юристам", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Конфиденциальность", href: "/pages/privacy/", type: "light" }) }}
-    </div>
+    <h3 class="text-h2 text-white">Остались вопросы по статусу?</h3>
+    {{ button({ text: "Написать нам", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

@@ -1,0 +1,14 @@
+{#
+  button({ text, href, type, class })
+  type: 'primary' (default) | 'light' | 'ghost' | 'gold'
+  href: если задан — рендерит <a>, иначе <button>
+#}
+{% macro button(params) %}
+  {%- set t = params.type or 'primary' -%}
+  {%- set cls = 'dl-btn dl-btn--' + t + (' ' + params.class if params.class else '') -%}
+  {%- if params.href -%}
+    <a href="{{ params.href | url }}" class="{{ cls }}">{{ params.text | safe }}</a>
+  {%- else -%}
+    <button type="button" class="{{ cls }}">{{ params.text | safe }}</button>
+  {%- endif -%}
+{% endmacro %}

@@ -12,7 +12,7 @@ title: Конфиденциальность — DataLaw
 {{ hero({
   eyebrow: "Zero-Knowledge Policy",
   title: "Приватность через<br><em>архитектуру</em>",
-  description: "В мире правозащиты конфиденциальность — это не юридическая формальность, а вопрос безопасности жизни. Мы спроектировали DataLaw так, чтобы доступ к вашим данным был физически невозможен ни для нас, ни для правительств, ни для злоумышленников.<br><br><strong class='text-main'>Ваши данные не защищены нашим обещанием — они защищены математикой и кодом.</strong>",
+  description: "Ваши данные не защищены нашим обещанием — они защищены математикой и кодом.",
   bg: "alt"
 }) }}
 
@@ -20,67 +20,27 @@ title: Конфиденциальность — DataLaw
 {% call section({
   class: "border-t"
 }) %}
-  <div class="max-w-3xl mx-auto flex flex-col gap-16 mt-12">
-    
-    {# Point 1 #}
-    <div class="flex gap-8 items-start">
-      <span class="text-h2 font-serif italic text-accent leading-none">01</span>
-      <div>
-        <h3 class="text-h3 mb-6">Локальная обработка (Local-First)</h3>
-        <p class="text-lead mb-4">Все чувствительные данные — тексты жалоб, персональные данные клиентов, материалы уголовных дел — обрабатываются <strong>исключительно на вашем устройстве</strong>.</p>
-        <p class="text-muted">Когда вы используете Local AI для анализа тома дела, нейросеть запускается на вашей оперативной памяти. Ни один байт вашего текста не передается в облако DataLaw.</p>
-      </div>
+  <div class="grid grid-1 gap-12 mt-12">
+    <div>
+      <h3 class="text-h3 mb-4">Локальная обработка</h3>
+      <p>Все чувствительные данные обрабатываются исключительно на вашем устройстве.</p>
     </div>
-
-    {# Point 2 #}
-    <div class="flex gap-8 items-start">
-      <span class="text-h2 font-serif italic text-accent leading-none">02</span>
-      <div>
-        <h3 class="text-h3 mb-6">Zero-Knowledge Encryption</h3>
-        <p class="text-lead mb-4">Если вы используете синхронизацию между своими устройствами, данные шифруются на стороне клиента (AES-256) с использованием вашего мастер-пароля.</p>
-        <p class="text-lead font-bold">У разработчиков DataLaw нет ключей расшифровки. Мы храним лишь зашифрованные «контейнеры», содержимое которых нам неизвестно.</p>
-      </div>
+    <div>
+      <h3 class="text-h3 mb-4">Zero-Knowledge Encryption</h3>
+      <p>У разработчиков DataLaw нет ключей расшифровки.</p>
     </div>
-
-    {# Point 3 #}
-    <div class="flex gap-8 items-start">
-      <span class="text-h2 font-serif italic text-accent leading-none">03</span>
-      <div>
-        <h3 class="text-h3 mb-6">Принцип минимизации следов</h3>
-        <p class="text-lead mb-6">Мы не используем коммерческие системы аналитики (Google Analytics, Hotjar и др.). Мы не собираем IP-адреса пользователей при работе с публичной библиотекой прецедентов.</p>
-        <ul class="feature-list">
-          <li>Нет cookies для отслеживания поведения.</li>
-          <li>Нет логов запросов к AI-Навигатору Лайле.</li>
-          <li>Нет передачи данных третьим лицам или рекламным сетям.</li>
-        </ul>
-      </div>
-    </div>
-
-    {# --- INFO BOX --- #}
-    {% call card({
-      dark: true,
-      class: "p-10"
-    }) %}
-      <h4 class="text-h3 text-accent font-serif italic mb-6">Адвокатская тайна</h4>
-      <p class="opacity-80">Архитектура DataLaw соответствует стандартам защиты профессиональной тайны. Даже в случае физического изъятия наших серверов, правоохранительные органы не смогут получить доступ к вашим рабочим файлам, так как ключи доступа находятся только у вас.</p>
+    {% call card({ dark: true, title: "Адвокатская тайна" }) %}
+      <p>Архитектура соответствует стандартам защиты профессиональной тайны.</p>
     {% endcall %}
-
   </div>
 {% endcall %}
 
 {# --- CTA BAND --- #}
 {% call section({
-  bg: "dark",
-  class: "text-white"
+  bg: "dark"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">Security & Integrity</p>
-      <h3 class="text-h2 text-white">Хотите проверить наш код?</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "GitHub Repository", href: "/pages/opensource/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Технический аудит", href: "/pages/contacts/", type: "light" }) }}
-    </div>
+    <h3 class="text-h2 text-white">Хотите проверить наш код?</h3>
+    {{ button({ text: "GitHub Repository", href: "/pages/opensource/" }) }}
   </div>
 {% endcall %}

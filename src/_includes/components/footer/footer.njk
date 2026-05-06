@@ -11,10 +11,10 @@
         <p class="footer-desc">
           Цифровая инфраструктура справедливости — где технологии стоят на страже достоинства, а не систем контроля.
         </p>
-        <p class="footer-desc" style="margin-top: 10px; font-style: italic; opacity: 0.6; font-size: 0.82rem;">
+        <p class="footer-desc" style="font-style: italic; opacity: 0.5; font-size: var(--fs-xs); margin-top: var(--sp-2);">
           «Мы превращаем Big Data в Big Justice»
         </p>
-        <div class="footer-badges" style="display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap;">
+        <div class="footer-badges">
           <span class="footer-badge">Zero-Knowledge</span>
           <span class="footer-badge">Open Data</span>
           <span class="footer-badge">Non-Profit</span>
@@ -41,7 +41,7 @@
             <span class="footer-link-dot"></span>Аналитика и доклады
           </a>
           <a href="{{ '/pages/crm/' | url }}" class="footer-link footer-link--gold">
-            <span class="footer-link-dot" style="background: var(--gold, #b8913a);"></span>CRM Система
+            <span class="footer-link-dot" style="background: var(--c-gold);"></span>CRM Система
           </a>
         </div>
 
@@ -61,16 +61,15 @@
           </a>
         </div>
 
-        <div class="footer-col help-col">
+        <div class="footer-col footer-help-col">
           <div class="footer-col-title">Нужна помощь?</div>
           <p class="footer-link-desc">
             Если вы столкнулись с политически мотивированным преследованием, незаконным Red Notice или нарушением прав — мы рядом.
           </p>
-          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+          <div class="footer-cta-actions">
             <a href="{{ '/pages/contacts/' | url }}" class="footer-cta-btn">
               Связаться с командой →
             </a>
-            {# Здесь используем id нашего триггера для Лайлы, чтобы кнопка открывала виджет #}
             <a href="#" id="laylaTriggerFooter" class="footer-cta-link">
               ✦ Спросить Лайлу
             </a>
@@ -85,7 +84,7 @@
     </div>
 
     <div class="footer-sources">
-      <span class="footer-col-title" style="display: block; margin-bottom: 16px;">Источники данных</span>
+      <div class="footer-col-title" style="margin-bottom: var(--sp-4);">Источники данных</div>
       <div class="footer-sources-list">
         <span>ЕСПЧ / HUDOC</span>
         <span>ООН / КПЧ</span>

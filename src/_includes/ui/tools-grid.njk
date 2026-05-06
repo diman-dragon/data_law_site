@@ -1,0 +1,9 @@
+{% macro tools_grid(params) %}
+<div class="tools-grid">
+  <div class="container">
+    <div class="grid grid-3 gap-12">
+      {{ caller() if caller }}
+    </div>
+  </div>
+</div>
+{% endmacro %}

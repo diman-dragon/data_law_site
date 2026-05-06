@@ -12,79 +12,38 @@ title: Open Source — DataLaw
 {{ hero({
   eyebrow: "Engineering Integrity · Сообщество",
   title: "Прозрачность — это<br><em>линия защиты</em>",
-  description: "Мы убеждены: критическая правозащитная инфраструктура не может быть закрытой. Доверие к инструментам защиты прав человека должно базироваться на возможности независимого аудита каждой строчки кода.<br><br><strong class='text-main'>Весь основной стек DataLaw — от краулеров до локальной CRM — распространяется под свободными лицензиями.</strong>",
+  description: "Весь основной стек DataLaw — от краулеров до локальной CRM — распространяется под свободными лицензиями.",
   bg: "alt"
 }) }}
 
 {# --- REPOS & TECH STACK --- #}
 {% call section({
-  class: "border-t",
-  bg: "base"
+  class: "border-t"
 }) %}
   <div class="grid grid-2 gap-16 mt-12 items-start">
-    
-    {# Стек и ссылки #}
     {% call card({
       dark: true,
-      class: "p-10"
+      title: "DataLaw Core"
     }) %}
-      <div class="text-overline text-accent mb-4">Наш стек</div>
-      <h3 class="text-h2 font-serif italic text-white mb-6">DataLaw Core</h3>
-      <p class="opacity-80 mb-8">Мы выбрали Rust для ядра системы ради безопасности памяти, Tauri для кроссплатформенного десктопа и Python для обучения наших AI-моделей.</p>
-      
-      <div class="flex flex-col gap-4">
-        {{ button({ text: "GitHub / Main Repository →", href: "https://github.com/datalaw", class: "bg-accent text-navy justify-center" }) }}
-        {{ button({ text: "Документация для разработчиков", href: "#", type: "light", class: "text-white border-white-10 justify-center" }) }}
-      </div>
+      <p class="opacity-80 mb-8">Стек: Rust, Tauri, Python.</p>
+      {{ button({ text: "GitHub Repository →", href: "https://github.com/datalaw" }) }}
     {% endcall %}
 
-    {# Принципы разработки #}
     <div class="flex flex-col gap-10">
       <div>
-        <h3 class="text-h3 mb-4">1. Публичный аудит безопасности</h3>
-        <p class="text-muted">Все криптографические модули и механизмы локального хранения данных (Zero-Knowledge) проходят независимый аудит. Мы приветствуем участие сообщества в проверке архитектурных решений.</p>
-      </div>
-
-      <div>
-        <h3 class="text-h3 mb-4">2. Лицензирование (MIT/GPL)</h3>
-        <p class="text-muted">Мы не накладываем ограничений на использование наших технологий правозащитными организациями. Наши разработки — это общественное благо.</p>
-      </div>
-
-      <div>
-        <h3 class="text-h3 mb-4">3. Вклад в проект (Contributing)</h3>
-        <p class="text-muted">Вы можете помочь проекту не только кодом, но и данными, переводами юридических корпусов или верификацией прецедентов в вашей юрисдикции.</p>
+        <h3 class="text-h3 mb-4">Публичный аудит</h3>
+        <p class="text-muted">Все механизмы локального хранения данных (Zero-Knowledge) проходят аудит.</p>
       </div>
     </div>
-
   </div>
 {% endcall %}
 
-{# --- INFO BLOCK --- #}
+{# --- CTA BAND --- #}
 {% call section({
-  class: "border-t text-center",
-  headerClass: "items-center"
-}) %}
-  <div class="max-w-3xl mx-auto">
-    <div class="text-overline mb-4">Bug Bounty</div>
-    <h2 class="text-h1 mb-8">Нашли уязвимость?</h2>
-    <p class="text-lead mb-10">Безопасность наших пользователей — приоритет №1. Если вы обнаружили ошибку в логике работы локального узла или CRM, пожалуйста, сообщите нам через защищенный канал.</p>
-    {{ button({ text: "Сообщить об ошибке →", href: "/pages/contacts/" }) }}
-  </div>
-{% endcall %}
-
-{# --- ACTION CARDS --- #}
-{% call section({
-  bg: "dark",
-  class: "text-white"
+  bg: "dark"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">DataLaw Engineering</p>
-      <h3 class="text-h2 text-white">Хотите развернуть локальный узел?</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Docker Image", href: "#", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Build from Source", href: "#", type: "light" }) }}
-    </div>
+    <h3 class="text-h2 text-white">Развернуть локальный узел?</h3>
+    {{ button({ text: "Build from Source", href: "#" }) }}
   </div>
 {% endcall %}

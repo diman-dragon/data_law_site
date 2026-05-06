@@ -12,7 +12,7 @@ title: Контакты — DataLaw
 {{ hero({
   eyebrow: "DataLaw Infrastructure · Связь и доступ",
   title: "Безопасность — это не опция.<br>Это <em>единственный</em> формат работы",
-  description: "В условиях системного давления стандартные каналы связи становятся уязвимостью. Мы ограничили использование открытых email-форм, чтобы исключить перехват данных. Связь осуществляется через защищенные точки доступа.",
+  description: "В условиях системного давления стандартные каналы связи становятся уязвимостью. Мы ограничили использование открытых email-форм, чтобы исключить перехват данных.",
   stats: [
     { value: "2", label: "активных узла" },
     { value: "24/7", label: "мониторинг" }
@@ -27,25 +27,19 @@ title: Контакты — DataLaw
   class: "border-t"
 }) %}
   <div class="grid grid-2 gap-8 mt-12">
-    
     {{ card({
       label: "Node 01 · Оперативная связь",
       title: "Ситуационный центр",
-      description: "Закрытая группа для первичного аудита кейсов, экстренных консультаций по линии Интерпола и координации юридической защиты.",
-      href: "https://t.me/+q_sSkrk1WMdlNTA0",
-      footer: "<span class='text-overline border-b-2 border-accent pb-1'>Присоединиться к чату →</span>",
-      class: "p-10"
+      description: "Закрытая группа для первичного аудита кейсов, экстренных консультаций по линии Интерпола.",
+      href: "https://t.me/+q_sSkrk1WMdlNTA0"
     }) }}
 
     {{ card({
       label: "Node 02 · Мониторинг",
       title: "DataLaw Channel",
-      description: "Официальный поток: аналитика системных нарушений, обновления базы прецедентов и новости образовательных программ Academy.",
-      href: "https://t.me/datalaw_rights",
-      footer: "<span class='text-overline border-b-2 border-accent pb-1'>Подписаться на канал →</span>",
-      class: "p-10"
+      description: "Официальный поток: аналитика системных нарушений, обновления базы прецедентов.",
+      href: "https://t.me/datalaw_rights"
     }) }}
-
   </div>
 {% endcall %}
 
@@ -53,21 +47,15 @@ title: Контакты — DataLaw
 {% call section({
   label: "Протокол безопасности",
   title: "Почему ограничены<br><em>стандартные</em> способы?",
-  description: "Мы работаем в среде, где метаданные часто важнее содержания. Обычное письмо на почту оставляет след на серверах провайдеров, который невозможно стереть.<br><br>DataLaw придерживается концепции <strong>Zero-Knowledge</strong>. Это значит, что архитектура проекта должна исключать возможность доступа третьих лиц к самому факту вашего обращения."
+  description: "Мы работаем в среде, где метаданные часто важнее содержания. DataLaw придерживается концепции <strong>Zero-Knowledge</strong>."
 }) %}
   <div class="grid grid-2 gap-12 items-center mt-12">
-    <div>{# Left #}</div>
+    <div></div>
     {% call card({
       dark: true,
-      class: "border-accent p-10"
+      title: "Laila Encrypted Gate"
     }) %}
-      <h4 class="text-h3 text-accent font-serif italic mb-6">Laila Encrypted Gate</h4>
-      <p class="text-sm opacity-80 mb-8">В процессе интеграции находится модуль прямого шифрования. К моменту релиза здесь будет развернута форма, работающая по стандарту PGP в браузере клиента.</p>
-      <ul class="feature-list">
-        <li>Локальное шифрование (No Cloud)</li>
-        <li>Анонимная передача пакетов</li>
-        <li>Автоматическое удаление метаданных</li>
-      </ul>
+      <p class="text-sm opacity-80 mb-8">В процессе интеграции находится модуль прямого шифрования. Форма будет работать по стандарту PGP в браузере клиента.</p>
     {% endcall %}
   </div>
 {% endcall %}
@@ -82,6 +70,6 @@ title: Контакты — DataLaw
       <p class="text-overline mb-2">DataLaw Connect</p>
       <h3 class="text-h2 text-white">Нужна помощь по линии Интерпола?</h3>
     </div>
-    {{ button({ text: "В ситуационный центр →", href: "https://t.me/+q_sSkrk1WMdlNTA0", class: "bg-white text-navy" }) }}
+    {{ button({ text: "В ситуационный центр →", href: "https://t.me/+q_sSkrk1WMdlNTA0" }) }}
   </div>
 {% endcall %}

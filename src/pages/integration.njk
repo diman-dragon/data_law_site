@@ -12,89 +12,32 @@ title: Интеграция — DataLaw
 {{ hero({
   eyebrow: "DataLaw API · Партнёрская программа",
   title: "Встройте инфраструктуру DataLaw<br>в <em>свои процессы</em>",
-  description: "DataLaw открыт для партнёрства с НКО, медиа и адвокатскими объединениями. Мы предоставляем API-доступ к библиотеке прецедентов, AI-ассистенту Лайле и аналитическим инструментам — чтобы вы могли использовать наши мощности, не дублируя сложную IT-инфраструктуру.",
+  description: "Мы предоставляем API-доступ к библиотеке прецедентов, AI-ассистенту Лайле и аналитическим инструментам.",
   bg: "alt"
 }) }}
 
 {# --- PARTNERSHIP FORMATS --- #}
 {% call section({
   label: "Форматы",
-  title: "Как мы работаем<br>с партнёрами",
-  class: "border-t",
-  bg: "base"
+  title: "Как мы работаем",
+  class: "border-t"
 }) %}
   <div class="grid grid-3 gap-8 mt-12">
     {{ card({
-      label: "01 · API-Доступ",
-      title: "Библиотека и AI",
-      description: "Доступ к базе прецедентов и AI-ассистенту Лайле через REST API. Для организаций, создающих собственные правовые платформы.",
-      class: "bg-white p-10"
+      label: "01",
+      title: "API-Доступ",
+      description: "Доступ к базе прецедентов и AI через REST API."
     }) }}
-
     {{ card({
-      label: "02 · White-Label",
-      title: "Собственная CRM",
-      description: "Развертывание изолированного экземпляра DataLaw CRM под брендом партнёра с сохранением Zero-Knowledge архитектуры.",
-      class: "bg-white p-10"
+      label: "02",
+      title: "White-Label",
+      description: "Развертывание CRM под вашим брендом."
     }) }}
-
     {{ card({
-      label: "03 · Данные",
-      title: "Верификация данных",
-      description: "Совместная работа над мониторингом судебных реестров и аналитикой Интерпола в закрытых юрисдикциях.",
-      class: "bg-white p-10"
-    }) }}
-
-    {{ card({
-      label: "04 · Исследования",
-      title: "Для расследований",
-      description: "Редакциям медиа — доступ к аналитическим выгрузкам по паттернам системных злоупотреблений международным правом.",
-      class: "bg-white p-10"
-    }) }}
-
-    {{ card({
-      label: "05 · Академия",
-      title: "Клинические программы",
-      description: "Предоставление кейс-материалов и инфраструктуры DataLaw для образовательных курсов юридических факультетов.",
-      class: "bg-white p-10"
-    }) }}
-
-    {{ card({
-      label: "06 · Dev",
+      label: "03",
       title: "Open Source",
-      description: "Совместная разработка инструментов защиты на базе открытого кода DataLaw. Мы верим в прозрачность алгоритмов.",
-      class: "bg-white p-10"
+      description: "Совместная разработка инструментов защиты."
     }) }}
-  </div>
-{% endcall %}
-
-{# --- PRINCIPLES & CONTACT --- #}
-{% call section({
-  label: "Ценности",
-  title: "Партнёрство на<br><em>ваших</em> условиях",
-  class: "border-t"
-}) %}
-  <div class="grid grid-2 gap-12 items-center mt-12">
-    <div>
-      <p class="text-lead mb-6">Мы — некоммерческая организация. Это означает, что миссия всегда выше коммерческих соображений. Мы не сотрудничаем с теми, кто создает угрозу защите прав человека.</p>
-      <ul class="feature-list">
-        <li><strong>Независимость:</strong> данные не меняются под влиянием партнёров.</li>
-        <li><strong>Изоляция:</strong> ваши данные остаются только вашими.</li>
-        <li><strong>Прозрачность:</strong> все значимые партнёрства публичны.</li>
-      </ul>
-    </div>
-    
-    {% call card({
-      dark: true,
-      class: "border-accent p-10"
-    }) %}
-      <h4 class="text-h3 text-accent font-serif italic mb-6">Готовы к диалогу</h4>
-      <p class="text-sm opacity-80 mb-8">Расскажите о вашей задаче. Если ваша работа служит защите прав человека, мы всегда найдём форму технологического сотрудничества.</p>
-      <div class="border-t border-white-10 pt-8">
-        <div class="text-overline text-accent mb-4">Срок ответа:</div>
-        <p class="text-sm opacity-70">НКО и правозащита — до 48 часов.<br>Другие запросы — в течение 5 рабочих дней.</p>
-      </div>
-    {% endcall %}
   </div>
 {% endcall %}
 
@@ -106,11 +49,8 @@ title: Интеграция — DataLaw
   <div class="flex justify-between items-center gap-8">
     <div>
       <p class="text-overline mb-2">DataLaw Integration</p>
-      <h3 class="text-h2 text-white">Обсудим интеграцию в ваши процессы</h3>
+      <h3 class="text-h2 text-white">Обсудим интеграцию</h3>
     </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Связаться с командой →", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Запросить API-документацию", href: "/pages/contacts/", type: "light" }) }}
-    </div>
+    {{ button({ text: "Связаться с командой →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

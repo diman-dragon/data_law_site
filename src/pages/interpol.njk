@@ -9,21 +9,22 @@ title: DATALAW — Интерпол
 {% from "ui/button.njk" import button %}
 
 {# --- HERO SECTION --- #}
-{{ hero({
+{% call hero({
   eyebrow: "Направление — Интерпол · Red Notice · CCF",
   title: "Защита от <em>политического</em><br>преследования",
   description: "Механизмы Red Notice и Diffusion — инструменты, которые авторитарные государства используют против активистов и оппонентов. DataLaw мониторит злоупотребления, документирует паттерны и помогает выстраивать защиту через CCF.",
-  actions: [
-    button({ text: "Нам нужна помощь →", href: "/pages/contacts/" }),
-    button({ text: "База прецедентов", href: "/pages/library/?q=interpol", type: "light" })
-  ],
   stats: [
     { value: "196", label: "государств-членов" },
     { value: "70k+", label: "активных Red Notices" },
     { value: "~12%", label: "отмен по жалобам в CCF" }
   ],
   bg: "alt"
-}) }}
+}) %}
+  <div class="flex gap-4 mt-8">
+    {{ button({ text: "Нам нужна помощь →", href: "/pages/contacts/" }) }}
+    {{ button({ text: "База прецедентов", href: "/pages/library/?q=interpol" }) }}
+  </div>
+{% endcall %}
 
 {# --- SYSTEM DESCRIPTION --- #}
 {% call section({

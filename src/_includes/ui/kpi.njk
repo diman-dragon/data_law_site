@@ -1,0 +1,22 @@
+{#
+  kpi_strip({ items: [{ target, label, trend, trendUp }] })
+#}
+{% macro kpi_strip(params) %}
+  <div class="dl-kpi-strip">
+    <div class="container">
+      <div class="dl-kpi-strip__inner">
+        {% for item in params.items %}
+          <div class="dl-kpi-strip__item">
+            <span class="dl-kpi-strip__num" data-target="{{ item.target }}">{{ item.target }}</span>
+            <span class="dl-kpi-strip__label">{{ item.label }}</span>
+            {% if item.trend %}
+              <span class="dl-kpi-strip__trend{% if item.trendUp %} dl-kpi-strip__trend--up{% endif %}">
+                {{ '↑' if item.trendUp else '' }} {{ item.trend }}
+              </span>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

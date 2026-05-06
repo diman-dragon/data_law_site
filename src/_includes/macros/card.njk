@@ -1,6 +1,0 @@
-{% macro card(title, description, href, dark=false) %}
-<a href="{{ href | url }}" class="action-card {% if dark %}action-card--dark{% endif %}">
-  <h4 style="margin-bottom: var(--space-sm);">{{ title }}</h4>
-  <p style="font-size: 0.85rem; color: var(--text-mid);">{{ description }}</p>
-</a>
-{% endmacro %}

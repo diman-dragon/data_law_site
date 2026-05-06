@@ -7,17 +7,15 @@ title: AI Навигатор — Лайла
 {% from "ui/section.njk" import section %}
 {% from "ui/card.njk" import card %}
 {% from "ui/button.njk" import button %}
-{% from "macros/layla-chat-preview.njk" import laylaChatPreview %}
+{% from "ui/layla-chat-preview.njk" import laylaChatPreview %}
 
 {# --- HERO SECTION --- #}
-{% call hero({
+{{ hero({
   eyebrow: "Linguadeck AI · DataLaw Intelligence",
   title: "Лайла — ваш <em>интеллектуальный</em><br>проводник по праву",
   description: "AI-ассистент, обученный на десятках тысяч решений ЕСПЧ, Комитета ООН по правам человека и CCF Интерпола. Лайла анализирует ситуацию, находит релевантные прецеденты и указывает на слабые места в защите.",
   bg: "alt"
-}) %}
-  {{ laylaChatPreview() }}
-{% endcall %}
+}) }}
 
 {# --- FEATURES SECTION --- #}
 {% call section({

@@ -1,81 +1,199 @@
 ---
 layout: base.njk
-title: DataLaw — Мониторинг системных злоупотреблений и ИИ-аналитика
+title: DataLaw — Мониторинг системных злоупотреблений | ИИ-аналитика
 ---
 
-{% from "macros/section.njk" import section %}
-{% from "macros/cta.njk" import cta %}
-{% from "macros/card.njk" import card %}
+{% from "ui/button.njk" import button %}
+{% from "ui/card.njk"   import card %}
 
-{# --- HERO СЕКЦИЯ --- #}
-<section class="home-hero">
+{# ═══════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════ #}
+<section class="dl-hero">
   <div class="container">
-    <div class="hero-eyebrow animate-in">
-      <span class="pulse-dot"></span>
-      <span class="eyebrow-text">Система оперативного мониторинга прецедентов</span>
-    </div>
+    <div class="dl-hero__inner">
 
-    <div class="hero-grid">
-      <div>
-        <h1 class="main-title animate-in">Право против <br><em>госмашины.</em></h1>
-        <p class="lead-description animate-in">DataLaw оцифровывает опыт противостояния неправомерному давлению. Мы строим инструменты симметричного ответа: от глобальных архивов CCF до локального ИИ.</p>
-      </div>
-      
-      <div class="edu-hero-stat-col animate-in" style="border-left: 1px solid var(--border); padding-left: var(--space-lg);">
-        <div class="edu-stat">
-          <span class="edu-stat-num">50k+</span>
-          <span class="edu-stat-label">судебных прецедентов</span>
+      <div class="dl-hero__main">
+        <div class="dl-hero__eyebrow">
+          <span class="pulse-dot"></span>
+          <span class="text-overline">Система мониторинга системных злоупотреблений</span>
         </div>
-        <div style="display: flex; gap: var(--space-md); margin-top: var(--space-sm);">
-          {{ cta("База данных", "/pages/library/") }}
-          {{ cta("О нас", "/pages/about/", true) }}
+        <h1 class="dl-hero__title">
+          Право против<br><em>госмашины.</em>
+        </h1>
+        <p class="dl-hero__desc">
+          DataLaw оцифровывает опыт противостояния неправомерному давлению. Мы строим инструменты симметричного ответа — от глобальных архивов CCF до локального ИИ.
+        </p>
+        <div class="dl-hero__actions">
+          {{ button({ text: "База данных →", href: "/pages/library/", type: "primary" }) }}
+          {{ button({ text: "О нас", href: "/pages/about/", type: "light" }) }}
         </div>
       </div>
+
+      <div class="dl-hero__stats">
+        <div class="dl-hero__stat">
+          <span class="dl-hero__stat-num">50k+</span>
+          <span class="dl-hero__stat-label">Судебных прецедентов</span>
+        </div>
+        <div class="dl-hero__stat">
+          <span class="dl-hero__stat-num">190</span>
+          <span class="dl-hero__stat-label">Стран в базе данных</span>
+        </div>
+        <div class="dl-hero__stat">
+          <span class="dl-hero__stat-num">40</span>
+          <span class="dl-hero__stat-label">Отменённых Red Notice в 2025</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-{# --- СЕКЦИЯ НОВОСТЕЙ --- #}
-{% call section("", "Последние расследования") %}
-  <div class="news-grid-12">
-    <div class="news-col-main">
-      <article class="article-item" style="border-top: none; border-bottom: 1px solid var(--border); padding-bottom: var(--space-lg);">
-        <div class="block-label">Критический анализ · Интерпол</div>
-        <h2 style="font-size: 2.8rem; margin-bottom: var(--space-md);">
-          <a href="{{ '/pages/interpol/' | url }}" style="color: var(--navy); text-decoration: none;">Злоупотребление Red Notice: Новые паттерны в 2026 году</a>
+{# ═══════════════════════════════════════════════════════════════
+   BREAKING BAND
+═══════════════════════════════════════════════════════════════ #}
+<div class="dl-band">
+  <div class="dl-band__inner">
+    <span class="dl-band__tag">Новое</span>
+    <span class="dl-band__text">Layla v2.5: интеграция семантического анализа жалоб в ООН — теперь в открытом доступе</span>
+  </div>
+</div>
+
+{# ═══════════════════════════════════════════════════════════════
+   ПОСЛЕДНИЕ РАССЛЕДОВАНИЯ
+═══════════════════════════════════════════════════════════════ #}
+<section class="dl-section dl-section--base">
+  <div class="container">
+
+    <div class="dl-section__header home-news-header">
+      <div>
+        <div class="text-overline text-overline--gold dl-section__label">Расследования</div>
+        <h2 class="dl-section__title">Последние материалы</h2>
+      </div>
+      <a href="{{ '/pages/articles/' | url }}" class="home-news-all">Все материалы →</a>
+    </div>
+
+    <div class="home-news-grid">
+
+      <article class="home-news-main">
+        <div class="home-news-main__tag">
+          <span class="home-news-main__tag-line"></span>
+          Критический анализ · Интерпол
+        </div>
+        <a href="{{ '/pages/interpol/' | url }}" class="home-news-main__title">
+          Злоупотребление Red Notice: Новые паттерны в 2026 году
+        </a>
+        <p class="home-news-main__lead">
+          Исследование DataLaw выявило рост использования обвинений в «кибермошенничестве» как прикрытия для преследования политических активистов. Анализ 40 успешных кейсов отмены в CCF.
+        </p>
+        <time class="home-news-main__date">28 Февраля, 2026</time>
+      </article>
+
+      <div class="home-news-side">
+        <article class="home-news-side__item">
+          <div class="text-overline text-overline--gold">Обновление базы</div>
+          <a href="{{ '/pages/library/' | url }}" class="home-news-side__title">
+            ЕСПЧ: Статья 18. Добавлены решения по делам о скрытых мотивах преследования.
+          </a>
+          <time class="home-news-side__date">15 Марта, 2026</time>
+        </article>
+        <article class="home-news-side__item">
+          <div class="text-overline text-overline--gold">Технологии</div>
+          <a href="{{ '/pages/ai-navigator/' | url }}" class="home-news-side__title">
+            Layla v2.5: Интеграция семантического анализа жалоб в ООН.
+          </a>
+          <time class="home-news-side__date">02 Апреля, 2026</time>
+        </article>
+        <article class="home-news-side__item">
+          <div class="text-overline text-overline--gold">Аналитика</div>
+          <a href="{{ '/pages/reviews/' | url }}" class="home-news-side__title">
+            Страновой обзор: трансграничное преследование в 2025–2026.
+          </a>
+          <time class="home-news-side__date">18 Апреля, 2026</time>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════
+   DARK TECHNOLOGY SECTION
+═══════════════════════════════════════════════════════════════ #}
+<section class="dl-section dl-section--dark">
+  <div class="container">
+    <div class="home-tech-grid">
+
+      <div class="home-tech-left">
+        <div class="text-overline text-overline--gold dl-section__label">Инструментарий</div>
+        <h2 class="dl-section__title text-white">
+          Когда закон становится оружием,<br><em>технологии — щитом.</em>
         </h2>
-        <p class="lead-description" style="font-size: 1.15rem;">Исследование DataLaw выявило рост использования обвинений в «кибермошенничестве» как прикрытия для преследования политических активистов. Анализ 40 успешных кейсов отмены в CCF.</p>
-        <time class="article-time">28 Февраля, 2026</time>
-      </article>
-    </div>
-    <div class="news-col-side">
-      <article style="margin-bottom: var(--space-lg);">
-        <div class="block-label">Обновление базы</div>
-        <h3 style="font-size: 1.3rem;"><a href="{{ '/pages/practice/' | url }}" style="color: var(--navy); text-decoration: none;">ЕСПЧ: Статья 18. Добавлены решения по делам о скрытых мотивах.</a></h3>
-      </article>
-      <article>
-        <div class="block-label">Технологии</div>
-        <h3 style="font-size: 1.3rem;"><a href="{{ '/pages/ai-navigator/' | url }}" style="color: var(--navy); text-decoration: none;">Laila v2.5: Интеграция семантического анализа жалоб в ООН.</a></h3>
-      </article>
-    </div>
-  </div>
-{% endcall %}
+      </div>
 
-{# --- DEEP DIVE --- #}
-{% call section("Инструментарий", "Когда закон становится оружием, технологии — щитом.", "page-section", "background: var(--navy); color: var(--white);") %}
-  <div class="hero-grid" style="align-items: center; gap: 100px;">
-    <div>
-      <p style="font-size: 1.2rem; opacity: 0.8;">Мы создали DataLaw для работы в условиях, где «облако» — это риск. Наш софт написан на Rust ради абсолютной устойчивости и скорости анализа.</p>
+      <div class="home-tech-features">
+        <div class="home-tech-feature">
+          <span class="home-tech-feature__num">01</span>
+          <div>
+            <div class="home-tech-feature__title">Локальный ИИ без облака</div>
+            <p class="home-tech-feature__text">Layla работает на вашем устройстве. Никаких серверов, никаких утечек — особенно критично в зонах риска.</p>
+          </div>
+        </div>
+        <div class="home-tech-feature">
+          <span class="home-tech-feature__num">02</span>
+          <div>
+            <div class="home-tech-feature__title">Написан на Rust</div>
+            <p class="home-tech-feature__text">Абсолютная устойчивость и скорость анализа юридических документов. Работает в условиях слабой инфраструктуры.</p>
+          </div>
+        </div>
+        <div class="home-tech-feature">
+          <span class="home-tech-feature__num">03</span>
+          <div>
+            <div class="home-tech-feature__title">Open Source</div>
+            <p class="home-tech-feature__text">Весь код открыт. Любая организация может развернуть собственный экземпляр без зависимости от DataLaw.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-{% endcall %}
+</section>
 
-{# --- ACTION CARDS --- #}
-{% call section("", "") %}
-  <div class="action-grid">
-    {{ card("Interpol CCF", "Методология и прецеденты отмены Red Notice.", "/pages/interpol/") }}
-    {{ card("ЕСПЧ / ООН", "Архив решений по системным нарушениям.", "/pages/library/") }}
-    {{ card("AI Laila", "Локальный анализ юридических документов.", "/pages/ai-navigator/") }}
-    {{ card("Support", "Запрос на экспертную поддержку и консультацию.", "/pages/contacts/", true) }}
+{# ═══════════════════════════════════════════════════════════════
+   TOOLS GRID
+═══════════════════════════════════════════════════════════════ #}
+<section class="dl-section dl-section--base" style="padding-top: 0;">
+  <div class="container">
+    <div class="home-tools-grid">
+
+      <a href="{{ '/pages/interpol/' | url }}" class="home-tool">
+        <div class="home-tool__num">01</div>
+        <div class="home-tool__title">Interpol CCF</div>
+        <p class="home-tool__desc">Методология и прецеденты отмены Red Notice. База 40+ успешных кейсов.</p>
+        <span class="home-tool__arrow">→</span>
+      </a>
+
+      <a href="{{ '/pages/library/' | url }}" class="home-tool">
+        <div class="home-tool__num">02</div>
+        <div class="home-tool__title">ЕСПЧ / ООН</div>
+        <p class="home-tool__desc">Архив решений по системным нарушениям прав человека. 190+ юрисдикций.</p>
+        <span class="home-tool__arrow">→</span>
+      </a>
+
+      <a href="{{ '/pages/ai-navigator/' | url }}" class="home-tool">
+        <div class="home-tool__num">03</div>
+        <div class="home-tool__title">AI Layla</div>
+        <p class="home-tool__desc">Локальный ИИ-анализ юридических документов. Работает без интернета.</p>
+        <span class="home-tool__arrow">→</span>
+      </a>
+
+      <a href="{{ '/pages/contacts/' | url }}" class="home-tool home-tool--dark">
+        <div class="home-tool__num">04</div>
+        <div class="home-tool__title">Получить помощь</div>
+        <p class="home-tool__desc">Экспертная поддержка в случае преследования. Для НКО — бесплатно.</p>
+        <span class="home-tool__arrow">→</span>
+      </a>
+
+    </div>
   </div>
-{% endcall %}
+</section>

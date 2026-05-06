@@ -12,7 +12,7 @@ title: Обзоры и страновая аналитика — DataLaw
 {{ hero({
   eyebrow: "DataLaw Analytics · Системный мониторинг",
   title: "Обзоры <em>злоупотреблений</em><br>и страновые доклады",
-  description: "Мы анализируем массивы данных, чтобы выявить паттерны, которые скрыты за единичными кейсами. Наши обзоры — это база для формирования стратегии защиты в условиях системного давления госмашины.",
+  description: "Мы анализируем массивы данных, чтобы выявить паттерны, скрытые за единичными кейсами.",
   bg: "alt"
 }) }}
 
@@ -21,88 +21,29 @@ title: Обзоры и страновая аналитика — DataLaw
   class: "border-t"
 }) %}
   <div class="grid grid-3 gap-12 mt-12">
-    
-    {# ГЛАВНЫЙ МАТЕРИАЛ (Левая колонка на 2 сетки) #}
-    <div class="grid-span-2 flex flex-col gap-12">
-      <article class="bg-base border p-12 relative">
-        <span class="bg-dark text-white px-4 py-1 text-xxs font-bold absolute top-0 left-12 -translate-y-1/2 tracking-widest">ГОДОВОЙ ОТЧЕТ 2026</span>
-        
-        <time class="text-overline text-accent mb-6 block">28 ФЕВРАЛЯ, 2026</time>
-        
-        <h2 class="text-display mb-8">Транснациональные репрессии через механизмы Интерпола</h2>
-        
-        <p class="text-lead mb-10">Глобальное исследование DataLaw об использовании Статьи 3 Устава Интерпола в странах Центральной Азии и Восточной Европы. Мы проанализировали 1,200+ запросов на Red Notice, выявив алгоритмы, по которым политически мотивированные преследования маскируются под экономические преступления.</p>
-        
-        <div class="flex flex-wrap gap-8 items-center">
-          {{ button({ text: "Читать полный текст" }) }}
-          <a href="#" class="text-overline border-b-2 border-accent pb-1">PDF Report [3.4 MB]</a>
-        </div>
-      </article>
-
-      <div class="grid grid-2 gap-8">
-        {{ card({
-          label: "Методология",
-          title: "Семантический анализ обвинительных актов",
-          description: "Как наш ИИ находит идентичные формулировки в «индивидуальных» уголовных делах разных регионов.",
-          footer: "<a href='#' class='text-overline text-xxs border-b border-accent'>Подробнее →</a>"
-        }) }}
-        
-        {{ card({
-          label: "Статистика",
-          title: "Динамика экстрадиций: 2023–2025",
-          description: "Инфографика: корреляция между политическими событиями и всплеском запросов в Интерпол.",
-          footer: "<a href='#' class='text-overline text-xxs border-b border-accent'>Смотреть данные →</a>"
-        }) }}
-      </div>
+    <div style="grid-column: span 2;">
+      {% call card({ title: "Транснациональные репрессии через механизмы Интерпола" }) %}
+        <p class="text-lead mb-8">Глобальное исследование об использовании Статьи 3 Устава Интерпола.</p>
+        {{ button({ text: "Читать полный текст" }) }}
+      {% endcall %}
     </div>
-
-    {# САЙДБАР (Правая колонка) #}
-    <aside class="flex flex-col gap-8">
-      {% call card({
-        dark: true,
-        class: "p-10"
-      }) %}
-        <h4 class="text-overline text-accent border-b border-white-10 pb-4 mb-8">Фокус внимания</h4>
-        <ul class="flex flex-col gap-8 list-none p-0">
-          <li>
-            <span class="text-xxs text-accent font-bold block mb-2 uppercase tracking-widest">Казахстан</span>
-            <a href="#" class="text-white font-bold hover:text-accent leading-tight block">Анализ использования антитеррористического законодательства.</a>
-          </li>
-          <li>
-            <span class="text-xxs text-accent font-bold block mb-2 uppercase tracking-widest">Восточная Европа</span>
-            <a href="#" class="text-white font-bold hover:text-accent leading-tight block">Таймлайн блокировок счетов правозащитных НКО.</a>
-          </li>
-          <li>
-            <span class="text-xxs text-accent font-bold block mb-2 uppercase tracking-widest">Интерпол</span>
-            <a href="#" class="text-white font-bold hover:text-accent leading-tight block">Эффективность реформ CCF: статистический срез за год.</a>
-          </li>
+    <aside>
+      {% call card({ dark: true, title: "Фокус внимания" }) %}
+        <ul style="list-style: none; padding: 0;">
+          <li class="mb-4"><a href="#" class="text-white">Казахстан: Антитеррор</a></li>
+          <li class="mb-4"><a href="#" class="text-white">Интерпол: Реформы CCF</a></li>
         </ul>
       {% endcall %}
-
-      <div class="border p-8 bg-alt">
-        <h5 class="text-overline text-xs mb-4">Подписка на дайджест</h5>
-        <p class="text-xs text-muted mb-6">Получайте оповещения о новых страновых докладах и аналитических записках.</p>
-        <input type="email" placeholder="Email адрес" class="w-full p-3 border mb-4 text-sm font-main bg-white">
-        {{ button({ text: "Подписаться", class: "w-full justify-center text-xs" }) }}
-      </div>
     </aside>
-
   </div>
 {% endcall %}
 
 {# --- CTA BAND --- #}
 {% call section({
-  bg: "dark",
-  class: "text-white"
+  bg: "base"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">DataLaw Intelligence</p>
-      <h3 class="text-h2 text-white">Нужен специальный анализ для вашего дела?</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Запросить экспертизу →", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Спросить Лайлу", href: "/pages/ai-navigator/", type: "light" }) }}
-    </div>
+    <h3 class="text-h2">Нужен специальный анализ?</h3>
+    {{ button({ text: "Запросить экспертизу →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

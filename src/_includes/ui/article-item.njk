@@ -1,0 +1,8 @@
+{% macro article_card(params) %}
+<article class="article-card">
+  <div class="label label--gold mb-4">{{ params.category }}</div>
+  <h3 class="text-h4 mb-4">{{ params.title }}</h3>
+  <p class="text-sm text-muted mb-6">{{ params.excerpt }}</p>
+  <a href="{{ params.href | url }}" class="text-link">Читать полностью →</a>
+</article>
+{% endmacro %}

@@ -8,142 +8,49 @@ title: Аналитика и события — DataLaw
 {% from "ui/card.njk" import card %}
 {% from "ui/button.njk" import button %}
 {% from "ui/kpi.njk" import kpi_strip %}
-{% from "ui/chart-card.njk" import chart_card %}
 
 {# --- HERO --- #}
 {{ hero({
   eyebrow: "DataLaw Analytics · Открытые данные",
   title: "Данные, которые нельзя<br><em>опровергнуть</em>",
-  description: "Мы публикуем аналитику в открытом доступе — потому что системные нарушения прав человека должны быть видны. Здесь: данные нашего мониторинга, доклады, отчёты и анонсы событий, в которых участвует DataLaw.",
+  description: "Мы публикуем аналитику в открытом доступе — потому что системные нарушения прав человека должны быть видны.",
   bg: "alt"
 }) }}
-{% call hero() %}
-  <div class="analytics-hero-meta mt-12">
-    <div class="analytics-update-badge flex items-center gap-2 text-sm text-muted bg-base border rounded-full px-4 py-2">
-      <span class="analytics-update-dot pulse-dot bg-green"></span>
-      Данные обновлены: январь 2026
-    </div>
-    <a href="#reports" class="flex items-center gap-2 text-sm text-muted mt-4">
-      Смотреть отчёты
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
-  </div>
-{% endcall %}
 
 {# --- KPI STRIP --- #}
 {{ kpi_strip({
   items: [
-    { target: "1540000", label: "документов в базе", trend: "+18% за год", trendUp: true },
-    { target: "47", label: "юрисдикций мониторинга", trend: "+9 новых в 2025", trendUp: true },
-    { target: "312", label: "злоупотреблений Red Notice", trend: "+34% к 2024", trendUp: true },
-    { target: "89", label: "успешных жалоб", trend: "2023–2025", trendUp: true },
-    { target: "23", label: "государств-нарушителей", trend: "по данным 2025" }
+    { target: "1.5M+", label: "документов", trend: "+18%", trendUp: true },
+    { target: "47", label: "юрисдикций", trend: "+9 новых", trendUp: true },
+    { target: "312", label: "злоупотреблений", trend: "+34%", trendUp: true }
   ]
 }) }}
 
-{# --- CHARTS SECTION --- #}
+{# --- VISUALIZATION --- #}
 {% call section({
-  label: "Визуализация",
-  title: "Мониторинг в цифрах",
-  bg: "base",
+  label: "Мониторинг",
+  title: "Визуализация данных",
   class: "border-t"
 }) %}
-  <div class="grid grid-2 gap-4 mt-12">
-    
-    {# CHART 1: Red Notices by country #}
-    {% call chart_card({
-      title: "Топ-10 стран по числу злоупотреблений Red Notice",
-      subtitle: "Верифицированные случаи политически мотивированных уведомлений, 2020–2025",
-      badge: "Мониторинг CCF",
-      class: "grid-span-2"
-    }) %}
-      <div class="bar-chart flex flex-col gap-3">
-        {% set countries = [
-          { name: "Россия", pct: "92%", color: "#c0392b", val: "92" },
-          { name: "Казахстан", pct: "74%", color: "#e67e22", val: "74" },
-          { name: "Азербайджан", pct: "58%", color: "#e67e22", val: "58" },
-          { name: "Беларусь", pct: "47%", color: "#b8913a", val: "47" },
-          { name: "Узбекистан", pct: "38%", color: "#b8913a", val: "38" },
-          { name: "Таджикистан", pct: "29%", color: "#7f8c8d", val: "29" },
-          { name: "Китай", pct: "24%", color: "#7f8c8d", val: "24" },
-          { name: "Турция", pct: "18%", color: "#7f8c8d", val: "18" },
-          { name: "Иран", pct: "14%", color: "#7f8c8d", val: "14" },
-          { name: "Египет", pct: "10%", color: "#7f8c8d", val: "10" }
-        ] %}
-        {% for c in countries %}
-          <div class="bar-row flex items-center gap-3">
-            <span class="text-sm text-muted text-right w-24">{{ c.name }}</span>
-            <div class="flex-grow h-2 bg-base rounded-full overflow-hidden">
-              <div class="h-full rounded-full" style="width: {{ c.pct }}; background: {{ c.color }};"></div>
-            </div>
-            <span class="text-sm font-bold w-8">{{ c.val }}</span>
-          </div>
-        {% endfor %}
+  <div class="grid grid-2 gap-12 mt-12">
+    {% call card({ title: "Топ стран по злоупотреблениям" }) %}
+      <p>Статистика верифицированных случаев Red Notice.</p>
+      {# Упрощенная заглушка чарта #}
+      <div class="mt-4 border-t pt-4">
+        <div class="flex justify-between text-sm mb-2"><span>Россия</span> <strong>92</strong></div>
+        <div class="h-2 bg-base rounded-full mb-4"><div class="h-full bg-accent w-11/12 rounded-full"></div></div>
+        <div class="flex justify-between text-sm mb-2"><span>Казахстан</span> <strong>74</strong></div>
+        <div class="h-2 bg-base rounded-full"><div class="h-full bg-accent w-3/4 rounded-full"></div></div>
       </div>
     {% endcall %}
 
-    {# CHART 2: Categories #}
-    {% call chart_card({
-      title: "Типы преследования",
-      subtitle: "Распределение по категориям, 2025"
-    }) %}
-      <div class="flex flex-col gap-8">
-        <div class="flex justify-center">
-          <svg class="w-48 h-48" viewBox="0 0 200 200">
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#e8ecf0" stroke-width="28"/>
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#1a1a1a" stroke-width="28" stroke-dasharray="165.7 273.7" transform="rotate(-90 100 100)"/>
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#c5a87c" stroke-width="28" stroke-dasharray="126.4 312.9" stroke-dashoffset="-165.7" transform="rotate(-90 100 100)"/>
-            <circle cx="100" cy="100" r="70" fill="none" stroke="#e67e22" stroke-width="28" stroke-dasharray="78.5 361" stroke-dashoffset="-292.2" transform="rotate(-90 100 100)"/>
-            <text x="100" y="95" text-anchor="middle" class="text-h2 font-bold" fill="currentColor">312</text>
-            <text x="100" y="113" text-anchor="middle" class="text-xxs opacity-60" fill="currentColor">кейсов</text>
-          </svg>
-        </div>
-        <div class="flex flex-col gap-2">
-          <div class="flex items-center justify-between text-sm">
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full" style="background:#1a1a1a;"></span> Политическая деятельность</div>
-            <span class="font-bold">38%</span>
-          </div>
-          <div class="flex items-center justify-between text-sm">
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full" style="background:#c5a87c;"></span> Злоупотребление правом</div>
-            <span class="font-bold">29%</span>
-          </div>
-          <div class="flex items-center justify-between text-sm">
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full" style="background:#e67e22;"></span> Журналисты и медиа</div>
-            <span class="font-bold">18%</span>
-          </div>
-        </div>
-      </div>
+    {% call card({ title: "Типы преследования", dark: true }) %}
+      <p>Распределение по категориям за 2025 год.</p>
+      <ul class="mt-4">
+        <li>Политическая деятельность — 38%</li>
+        <li>Злоупотребление правом — 29%</li>
+      </ul>
     {% endcall %}
-
-    {# CHART 3: ECHR outcomes #}
-    {% call chart_card({
-      title: "Исходы жалоб в ЕСПЧ",
-      subtitle: "По делам из нашей практики",
-      footer: "89 дел · 2023–2025 · только кейсы с поддержкой DataLaw"
-    }) %}
-      <div class="flex flex-col gap-4">
-        {% set outcomes = [
-          { name: "Нарушение признано", count: "61 дело", pct: "69%", w: "69%", color: "var(--navy)" },
-          { name: "На рассмотрении", count: "18 дел", pct: "20%", w: "20%", color: "var(--color-accent)" },
-          { name: "Дружественное урегулирование", count: "7 дел", pct: "8%", w: "8%", color: "var(--color-text-light)" }
-        ] %}
-        {% for o in outcomes %}
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between text-sm">
-              <span class="font-bold">{{ o.name }}</span>
-              <span class="text-muted">{{ o.count }}</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex-grow h-1.5 bg-base rounded-full overflow-hidden">
-                <div class="h-full rounded-full" style="width: {{ o.w }}; background: {{ o.color }};"></div>
-              </div>
-              <span class="text-xs font-bold">{{ o.pct }}</span>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endcall %}
-
   </div>
 {% endcall %}
 
@@ -151,110 +58,27 @@ title: Аналитика и события — DataLaw
 {% call section({
   label: "Публикации",
   title: "Доклады и отчёты",
-  id: "reports"
+  bg: "base"
 }) %}
-  <div class="grid grid-2 gap-4 mt-12">
+  <div class="grid grid-2 gap-8 mt-12">
+    {% call card({ title: "Глобальный доклад 2025" }) %}
+      <p>Анализ 312 верифицированных случаев злоупотребления Интерполом.</p>
+      {{ button({ text: "Скачать PDF", href: "#" }) }}
+    {% endcall %}
     
-    {# Featured report #}
-    <div class="grid-span-2 bg-dark text-white rounded-xl overflow-hidden flex flex-col md:flex-row border border-white-10">
-      <div class="p-10 flex-grow">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="bg-accent text-navy text-xxs font-bold px-3 py-1 rounded-full uppercase">Новый</span>
-          <span class="text-xxs opacity-40">Январь 2026</span>
-        </div>
-        <h3 class="text-h2 text-white mb-6">Интерпол как инструмент политического давления: глобальный доклад 2025</h3>
-        <p class="text-sm opacity-70 mb-8">Ежегодный флагманский доклад DataLaw. Анализ 312 верифицированных случаев злоупотребления механизмом Red Notice и Diffusion. Страновые профили, типологии обвинений, динамика по годам и рекомендации.</p>
-        <div class="flex gap-8 mb-8 pb-8 border-b border-white-10">
-          <div><span class="text-h3 text-accent block">312</span> <span class="text-xxs opacity-40 uppercase">кейсов</span></div>
-          <div><span class="text-h3 text-accent block">23</span> <span class="text-xxs opacity-40 uppercase">страны</span></div>
-          <div><span class="text-h3 text-accent block">148</span> <span class="text-xxs opacity-40 uppercase">стр.</span></div>
-        </div>
-        <div class="flex items-center gap-6">
-          {{ button({ text: "Скачать доклад →", class: "bg-accent text-navy" }) }}
-          <a href="/pages/contacts/" class="text-sm opacity-60 hover:text-accent">Запросить брифинг</a>
-        </div>
-      </div>
-      <div class="w-1.5 bg-accent hidden md:block"></div>
-    </div>
-
-    {# Regular reports #}
-    {{ card({
-      label: "Аналитика",
-      title: "Флагрантное правосудие в постсоветских государствах",
-      description: "Сравнительный анализ 847 дел ЕСПЧ против России, Беларуси, Азербайджана, Казахстана и Узбекистана.",
-      class: "bg-alt",
-      footer: "<div class='flex justify-between items-center'><span class='text-xxs opacity-60'>ЕСПЧ · Ст. 6</span> <a href='#' class='text-sm font-bold'>Скачать PDF</a></div>"
-    }) }}
-
-    {{ card({
-      label: "Мониторинг",
-      title: "Цифровые доказательства в международных судах",
-      description: "Методологический доклад о требованиях к цифровым доказательствам в ЕСПЧ, МУС и Комитетах ООН.",
-      class: "bg-alt",
-      footer: "<div class='flex justify-between items-center'><span class='text-xxs opacity-60'>Методология</span> <a href='#' class='text-sm font-bold'>Скачать PDF</a></div>"
-    }) }}
-
+    {% call card({ title: "Цифровые доказательства" }) %}
+      <p>Методологический доклад о требованиях международных судов.</p>
+      {{ button({ text: "Скачать PDF", href: "#" }) }}
+    {% endcall %}
   </div>
 {% endcall %}
 
-{# --- EVENTS --- #}
+{# --- CTA BAND --- #}
 {% call section({
-  label: "Мероприятия",
-  title: "Участие и анонсы",
-  class: "border-t",
-  bg: "base"
+  bg: "dark"
 }) %}
-  <div class="grid grid-2 gap-12 mt-12">
-    
-    <div class="flex flex-col gap-6">
-      <div class="text-overline flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green pulse-dot"></span> Предстоящие</div>
-      
-      {{ card({
-        class: "p-0 overflow-hidden",
-        footer: "<div class='p-6'><a href='#' class='font-bold'>Зарегистрироваться →</a></div>"
-      }) }}
-        {% call card() %}
-          <div class="flex gap-6 p-6">
-            <div class="bg-dark text-white p-4 rounded text-center min-w-16 h-fit">
-              <span class="text-h2 text-accent block">14</span>
-              <span class="text-xxs opacity-60 uppercase">Мар</span>
-            </div>
-            <div>
-              <div class="text-overline text-xxs opacity-60 mb-1">Конференция · Выступление</div>
-              <h4 class="text-h4 mb-2">RightsCon 2026 — Taipei</h4>
-              <p class="text-sm text-muted mb-4">Доклад DataLaw: «Автоматизированный мониторинг злоупотреблений Интерполом: методология и результаты».</p>
-              <div class="text-xxs flex items-center gap-2 text-muted">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Тайбэй, Тайвань + Online
-              </div>
-            </div>
-          </div>
-        {% endcall %}
-      {{ card.end if card.end }}
-    </div>
-
-    <div class="flex flex-col gap-4">
-      <div class="text-overline">Прошедшие</div>
-      {# Past events simplified cards #}
-      <div class="flex flex-col gap-2 border-t pt-4">
-        <div class="flex gap-4">
-          <span class="text-xxs opacity-40 font-bold uppercase w-12">Фев 26</span>
-          <div>
-            <h5 class="text-sm font-bold">CPDP 2026 — Brussels</h5>
-            <p class="text-xs text-muted">Панельная дискуссия о трансграничном доступе к данным.</p>
-          </div>
-        </div>
-      </div>
-      <div class="flex flex-col gap-2 border-t pt-4">
-        <div class="flex gap-4">
-          <span class="text-xxs opacity-40 font-bold uppercase w-12">Янв 26</span>
-          <div>
-            <h5 class="text-sm font-bold">Data Privacy Day</h5>
-            <p class="text-xs text-muted">Презентация обновленного AI-навигатора Лайла.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="flex justify-between items-center gap-8">
+    <h3 class="text-h2 text-white">Нужен специальный анализ?</h3>
+    {{ button({ text: "Запросить экспертизу", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

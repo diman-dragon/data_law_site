@@ -12,117 +12,45 @@ title: Библиотека прецедентов — DataLaw
 {% call hero({
   eyebrow: "DataLaw Intelligence Layer · Библиотека прецедентов",
   title: "Архив <em>юридических данных</em><br>в открытом доступе",
-  description: "Мы собрали 50 000+ решений ЕСПЧ, Комитетов ООН и CCF Интерпола. Все документы нормализованы и проиндексированы для мгновенного поиска по фактическим обстоятельствам. Без регистрации и SMS.",
+  description: "Мы собрали 50 000+ решений ЕСПЧ, Комитетов ООН и CCF Интерпола.",
   stats: [
     { value: "50k+", label: "документов в базе" },
-    { value: "24/7", label: "обновление данных" }
+    { value: "24/7", label: "обновление" }
   ],
   bg: "alt"
 }) %}
-  <div class="c-search-hub animate-in mt-12">
-    <div class="c-search-hub__field">
-      <svg class="c-search-hub__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/>
-        <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <input class="c-search-hub__input" type="text" placeholder="Введите суть дела (например: задержание за пост в Facebook или экстрадиция по мошенничеству)...">
-    </div>
-    {{ button({ text: "Семантический поиск" }) }}
-  </div>
-
-  <div class="c-search-tags animate-in">
-    <span class="c-search-tags__label">Быстрые фильтры:</span>
-    <a href="#" class="search-tag">#FlagrantJustice</a>
-    <a href="#" class="search-tag">#RedNotice</a>
-    <a href="#" class="search-tag">#Статья18</a>
-    <a href="#" class="search-tag">#Экстрадиция</a>
+  <div class="mt-8 flex gap-4">
+    <input type="text" class="card" style="flex-grow: 1;" placeholder="Поиск прецедента...">
+    {{ button({ text: "Поиск" }) }}
   </div>
 {% endcall %}
 
 {# --- ТЕХНОЛОГИЧЕСКИЙ БЛОК --- #}
 {% call section({
   label: "Технология",
-  title: "Как работает<br><em>семантический</em> поиск",
-  description: "Традиционный поиск ищет <strong>слова</strong>. Наш поиск ищет <strong>смыслы</strong>. Мы используем векторные представления (embeddings) для каждого абзаца в нашей базе. Это превращает юридический текст в математическую модель связей.",
-  bg: "dark",
-  class: "text-white"
+  title: "Семантический поиск",
+  bg: "dark"
 }) %}
   <div class="grid grid-2 gap-12 mt-12">
-    <div>{# Left empty or additional content #}</div>
+    <div>
+      <p class="text-lead text-muted">Традиционный поиск ищет слова. Наш — смыслы.</p>
+    </div>
     <div class="grid grid-1 gap-8">
       {{ card({
         title: "Поиск по контексту",
-        description: "Вы можете описать ситуацию «своими словами». Система поймет, что «незаконное удержание в отделе» семантически близко к «нарушению статьи 5 ЕКПЧ», даже если эти термины не пересекаются буквально.",
-        dark: true,
-        class: "border-l-2 border-accent p-8"
-      }) }}
-      {{ card({
-        title: "Юридическая синонимия",
-        description: "Лайла понимает иерархию и синонимию терминов. Она знает, что «прецедент CCF» и «решение Комиссии по контролю файлов» — это одно и то же в контексте Интерпола.",
-        dark: true,
-        class: "border-l-2 border-accent p-8"
+        description: "Система понимает юридическую суть, а не только буквы.",
+        dark: true
       }) }}
     </div>
   </div>
 {% endcall %}
 
-{# --- ИСТОЧНИКИ ДАННЫХ --- #}
+{# --- CTA BAND --- #}
 {% call section({
-  label: "Архитектура",
-  title: "Структура базы данных",
-  class: "border-t"
+  bg: "base"
 }) %}
-  <div class="grid grid-4 gap-4 mt-12">
-    {{ card({
-      label: "ECHR",
-      title: "Решения ЕСПЧ",
-      description: "Полный архив по делам против РФ, Беларуси, Азербайджана и стран ЦА. Размечено по статьям и мерам «общего характера».",
-      class: "bg-alt"
-    }) }}
-
-    {{ card({
-      label: "INTERPOL",
-      title: "Архив CCF",
-      description: "Специфическая выборка решений Комиссии по контролю файлов Интерпола о блокировке и удалении данных.",
-      class: "bg-alt"
-    }) }}
-
-    {{ card({
-      label: "UN",
-      title: "Комитеты ООН",
-      description: "Соображения по индивидуальным жалобам в КПЧ и решения Рабочей группы по произвольным задержаниям.",
-      class: "bg-alt"
-    }) }}
-
-    {{ card({
-      label: "NATIONAL",
-      title: "Экстрадиция",
-      description: "Решения национальных судов ЕС и Великобритании по запросам о выдаче в страны с высоким риском пыток.",
-      class: "bg-alt"
-    }) }}
-  </div>
-{% endcall %}
-
-{# --- LAILA AI BLOCK --- #}
-{% call section({
-  label: "Laila AI",
-  title: "Анализ выше<br><em>простого</em> поиска",
-  description: "Семантический поиск находит документы. Лайла — анализирует их содержание. Она может сравнить ваш кейс с найденными прецедентами и выделить аргументы, которые сработали.",
-  class: "border-t"
-}) %}
-  <div class="grid grid-2 gap-12 items-center mt-12">
-    <div>{# Left #}</div>
-    {% call card({
-      dark: true,
-      class: "border-accent"
-    }) %}
-      <h3 class="text-h2 font-serif italic text-accent mb-6">AI-фильтрация</h3>
-      <ul class="feature-list mb-8">
-        <li><strong>Суммаризация:</strong> краткое содержание решения за 5 секунд.</li>
-        <li><strong>Extract Arguments:</strong> выгрузка только юридической позиции защиты.</li>
-        <li><strong>Similarity Score:</strong> процент совпадения фактов вашего дела с прецедентом.</li>
-      </ul>
-      {{ button({ text: "Запустить Лайлу →", href: "/pages/ai-navigator/", class: "bg-accent text-navy w-full justify-center" }) }}
-    {% endcall %}
+  <div class="flex justify-between items-center gap-8">
+    <h3 class="text-h2">Нужен глубокий анализ?</h3>
+    {{ button({ text: "Запустить Лайлу →", href: "/pages/ai-navigator/" }) }}
   </div>
 {% endcall %}

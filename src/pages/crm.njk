@@ -9,16 +9,17 @@ title: DataLaw CRM — Case Management System
 {% from "ui/button.njk" import button %}
 
 {# --- HERO SECTION --- #}
-{{ hero({
+{% call hero({
   eyebrow: "DataLaw Private Infrastructure · Zero-Knowledge",
   title: "CRM как инструмент <em>стратегической</em><br>защиты прав человека",
-  description: "Первая в мире система управления делами, разработанная специально для правозащитников, адвокатов и НКО. Автоматизация юридических процессов — и архитектура нулевого разглашения, при которой ваши данные недоступны даже нам.",
-  actions: [
-    button({ text: "Запросить доступ →", href: "/pages/contacts/" }),
-    button({ text: "Смотреть демо", href: "/pages/contacts/", type: "light" })
-  ],
+  description: "Система управления делами, разработанная для правозащитников. Архитектура нулевого разглашения: ваши данные недоступны даже нам.",
   bg: "alt"
-}) }}
+}) %}
+  <div class="flex gap-4 mt-8">
+    {{ button({ text: "Запросить доступ →", href: "/pages/contacts/" }) }}
+    {{ button({ text: "Смотреть демо", href: "/pages/contacts/" }) }}
+  </div>
+{% endcall %}
 
 {# --- FEATURES GRID --- #}
 {% call section({
@@ -29,38 +30,27 @@ title: DataLaw CRM — Case Management System
   <div class="grid grid-3 gap-8 mt-12">
     {{ card({
       title: "Smart-формуляры",
-      description: "Автоматическая генерация жалоб в ЕСПЧ, Комитет ООН и CCF Интерпола. Система проверяет критерии приемлемости и подтягивает нужные параграфы из библиотеки прецедентов.",
-      class: "bg-alt p-10"
+      description: "Автоматическая генерация жалоб в ЕСПЧ, Комитет ООН и CCF Интерпола."
     }) }}
-
     {{ card({
       title: "Абсолютная анонимность",
-      description: "Все данные шифруются на стороне браузера. Мы не храним ваши ключи. Даже при принудительном изъятии серверов — ваши дела остаются физически недоступными для нас и третьих лиц.",
-      class: "bg-alt p-10"
+      description: "Все данные шифруются на стороне браузера. Мы не храним ваши ключи."
     }) }}
-
     {{ card({
       title: "Таймлайн преследования",
-      description: "Визуальная хроника нарушений: фиксируйте события и выстраивайте причинно-следственные связи. Инструмент выявляет паттерны системных злоупотреблений госмашины.",
-      class: "bg-alt p-10"
+      description: "Визуальная хроника нарушений: выявляет паттерны системных злоупотреблений."
     }) }}
-
     {{ card({
       title: "Командная работа",
-      description: "Защищённое пространство для совместной работы группы адвокатов и экспертов. Разграничение доступа, история версий и зашифрованный мессенджер внутри каждой карточки.",
-      class: "bg-alt p-10"
+      description: "Защищённое пространство для совместной работы адвокатов и экспертов."
     }) }}
-
     {{ card({
       title: "Стратегия защиты",
-      description: "Ведите дело параллельно в нескольких инстанциях: национальные суды, ЕСПЧ, ООН, Интерпол. CRM отслеживает жесткие дедлайны и синхронизирует правовые позиции.",
-      class: "bg-alt p-10"
+      description: "Ведите дело параллельно в нескольких инстанциях синхронно."
     }) }}
-
     {{ card({
       title: "AI-анализ в деле",
-      description: "Лайла интегрирована в каждую карточку: она находит пробелы в доказательной базе, предлагает тактику и составляет черновики — не покидая защищенный контур.",
-      class: "bg-alt p-10"
+      description: "Лайла находит пробелы в доказательной базе прямо в карточке дела."
     }) }}
   </div>
 {% endcall %}
@@ -69,29 +59,17 @@ title: DataLaw CRM — Case Management System
 {% call section({
   label: "Безопасность",
   title: "Работа в условиях<br><em>прямого</em> давления",
-  description: "Мы понимаем реальность: наши пользователи работают под наблюдением. CRM спроектирован с допущением, что однажды к вам могут прийти.",
-  class: "border-t"
+  description: "CRM спроектирован с допущением, что однажды к вам могут прийти."
 }) %}
   <div class="grid grid-2 gap-12 items-center mt-12">
     <div>
-      <ul class="feature-list">
-        <li><strong>Panic Button:</strong> мгновенная очистка локальных данных одним нажатием.</li>
-        <li><strong>Multi-jurisdiction Backup:</strong> зашифрованные копии вне зоны риска.</li>
-        <li><strong>Decoy Mode:</strong> отдельный PIN-код для отображения «чистого» профиля.</li>
-        <li><strong>Tor / VPN Native:</strong> работа через анонимные сети без потери скорости.</li>
-      </ul>
+      <p>Включает функции: Panic Button, Multi-jurisdiction Backup, Decoy Mode и Tor Native работу.</p>
     </div>
-    
     {% call card({
       dark: true,
-      class: "border-accent p-10"
+      title: "Лайла — внутри дела"
     }) %}
-      <h4 class="text-h3 text-accent font-serif italic mb-6">Лайла — внутри дела</h4>
-      <p class="text-sm opacity-80 mb-8">Наш AI-ассистент встроен в интерфейс. Откройте карточку — и Лайла уже готова анализировать материалы и искать прецеденты.</p>
-      <div class="border-t border-white-10 pt-8">
-        <div class="text-overline text-accent mb-4">Бесплатно для НКО</div>
-        <p class="text-sm opacity-70">Правозащитные организации получают полный доступ к CRM на безвозмездной основе. Рассмотрение заявки — 72 часа.</p>
-      </div>
+      <p class="text-sm opacity-80 mb-8">Наш AI-ассистент встроен в интерфейс для мгновенного поиска прецедентов.</p>
     {% endcall %}
   </div>
 {% endcall %}
@@ -104,11 +82,8 @@ title: DataLaw CRM — Case Management System
   <div class="flex justify-between items-center gap-8">
     <div>
       <p class="text-overline mb-2">DataLaw CRM · Бета-доступ</p>
-      <h3 class="text-h2 text-white">Начните защищать своих клиентов безопаснее</h3>
+      <h3 class="text-h2 text-white">Защищайте своих клиентов безопаснее</h3>
     </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Запросить доступ →", href: "/pages/contacts/", class: "bg-white text-navy" }) }}
-      {{ button({ text: "Задать вопрос", href: "/pages/contacts/", type: "light" }) }}
-    </div>
+    {{ button({ text: "Запросить доступ →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

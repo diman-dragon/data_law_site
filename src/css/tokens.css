@@ -1,23 +1,108 @@
+/* ==========================================================================
+   DATALAW — DESIGN TOKENS v2
+   Единственный источник переменных. Не переопределять в других файлах.
+   ========================================================================== */
+
 :root {
-  /* Colors - keeping originals */
-  --navy: #0a192f;
-  --gold: #b8913a;
-  --text-main: #333;
-  --text-mid: #666;
-  --border: #e0e0e0;
-  --white: #ffffff;
 
-  /* Typography */
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Cormorant Garamond', serif;
+  /* ── ЦВЕТА ─────────────────────────────────────────────────────────── */
 
-  /* Spacing */
-  --space-sm: 10px;
-  --space-md: 20px;
-  --space-lg: 40px;
-  --space-xl: 100px;
+  --c-ink:         #0e0e0e;
+  --c-ink-80:      rgba(14,14,14,.80);
+  --c-ink-60:      rgba(14,14,14,.60);
+  --c-ink-30:      rgba(14,14,14,.28);
+  --c-ink-10:      rgba(14,14,14,.08);
+
+  --c-navy:        #0d1f35;          /* тёмные секции */
+  --c-red:         #c0392b;          /* pulse, критические теги */
+  --c-gold:        #b5813a;          /* акцент, em, стрелки */
+  --c-gold-border: rgba(181,129,58,.35);
+
+  --c-paper:       #f7f5f0;          /* основной фон */
+  --c-white:       #ffffff;
+  --c-surface:     #f0ede6;          /* карточки на paper */
+  --c-washi:       #e8e3c4;          /* фон хедера */
+
+  --c-text:        #0e0e0e;
+  --c-text-mid:    #5a5753;
+  --c-text-dim:    #8c8880;
+
+  --c-border:      rgba(14,14,14,.09);
+  --c-border-mid:  rgba(14,14,14,.16);
+
+  /* ── ТИПОГРАФИКА ────────────────────────────────────────────────────── */
+
+  --f-serif: 'Libre Baskerville', Georgia, serif;
+  --f-sans:  'DM Sans', system-ui, sans-serif;
+
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* Шкала */
+  --fs-xs:   0.6875rem;   /* 11px — overline, caps-метки   */
+  --fs-sm:   0.8125rem;   /* 13px — подписи, footer        */
+  --fs-base: 0.9375rem;   /* 15px — body                   */
+  --fs-md:   1.0625rem;   /* 17px — lead                   */
+  --fs-lg:   1.25rem;     /* 20px                          */
+  --fs-xl:   1.625rem;    /* 26px                          */
+  --fs-2xl:  2rem;        /* 32px                          */
+  --fs-3xl:  2.75rem;     /* 44px                          */
+  --fs-hero: clamp(2.6rem, 5vw, 4.25rem);
+
+  /* Межстрочные */
+  --lh-tight:  1.06;
+  --lh-snug:   1.22;
+  --lh-normal: 1.55;
+  --lh-loose:  1.72;
+
+  /* Трекинг */
+  --ls-caps:  .18em;   /* ALL CAPS метки */
+  --ls-wide:  .08em;
+  --ls-tight: -.02em;
+
+  /* ── ОТСТУПЫ ────────────────────────────────────────────────────────── */
+
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  --section-v: clamp(64px, 8vw, 112px);
+
+  /* ── СЕТКА ──────────────────────────────────────────────────────────── */
+
+  --max-w:    1280px;
+  --gutter:   clamp(20px, 4vw, 48px);
+  --col-gap:  clamp(24px, 3vw, 48px);
+
+  /* ── АНИМАЦИИ ───────────────────────────────────────────────────────── */
+
+  --ease-out: cubic-bezier(.19,1,.22,1);
+  --ease-in:  cubic-bezier(.77,0,.175,1);
+  --ease-std: cubic-bezier(.4,0,.2,1);
+  --t-fast:   .15s;
+  --t-base:   .22s;
+  --t-slow:   .42s;
+
+  /* ── ХЕДЕР ──────────────────────────────────────────────────────────── */
+
+  --header-h:     68px;
+  --header-h-mob: 58px;
+
+  /* ── ТЕНИ ───────────────────────────────────────────────────────────── */
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,.09);
+  --shadow-lg: 0 20px 48px rgba(0,0,0,.13);
 }
-
-body { font-family: var(--font-sans); color: var(--text-main); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
-.block-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-mid); margin-bottom: var(--space-sm); }

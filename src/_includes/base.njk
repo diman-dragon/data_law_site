@@ -3,42 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | {{ site.title if site.title else "DATALAW" }}</title>
+  <title>{{ title }}</title>
 
-  {# 1. ШРИФТЫ #}
+  {# ── ФАВИКОНЫ ── #}
+  <link rel="icon" type="image/png" href="{{ '/assets/datalaw-logo-shield.jpg' | url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/datalaw-logo-shield.jpg' | url }}">
+
+  {# ── ШРИФТЫ — только здесь ── #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  {# 2-4. СТИЛИ (Применяем фильтр | url для корректных путей на GitHub) #}
+  {# ── СТИЛИ: токены → глобальные → компоненты → layout-компоненты ── #}
+  <link rel="stylesheet" href="{{ '/css/tokens.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/global.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/components.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/pages.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/header.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/layla-widget.css' | url }}">
-
-  {# 5. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ СТРАНИЦЫ #}
-  {% if css %}
-    <link rel="stylesheet" href="{{ ['/css/', css, '.css'] | join | url }}">
-  {% endif %}
 </head>
-<body class="site-body">
+<body>
 
-  {# ХЕДЕР #}
   {% include "components/header/header.njk" %}
 
-  {# ОСНОВНОЙ КОНТЕНТ #}
-  <main id="main-content" class="fade-in">
+  <main id="main-content">
     {{ content | safe }}
   </main>
 
-  {# ФУТЕР #}
   {% include "components/footer/footer.njk" %}
-  
-  {# ВИДЖЕТ LAYLA AI #}
   {% include "components/layla-widget/layla-widget.njk" %}
 
-  {# СКРИПТЫ #}
   <script src="{{ '/js/main.js' | url }}" defer></script>
   <script src="{{ '/js/layla-widget.js' | url }}" defer></script>
 

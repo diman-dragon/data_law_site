@@ -1,0 +1,11 @@
+{% macro dark_section(params) %}
+<section class="dark-section">
+  <div class="container">
+    {% if params.label %}<div class="label label--gold">{{ params.label }}</div>{% endif %}
+    {% if params.title %}<h2 class="text-h2 text-white">{{ params.title | safe }}</h2>{% endif %}
+    <div class="dark-section__content">
+      {{ caller() if caller }}
+    </div>
+  </div>
+</section>
+{% endmacro %}

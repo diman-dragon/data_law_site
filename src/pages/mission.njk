@@ -12,9 +12,9 @@ title: DATALAW — Миссия и Технология
 {{ hero({
   eyebrow: "Non-Profit Human Rights Technology",
   title: "Там, где право встречается<br>с <em>Big Data</em>",
-  description: "Государства используют неограниченные ресурсы, чтобы превратить право в инструмент давления. Мы создаем технологический противовес.<br><br> <strong class='text-main'>DataLaw — это цифровая инфраструктура, которая делает международную защиту доступной независимо от бюджета и географии клиента.</strong>",
+  description: "Мы создаем технологический противовес госмашине. DataLaw — это цифровая инфраструктура для защиты прав человека.",
   stats: [
-    { value: "50k+", label: "решений в базе данных" },
+    { value: "50k+", label: "решений в базе" },
     { value: "100%", label: "бесплатно для НКО" }
   ],
   bg: "alt"
@@ -23,117 +23,50 @@ title: DATALAW — Миссия и Технология
 {# --- MANIFESTO SECTION --- #}
 {% call section({
   label: "Manifesto",
-  title: "Мы NPO — и это <br>не оговорка",
-  bg: "dark",
-  class: "text-white"
+  title: "Мы NPO — и это не оговорка",
+  bg: "dark"
 }) %}
   <div class="grid grid-2 gap-12 mt-12">
     <div>
-      <p class="text-lead text-white opacity-80 mb-6">Коммерческий LegalTech идет туда, где есть корпоративные деньги. Правозащитники же годами работают «вручную» в условиях дефицита ресурсов.</p>
-      <p class="text-lead text-white opacity-80">DataLaw — это недостающий технологический слой. Мы берем инструменты Big Data, доступные спецслужбам, и отдаем их тем, кто защищает права человека.</p>
+      <p class="text-lead text-muted">Коммерческий LegalTech идет туда, где есть деньги. Мы идем туда, где есть нарушения прав человека.</p>
     </div>
-    
     <div class="grid grid-1 gap-6">
-      <div class="p-10 border border-white-10 bg-white-10">
-        <span class="text-accent text-h2 font-bold block mb-4">01</span>
-        <h4 class="text-h3 text-white mb-4">Независимость</h4>
-        <p class="text-sm opacity-70">Никаких внешних инвесторов или коммерческих интересов, влияющих на приоритеты разработки.</p>
-      </div>
-      <div class="p-10 border border-white-10 bg-white-10">
-        <span class="text-accent text-h2 font-bold block mb-4">02</span>
-        <h4 class="text-h3 text-white mb-4">Симметрия</h4>
-        <p class="text-sm opacity-70">Если у госмашины есть нейросети для слежки, у защиты должны быть нейросети для анализа прецедентов.</p>
-      </div>
+      {{ card({
+        title: "Независимость",
+        description: "Никаких внешних инвесторов.",
+        dark: true
+      }) }}
+      {{ card({
+        title: "Симметрия",
+        description: "Нейросети на службе защиты.",
+        dark: true
+      }) }}
     </div>
   </div>
 {% endcall %}
 
-{# --- ARCHITECTURE (THE TWO LAYERS) --- #}
+{# --- ARCHITECTURE --- #}
 {% call section({
   label: "Architecture",
   title: "Гибридная модель безопасности",
-  description: "Мы разделили систему на два независимых контура: облако для публичных данных и локальную среду для работы с делами.",
   class: "border-t"
 }) %}
   <div class="grid grid-2 gap-8 mt-12">
-    
-    {# Cloud Layer #}
-    {% call card({
-      class: "p-10 bg-white border"
-    }) %}
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-        <span class="text-overline text-xxs opacity-60">Облачный слой (Публичный)</span>
-      </div>
-      <h3 class="text-h2 font-serif italic mb-6">Global Intelligence</h3>
-      <p class="text-muted mb-8">Круглосуточный краулер сканирует реестры судов, ООН и ЕСПЧ. Здесь хранятся 1.5 млн документов, доступных для семантического поиска всем желающим.</p>
-      <ul class="feature-list">
-        <li>Мониторинг аномалий в реальном времени.</li>
-        <li>Семантический поиск по смыслу (Embeddings).</li>
-        <li>Анонимный доступ без регистрации.</li>
-      </ul>
+    {% call card({ title: "Global Intelligence" }) %}
+      <p>Облачный слой для публичных данных. 1.5 млн документов.</p>
     {% endcall %}
-
-    {# Local Layer #}
-    {% call card({
-      dark: true,
-      class: "p-10"
-    }) %}
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-3 h-3 rounded-full bg-accent"></div>
-        <span class="text-overline text-xxs text-accent">Локальный слой (Zero-Knowledge)</span>
-      </div>
-      <h3 class="text-h2 font-serif italic text-white mb-6">Local Node & CRM</h3>
-      <p class="opacity-70 mb-8">Рабочее пространство юриста. Устанавливается на устройство. Все персональные данные и материалы дел физически не могут покинуть ваш компьютер.</p>
-      <ul class="feature-list">
-        <li>Локальная нейросеть (LLM) работает офлайн.</li>
-        <li>Шифрование военного уровня.</li>
-        <li>Zero-Knowledge: DataLaw не имеет доступа к вашим делам.</li>
-      </ul>
+    {% call card({ title: "Local Node & CRM", dark: true }) %}
+      <p>Локальный слой для работы с делами. Zero-Knowledge.</p>
     {% endcall %}
-
-  </div>
-{% endcall %}
-
-{# --- SYNERGY / ECOSYSTEM --- #}
-{% call section({
-  label: "Ecosystem",
-  title: "Не замена, а усиление",
-  description: "Мы занимаем нишу автоматизированного анализа. DataLaw дополняет существующие инструменты правозащитников.",
-  class: "border-t"
-}) %}
-  <div class="grid grid-3 gap-8 mt-12">
-    {{ card({
-      title: "DataLaw + Uwazi",
-      description: "Uwazi хранит и структурирует ваши кейсы — DataLaw обогащает их прецедентами из 50+ юрисдикций.",
-      class: "bg-alt"
-    }) }}
-    {{ card({
-      title: "DataLaw + Tella",
-      description: "Tella собирает доказательства «в поле» — DataLaw помогает выстроить на их основе правовую позицию без облачных следов.",
-      class: "bg-alt"
-    }) }}
-    {{ card({
-      title: "DataLaw + OSINT",
-      description: "Мы превращаем точечные находки расследователей в статистически доказанные системные паттерны нарушений.",
-      class: "bg-alt"
-    }) }}
   </div>
 {% endcall %}
 
 {# --- CTA BAND --- #}
 {% call section({
-  bg: "dark",
-  class: "text-white"
+  bg: "base"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <div>
-      <p class="text-overline mb-2">Support Human Rights Tech</p>
-      <h3 class="text-h2 text-white">Станьте частью инфраструктуры</h3>
-    </div>
-    <div class="flex gap-4">
-      {{ button({ text: "Поддержать проект", href: "/pages/contacts/" }) }}
-      {{ button({ text: "Смотреть данные", href: "/pages/library/", type: "light" }) }}
-    </div>
+    <h3 class="text-h2">Станьте частью инфраструктуры</h3>
+    {{ button({ text: "Поддержать проект", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}

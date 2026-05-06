@@ -1,38 +1,25 @@
 module.exports = function(eleventyConfig) {
   
   // --- 1. ПРЯМОЕ КОПИРОВАНИЕ СТАТИКИ ---
+  // src/css/* → css/* (покрывает tokens, global, components, pages)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
   eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
-  // --- 2. МОДУЛЬНЫЕ КОМПОНЕНТЫ (HEADER) ---
+  // --- 2. КОМПОНЕНТЫ: HEADER ---
   eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/header/header.css": "css/header.css" 
   });
-  eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/header/header.js": "js/header.js" 
-  });
 
-  // --- 3. МОДУЛЬНЫЕ КОМПОНЕНТЫ (FOOTER) ---
+  // --- 3. КОМПОНЕНТЫ: FOOTER ---
   eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/footer/footer.css": "css/footer.css" 
   });
-  eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/footer/footer.js": "js/footer.js" 
-  });
 
-  // --- 4. МОДУЛЬНЫЕ КОМПОНЕНТЫ (LAYLA WIDGET) ---
+  // --- 4. КОМПОНЕНТЫ: LAYLA WIDGET ---
+  // Все 4 старых файла объединены в один layla-widget.css
   eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/layla-widget/layla-widget.css": "css/layla-widget.css" 
-  });
-  eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/layla-widget/layla-window.css": "css/layla-window.css" 
-  });
-  eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/layla-widget/layla-messages.css": "css/layla-messages.css" 
-  });
-  eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/layla-widget/layla-input.css": "css/layla-input.css" 
   });
   eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/layla-widget/layla-widget.js": "js/layla-widget.js" 
@@ -45,6 +32,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/css/");
   eleventyConfig.addWatchTarget("./src/js/");
   eleventyConfig.addWatchTarget("./src/_includes/components/");
+  eleventyConfig.addWatchTarget("./src/_includes/ui/");
+  eleventyConfig.addWatchTarget("./src/_includes/macros/");
   eleventyConfig.addWatchTarget("./src/_data/");
 
   // --- 7. НАСТРОЙКИ ДВИЖКА ---
