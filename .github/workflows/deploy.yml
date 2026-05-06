@@ -37,8 +37,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Проверь, чтобы в .eleventy.js папка вывода была именно _site
-          path: ./_site
+          # .eleventy.js пишет сборку в public
+          path: ./public
 
   deploy:
     environment:
