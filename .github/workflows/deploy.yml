@@ -2,7 +2,7 @@ name: Deploy Eleventy to Pages
 
 on:
   push:
-    branches: ["main"] # или master, смотря какая у тебя главная
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -15,23 +15,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # Используем актуальную версию pnpm
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          cache: 'pnpm' # Теперь кэшируем зависимости pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build Eleventy
-        run: npx @11ty/eleventy
+        run: pnpm exec @11ty/eleventy
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public # Твоя папка из конфига eleventy.js
+          # ВАЖНО: убедись, что в .eleventy.js папка вывода именно _site или public
+          # Судя по стандартам Eleventy, это обычно _site
+          path: ./_site 
 
   deploy:
     environment:
