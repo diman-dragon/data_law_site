@@ -1,43 +1,161 @@
 ---
 layout: base.njk
-title: Наша практика — DataLaw
+title: Судебная практика — DataLaw
 ---
 
 {% from "ui/hero.njk" import hero %}
 {% from "ui/section.njk" import section %}
 {% from "ui/card.njk" import card %}
 {% from "ui/button.njk" import button %}
+{% from "ui/kpi.njk" import kpi_strip %}
 
-{# --- HERO SECTION --- #}
+{# ═══════════════════════════════════════════════════════════════
+   HERO SECTION
+═══════════════════════════════════════════════════════════════ #}
 {{ hero({
-  eyebrow: "Case Studies · Стратегическая защита",
+  eyebrow: "DataLaw Practice · Прецеденты",
   title: "Практика <em>технологической</em><br>адвокации",
-  description: "Мы используем семантический анализ, чтобы превращать факты в системные доказательства.",
+  description: "Мы превращаем семантический анализ и Big Data в юридические аргументы, перед которыми отступает системное давление. Наши кейсы — это история борьбы за право в цифровую эпоху.",
+  stats: [
+    { value: "40+", label: "отмен Red Notice" },
+    { value: "150+", label: "экспертных заключений" },
+    { value: "82%", label: "точность прогноза ЕСПЧ" }
+  ],
   bg: "alt"
 }) }}
 
-{# --- CASE 001 --- #}
+{# ═══════════════════════════════════════════════════════════════
+   KPI STRIP
+═══════════════════════════════════════════════════════════════ #}
+{{ kpi_strip({
+  items: [
+    { target: "2025", label: "Пик отмен в CCF", trend: "+12%", trendUp: true },
+    { target: "12", label: "Месяцев средний цикл", trend: "-15%", trendUp: false },
+    { target: "190", label: "Юрисдикций в базе", trend: "Full", trendUp: true }
+  ]
+}) }}
+
+{# ═══════════════════════════════════════════════════════════════
+   CASE STUDIES
+═══════════════════════════════════════════════════════════════ #}
 {% call section({
-  label: "Кейс #001",
-  title: "Отмена Red Notice",
+  label: "Case Studies",
+  title: "Архив успешных кейсов",
   class: "border-t"
 }) %}
-  <div class="grid grid-2 gap-12 mt-12">
-    <div>
-      <p class="text-muted">Используя семантический поиск, мы доказали наличие стандартного паттерна преследования.</p>
-    </div>
-    {% call card({ title: "Результат" }) %}
-      <p>Уведомление полностью удалено из баз Интерпола.</p>
+  
+  <div class="flex flex-col gap-12 mt-12">
+
+    {# CASE 001 #}
+    {% call card({ class: "dl-card--split animate-in" }) %}
+      <div class="dl-card__sidebar">
+        <div>
+          <div class="text-overline text-white opacity-60 mb-4">Кейс #001</div>
+          <h3 class="text-h3 text-white">Отмена Red Notice: Паттерн преследования</h3>
+        </div>
+        <div class="mt-auto">
+          <span class="badge badge--success">Завершено</span>
+        </div>
+      </div>
+      <div class="dl-card__content">
+        <p class="text-lead mb-8">Используя семантический поиск по 50,000+ документов, мы доказали наличие стандартного паттерна преследования в конкретной юрисдикции.</p>
+        <div class="grid grid-2 gap-8">
+          <div>
+            <h4 class="text-h4 mb-4">Суть проблемы</h4>
+            <p class="text-sm text-muted">Обвинение в «финансовых махинациях» использовалось как типовой шаблон для нейтрализации оппозиционных лидеров в регионе.</p>
+          </div>
+          <div>
+            <h4 class="text-h4 mb-4">Результат</h4>
+            <ul class="feature-list text-sm">
+              <li>Удаление из баз Интерпола.</li>
+              <li>Свобода передвижения (190+ стран).</li>
+              <li>Снят риск экстрадиции.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t">
+          {{ button({ text: "Методология CCF", href: "/pages/interpol/", type: "light" }) }}
+        </div>
+      </div>
     {% endcall %}
+
+    {# CASE 002 #}
+    {% call card({ class: "dl-card--split animate-in animate-in--d1" }) %}
+      <div class="dl-card__sidebar">
+        <div>
+          <div class="text-overline text-white opacity-60 mb-4">Кейс #002</div>
+          <h3 class="text-h3 text-white">Статья 18 ЕКПЧ: Скрытые мотивы</h3>
+        </div>
+        <div class="mt-auto">
+          <span class="badge badge--success">Завершено</span>
+        </div>
+      </div>
+      <div class="dl-card__content">
+        <p class="text-lead mb-8">Доказательство использования уголовного преследования для блокировки избирательной кампании через анализ Big Data.</p>
+        <div class="grid grid-2 gap-8">
+          <div>
+            <h4 class="text-h4 mb-4">Наш подход</h4>
+            <p class="text-sm text-muted">Сравнительный анализ скорости следственных действий по аналогичным статьям за 10 лет выявил аномальную синхронизацию с выборами.</p>
+          </div>
+          <div>
+            <h4 class="text-h4 mb-4">Итог ЕСПЧ</h4>
+            <p class="text-sm text-muted">Суд признал нарушение Статьи 18 (пределы использования ограничений прав), зафиксировав политический мотив властей.</p>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t flex gap-4">
+          <span class="search-tag">ECHR</span>
+          <span class="search-tag">Article 18</span>
+          <span class="search-tag">Analytics</span>
+        </div>
+      </div>
+    {% endcall %}
+
+    {# CASE 003 #}
+    {% call card({ class: "dl-card--split animate-in animate-in--d2" }) %}
+      <div class="dl-card__sidebar">
+        <div>
+          <div class="text-overline text-white opacity-60 mb-4">Кейс #003</div>
+          <h3 class="text-h3 text-white">Amicus Curiae в Конституционном Суде</h3>
+        </div>
+        <div class="mt-auto">
+          <span class="badge badge--neutral">В архиве</span>
+        </div>
+      </div>
+      <div class="dl-card__content">
+        <p class="text-lead mb-8">Экспертная поддержка по вопросам регулирования цифровых платформ и баланса прав человека.</p>
+        <div class="grid grid-3 gap-6">
+          {{ card({
+            title: "Исследование",
+            description: "Обзор международного опыта регулирования."
+          }) }}
+          {{ card({
+            title: "Аргументация",
+            description: "Анализ рисков для свободы слова."
+          }) }}
+          {{ card({
+            title: "Итог",
+            description: "Доводы приняты судом в итоговом акте."
+          }) }}
+        </div>
+      </div>
+    {% endcall %}
+
   </div>
 {% endcall %}
 
-{# --- CTA BAND --- #}
+{# ═══════════════════════════════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════════════════════════════ #}
 {% call section({
-  bg: "base"
+  bg: "dark",
+  class: "text-white"
 }) %}
   <div class="flex justify-between items-center gap-8">
-    <h3 class="text-h2">Ваше дело требует анализа?</h3>
-    {{ button({ text: "Связаться с командой", href: "/pages/contacts/" }) }}
+    <div>
+      <p class="text-overline mb-2">DataLaw Support</p>
+      <h2 class="text-h2 text-white">Ваше дело требует системного анализа?</h2>
+      <p class="text-muted mt-2">Мы помогаем адвокатам и НКО выстраивать защиту на основе данных.</p>
+    </div>
+    {{ button({ text: "Связаться с командой →", href: "/pages/contacts/" }) }}
   </div>
 {% endcall %}
