@@ -103,9 +103,9 @@
 }
 
 .dl-card--dark {
-  background: var(--c-navy);
-  border: 1px solid rgba(255,255,255,.05);
-  color: rgba(255,255,255,.9);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
 }
 
 .dl-card--split {
