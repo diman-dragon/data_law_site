@@ -20,7 +20,7 @@
       <p class="mb-8{% if bg == 'dark' %} text-white{% endif %}">{{ group.text | safe }}</p>
     {% endif %}
 
-    {% if group.items %}
+    {% if group.items and group.items.length %}
       {% if groupLayout == "text" %}
         <div class="grid grid-{{ columns }} gap-12">
           {% for item in group.items %}
@@ -47,11 +47,12 @@
       {% elif groupLayout == "actions" %}
         <div class="flex gap-4">
           {% for item in group.items %}
-            {% if item.href %}
-              {{ button({ text: item.title, href: item.href, type: item.type or "primary" }) }}
-            {% else %}
-              {{ button({ text: item.title, type: item.type or "ghost" }) }}
-            {% endif %}
+            {{ button({
+              text: item.title,
+              href: item.href,
+              type: item.type or "primary",
+              trigger: item.trigger
+            }) }}
           {% endfor %}
         </div>
       {% else %}
@@ -100,7 +101,7 @@
     </div>
   {% endif %}
 
-  {% if page.news %}
+  {% if page.news and page.news.main %}
     <section class="dl-section dl-section--base">
       <div class="container">
         <div class="dl-section__header home-news-header">
@@ -122,9 +123,7 @@
             <a href="{{ page.news.main.href | url }}" class="home-news-main__title">
               {{ page.news.main.title }}
             </a>
-            <p class="home-news-main__lead">
-              {{ page.news.main.lead }}
-            </p>
+            <p class="home-news-main__lead">{{ page.news.main.lead }}</p>
             <time class="home-news-main__date">{{ page.news.main.date }}</time>
           </article>
 
@@ -132,9 +131,7 @@
             {% for item in page.news.side %}
               <article class="home-news-side__item">
                 <div class="text-overline text-overline--gold">{{ item.label }}</div>
-                <a href="{{ item.href | url }}" class="home-news-side__title">
-                  {{ item.title }}
-                </a>
+                <a href="{{ item.href | url }}" class="home-news-side__title">{{ item.title }}</a>
                 <time class="home-news-side__date">{{ item.date }}</time>
               </article>
             {% endfor %}
@@ -144,7 +141,7 @@
     </section>
   {% endif %}
 
-  {% if page.feature %}
+  {% if page.feature and page.feature.items and page.feature.items.length %}
     <section class="dl-section dl-section--dark">
       <div class="container">
         <div class="home-tech-grid">
@@ -169,7 +166,7 @@
     </section>
   {% endif %}
 
-  {% if page.tools %}
+  {% if page.tools and page.tools.length %}
     <section class="dl-section dl-section--base pt-0">
       <div class="container">
         <div class="home-tools-grid">
