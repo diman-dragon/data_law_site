@@ -2,7 +2,7 @@
   --c-washi: #E5E0B8; /* Точный фон логотипа (медиана по краям пикселей) */
   --c-paper: #fdfdfb;
   --c-navy: #1a1a1a;
-  --c-gold: #C84028;
+  --c-gold: #8a5e1e;
   --c-purple: #7040A0;
   --header-h: 110px;
   --t-normal: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -73,10 +73,10 @@
 .logo-text-group {
   display: flex;
   flex-direction: column;
-  padding-left: 14px;
+  padding-left: 16px;
 }
 
-.logo-main { font-size: 32px; font-weight: 900; line-height: 1; letter-spacing: -0.01em; }
+.logo-main { font-family: var(--f-serif); font-size: 34px; font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; }
 .logo-accent-line { height: 3px; background: rgba(0,0,0,0.25); width: 40px; margin: 2px 0 6px; }
 .logo-sub { font-size: 8.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.18em; opacity: 0.8; }
 

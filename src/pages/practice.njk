@@ -47,96 +47,57 @@ title: Судебная практика — DataLaw
   <div class="flex flex-col gap-12 mt-12">
 
     {# CASE 001 #}
-    {% call card({ class: "dl-card--split animate-in" }) %}
-      <div class="dl-card__sidebar">
-        <div>
-          <div class="text-overline text-white opacity-60 mb-4">Кейс #001</div>
-          <h3 class="text-h3 text-white">Отмена Red Notice: Паттерн преследования</h3>
-        </div>
-        <div class="mt-auto">
-          <span class="badge badge--success">Завершено</span>
-        </div>
+    {% call card({ class: "animate-in" }) %}
+      <div class="mb-4">
+        <div class="text-overline text-overline--gold mb-2">Кейс #001</div>
+        <h3 class="dl-card__title">Отмена Red Notice: Паттерн преследования</h3>
       </div>
-      <div class="dl-card__content">
-        <p class="text-lead mb-8">Используя семантический поиск по 50,000+ документов, мы доказали наличие стандартного паттерна преследования в конкретной юрисдикции.</p>
-        <div class="grid grid-2 gap-8">
-          <div>
-            <h4 class="text-h4 mb-4">Суть проблемы</h4>
-            <p class="text-sm text-muted">Обвинение в «финансовых махинациях» использовалось как типовой шаблон для нейтрализации оппозиционных лидеров в регионе.</p>
-          </div>
-          <div>
-            <h4 class="text-h4 mb-4">Результат</h4>
-            <ul class="feature-list text-sm">
-              <li>Удаление из баз Интерпола.</li>
-              <li>Свобода передвижения (190+ стран).</li>
-              <li>Снят риск экстрадиции.</li>
-            </ul>
-          </div>
+      <p class="dl-card__desc mb-6">Используя семантический поиск по 50,000+ документов, мы доказали наличие стандартного паттерна преследования в конкретной юрисдикции.</p>
+      <div class="grid grid-2 gap-8 pt-6 border-t">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Суть проблемы</h4>
+          <p class="text-sm text-muted">Обвинение в «финансовых махинациях» использовалось как типовой шаблон для нейтрализации оппозиционных лидеров в регионе.</p>
         </div>
-        <div class="mt-8 pt-8 border-t">
-          {{ button({ text: "Методология CCF", href: "/pages/interpol/", type: "light" }) }}
+        <div>
+          <h4 class="text-sm font-bold mb-2">Результат</h4>
+          <ul class="text-sm text-muted">
+            <li>Удаление из баз Интерпола.</li>
+            <li>Свобода передвижения (190+ стран).</li>
+          </ul>
         </div>
       </div>
     {% endcall %}
 
     {# CASE 002 #}
-    {% call card({ class: "dl-card--split animate-in animate-in--d1" }) %}
-      <div class="dl-card__sidebar">
-        <div>
-          <div class="text-overline text-white opacity-60 mb-4">Кейс #002</div>
-          <h3 class="text-h3 text-white">Статья 18 ЕКПЧ: Скрытые мотивы</h3>
-        </div>
-        <div class="mt-auto">
-          <span class="badge badge--success">Завершено</span>
-        </div>
+    {% call card({ class: "animate-in animate-in--d1" }) %}
+      <div class="mb-4">
+        <div class="text-overline text-overline--gold mb-2">Кейс #002</div>
+        <h3 class="dl-card__title">Статья 18 ЕКПЧ: Скрытые мотивы</h3>
       </div>
-      <div class="dl-card__content">
-        <p class="text-lead mb-8">Доказательство использования уголовного преследования для блокировки избирательной кампании через анализ Big Data.</p>
-        <div class="grid grid-2 gap-8">
-          <div>
-            <h4 class="text-h4 mb-4">Наш подход</h4>
-            <p class="text-sm text-muted">Сравнительный анализ скорости следственных действий по аналогичным статьям за 10 лет выявил аномальную синхронизацию с выборами.</p>
-          </div>
-          <div>
-            <h4 class="text-h4 mb-4">Итог ЕСПЧ</h4>
-            <p class="text-sm text-muted">Суд признал нарушение Статьи 18 (пределы использования ограничений прав), зафиксировав политический мотив властей.</p>
-          </div>
+      <p class="dl-card__desc mb-6">Доказательство использования уголовного преследования для блокировки избирательной кампании через анализ Big Data.</p>
+      <div class="grid grid-2 gap-8 pt-6 border-t">
+        <div>
+          <h4 class="text-sm font-bold mb-2">Наш подход</h4>
+          <p class="text-sm text-muted">Сравнительный анализ скорости следственных действий выявил аномальную синхронизацию с выборами.</p>
         </div>
-        <div class="mt-8 pt-8 border-t flex gap-4">
-          <span class="search-tag">ECHR</span>
-          <span class="search-tag">Article 18</span>
-          <span class="search-tag">Analytics</span>
+        <div>
+          <h4 class="text-sm font-bold mb-2">Итог ЕСПЧ</h4>
+          <p class="text-sm text-muted">Суд признал нарушение Статьи 18 (пределы использования ограничений прав).</p>
         </div>
       </div>
     {% endcall %}
 
     {# CASE 003 #}
-    {% call card({ class: "dl-card--split animate-in animate-in--d2" }) %}
-      <div class="dl-card__sidebar">
-        <div>
-          <div class="text-overline text-white opacity-60 mb-4">Кейс #003</div>
-          <h3 class="text-h3 text-white">Amicus Curiae в Конституционном Суде</h3>
-        </div>
-        <div class="mt-auto">
-          <span class="badge badge--neutral">В архиве</span>
-        </div>
+    {% call card({ class: "animate-in animate-in--d2" }) %}
+      <div class="mb-4">
+        <div class="text-overline text-overline--gold mb-2">Кейс #003</div>
+        <h3 class="dl-card__title">Amicus Curiae в Конституционном Суде</h3>
       </div>
-      <div class="dl-card__content">
-        <p class="text-lead mb-8">Экспертная поддержка по вопросам регулирования цифровых платформ и баланса прав человека.</p>
-        <div class="grid grid-3 gap-6">
-          {{ card({
-            title: "Исследование",
-            description: "Обзор международного опыта регулирования."
-          }) }}
-          {{ card({
-            title: "Аргументация",
-            description: "Анализ рисков для свободы слова."
-          }) }}
-          {{ card({
-            title: "Итог",
-            description: "Доводы приняты судом в итоговом акте."
-          }) }}
-        </div>
+      <p class="dl-card__desc mb-8">Экспертная поддержка по вопросам регулирования цифровых платформ и баланса прав человека.</p>
+      <div class="grid grid-3 gap-6">
+        {{ card({ title: "Исследование", description: "Обзор международного опыта." }) }}
+        {{ card({ title: "Аргументация", description: "Анализ рисков для свободы слова." }) }}
+        {{ card({ title: "Итог", description: "Доводы приняты судом." }) }}
       </div>
     {% endcall %}
 

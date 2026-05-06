@@ -10,6 +10,8 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 3px; }
+
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
@@ -253,9 +255,14 @@ strong { font-weight: var(--fw-semibold); }
 .animate-in {
   animation: fade-up .65s var(--ease-out) both;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in { animation: none; }
+}
+
 @keyframes fade-up {
-  from { opacity:0; transform:translateY(20px); }
-  to   { opacity:1; transform:translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── SCROLLBAR ────────────────────────────────────────────────────────────── */

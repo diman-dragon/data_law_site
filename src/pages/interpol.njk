@@ -74,13 +74,12 @@ title: DATALAW — Интерпол
     }) }}
   </div>
 
-  {# Honest Box #}
-  <div class="mt-12 p-10 bg-alt border-l-4 border-accent animate-in">
+  {% call card({ class: "mt-12 border-l-4 border-accent animate-in" }) %}
     <div class="text-overline mb-4">Честный взгляд</div>
     <p class="text-h3 font-serif italic mb-0">
       Интерпол уязвим к давлению со стороны государств. Мы не питаем иллюзий: система инертна. Но каждая отмененная Red Notice — это конкретный человек, получивший свободу передвижения и защиту от экстрадиции. Это то, ради чего мы работаем.
     </p>
-  </div>
+  {% endcall %}
 {% endcall %}
 
 {# --- STEPS SECTION --- #}
@@ -102,7 +101,6 @@ title: DATALAW — Интерпол
     </div>
     
     {% call card({
-      dark: true,
       class: "border-accent"
     }) %}
       <h3 class="text-h2 font-serif italic text-accent mb-6">Спросите Лайлу</h3>

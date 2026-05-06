@@ -104,16 +104,17 @@
 
 .dl-card--dark {
   background: var(--c-navy);
-  border-color: rgba(255,255,255,.08);
-  color: rgba(255,255,255,.8);
+  border: 1px solid rgba(255,255,255,.05);
+  color: rgba(255,255,255,.9);
 }
 
 .dl-card--split {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 0;
-  padding: 0;
   border: 1px solid var(--c-border);
+  background: var(--c-white);
+  overflow: hidden;
 }
 .dl-card--split .dl-card__sidebar {
   background: var(--c-navy);
@@ -127,6 +128,9 @@
 .dl-card--split .dl-card__content {
   padding: var(--sp-8);
   background: var(--c-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
 }
 
 @media (max-width: 768px) {
@@ -208,6 +212,7 @@
 .dl-section--alt   { background: var(--c-surface); }
 .dl-section--white { background: var(--c-white); }
 .dl-section--dark  { background: var(--c-navy); color: rgba(255,255,255,.8); }
+.dl-section--no-top { padding-top: 0; }
 
 .dl-section__header {
   margin-bottom: var(--sp-12);
