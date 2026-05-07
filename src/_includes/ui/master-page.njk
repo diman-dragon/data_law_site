@@ -4,11 +4,13 @@
 {% from "ui/section.njk" import section %}
 {% from "ui/detail-group.njk" import detail_group %}
 {% from "ui/workspace-layout.njk" import workspace_layout %}
+{% from "macros/breadcrumbs.njk" import breadcrumbs %}
 
 {% macro master_page(page) %}
   {% if page.layout == "workspace" %}
     {{ workspace_layout(page) }}
   {% else %}
+    <div class="container">{{ breadcrumbs(page) }}</div>
     {{ hero(page.hero) }}
 
     {% if page.band %}

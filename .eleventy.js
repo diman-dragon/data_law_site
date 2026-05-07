@@ -27,6 +27,7 @@ module.exports = function(eleventyConfig) {
 
   // --- 5. ДАННЫЕ ДЛЯ БРАУЗЕРА ---
   eleventyConfig.addPassthroughCopy({ "src/_data/layla-db.json": "data/layla-db.json" });
+  eleventyConfig.addPassthroughCopy({ "src/_data/echr_decisions.json": "data/echr_decisions.json" });
 
   // --- 6. СЛЕЖЕНИЕ ЗА ИЗМЕНЕНИЯМИ ---
   eleventyConfig.addWatchTarget("./src/css/");

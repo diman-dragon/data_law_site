@@ -1,0 +1,14 @@
+<section class="intelligence-workspace">
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="{{ workspace.search.placeholder }}">
+  </div>
+
+  <div id="results-container" class="results-grid">
+    <!-- Результаты поиска будут выведены здесь -->
+  </div>
+</section>
+
+<script src="{{ '/js/search.js' | url }}" defer></script>
