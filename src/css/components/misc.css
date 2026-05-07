@@ -1,0 +1,8 @@
+/* Bar chart */
+
+.bar-chart { display: flex; flex-direction: column; gap: 10px; }
+.bar-row   { display: flex; align-items: center; gap: 12px; }
+
+.footer-quote { font-style: italic; opacity: 0.5; font-size: var(--fs-xs); margin-top: var(--sp-2); }
+.footer-link-dot--gold { background: var(--c-gold); }
+.footer-sources-title { margin-bottom: var(--sp-4); }

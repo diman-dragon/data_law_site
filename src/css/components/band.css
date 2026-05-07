@@ -4,7 +4,7 @@
 
 .dl-band {
   background: var(--c-red);
-  padding: 13px 0;
+  padding-block: var(--sp-3);
   overflow: hidden;
 }
 
@@ -24,14 +24,14 @@
   text-transform: uppercase;
   background: var(--c-white);
   color: var(--c-red);
-  padding: 3px 10px;
+  padding: var(--sp-1) var(--sp-3);
   flex-shrink: 0;
 }
 
 .dl-band__text {
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
-  color: rgba(255,255,255,.92);
+  color: var(--c-white-90);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

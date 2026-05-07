@@ -106,7 +106,7 @@
       {% call section({
         label: page.details.label,
         title: page.details.title,
-        description: page.details.description,
+        description: page.details.description or "Дополнительные материалы страницы собраны в общем каркасе и не требуют отдельного шаблона.",
         bg: page.details.bg or "white"
       }) %}
         {% if page.details.groups %}

@@ -43,4 +43,4 @@
   font-weight: var(--fw-semibold);
   color: var(--c-text-dim);
 }
-.dl-kpi-strip__trend--up { color: #1a7a42; }
+.dl-kpi-strip__trend--up { color: var(--c-green); }

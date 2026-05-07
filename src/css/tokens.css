@@ -10,30 +10,55 @@
   --c-ink:         #0e0e0e;
   --c-ink-80:      rgba(14,14,14,.80);
   --c-ink-60:      rgba(14,14,14,.60);
+  --c-ink-40:      rgba(14,14,14,.40);
   --c-ink-30:      rgba(14,14,14,.28);
+  --c-ink-20:      rgba(14,14,14,.20);
   --c-ink-10:      rgba(14,14,14,.08);
+  --c-ink-05:      rgba(14,14,14,.04);
+
+  --c-white:       #ffffff;
+  --c-white-90:    rgba(255,255,255,.90);
+  --c-white-80:    rgba(255,255,255,.80);
+  --c-white-70:    rgba(255,255,255,.70);
+  --c-white-60:    rgba(255,255,255,.60);
+  --c-white-40:    rgba(255,255,255,.40);
+  --c-white-20:    rgba(255,255,255,.20);
+  --c-white-10:    rgba(255,255,255,.10);
+  --c-white-05:    rgba(255,255,255,.05);
 
   --c-navy:        #0d1f35;          /* тёмные секции */
-  --c-red:         #c0392b;          /* pulse, критические теги */
+  
+  /* Акценты и статусы */
   --c-gold:        #8a5e1e;          /* акцент, em, стрелки */
   --c-gold-border: rgba(138,94,30,.35);
+  --c-gold-10:     rgba(138,94,30,.10);
 
+  --c-red:         #c0392b;          /* pulse, критические теги, alert */
+  --c-red-10:      rgba(192,57,43,.10);
+  
+  --c-green:       #1a7a42;          /* success */
+  --c-green-10:    rgba(26,122,66,.10);
+  
+  --c-blue:        #2980b9;
+
+  /* Фоны */
   --c-paper:       #f7f5f0;          /* основной фон */
-  --c-white:       #ffffff;
   --c-surface:     #f0ede6;          /* карточки на paper */
   --c-washi:       #e8e3c4;          /* фон хедера */
 
-  --c-text:        #0e0e0e;
+  /* Текст */
+  --c-text:        var(--c-ink);
   --c-text-mid:    #5a5753;
   --c-text-dim:    #8c8880;
 
-  --c-border:      rgba(14,14,14,.09);
-  --c-border-mid:  rgba(14,14,14,.16);
+  /* Границы */
+  --c-border:      var(--c-ink-10);
+  --c-border-mid:  var(--c-ink-20);
 
   /* ── ТИПОГРАФИКА ────────────────────────────────────────────────────── */
 
-  --f-serif: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
-  --f-sans:  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --f-serif: "Libre Baskerville", serif;
+  --f-sans:  "DM Sans", sans-serif;
 
   --fw-light:    300;
   --fw-regular:  400;

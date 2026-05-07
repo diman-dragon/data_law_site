@@ -16,12 +16,12 @@
   color: var(--c-text-mid);
   background: var(--c-white);
   border: 1px solid var(--c-border);
-  padding: 8px 16px;
+  padding: var(--sp-2) var(--sp-4);
   border-radius: 999px;
   width: fit-content;
 }
 
-.analytics-update-dot { background: #27ae60; }
+.analytics-update-dot { background: var(--c-green); }
 
 /* SVG inline in analytics donut */
 svg text { font-family: var(--f-serif); fill: var(--c-ink); }
