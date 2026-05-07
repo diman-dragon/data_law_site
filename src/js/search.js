@@ -3,9 +3,12 @@ console.log('Search script initialized');
   const searchInput = document.getElementById('search-input');
   const resultsContainer = document.getElementById('results-container');
   let data = [];
+  
+  // Use absolute path relative to the root for better reliability with pathPrefix
+  const dataPath = '/data/echr_decisions.json';
 
-  console.log('Fetching data...');
-  fetch('./data/echr_decisions.json')
+  console.log('Fetching data from:', dataPath);
+  fetch(dataPath)
     .then(response => {
       console.log('Response status:', response.status);
       if (!response.ok) throw new Error('Network response error');
