@@ -1,0 +1,65 @@
+{% macro workspace_layout(page) %}
+  <div class="dl-search-workspace">
+    <div class="dl-search-workspace__chat">
+      <div class="dl-chat-container">
+        {% for msg in page.workspace.chat %}
+          <div class="dl-msg dl-msg--{{ msg.role }}">
+            <div class="dl-msg__avatar">{{ "AI" if msg.role == "ai" else "You" }}</div>
+            <div class="dl-msg__content">
+              <p>{{ msg.text | safe }}</p>
+              {% if msg.citations %}
+                <div class="dl-msg__citations">
+                  {% for cite in msg.citations %}
+                    <button class="cite-trigger" data-cite-id="{{ cite.id }}">[{{ cite.id }}] {{ cite.title }}</button>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="dl-chat-input-area">
+        <input type="text" placeholder="{{ page.workspace.placeholder }}">
+        <button class="dl-chat-send">Отправить</button>
+      </div>
+    </div>
+    <div class="dl-search-workspace__context" id="context-panel">
+      <div class="dl-context-placeholder">
+        <p>Выберите ссылку в чате, чтобы просмотреть документ</p>
+      </div>
+      {% for msg in page.workspace.chat %}
+        {% if msg.citations %}
+          {% for cite in msg.citations %}
+            <div class="dl-context-item hidden" id="cite-{{ cite.id }}">
+              <div class="dl-context-header">
+                <h3 class="text-overline">Источник [{{ cite.id }}]</h3>
+                <p class="text-sm font-bold">{{ cite.title }}</p>
+              </div>
+              <div class="dl-context-body">
+                {{ cite.content | safe }}
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const triggers = document.querySelectorAll('.cite-trigger');
+      const contextItems = document.querySelectorAll('.dl-context-item');
+      const placeholder = document.querySelector('.dl-context-placeholder');
+
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const id = trigger.getAttribute('data-cite-id');
+          if (placeholder) placeholder.classList.add('hidden');
+          contextItems.forEach(item => item.classList.add('hidden'));
+          const target = document.getElementById(`cite-${id}`);
+          if (target) target.classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+{% endmacro %}
