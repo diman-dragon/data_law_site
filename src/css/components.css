@@ -16,6 +16,8 @@
 @import "components/feature-list.css";
 @import "components/badge.css";
 @import "components/animations.css";
+@import "components/reveal.css";
+@import "components/a11y.css";
 @import "components/table-registry.css";
 @import "components/search-hub.css";
 @import "components/misc.css";

@@ -49,4 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-trigger="layla"]').forEach((button) => {
     button.addEventListener('click', openLayla);
   });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.dl-section, .dl-card, .home-news-side__item').forEach((el) => {
+    el.classList.add('animate-reveal');
+    observer.observe(el);
+  });
 });
