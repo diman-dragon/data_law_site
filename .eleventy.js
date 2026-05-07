@@ -1,5 +1,24 @@
+const Image = require("@11ty/eleventy-img");
+
 module.exports = function(eleventyConfig) {
   
+  // --- 0. IMAGE OPTIMIZATION ---
+  eleventyConfig.addAsyncShortcode("image", async function(src, alt) {
+    if (!alt) throw new Error(`Missing \`alt\` on image: ${src}`);
+    let stats = await Image(src, {
+      widths: [300, 600, 1200],
+      formats: ["webp", "jpeg"],
+      urlPath: "/img/",
+      outputDir: "./public/img/"
+    });
+    return Image.generateHTML(stats, {
+      alt,
+      loading: "lazy",
+      decoding: "async",
+      sizes: "(min-width: 30em) 50vw, 100vw"
+    });
+  });
+
   // --- 1. ПРЯМОЕ КОПИРОВАНИЕ СТАТИКИ ---
   // src/css/* → css/* (покрывает tokens, global, components, pages)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });

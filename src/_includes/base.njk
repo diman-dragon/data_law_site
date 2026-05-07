@@ -26,18 +26,33 @@
   <link rel="stylesheet" href="{{ '/css/header.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
   <link rel="stylesheet" href="{{ '/css/layla-widget.css' | url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ metadata.type }}",
+    "name": "{{ metadata.name }}",
+    "url": "{{ metadata.url }}",
+    "description": "{{ metadata.description }}",
+    "email": "{{ metadata.email }}"
+  }
+  </script>
 </head>
 <body class="animate-in">
 
   <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
 
-  {% include "components/header/header.njk" %}
+  <header role="banner" aria-label="Основная навигация">
+    {% include "components/header/header.njk" %}
+  </header>
 
   <main id="main-content" role="main">
     {{ content | safe }}
   </main>
 
-  {% include "components/footer/footer.njk" %}
+  <footer role="contentinfo" aria-label="Контактная информация">
+    {% include "components/footer/footer.njk" %}
+  </footer>
   {% include "components/layla-widget/layla-widget.njk" %}
 
   <script src="{{ '/js/main.js' | url }}" defer></script>
