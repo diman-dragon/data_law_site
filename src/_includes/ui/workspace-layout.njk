@@ -1,65 +1,186 @@
 {% macro workspace_layout(page) %}
   <div class="dl-search-workspace">
+
+    {# ── LEFT: search panel ── #}
     <div class="dl-search-workspace__chat">
-      <div class="dl-chat-container">
-        {% for msg in page.workspace.chat %}
-          <div class="dl-msg dl-msg--{{ msg.role }}">
-            <div class="dl-msg__avatar">{{ "AI" if msg.role == "ai" else "You" }}</div>
-            <div class="dl-msg__content">
-              <p>{{ msg.text | safe }}</p>
-              {% if msg.citations %}
-                <div class="dl-msg__citations">
-                  {% for cite in msg.citations %}
-                    <button class="cite-trigger" data-cite-id="{{ cite.id }}">[{{ cite.id }}] {{ cite.title }}</button>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
+
+      <div class="dl-search-header">
+        <p class="dl-search-header__desc">{{ page.description }}</p>
+        <div class="dl-search-box">
+          <input type="text" id="search-input" class="dl-search-box__input" placeholder="Поиск по базе...">
+        </div>
+        
+        <details class="dl-advanced-filters">
+          <summary>Расширенный поиск</summary>
+          <div class="dl-filter-grid">
+            <select id="f-jurisdiction"><option value="">Юрисдикция</option><option value="ECHR">ЕСПЧ</option><option value="UN">ООН</option></select>
+            <select id="f-article"><option value="">Статья</option><option value="Art 3">Статья 3</option><option value="Art 5">Статья 5</option></select>
+            <select id="f-year"><option value="">Год</option><option value="2026">2026</option><option value="2025">2025</option></select>
+            <select id="f-type"><option value="">Тип</option><option value="Arbitration">Арбитраж</option><option value="HumanRights">Права человека</option></select>
           </div>
-        {% endfor %}
+        </details>
       </div>
-      <div class="dl-chat-input-area">
-        <input type="text" placeholder="{{ page.workspace.placeholder }}">
-        <button class="dl-chat-send">Отправить</button>
+
+      <div id="results-container" class="dl-search-results">
+        <p class="dl-search-hint">Введите запрос — появятся карточки решений.</p>
       </div>
     </div>
+
+    {# ── RIGHT: detail panel ── #}
     <div class="dl-search-workspace__context" id="context-panel">
-      <div class="dl-context-placeholder">
-        <p>Выберите ссылку в чате, чтобы просмотреть документ</p>
+      <div class="dl-context-placeholder" id="context-placeholder">
+        <p>Выберите решение, чтобы прочитать полный текст</p>
       </div>
-      {% for msg in page.workspace.chat %}
-        {% if msg.citations %}
-          {% for cite in msg.citations %}
-            <div class="dl-context-item hidden" id="cite-{{ cite.id }}">
-              <div class="dl-context-header">
-                <h3 class="text-overline">Источник [{{ cite.id }}]</h3>
-                <p class="text-sm font-bold">{{ cite.title }}</p>
-              </div>
-              <div class="dl-context-body">
-                {{ cite.content | safe }}
-              </div>
-            </div>
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
+      <div class="dl-context-item" id="context-detail" style="display:none">
+        <div class="dl-context-header">
+          <span id="ctx-article" class="dl-context-article"></span>
+          <time id="ctx-date" class="dl-context-date"></time>
+        </div>
+        <h3 id="ctx-title" class="dl-context-title"></h3>
+        <p id="ctx-case" class="dl-context-case"></p>
+        <p id="ctx-summary" class="dl-context-summary"></p>
+        <div class="dl-context-divider"></div>
+        <p id="ctx-text" class="dl-context-text"></p>
+      </div>
     </div>
   </div>
 
+  {# Inline the data URL with pathPrefix already applied by Nunjucks url filter #}
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const triggers = document.querySelectorAll('.cite-trigger');
-      const contextItems = document.querySelectorAll('.dl-context-item');
-      const placeholder = document.querySelector('.dl-context-placeholder');
+  (function () {
+    'use strict';
 
-      triggers.forEach(trigger => {
-        trigger.addEventListener('click', () => {
-          const id = trigger.getAttribute('data-cite-id');
-          if (placeholder) placeholder.classList.add('hidden');
-          contextItems.forEach(item => item.classList.add('hidden'));
-          const target = document.getElementById(`cite-${id}`);
-          if (target) target.classList.remove('hidden');
-        });
+    var input      = document.getElementById('search-input');
+    var container  = document.getElementById('results-container');
+    var detail     = document.getElementById('context-detail');
+    var placeholder = document.getElementById('context-placeholder');
+
+    if (!input || !container) return;
+
+    /* ── tags ── */
+    document.querySelectorAll('.dl-search-tag').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        input.value = btn.textContent;
+        input.dispatchEvent(new Event('input'));
       });
     });
+
+    /* ── data ── */
+    var db = [];
+    var timer = null;
+    var dataUrl = '{{ page.workspace.search.data | url if page.workspace.search else "/data/echr_decisions.json" | url }}';
+
+    input.disabled = true;
+    input.placeholder = 'Загрузка базы…';
+
+    fetch(dataUrl)
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (json) {
+        db = Array.isArray(json) ? json : [];
+        input.disabled = false;
+        input.placeholder = '{{ page.workspace.search.placeholder if page.workspace.search else "Поиск по решениям…" }}';
+      })
+      .catch(function (e) {
+        input.placeholder = '⚠ Ошибка загрузки';
+        container.innerHTML = '<p class="dl-search-empty">Не удалось загрузить базу: ' + e.message + '</p>';
+      });
+
+    /* ── search ── */
+    [input, document.getElementById('f-jurisdiction'), document.getElementById('f-article'), document.getElementById('f-year'), document.getElementById('f-type')].forEach(function(el) {
+      el.addEventListener('input', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () { doSearch(input.value.trim()); }, 180);
+      });
+    });
+
+    function doSearch(q) {
+      var jur = document.getElementById('f-jurisdiction').value;
+      var art = document.getElementById('f-article').value;
+      var year = document.getElementById('f-year').value;
+      var type = document.getElementById('f-type').value;
+
+      if (!q && !jur && !art && !year && !type) {
+        container.innerHTML = '<p class="dl-search-hint">Введите запрос или выберите фильтры.</p>';
+        showPlaceholder();
+        return;
+      }
+      
+      var results = db.filter(function (item) {
+        var matchQ = !q || [item.title, item.summary, item.text].some(f => (f||'').toLowerCase().includes(q.toLowerCase()));
+        var matchJur = !jur || (item.jurisdiction === jur);
+        var matchArt = !art || (item.article === art);
+        var matchYear = !year || (item.date && item.date.includes(year));
+        var matchType = !type || (item.type === type);
+        return matchQ && matchJur && matchArt && matchYear && matchType;
+      });
+      renderResults(results, q);
+    }
+
+    function renderResults(items, q) {
+      if (!items.length) {
+        container.innerHTML = '<p class="dl-search-empty">По запросу «' + esc(q) + '» ничего не найдено.</p>';
+        showPlaceholder();
+        return;
+      }
+      container.innerHTML = items.map(function (item, idx) {
+        return '<button class="dl-result-card" data-idx="' + idx + '" type="button">' +
+          '<div class="dl-result-card__meta">' +
+            '<span class="dl-result-card__article">' + esc(item.article) + '</span>' +
+            '<span class="dl-result-card__date">' + esc(item.date) + '</span>' +
+          '</div>' +
+          '<div class="dl-result-card__title">' + hi(item.title, q) + '</div>' +
+          '<div class="dl-result-card__case">' + hi(item.case, q) + '</div>' +
+          '<div class="dl-result-card__summary">' + hi(item.summary, q) + '</div>' +
+        '</button>';
+      }).join('');
+
+      /* click → show detail */
+      container.querySelectorAll('.dl-result-card').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          container.querySelectorAll('.dl-result-card').forEach(function(b){ b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          showDetail(items[+btn.dataset.idx], q);
+        });
+      });
+
+      /* auto-open first */
+      container.querySelector('.dl-result-card').click();
+    }
+
+    function showDetail(item, q) {
+      document.getElementById('ctx-article').textContent = item.article || '';
+      document.getElementById('ctx-date').textContent    = item.date    || '';
+      document.getElementById('ctx-title').innerHTML     = hi(item.title,   q);
+      document.getElementById('ctx-case').innerHTML      = hi(item.case,    q);
+      document.getElementById('ctx-summary').innerHTML   = hi(item.summary, q);
+      document.getElementById('ctx-text').innerHTML      = hi(item.text,    q);
+      placeholder.style.display = 'none';
+      detail.style.display      = 'block';
+    }
+
+    function showPlaceholder() {
+      placeholder.style.display = '';
+      detail.style.display      = 'none';
+    }
+
+    function esc(s) {
+      return String(s || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function hi(s, q) {
+      var out = esc(s);
+      (q || '').split(/\s+/).filter(Boolean).forEach(function (t) {
+        out = out.replace(
+          new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'),
+          '<mark>$1</mark>'
+        );
+      });
+      return out;
+    }
+  })();
   </script>
 {% endmacro %}
