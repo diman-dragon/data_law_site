@@ -1,6 +1,33 @@
 /* ==========================================================================
-   DATALAW — LAYLA AI WIDGET THEME (Messages, Inputs)
+   DATALAW — LAYLA AI WIDGET THEME (Modernized)
    ========================================================================== */
+
+:root {
+  --lw-navy: #0d1f35;
+  --lw-gold: #c5a87c;
+  --lw-white: #ffffff;
+  --lw-bg: #f8f9fa;
+  --lw-text: #334155;
+  --lw-shadow: 0 10px 30px rgba(13, 31, 53, 0.15);
+}
+
+.layla-window {
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 12px;
+  background-color: var(--lw-white) !important;
+  opacity: 1 !important;
+  border: 1px solid rgba(197, 168, 124, 0.2) !important;
+  box-shadow: var(--lw-shadow) !important;
+}
+
+.layla-header {
+  background: var(--lw-navy) !important;
+  color: var(--lw-white);
+  padding: 16px 20px !important;
+  border-bottom: 2px solid var(--lw-gold) !important;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
 
 .layla-header-info {
   display: flex;
@@ -9,103 +36,67 @@
 }
 
 .status-live {
-  font-size: 9px;
-  font-weight: var(--fw-bold);
+  font-size: 8px;
+  font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--lw-gold);
-  opacity: 0.8;
 }
 
 .layla-header h4 {
   margin: 0;
-  font-size: 12px;
-  font-weight: var(--fw-black);
-  letter-spacing: 0.15em;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--lw-gold);
-  line-height: 1;
+  color: var(--lw-white);
 }
 
 .layla-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  color: rgba(197,168,124,0.6);
-  font-size: 20px;
-  line-height: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color var(--t-fast), transform var(--t-fast);
-  padding: 0;
-}
-
-.layla-close:hover {
   color: var(--lw-gold);
-  transform: scale(1.15);
+  font-size: 24px;
 }
 
 .msg {
-  max-width: 86%;
-  padding: 10px var(--sp-4);
-  font-size: 13.5px;
-  line-height: 1.55;
-  word-wrap: break-word;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-radius: 12px;
+  max-width: 85%;
 }
 
 .msg.ai {
   align-self: flex-start;
   color: var(--lw-navy);
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.07);
-  border-left: 3px solid var(--lw-gold);
+  background: #f1f5f9;
+  border: none;
 }
 
 .msg.user {
   align-self: flex-end;
   color: #fff;
   background: var(--lw-navy);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .layla-input {
   flex: 1;
-  padding: 10px var(--sp-4);
-  border: 1px solid rgba(0,0,0,0.1);
-  outline: none;
-  font-family: var(--f-sans);
-  font-size: 13px;
-  color: var(--c-text);
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  font-size: 0.9rem;
   background: var(--lw-bg);
-  transition: border-color var(--t-fast);
-}
-
-.layla-input:focus {
-  border-color: var(--lw-gold);
-  background: #fff;
-}
-
-.layla-input::placeholder {
-  color: var(--c-text-dim);
 }
 
 .layla-send {
-  padding: 0 var(--sp-4);
-  color: var(--lw-gold);
-  font-family: var(--f-sans);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-black);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  padding: 0 20px;
+  border-radius: 24px;
   background: var(--lw-navy);
-  border: 1px solid rgba(197,168,124,0.3);
-  cursor: pointer;
-  transition:
-    background var(--t-base),
-    color var(--t-base);
-  white-space: nowrap;
+  color: var(--lw-gold);
+  border: 1px solid var(--lw-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 .layla-send:hover {

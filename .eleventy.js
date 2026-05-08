@@ -36,9 +36,13 @@ module.exports = function(eleventyConfig) {
   });
 
   // --- 4. КОМПОНЕНТЫ: LAYLA WIDGET ---
-  // Все 4 старых файла объединены в один layla-widget.css
   eleventyConfig.addPassthroughCopy({ 
-    "src/_includes/components/layla-widget/layla-widget.css": "css/layla-widget.css" 
+    "src/_includes/components/layla-widget/layla-widget.css": "css/layla-widget.css",
+    "src/_includes/components/layla-widget/layla-core.css": "css/layla-core.css",
+    "src/_includes/components/layla-widget/layla-theme.css": "css/layla-theme.css",
+    "src/_includes/components/layla-widget/layla-window.css": "css/layla-window.css",
+    "src/_includes/components/layla-widget/layla-messages.css": "css/layla-messages.css",
+    "src/_includes/components/layla-widget/layla-input.css": "css/layla-input.css"
   });
   eleventyConfig.addPassthroughCopy({ 
     "src/_includes/components/layla-widget/layla-widget.js": "js/layla-widget.js" 
@@ -47,6 +51,7 @@ module.exports = function(eleventyConfig) {
   // --- 5. ДАННЫЕ ДЛЯ БРАУЗЕРА ---
   eleventyConfig.addPassthroughCopy({ "src/_data/layla-db.json": "data/layla-db.json" });
   eleventyConfig.addPassthroughCopy({ "src/_data/echr_decisions.json": "data/echr_decisions.json" });
+  eleventyConfig.addPassthroughCopy({ "src/_data/legal_library.json": "data/legal_library.json" });
 
   // --- 6. СЛЕЖЕНИЕ ЗА ИЗМЕНЕНИЯМИ ---
   eleventyConfig.addWatchTarget("./src/css/");
